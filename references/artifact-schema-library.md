@@ -31,6 +31,8 @@
   "decision_to_make": "需要客户授权、选择或确认的事项",
   "scope": "覆盖主体、期间、地区、业务或交易范围",
   "source_boundaries": ["用户材料", "公开披露", "项目组测算"],
+  "audience_expertise_level": "informed",
+  "bilingual": false,
   "page_count_target": 18,
   "visual_profile": "rsm-insurance-results",
   "constraints": ["沿用 logo", "不得新增未核验数据"],
@@ -70,6 +72,11 @@
       "source_id": "S001",
       "calculation": null,
       "confidence": "high",
+      "as_of_date": "2026-03-31",
+      "publication_date": "2026-04-28",
+      "retrieved_date": "2026-05-30",
+      "freshness_tier": "fresh",
+      "evidence_credibility": "L2-official",
       "notes": "示例数据，不用于正式结论"
     }
   ]
@@ -126,6 +133,8 @@
       "evidence_fact_ids": ["F001", "F002"],
       "lineage_ids": ["L001"],
       "evidence_strength": "medium",
+      "evidence_credibility": "L2-official",
+      "freshness_tier": "fresh",
       "limitations": ["样本只覆盖上市主体"],
       "counter_hypothesis": "改善可能来自一次性因素",
       "wording_strength": "初步显示"
@@ -166,6 +175,10 @@
       "render_strategy": "html-image-with-native-text",
       "primary_evidence_object": "stacked_contribution_chart",
       "density": "medium-high",
+      "rhythm_score": 4,
+      "rhythm_role": "evidence",
+      "chapter_tone": "neutral",
+      "color_temperature": "neutral",
       "editable_elements": ["claim_title", "story_subtitle", "takeaway_text", "source_note"],
       "rasterized_elements": ["main_chart"],
       "qa_focus": ["chart_labels", "source_traceability", "takeaway_bar_readability"]
@@ -182,6 +195,7 @@
   "chart_id": "P07_main_chart",
   "chart_type": "stacked_bar",
   "chart_point_of_view": "利润改善更多来自投资端贡献",
+  "chart_render_path": "native-chart",
   "benchmark_type": "year_over_year",
   "focus_series": ["投资收益", "承保利润"],
   "annotation_priority": ["投资端贡献", "承保贡献下降"],

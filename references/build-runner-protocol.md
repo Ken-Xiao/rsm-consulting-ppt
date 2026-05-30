@@ -28,6 +28,29 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 
 ## Runner Stages
 
+### Stage 0: Phase Lock Check
+
+`partner-ready` 以上项目启用 `phase_lock`。当用户、项目经理或合伙人确认了关键产物后，在对应 artifact 中写入：
+
+```json
+{
+  "phase_lock": {
+    "locked": true,
+    "locked_at": "2026-05-30T00:00:00+08:00",
+    "locked_by": "user",
+    "lock_scope": ["brief", "storyline_map"],
+    "version": "v1.0",
+    "unlock_reason": null
+  }
+}
+```
+
+锁定后：
+
+- 构建、渲染和视觉修复不得重写 `client_question`、`deck_answer`、章节答案、页面 claim 或推荐路径。
+- 如必须修改，先输出 `unlock_request`，说明修改原因、影响页面和回滚风险。
+- `quick-polish` 和 `express` 默认不启用 phase lock。
+
 ### Stage 1: Validate Artifacts
 
 Read:
@@ -51,6 +74,7 @@ Read:
 Apply:
 
 - `references/task-tier-protocol.md`
+- `references/v2-capability-router.md`
 - `references/artifact-validation-standard.md`
 - `references/logic-gate-checklist.md`
 - `references/conclusion-evidence-matrix.md`
@@ -83,6 +107,7 @@ Read:
 Apply:
 
 - `references/visual-rendering-engine.md`
+- `references/visual-rhythm-orchestrator.md` for rhythm score and buffer page decisions
 - `references/page-family-contracts.md`
 - `references/section-divider-image-protocol.md` for section pages
 - `references/professional-chart-rulebook.md` for all core charts
@@ -113,6 +138,7 @@ Gate:
 Apply:
 
 - `references/review-loop.md`
+- `references/quality-dashboard-standard.md`
 - `references/final-review-checklist.md`
 - `references/presentation-polish-checklist.md`
 - `references/client-meeting-minutes-test.md`
@@ -123,6 +149,8 @@ Output:
 
 - `review_report.json`
 - `final_review_report.json`
+- optional `logic_health_dashboard.json`
+- optional `deck_quality_radar.json`
 
 ### Stage 5: Auto-Fix
 
@@ -148,6 +176,14 @@ Output:
 - optional `final_deck.pdf`
 - `delivery_note.md`
 
+Optional formats, only when requested or configured:
+
+- `final_deck.pdf`
+- `html_preview/index.html`
+- `video_narration.mp4`
+
+Read `references/delivery-format-extension.md` before enabling optional channels.
+
 Delivery note must include:
 
 - task tier
@@ -156,6 +192,7 @@ Delivery note must include:
 - review status
 - remaining risks
 - whether marked `client-ready` or `partner-ready`
+- whether any phase-locked artifact was changed or unlocked
 
 ## Standard Output Folder
 

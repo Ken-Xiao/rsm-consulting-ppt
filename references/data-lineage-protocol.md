@@ -1,6 +1,6 @@
 # Data Lineage Protocol
 
-用于保证金融 PPT 中每个数字、图表、排名、估算和判断都可追溯。处理金融数据、公开资料、用户文件或模型时必须使用。
+用于保证金融 PPT 中每个数字、图表、排名、估算和判断都可追溯。处理金融数据、公开资料、用户文件或模型时必须使用。关键数据进入核心结论时同步读取 `references/content-freshness-and-evidence.md`。
 
 ## Principle
 
@@ -24,6 +24,11 @@
   "source_page": 42,
   "source_table": "合并利润表",
   "source_cell": null,
+  "as_of_date": "2025-12-31",
+  "publication_date": "2026-03-28",
+  "retrieved_date": "2026-05-30",
+  "freshness_tier": "aging",
+  "evidence_credibility": "L2-official",
   "formula": "(current - prior) / prior",
   "dependencies": ["fact_revenue_2025", "fact_revenue_2024"],
   "transformation": "同比计算",
@@ -69,6 +74,18 @@
 | `low` | 单一非权威来源或 OCR 提取 | 只作为待确认或附录 |
 | `assumption` | 项目组假设或情景 | 必须标注假设 |
 | `pending_confirmation` | 缺来源或口径不清 | 不进入正文结论 |
+
+## Freshness And Credibility
+
+每个核心数字尽量补充：
+
+- `as_of_date`
+- `publication_date`
+- `retrieved_date`
+- `freshness_tier`: `fresh` / `aging` / `stale` / `unknown`
+- `evidence_credibility`: `L1-audited` / `L2-official` / `L3-estimated` / `L4-anecdotal`
+
+规则读取 `references/content-freshness-and-evidence.md`。`stale` 或 `unknown` 数据不得作为核心结论唯一支撑；`L3/L4` 支撑的结论必须降低措辞强度。
 
 ## Number Audit Rules
 
@@ -128,6 +145,16 @@
         "fix": "补充 lineage record 或删除该数字"
       }
     ]
+  },
+  "content_freshness_audit": {
+    "fresh": 0,
+    "aging": 0,
+    "stale": 0,
+    "unknown": 0,
+    "stale_core_evidence": []
+  },
+  "evidence_credibility_audit": {
+    "low_credibility_core_claims": []
   }
 }
 ```

@@ -18,6 +18,14 @@
 - `context_enrichment.json` if available
 - `chart_data/` if available
 
+For PRD V2 client-ready or partner-ready checks, also read as needed:
+
+- `references/v2-capability-router.md`
+- `references/content-freshness-and-evidence.md`
+- `references/quality-dashboard-standard.md`
+- `references/visual-rhythm-orchestrator.md`
+- `references/language-calibration-standard.md`
+
 ## Dimension 1: Storyline Coherence
 
 读取 `references/client-delivery-standard.md`、`references/consulting-storyline-standard.md`、`references/decision-path-standard.md` 和 `references/storyline-page-planning.md`。
@@ -46,6 +54,7 @@
 
 - 每个核心结论是否能回链到 `conclusion_evidence_matrix.json`。
 - 结论措辞强度是否匹配证据强度。
+- 数据是否有 `as_of_date`、`freshness_tier` 和 `evidence_credibility`；`stale` 或 `unknown` 是否被降级或补充说明。
 - 替代解释和口径限制是否被记录。
 - 每个数字能否追到 `lineage_map.json`、`data_pool.json`、`chart_data/` 或原始材料。
 - 排名是否跨页一致。
@@ -54,6 +63,14 @@
 - 摘要页和模块小结是否与正文页一致。
 - 图片化图表是否有对应 `chart_data/Pxx.json`。
 - 核心图表是否有 `chart_point_of_view`、基准、单位、样本、期间、来源和 lineage。
+
+### Orphan Evidence Scan
+
+`client-ready` 或 `pipeline` 且同时存在 `data_pool.json` 和 `conclusion_evidence_matrix.json` 时，执行反向推理验证：
+
+- 遍历 `data_pool.json` 中 `confidence=high`、`evidence_credibility=L1/L2` 或 `evidence_strength=high` 的事实。
+- 检查是否被 `conclusion_evidence_matrix`、`storyline_map` 或 `chart_data/` 引用。
+- 未引用的高价值事实输出为 `orphan_evidence_scan`，作为潜在遗漏洞察，不自动写入正文结论。
 
 ## Dimension 3: Professional Judgment
 
@@ -69,6 +86,7 @@
 - 是否存在没有证据支撑的“孤立结论”。
 - 法律/财务/估值结论是否保留必要前提。
 - 判断强度是否匹配证据强度。
+- 判断强度是否匹配 `language-calibration-standard.md` 的 assertion strength matrix。
 - 标题、结论条和建议措辞是否符合证据强度；情景测算是否被写成事实。
 - 是否存在“建议关注”但没有指标、阈值、动作或责任边界。
 - 客户是否能基于建议安排下一步会议、数据补充、责任人或监控指标。
@@ -90,6 +108,7 @@
 - 是否通过 presentation polish：网格对齐、视觉重量、标签图例、留白、thumbnail test、print test、partner flip test。
 - 客户交付样张是否覆盖高频咨询页型：方法限制、执行摘要、议题树、方案比较、风险缓释、行动计划。
 - 每 6-8 页是否有 synthesis、transition、executive takeaways 或章节转折页。
+- `preset_map.json` 是否记录 `rhythm_score`；连续页面认知负荷是否超过 `visual-rhythm-orchestrator.md` 阈值。
 - 每页是否标注 `density_level`，正文页是否误用了附录密表密度。
 - 主图是否满足 Chart As Proof Rule：焦点主体、参照基准、单位口径、图内结论和来源。
 - 图表是否满足 Professional Chart Rulebook：观点、基准、比较口径、标注、色板和禁用场景。
@@ -117,6 +136,22 @@
 - 指标是否落在合理区间；异常值必须标记为需用户确认。
 - 外部政策、公告、利率、监管数据是否有来源和日期。
 - 自动生成的判断是否越过数据能支持的范围。
+
+## Dimension 7: V2 Capability Checks
+
+在 `partner-ready` 以上检查：
+
+- `phase_lock`：已确认的 brief/storyline/preset 是否被锁定；锁定后是否被无说明改写。
+- `logic_health_dashboard`：是否输出章节 × 逻辑门矩阵。
+- `visual_rhythm_audit`：是否识别连续高负荷页面和缓冲页需求。
+- `language_calibration_review`：是否记录受众专业程度、判断强度匹配和 tone arc。
+
+在 `client-ready` 检查：
+
+- `content_freshness_audit`：是否存在 stale/unknown 核心证据。
+- `evidence_credibility_audit`：是否存在仅由 L3/L4 支撑的强结论。
+- `public_citation_risk`：上市公司、金融机构或监管敏感主体的核心结论是否存在公开引用误读风险。
+- `deck_quality_radar`：是否输出逻辑、内容、呈现、语言四维评分。
 
 ## Dimension 6: Editability
 
@@ -206,6 +241,32 @@
   "quality_scorecard": {
     "total_score": 86,
     "rating": "partner-ready"
+  },
+  "logic_health_dashboard": {
+    "status": "yellow",
+    "chapters": []
+  },
+  "content_freshness_audit": {
+    "status": "pass",
+    "stale_core_evidence": []
+  },
+  "orphan_evidence_scan": {
+    "high_value_unreferenced_facts": []
+  },
+  "visual_rhythm_audit": {
+    "status": "pass",
+    "high_load_runs": []
+  },
+  "language_calibration_review": {
+    "status": "pass",
+    "audience_expertise_level": "informed",
+    "assertion_strength_alignment": "pass"
+  },
+  "deck_quality_radar": {
+    "logic": 86,
+    "content": 82,
+    "presentation": 78,
+    "language": 88
   },
   "final_review": {
     "status_before_fix": "partner-ready",

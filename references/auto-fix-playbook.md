@@ -35,6 +35,36 @@
 | 视觉结构重复 | 插入 synthesis、decision one-page 或换 page family |
 | 整页图片化 | 恢复标题、来源、关键数字、表格文字为可编辑 |
 | 来源缺失 | 补 source note 和 lineage id |
+| QA 出现 `overflow` | 启用 `auto_layout_fix`：先缩短非关键文字，再调间距，再拆页 |
+| QA 出现 `overlap` | 启用 `auto_layout_fix`：先恢复网格和层级，再减少标注 |
+| 连续高密度页面 | 按 `visual-rhythm-orchestrator.md` 插入 synthesis/bridge |
+| stale 数据支撑强结论 | 补最新来源，或把标题降级为历史观察 |
+
+## Auto Layout Fix Mode
+
+当 QA 报告出现 `overflow`、`overlap`、`text_too_dense`、`empty_space` 时，可启用 `auto_layout_fix`。自动修复只允许改布局和表达密度，不改事实、法律、财务、估值和推荐路径。
+
+优先级：
+
+1. 缩短非关键文字：注释、来源解释、卡片说明，但不得低于最低字号。
+2. 调整元素间距、卡片宽高和图表内边距。
+3. 减少图内标注数量，保留最多 2 个强标注。
+4. 页面仍太挤时拆为两页，并标记 `continued_from` / `continued_to`。
+5. 页面太空时放大主证据对象，补洞察卡、指标 strip 或口径卡。
+6. 仍无法修复时标记 `manual_review_required`，不要硬改。
+
+输出到 `fix_report.json`：
+
+```json
+{
+  "auto_layout_fix": {
+    "status": "partial",
+    "safe_fixes_applied": ["reduced_secondary_note", "increased_card_spacing"],
+    "split_pages": ["P08"],
+    "manual_review_required": []
+  }
+}
+```
 
 ## Page-Specific Fixes
 
@@ -101,4 +131,3 @@ If weak:
   }
 }
 ```
-

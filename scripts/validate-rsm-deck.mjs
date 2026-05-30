@@ -87,6 +87,13 @@ if (brief) {
   if (brief.client_question && !/(是否|如何|优先|能否|应否|什么|哪些|怎么)/.test(brief.client_question)) {
     result.warning.push({ artifact: "brief.json", issue: "client_question may be a topic rather than a decision question" });
   }
+  if (!brief.tier) result.warning.push({ artifact: "brief.json", issue: "missing tier" });
+  if (!brief.audience_expertise_level) {
+    result.info.push({ artifact: "brief.json", issue: "missing audience_expertise_level for language calibration" });
+  }
+  if ((brief.tier === "express" || brief.delivery_status === "internal-draft") && brief.client_ready === true) {
+    result.critical.push({ artifact: "brief.json", issue: "express/internal-draft cannot be marked client-ready" });
+  }
 }
 
 const consultingPyramid = readArtifactJson("consulting_pyramid.json", false);
@@ -129,6 +136,14 @@ if (presetMap) {
     if (!page.exhibit_structure && !/cover|agenda|section/i.test(page.page_family || "")) {
       result.major.push({ page: id, artifact: "preset_map.json", issue: "body page missing exhibit_structure" });
     }
+    if (page.rhythm_score === undefined) {
+      result.warning.push({ page: id, artifact: "preset_map.json", issue: "missing rhythm_score for visual rhythm audit" });
+    } else if (typeof page.rhythm_score === "number" && (page.rhythm_score < 1 || page.rhythm_score > 5)) {
+      result.warning.push({ page: id, artifact: "preset_map.json", issue: "rhythm_score should be 1-5" });
+    }
+    if (!page.color_temperature) {
+      result.info.push({ page: id, artifact: "preset_map.json", issue: "missing color_temperature" });
+    }
   }
 }
 
@@ -138,6 +153,28 @@ if (conclusionMatrix) {
     const id = item.conclusion_id || "unknown";
     for (const field of ["conclusion", "evidence", "limitations", "language_strength", "pages"]) {
       if (!item[field]) result.major.push({ conclusion_id: id, artifact: "conclusion_evidence_matrix.json", issue: `missing ${field}` });
+    }
+    if (!item.evidence_credibility) {
+      result.warning.push({ conclusion_id: id, artifact: "conclusion_evidence_matrix.json", issue: "missing evidence_credibility" });
+    }
+    if (!item.freshness_tier) {
+      result.info.push({ conclusion_id: id, artifact: "conclusion_evidence_matrix.json", issue: "missing freshness_tier" });
+    }
+  }
+}
+
+const dataPool = readArtifactJson("data_pool.json", false);
+if (dataPool) {
+  for (const fact of arr(dataPool.facts || dataPool)) {
+    const id = fact.fact_id || fact.id || "unknown";
+    if (!fact.as_of_date && !fact.period) {
+      result.warning.push({ fact_id: id, artifact: "data_pool.json", issue: "missing as_of_date or period" });
+    }
+    if (!fact.freshness_tier) {
+      result.info.push({ fact_id: id, artifact: "data_pool.json", issue: "missing freshness_tier" });
+    }
+    if (!fact.evidence_credibility) {
+      result.info.push({ fact_id: id, artifact: "data_pool.json", issue: "missing evidence_credibility" });
     }
   }
 }
@@ -176,6 +213,9 @@ if (fs.existsSync(chartDir)) {
     for (const field of ["chart_point_of_view", "unit", "period", "sample", "source", "lineage_ids"]) {
       if (!chart[field]) result.major.push({ artifact: rel, issue: `missing chart field: ${field}` });
     }
+    if (!chart.chart_render_path) {
+      result.info.push({ artifact: rel, issue: "missing chart_render_path for native chart priority check" });
+    }
   }
 }
 
@@ -185,6 +225,10 @@ if (review) {
   if (!review.language_rewrite_review) result.warning.push({ artifact: "review_report.json", issue: "missing language_rewrite_review" });
   if (!review.editable_component_review) result.warning.push({ artifact: "review_report.json", issue: "missing editable_component_review" });
   if (!review.quality_scorecard) result.warning.push({ artifact: "review_report.json", issue: "missing quality_scorecard" });
+  if (!review.logic_health_dashboard) result.info.push({ artifact: "review_report.json", issue: "missing logic_health_dashboard" });
+  if (!review.deck_quality_radar) result.info.push({ artifact: "review_report.json", issue: "missing deck_quality_radar" });
+  if (!review.content_freshness_audit) result.info.push({ artifact: "review_report.json", issue: "missing content_freshness_audit" });
+  if (!review.language_calibration_review) result.info.push({ artifact: "review_report.json", issue: "missing language_calibration_review" });
 }
 
 if (!exists("draft/contact_sheet.png") && !exists("contact_sheet.png") && !exists("final/contact_sheet.png")) {

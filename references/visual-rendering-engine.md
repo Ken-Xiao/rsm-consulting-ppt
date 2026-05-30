@@ -27,6 +27,7 @@ Use for:
 - 简单文本框、形状、线条、箭头。
 - 可编辑表格。
 - 简单柱状图、折线图、散点图。
+- ≤2 数据系列、标准类型、客户可能修改数据的图表。
 
 Preferred tools:
 
@@ -69,6 +70,30 @@ Build rule:
 4. 图表标题、结论、来源保持原生可编辑。
 
 ## Selection Rules
+
+### Native Chart Priority Path
+
+优先判断 `chart_render_path`：
+
+| Chart condition | Path |
+|---|---|
+| 简单柱状、条形、折线、面积、散点、饼图，且 ≤2 数据系列 | `native-chart` |
+| 简单图表但标签/标注密集 | `native-chart-with-simplified-labels` 或 `echarts-image-with-chart-data` |
+| 瀑布、雷达、热力矩阵、Sankey、复杂回归、情景敏感性 | `echarts-or-html-image` |
+| 客户明确要求后续可改数据 | 优先 `native-chart`，复杂图表也必须保留 `chart_data/Pxx.json` |
+
+在 `preset_map.json` 或 `chart_data/Pxx.json` 中记录：
+
+```json
+{
+  "chart_render_path": "native-chart",
+  "native_editability_reason": "bar chart with two series; client likely revises values"
+}
+```
+
+不得为了视觉方便把简单图表默认截图化。
+
+先按逻辑关系选择视觉大类：
 
 先按逻辑关系选择视觉大类：
 

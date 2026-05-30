@@ -1,4 +1,4 @@
 interface:
   display_name: "RSM Consulting PPT Skills"
-  short_description: "金融咨询 PPT 路由、结构、渲染、Schema 与视觉 QA"
-  default_prompt: "Use $rsm-consulting-ppt-skills to route, plan, structure, design, build, or optimize a finance consulting presentation by tier, with data traceability, artifact schemas, visual profile registry, editable/pixel rendering, and review QA."
+  short_description: "金融咨询 PPT 分档路由、V2 质量仪表盘、Schema 与视觉 QA"
+  default_prompt: "Use $rsm-consulting-ppt-skills to route, plan, structure, design, build, or optimize a finance consulting presentation by tier, with PRD V2 controls for phase lock, freshness, evidence credibility, visual rhythm, language calibration, editable rendering, and review QA."

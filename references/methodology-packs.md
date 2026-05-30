@@ -13,6 +13,65 @@
 - 排名方向和异常值处理。
 - 口径限制和免责声明。
 
+## Peer Benchmarking Engine
+
+银行对标、保险同业、区域政策比较、行业 ranking / quartile 场景必须明确 peer set 选择逻辑，不得临时拼样本。
+
+### Peer Set Criteria
+
+在 `brief.json` 或 `methodology_note` 中记录：
+
+```json
+{
+  "peer_benchmarking": {
+    "target_entity": "目标机构",
+    "peer_criteria": ["规模", "区域", "业务组合", "上市状态", "监管分类"],
+    "included_peers": ["公司A", "公司B"],
+    "excluded_peers": [
+      {"entity": "公司C", "reason": "业务结构不可比"}
+    ],
+    "ranking_method": "quartile",
+    "ranking_direction_notes": "NPL 越低越好，ROA 越高越好"
+  }
+}
+```
+
+### Common Metric Sets
+
+银行：
+
+- 净息差（NIM）
+- 成本收入比（CIR）
+- 不良贷款率（NPL）
+- 关注类贷款占比
+- ROA / ROE / RAROC
+- 核心一级资本充足率
+- 市净率（PB）
+
+保险：
+
+- 综合成本率
+- 保险服务收入
+- 承保利润
+- 投资收益率
+- 综合投资收益率
+- 核心/综合偿付能力充足率
+
+政策/区域比较：
+
+- 适用主体
+- 触发条件
+- 监管目标
+- 会计/税务/资本联动
+- 执行机制
+- 行为影响
+
+### Benchmark Wording
+
+- `目标机构在 [指标] 上位于样本 P25-P50 区间，低于标杆主体 [X]。`
+- `该差距更可能来自 [驱动因素]，仍需结合 [口径/样本限制] 验证。`
+- `排名结论只在当前 peer set 和披露期间内成立。`
+
 ## Insurance Results Review Pack
 
 Use when:

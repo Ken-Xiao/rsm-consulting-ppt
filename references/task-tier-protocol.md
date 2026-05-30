@@ -2,7 +2,7 @@
 
 用于把 PPT 任务按复杂度分级，避免小任务被完整生产管线拖慢，也避免客户交付项目跳过关键 gate。进入事实池、故事线或构建前先读取本文件。
 
-涉及中间产物字段时读取 `references/artifact-schema-library.md`；涉及视觉模式命名时读取 `references/visual-profile-registry.md`。
+涉及中间产物字段时读取 `references/artifact-schema-library.md`；涉及视觉模式命名时读取 `references/visual-profile-registry.md`；涉及 PRD V2 增量能力时读取 `references/v2-capability-router.md`。
 
 ## Tier Decision
 
@@ -10,10 +10,29 @@
 
 | Tier | Use when | Typical output | Required rigor |
 |---|---|---|---|
+| `express` | 用户明确要求快速内部初稿、brainstorming、培训草稿、一句话先出一版 | `internal-draft` deck 或页面草稿 | 只做基本来源边界、结论标题、字号/溢出/对齐 QA；禁止标记为正式交付 |
 | `quick-polish` | 用户要求快速优化、改语言、改版式、补标题、单页/少量页 targeted edit | 修订后的页面或小 deck | 保留来源边界，做语言/视觉 QA，不强制完整数据血缘 |
 | `partner-ready` | 需要形成可给经理/合伙人初审的结构化 deck，通常 8-25 页 | 有故事线、页面家族、图表口径和初步审校的 PPT | 必须有客户问题、章节答案、页面 claim、核心来源和 review report |
 | `client-ready` | 正式客户交付、董事会/管理层/投委会/监管汇报，或用户明确要求高质量成稿 | 可转发/上会的完整 deck | 必须有完整事实池、lineage、证据矩阵、preset map、contact sheet、final review 和 scorecard |
 | `pipeline` | 用户要求搭建、复刻或自动化 PPT 生产系统 | 模板、脚本、manifest、样张回归 | 必须有 manifest、样张、回归报告和可维护目录 |
+
+## Express Minimum
+
+`express` 是 Genspark-style 快速通道，只适用于内部讨论和初稿探索。
+
+必须：
+
+- 输出标记为 `internal-draft`。
+- 保留或标明数据/来源边界。
+- 每页标题尽量改为判断句。
+- 做基础 visual QA：溢出、重叠、字号、对齐、页码。
+- 明确说明未做完整 logic gate、lineage、fact check 和 client-ready review。
+
+禁止：
+
+- 标记为 `partner-ready` 或 `client-ready`。
+- 用 `express` 结果直接替代客户正式交付。
+- 新增未经核验的金融、法律、估值或监管判断。
 
 ## Quick-Polish Minimum
 
@@ -91,6 +110,7 @@
 - 出现建议、方案选择、行动计划或风险判断：至少 `partner-ready`。
 - 出现外部数据、政策、估值、法律或财务判断：至少 `partner-ready`，正式交付为 `client-ready`。
 - 用户只给一句“帮我美化/优化这几页”：保持 `quick-polish`，除非页面事实存在明显风险。
+- 用户明确说“先快速出一个内部草稿/brainstorming/不对外”：可降为 `express`，但必须标记 `internal-draft`。
 
 ## Tier Output Tag
 

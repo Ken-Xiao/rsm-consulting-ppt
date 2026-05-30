@@ -21,6 +21,18 @@
 
 ## Visual Variants
 
+### Variant Mode
+
+每个章节页先选择 `section_divider_variant`：
+
+| Variant | Use when | Structure |
+|---|---|---|
+| `classic` | 默认客户交付、正式财务结果、需要稳健阅读 | 编号 + 章节名 + 短章节问题/答案 + 专业图片 |
+| `immersive` | 董事会、高管 retreat、培训开场、需要强视觉锚点 | 全屏或大面积图片 + 半透明文字层 + 可编辑章节信息 |
+| `data-anchor` | 章节有一个必须被记住的核心数字/发现 | 章节标题 + 核心数字/发现 + 图片或浅底纹 |
+
+`immersive` 和 `data-anchor` 仅用于章节页，不用于正文分析页。
+
 ### `insurance_section_divider`
 
 用于默认 `rsm-insurance-results`：
@@ -41,6 +53,19 @@
 - 叠加：半透明白色几何方块拼贴。
 - 字体：章节名可用楷体/书法感字体，保持参考 PDF 的培训分享气质。
 
+### `immersive`
+
+- 图片占满或接近占满画布，使用冷色专业金融、建筑、数据或监管场景。
+- 标题区使用白色半透明叠层或深蓝半透明叠层，章节编号、章节名和章节问题必须可编辑。
+- 下半区可轻微虚化或压暗，以保证文字可读。
+- 不得出现真实商标、可读文字、人物近景或广告感暖色光。
+
+### `data-anchor`
+
+- 用一个核心数字或关键发现作为章节锚点，如 `本章核心发现：不良生成率上升 120bp`。
+- 核心数字必须来自已验证来源，记录 `lineage_ids`，不得使用 AI 生成或未核验数据。
+- 页面最多保留一条核心数字和一句章节问题，不能变成正文页。
+
 ## GPT Image Generation Prompt Pattern
 
 当没有用户授权图片或可用素材时，可使用 `gpt-image-generate` 生成章节背景图。生成图片应是照片感或高质量写实风，不要生成抽象插画。
@@ -57,6 +82,12 @@
   "composition": "wide 16:9, left side suitable for cropping, clear negative space for white geometric overlays",
   "avoid": ["people close-up", "warm orange lighting", "cartoon", "abstract gradient", "brand logos", "readable text"]
 }
+```
+
+`immersive` prompt 需加入：
+
+```text
+wide 16:9 cinematic but realistic corporate finance scene, professional blue tone, subtle depth of field, soft lower area for editable title overlay, no readable text, no brand logos, no people close-up
 ```
 
 可直接复用的场景 prompt 见 `section-image-prompt-library.md`。

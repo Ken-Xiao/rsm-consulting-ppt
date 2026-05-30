@@ -26,6 +26,32 @@
 }
 ```
 
+## Insight Density Governor
+
+数据扫描后先做 `insight_triage`，控制 deck 不试图“说太多事”。
+
+规则：
+
+- 核心洞察数量不超过 `3 × chapter_count`。
+- 超出阈值的洞察进入 `appendix_candidates`，不是删除。
+- 排序维度优先为客户决策影响，其次为证据强度，再次为呈现可解释性。
+
+```json
+{
+  "insight_triage": {
+    "chapter_count": 4,
+    "core_insight_limit": 12,
+    "selected_core_insights": ["I001", "I003"],
+    "appendix_candidates": ["I009"],
+    "excluded_insights": [
+      {"insight_id": "I010", "reason": "证据弱且与客户决策关联低"}
+    ]
+  }
+}
+```
+
+不要因为数据扫描发现很多模式就把所有洞察放入正文。选择不说什么，是咨询 deck 的一部分。
+
 ## Scan Rules
 
 ### 1. Rank Divergence

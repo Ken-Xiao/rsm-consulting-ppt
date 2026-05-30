@@ -2,6 +2,8 @@
 
 用于给金融咨询 PPT 做交付质量评分。完整项目、重要客户材料或大改后必须使用。
 
+完整 review 或合伙人审稿时，同步读取 `references/quality-dashboard-standard.md`，输出 deck quality radar。
+
 ## Score Dimensions
 
 总分 100 分：
@@ -15,6 +17,15 @@
 | 图表语法 | 10 | 图表类型、单位、标签、颜色和口径正确；主图能证明页面判断 |
 | 可编辑性和可维护性 | 10 | 关键文字/数字可编辑，图片化区域有源数据 |
 | 语言和合规边界 | 5 | 标题句式专业，措辞客观，判断强度匹配证据强度 |
+
+## Radar Dimensions
+
+在总分之外输出四维雷达，不替代评分：
+
+- 逻辑：storyline coherence、evidence coverage、decision path clarity。
+- 内容：data freshness、insight density、source credibility。
+- 呈现：visual rhythm、page fullness、chart professionalism。
+- 语言：assertion-evidence alignment、audience calibration、tone consistency。
 
 ## Rating
 
@@ -66,9 +77,9 @@
     "dimensions": {
       "storyline": 18,
       "decision_value": 16,
-    "data_lineage": 19,
-    "visual_quality": 13,
-    "chart_grammar": 8,
+      "data_lineage": 19,
+      "visual_quality": 13,
+      "chart_grammar": 8,
       "editability": 8,
       "language_compliance": 4
     },
@@ -77,6 +88,12 @@
       "P06 副标题未承接上一页",
       "P12 图表标签过密"
     ]
+  },
+  "deck_quality_radar": {
+    "logic": 86,
+    "content": 82,
+    "presentation": 78,
+    "language": 88
   }
 }
 ```
