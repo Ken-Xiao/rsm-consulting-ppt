@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Policy Philosophy Map</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .title {
+      position: absolute; left: 64px; top: 62px; right: 64px;
+      color: #0099d8; font-size: 48px; font-weight: 800;
+      display: flex; align-items: center; gap: 28px;
+    }
+    .title:after { content: ""; height: 5px; flex: 1; background: #0099d8; }
+    .subtitle {
+      position: absolute; left: 64px; top: 150px;
+      font-size: 28px; font-weight: 700; color: #061b3a;
+      border-left: 7px solid #0099d8; padding-left: 18px;
+    }
+    .map {
+      position: absolute; left: 64px; top: 224px; width: 1792px; height: 500px;
+      border-radius: 16px; overflow: hidden; border: 1px solid #d7dee8;
+      box-shadow: 0 10px 24px rgba(6,27,58,.08);
+      background: #f4f7fb;
+    }
+    .quad { position: absolute; width: 50%; height: 50%; }
+    .q1 { left: 0; top: 0; background: #f1e3f3; }
+    .q2 { left: 50%; top: 0; background: #e0f2fb; }
+    .q3 { left: 0; top: 50%; background: #f5f7fa; }
+    .q4 { left: 50%; top: 50%; background: #e8f6ea; }
+    .axis-x, .axis-y { position: absolute; background: #8b98a8; }
+    .axis-x { left: 0; right: 0; top: 249px; height: 3px; }
+    .axis-y { top: 0; bottom: 0; left: 895px; width: 3px; }
+    .axis-label {
+      position: absolute; padding: 8px 14px; border-radius: 6px;
+      background: rgba(255,255,255,.9); color: #667085; font-weight: 700;
+      font-size: 16px;
+    }
+    .top { left: 852px; top: 18px; }
+    .bottom { left: 852px; bottom: 18px; }
+    .left { left: 18px; top: 238px; }
+    .right { right: 18px; top: 238px; }
+    .point { position: absolute; transform: translate(-50%, -50%); text-align: center; }
+    .dot {
+      width: 22px; height: 22px; border-radius: 50%; margin: 0 auto 12px;
+      border: 5px solid white; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+      background: var(--c);
+    }
+    .tag {
+      min-width: 126px; background: white; border-radius: 10px; padding: 12px 18px;
+      box-shadow: 0 6px 16px rgba(6,27,58,.14); font-weight: 800;
+      color: #061b3a; font-size: 20px;
+    }
+    .tag small {
+      display: block; width: max-content; margin: 8px auto 0; padding: 4px 10px;
+      border-radius: 999px; background: color-mix(in srgb, var(--c) 16%, white);
+      color: var(--c); font-size: 15px; font-weight: 800;
+    }
+    .cards {
+      position: absolute; left: 64px; right: 64px; top: 748px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 20px;
+    }
+    .card {
+      background: white; border-radius: 10px; min-height: 104px;
+      box-shadow: 0 6px 16px rgba(6,27,58,.08); border-left: 6px solid var(--c);
+      padding: 20px 24px; display: grid; grid-template-columns: 48px 1fr; gap: 16px;
+      align-items: center;
+    }
+    .icon {
+      width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+      background: color-mix(in srgb, var(--c) 14%, white); color: var(--c);
+      font-size: 24px; font-weight: 900;
+    }
+    .card strong { display: block; color: #061b3a; font-size: 20px; margin-bottom: 5px; }
+    .card span { color: #667085; font-size: 16px; line-height: 1.3; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="title">整体政策关键考虑</div>
+    <div class="subtitle">全球贷款核销制度设计的八种监管哲学</div>
+
+    <div class="map">
+      <div class="quad q1"></div><div class="quad q2"></div><div class="quad q3"></div><div class="quad q4"></div>
+      <div class="axis-x"></div><div class="axis-y"></div>
+      <div class="axis-label top">监管刚性：高</div>
+      <div class="axis-label bottom">监管刚性：低</div>
+      <div class="axis-label left">税务协同：低</div>
+      <div class="axis-label right">税务协同：高</div>
+
+      <div class="point" style="left:84%;top:22%;--c:#0099d8"><div class="dot"></div><div class="tag">美国<small>市场清洁型</small></div></div>
+      <div class="point" style="left:20%;top:18%;--c:#8b5cf6"><div class="dot"></div><div class="tag">欧洲<small>资本惩罚型</small></div></div>
+      <div class="point" style="left:84%;top:78%;--c:#10b981"><div class="dot"></div><div class="tag">新加坡<small>财政协同型</small></div></div>
+      <div class="point" style="left:26%;top:78%;--c:#64748b"><div class="dot"></div><div class="tag">香港<small>资本约束型</small></div></div>
+      <div class="point" style="left:53%;top:50%;--c:#f97316"><div class="dot"></div><div class="tag">日本<small>审慎重组型</small></div></div>
+      <div class="point" style="left:68%;top:35%;--c:#06b6d4"><div class="dot"></div><div class="tag">巴西<small>改革转型型</small></div></div>
+      <div class="point" style="left:39%;top:64%;--c:#6366f1"><div class="dot"></div><div class="tag">巴拿马<small>防御型</small></div></div>
+      <div class="point" style="left:10%;top:88%;--c:#e11d48"><div class="dot"></div><div class="tag">开曼<small>效率型</small></div></div>
+    </div>
+
+    <div class="cards">
+      <div class="card" style="--c:#0099d8"><div class="icon">A</div><div><strong>美国：市场清洁</strong><span>120/180 天强制核销</span></div></div>
+      <div class="card" style="--c:#8b5cf6"><div class="icon">B</div><div><strong>欧洲：资本惩罚</strong><span>Backstop 日历拨备</span></div></div>
+      <div class="card" style="--c:#f97316"><div class="icon">C</div><div><strong>日本：审慎重组</strong><span>长期处置与政策平衡</span></div></div>
+      <div class="card" style="--c:#06b6d4"><div class="icon">D</div><div><strong>巴西：改革转型</strong><span>从司法到算法治理</span></div></div>
+      <div class="card" style="--c:#10b981"><div class="icon">E</div><div><strong>新加坡：财政协同</strong><span>MRLA + 税前抵扣</span></div></div>
+      <div class="card" style="--c:#64748b"><div class="icon">F</div><div><strong>香港：资本约束</strong><span>RR 监管储备机制</span></div></div>
+      <div class="card" style="--c:#6366f1"><div class="icon">G</div><div><strong>巴拿马：防御型</strong><span>动态拨备逆周期调节</span></div></div>
+      <div class="card" style="--c:#e11d48"><div class="icon">H</div><div><strong>开曼：效率型</strong><span>原则监管与零税负环境</span></div></div>
+    </div>
+    <div class="chrome-footer"><div class="src">来源：用户材料；项目组整理</div><div class="pagenum">04</div></div>
+  </div>
+</body>
+</html>

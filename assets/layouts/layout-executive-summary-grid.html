@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="chrome.css" />
+  <title>Executive Summary Grid</title>
+  <style>
+    .answer { position:absolute; left:105px; top:292px; width:1710px; min-height:96px; background:#F3F3F3; border-left:16px solid #0099D8; padding:22px 30px; font-size:30px; line-height:1.35; color:#333; font-weight:650; }
+    .summary-grid { position:absolute; left:105px; top:420px; width:1710px; height:430px; display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; }
+    .summary-card { background:#fff; border-radius:10px; box-shadow:0 14px 28px rgba(6,27,58,.12); padding:28px 26px; border-top:7px solid #0099D8; }
+    .summary-card h3 { font-size:28px; color:#061B3A; line-height:1.25; margin-bottom:18px; }
+    .summary-card .metric { font-size:44px; color:#0099D8; font-weight:800; margin-bottom:12px; }
+    .summary-card p { font-size:22px; line-height:1.45; color:#4A5568; }
+    .next-actions { position:absolute; left:105px; top:878px; width:1710px; height:82px; display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:18px; }
+    .action { background:#F7F8FA; border-left:10px solid #061B3A; padding:16px 22px; font-size:21px; line-height:1.3; color:#2F3A4A; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="results-brand-bars"><span class="gray"></span><span class="green"></span><span class="blue"></span></div>
+    <header class="results-header">
+      <div class="deck-title">2025年度上市保险公司业绩盘点</div>
+      <div class="module-pill"><span>执行摘要</span><span class="module-num">00</span></div>
+    </header>
+    <h1 class="results-subtitle">利润改善需要回到承保质量、费用效率和投资稳定性验证</h1>
+    <section class="answer">客户答案：短期利润改善更多来自投资和准则口径变化，后续应以承保质量、费用效率和投资收益稳定性作为监控主线。</section>
+    <main class="summary-grid">
+      <article class="summary-card"><h3>利润改善并不等同于质量改善</h3><div class="metric">+18%</div><p>样本公司净利润提升，但贡献来源集中于投资端。</p></article>
+      <article class="summary-card"><h3>承保贡献仍需单独验证</h3><div class="metric">3/7</div><p>仅部分公司承保利润同步改善，口径差异需保留边界。</p></article>
+      <article class="summary-card"><h3>费用效率分化影响可比性</h3><div class="metric">2.4pct</div><p>费用率差异扩大，需统一口径后再做横向排名。</p></article>
+      <article class="summary-card"><h3>建议建立三线监控机制</h3><div class="metric">3项</div><p>承保、投资、费用三类指标进入月度跟踪。</p></article>
+    </main>
+    <section class="next-actions">
+      <div class="action">下一步 01：统一承保、投资、费用三类利润来源口径</div>
+      <div class="action">下一步 02：设置月度指标和季度复盘阈值</div>
+      <div class="action">下一步 03：对异常主体做专项拆解</div>
+    </section>
+    <footer class="chrome-footer"><div class="src">数据来源：示例数据，不用于正式结论</div><div class="pagenum">4</div></footer>
+  </div>
+</body>
+</html>
+

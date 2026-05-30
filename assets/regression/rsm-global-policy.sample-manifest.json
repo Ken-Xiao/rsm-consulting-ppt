@@ -1,0 +1,67 @@
+{
+  "profile": "rsm-global-policy",
+  "reference_style": "global_loan_writeoff_policy_comparison",
+  "minimum_pages": 8,
+  "storyline": {
+    "client_question": "不同司法辖区贷款核销制度差异，对银行风险管理有什么启示？",
+    "client_answer": "差异不只是核销时间不同，而是监管哲学、税务协同和资本约束的组合差异；借鉴时应区分市场出清、财政协同和审慎缓冲三类逻辑"
+  },
+  "sample_pages": [
+    {
+      "page_id": "sample_01_cover",
+      "preset_family": "global_policy_cover",
+      "template_file": "assets/layouts/layout-global-policy-cover.html",
+      "purpose": "验证浅建筑背景、亮蓝标题和左侧品牌 rail",
+      "required_checks": ["title_contrast", "building_image_lightness", "left_brand_bar"]
+    },
+    {
+      "page_id": "sample_02_agenda",
+      "preset_family": "global_policy_agenda",
+      "template_file": "assets/layouts/layout-global-policy-agenda.html",
+      "purpose": "验证研究框架、核心维度和三段横线",
+      "required_checks": ["two_column_balance", "number_alignment", "segmented_rule"]
+    },
+    {
+      "page_id": "sample_03_dark_summary",
+      "preset_family": "global_policy_dark_summary",
+      "template_file": "assets/layouts/layout-global-policy-dark-summary.html",
+      "purpose": "验证深色总结页、双卡和底部大数字",
+      "required_checks": ["dark_contrast", "card_readability", "metric_strip_alignment"]
+    },
+    {
+      "page_id": "sample_04_philosophy_map",
+      "preset_family": "policy_philosophy_map",
+      "template_file": "assets/layouts/layout-policy-philosophy-map.html",
+      "purpose": "验证监管哲学 2x2 坐标和类型卡",
+      "required_checks": ["axis_label_readability", "point_label_overlap", "type_card_alignment"]
+    },
+    {
+      "page_id": "sample_05_jurisdiction_matrix",
+      "preset_family": "jurisdiction_matrix",
+      "template_file": "assets/layouts/layout-jurisdiction-matrix.html",
+      "purpose": "验证司法辖区颜色、矩阵层级和文字可读性",
+      "required_checks": ["matrix_text_fit", "jurisdiction_color_consistency", "legend_alignment"]
+    },
+    {
+      "page_id": "sample_06_policy_framework",
+      "preset_family": "policy_framework_cards",
+      "template_file": "assets/layouts/layout-policy-framework-cards.html",
+      "purpose": "验证 2x2 政策框架卡和浅蓝规则框",
+      "required_checks": ["card_pair_alignment", "rule_box_readability", "icon_consistency"]
+    },
+    {
+      "page_id": "sample_07_comparison_table",
+      "preset_family": "comparison_table",
+      "template_file": "assets/layouts/layout-comparison-table.html",
+      "purpose": "验证制度比较表、重点列和矩阵读法",
+      "required_checks": ["table_hierarchy", "highlight_column", "source_traceability"]
+    },
+    {
+      "page_id": "sample_08_option_comparison",
+      "preset_family": "option_comparison",
+      "template_file": "assets/layouts/layout-option-comparison.html",
+      "purpose": "验证政策借鉴路径比较和推荐路径",
+      "required_checks": ["recommended_option_visible", "criteria_fit", "rationale_presence"]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Sunong Dark Cover</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .slide-container { background:linear-gradient(126deg,#10283f 0%,#123a5b 52%,#1565a9 100%); color:white; }
+    .topline { position:absolute; left:60px; top:80px; width:80px; height:3px; background:#5fb8e8; }
+    .eyebrow { position:absolute; left:60px; top:110px; color:#b5c8dc; font-size:17px; letter-spacing:1.1em; }
+    .logo { position:absolute; right:58px; top:60px; width:140px; height:50px; background:white; color:#061b3a; display:grid; place-items:center; font-size:29px; font-weight:700; letter-spacing:.12em; }
+    .client { position:absolute; left:60px; top:208px; color:#b5c8dc; font-size:32px; font-weight:700; }
+    .title { position:absolute; left:60px; top:270px; width:1050px; color:white; font-size:76px; font-weight:300; line-height:1.08; letter-spacing:0; }
+    .subtitle { position:absolute; left:60px; top:500px; color:#b7cbdf; font-size:32px; font-weight:800; }
+    .note { position:absolute; left:60px; top:565px; width:1160px; color:#d5e2ee; font-size:23px; line-height:1.72; font-weight:700; }
+    .note strong { color:#ffd866; }
+    .meta { position:absolute; left:1285px; top:540px; width:515px; border-left:1px solid rgba(255,255,255,.28); padding-left:32px; }
+    .meta-row { display:grid; grid-template-columns:92px 1fr; gap:24px; min-height:34px; color:#c3d4e5; font-size:17px; line-height:1.55; }
+    .meta-row b { color:#7f9bb6; font-weight:700; }
+    .path { position:absolute; left:60px; right:60px; bottom:112px; color:#86a2bd; font-size:17px; letter-spacing:.18em; }
+    .pagenum { position:absolute; left:60px; bottom:34px; color:#86a2bd; font-size:18px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="topline"></div>
+    <div class="eyebrow">{{cover_tag}}</div>
+    <div class="logo">{{logo}}</div>
+    <div class="client">{{client_name}}（{{ticker}}）</div>
+    <div class="title">{{title}}</div>
+    <div class="subtitle">{{subtitle}}</div>
+    <div class="note">{{cover_note}}</div>
+    <div class="meta">
+      <div class="meta-row"><b>报告元数据</b><span></span></div>
+      <div class="meta-row"><b>报告期</b><span>{{date}}</span></div>
+      <div class="meta-row"><b>报告口径</b><span>{{period_scope}}</span></div>
+      <div class="meta-row"><b>沟通对象</b><span>{{audience}}</span></div>
+      <div class="meta-row"><b>对标样本</b><span>{{peer_scope}}</span></div>
+      <div class="meta-row"><b>数据来源</b><span>{{source_note}}</span></div>
+    </div>
+    <div class="path">{{reading_path}}</div>
+    <div class="pagenum">{{page_number}} / {{page_count}}</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "profile": "rsm-insurance-results",
+  "reference_style": "2025年度上市保险公司新准则财务结果分析",
+  "minimum_pages": 8,
+  "storyline": {
+    "client_question": "新准则下利润改善是否可持续，后续应重点监控哪些指标？",
+    "client_answer": "短期改善更多来自投资和准则口径变化，后续应以承保质量、费用效率和投资收益稳定性作为监控主线"
+  },
+  "sample_pages": [
+    {
+      "page_id": "sample_01_cover",
+      "preset_family": "insurance_cover",
+      "template_file": "assets/layouts/layout-insurance-cover.html",
+      "purpose": "验证浅蓝封面、横向金融图片、RSM 三色条和 logo",
+      "required_checks": ["title_readability", "hero_image_crop", "rsm_side_bars", "logo_alignment"]
+    },
+    {
+      "page_id": "sample_02_agenda",
+      "preset_family": "insurance_agenda",
+      "template_file": "assets/layouts/layout-practice-agenda.html",
+      "purpose": "验证目录行距、页码右对齐和章节顺序",
+      "required_checks": ["agenda_alignment", "page_range_alignment", "line_spacing"]
+    },
+    {
+      "page_id": "sample_03_section",
+      "preset_family": "insurance_section_divider",
+      "template_file": "assets/layouts/layout-insurance-section.html",
+      "purpose": "验证章节页建筑图、编号块和标题带",
+      "required_checks": ["image_crop", "title_band_alignment", "section_number_readability"]
+    },
+    {
+      "page_id": "sample_04_executive_summary",
+      "preset_family": "executive_summary_grid",
+      "template_file": "assets/layouts/layout-executive-summary-grid.html",
+      "purpose": "验证执行摘要能回答客户问题",
+      "required_checks": ["answer_prominence", "evidence_numbers", "action_specificity"]
+    },
+    {
+      "page_id": "sample_05_chart_card",
+      "preset_family": "insurance_results_chart_card",
+      "template_file": "assets/layouts/layout-insurance-results-chart-card.html",
+      "purpose": "验证模块胶囊、结论条和白色图表卡",
+      "required_checks": ["header_pill_alignment", "takeaway_bar_readability", "chart_card_fullness"]
+    },
+    {
+      "page_id": "sample_06_chart_plus_insight",
+      "preset_family": "chart_plus_insight_panel",
+      "template_file": "assets/layouts/layout-chart-plus-insight-panel.html",
+      "purpose": "验证主图 + 洞察卡的主体充实度",
+      "required_checks": ["chart_card_fullness", "insight_card_alignment", "source_traceability"]
+    },
+    {
+      "page_id": "sample_07_option_comparison",
+      "preset_family": "option_comparison",
+      "template_file": "assets/layouts/layout-option-comparison.html",
+      "purpose": "验证路径比较、推荐路径和前提说明",
+      "required_checks": ["recommended_option_visible", "rationale_presence", "text_overflow"]
+    },
+    {
+      "page_id": "sample_08_action_plan",
+      "preset_family": "management_action_plan",
+      "template_file": "assets/layouts/layout-management-action-plan.html",
+      "purpose": "验证行动、责任、时间、指标和输出",
+      "required_checks": ["owner_timeline_metric_presence", "action_specificity", "table_fit"]
+    }
+  ]
+}

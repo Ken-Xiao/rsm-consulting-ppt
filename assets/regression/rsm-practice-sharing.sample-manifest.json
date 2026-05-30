@@ -1,0 +1,53 @@
+{
+  "profile": "rsm-practice-sharing",
+  "reference_style": "商业银行及保险公司不良处置行业实践分享",
+  "minimum_pages": 6,
+  "storyline": {
+    "client_question": "不良处置实践中，哪些机制和控制点最值得客户借鉴？",
+    "client_answer": "实践借鉴应从案例事实出发，拆分为处置路径、责任边界、现金回收和风险缓释四类控制点"
+  },
+  "sample_pages": [
+    {
+      "page_id": "sample_01_cover",
+      "preset_family": "practice_cover",
+      "template_file": "assets/layouts/layout-practice-cover.html",
+      "purpose": "验证实践分享封面、建筑照片和书法感标题",
+      "required_checks": ["photo_crop", "calligraphy_title", "blue_vertical_accent"]
+    },
+    {
+      "page_id": "sample_02_agenda",
+      "preset_family": "practice_agenda",
+      "template_file": "assets/layouts/layout-practice-agenda.html",
+      "purpose": "验证左图右目录和页码对齐",
+      "required_checks": ["photo_panel_crop", "agenda_line_spacing", "page_range_alignment"]
+    },
+    {
+      "page_id": "sample_03_section",
+      "preset_family": "practice_section_divider",
+      "template_file": "assets/layouts/layout-practice-section-divider.html",
+      "purpose": "验证章节编号、照片、几何块和章节问题",
+      "required_checks": ["image_crop", "title_readability", "geometric_overlay"]
+    },
+    {
+      "page_id": "sample_04_case_evidence",
+      "preset_family": "case_evidence_panel",
+      "template_file": "assets/layouts/layout-practice-observation.html",
+      "purpose": "验证案例事实、依据、发现和建议的证据页",
+      "required_checks": ["case_text_density", "basis_source", "recommendation_specificity"]
+    },
+    {
+      "page_id": "sample_05_recommendations",
+      "preset_family": "three_recommendation_cards",
+      "template_file": "assets/layouts/layout-practice-three-cards.html",
+      "purpose": "验证三建议卡、编号和行动语言",
+      "required_checks": ["three_card_alignment", "recommendation_specificity", "text_fit"]
+    },
+    {
+      "page_id": "sample_06_action_plan",
+      "preset_family": "management_action_plan",
+      "template_file": "assets/layouts/layout-management-action-plan.html",
+      "purpose": "验证风险缓释行动计划",
+      "required_checks": ["owner_timeline_metric_presence", "action_specificity", "table_fit"]
+    }
+  ]
+}

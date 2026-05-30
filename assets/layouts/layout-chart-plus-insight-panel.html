@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="chrome.css" />
+  <title>Chart Plus Insight Panel</title>
+  <style>
+    .body { position:absolute; left:105px; top:420px; width:1710px; height:450px; display:grid; grid-template-columns:1fr 420px; gap:24px; }
+    .chart { background:#fff; border-radius:10px; box-shadow:0 14px 28px rgba(6,27,58,.12); padding:24px; display:grid; grid-template-rows:44px 1fr 54px; }
+    .chart h3 { font-size:25px; color:#061B3A; }
+    .chart-placeholder { display:grid; place-items:center; border:1px dashed #A6B0BE; color:#667085; font-size:28px; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px; }
+    .metric-strip div { background:#F7F8FA; padding:10px 14px; font-size:18px; color:#2F3A4A; border-left:6px solid #0099D8; }
+    .insights { display:grid; grid-template-rows:repeat(3, 1fr); gap:18px; }
+    .insight { background:#F7F8FA; border-left:10px solid #0099D8; padding:22px 24px; box-shadow:0 10px 22px rgba(6,27,58,.07); }
+    .insight h4 { font-size:24px; color:#061B3A; margin-bottom:10px; }
+    .insight .num { font-size:38px; color:#0099D8; font-weight:800; margin-bottom:8px; }
+    .insight p { font-size:20px; line-height:1.35; color:#2F3A4A; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="results-brand-bars"><span class="gray"></span><span class="green"></span><span class="blue"></span></div>
+    <header class="results-header"><div class="deck-title">2025年度上市保险公司业绩盘点</div><div class="module-pill"><span>图表证据</span><span class="module-num">03</span></div></header>
+    <h1 class="results-subtitle">投资端贡献抬升解释了多数利润改善，承保端改善仍需单独验证</h1>
+    <section class="results-takeaway">图表观点：利润增长不能直接等同于经营质量改善；需用承保、投资和费用三类指标拆开验证。</section>
+    <main class="body">
+      <section class="chart">
+        <h3>2025 vs 2024 利润贡献拆解</h3>
+        <div class="chart-placeholder">主图区域：堆叠贡献 / 瀑布拆解 / 双期间对比</div>
+        <div class="metric-strip"><div>投资贡献：+18%</div><div>承保贡献：-4pct</div><div>费用率：+2.4pct</div></div>
+      </section>
+      <aside class="insights">
+        <div class="insight"><h4>驱动来源</h4><div class="num">+18%</div><p>投资收益回暖是利润改善的主要贡献项。</p></div>
+        <div class="insight"><h4>质量验证</h4><div class="num">3/7</div><p>仅部分主体承保贡献同步改善。</p></div>
+        <div class="insight"><h4>管理含义</h4><div class="num">3项</div><p>建议跟踪承保、投资、费用三项指标。</p></div>
+      </aside>
+    </main>
+    <footer class="chrome-footer"><div class="src">数据来源：示例数据，不用于正式结论</div><div class="pagenum">9</div></footer>
+  </div>
+</body>
+</html>
+

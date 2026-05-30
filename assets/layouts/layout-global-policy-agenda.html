@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Global Policy Agenda</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .title {
+      position:absolute; left:64px; top:74px; right:64px;
+      color:#0099d8; font-size:56px; font-weight:500; line-height:1.1;
+    }
+    .seg-rule { position:absolute; left:64px; top:180px; right:64px; height:18px; display:flex; gap:8px; }
+    .seg-rule span:nth-child(1){ width:230px; background:#8a8f95; }
+    .seg-rule span:nth-child(2){ width:530px; background:#061b3a; }
+    .seg-rule span:nth-child(3){ flex:1; background:#0099d8; }
+    .col-title {
+      color:#0099d8; font-size:34px; font-weight:900; padding-bottom:12px;
+      border-bottom:2px solid #0099d8; margin-bottom:20px;
+    }
+    .left { position:absolute; left:88px; top:240px; width:1040px; }
+    .right { position:absolute; right:88px; top:240px; width:610px; }
+    .agenda-row { display:grid; grid-template-columns:52px 1fr 64px; align-items:center; min-height:46px; }
+    .num { color:#0099d8; font-size:24px; font-weight:900; }
+    .item { color:#111; font-size:24px; line-height:1.35; }
+    .page { color:#061b3a; font-size:22px; text-align:right; }
+    .bullets { margin-top:22px; }
+    .bullets li { margin-left:24px; padding-left:12px; margin-bottom:18px; color:#111; font-size:24px; line-height:1.45; }
+    .bullets li::marker { color:#0099d8; }
+    .section-label { color:#666; font-size:22px; font-weight:900; margin:24px 0 12px; }
+    .note {
+      position:absolute; left:88px; bottom:118px; width:1040px;
+      background:#f3f3f3; border-radius:10px; padding:22px 24px;
+      color:#333; font-size:22px; line-height:1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="title">{{claim_title}}</div>
+    <div class="seg-rule"><span></span><span></span><span></span></div>
+    <div class="left">
+      <div class="col-title">研究框架</div>
+      <div class="agenda-row"><div class="num">01</div><div class="item">{{agenda_item_1}}</div><div class="page">{{page_1}}</div></div>
+      <div class="agenda-row"><div class="num">02</div><div class="item">{{agenda_item_2}}</div><div class="page">{{page_2}}</div></div>
+      <div class="agenda-row"><div class="num">03</div><div class="item">{{agenda_item_3}}</div><div class="page">{{page_3}}</div></div>
+      <div class="agenda-row"><div class="num">04</div><div class="item">{{agenda_item_4}}</div><div class="page">{{page_4}}</div></div>
+      <div class="agenda-row"><div class="num">05</div><div class="item">{{agenda_item_5}}</div><div class="page">{{page_5}}</div></div>
+      <div class="agenda-row"><div class="num">06</div><div class="item">{{agenda_item_6}}</div><div class="page">{{page_6}}</div></div>
+      <div class="agenda-row"><div class="num">07</div><div class="item">{{agenda_item_7}}</div><div class="page">{{page_7}}</div></div>
+      <div class="agenda-row"><div class="num">08</div><div class="item">{{agenda_item_8}}</div><div class="page">{{page_8}}</div></div>
+      <div class="agenda-row"><div class="num">09</div><div class="item">{{agenda_item_9}}</div><div class="page">{{page_9}}</div></div>
+      <div class="agenda-row"><div class="num">10</div><div class="item">{{agenda_item_10}}</div><div class="page">{{page_10}}</div></div>
+    </div>
+    <div class="right">
+      <div class="col-title">核心维度</div>
+      <div class="section-label">{{dimension_group_1}}</div>
+      <ul class="bullets">
+        <li>{{dimension_1}}</li>
+        <li>{{dimension_2}}</li>
+        <li>{{dimension_3}}</li>
+        <li>{{dimension_4}}</li>
+      </ul>
+      <div class="section-label">{{dimension_group_2}}</div>
+      <ul class="bullets">
+        <li>{{dimension_5}}</li>
+        <li>{{dimension_6}}</li>
+      </ul>
+    </div>
+    <div class="note">{{scope_note}}</div>
+    <div class="chrome-footer"><div class="src">{{source_note}}</div><div class="pagenum">{{page_number}}</div></div>
+  </div>
+</body>
+</html>

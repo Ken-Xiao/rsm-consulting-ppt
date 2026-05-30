@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Policy Framework Cards</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .title { position:absolute; left:64px; top:82px; right:64px; color:#0099d8; font-size:44px; font-weight:900; display:flex; align-items:center; gap:28px; }
+    .title:after { content:""; height:4px; background:#0099d8; flex:1; }
+    .grid { position:absolute; left:64px; right:64px; top:192px; display:grid; grid-template-columns:1fr 1fr; gap:34px 46px; }
+    .card { min-height:330px; background:#f7f8fa; border-left:6px solid #0099d8; border-radius:6px; padding:34px 36px 30px; }
+    .card h2 { color:#0099d8; font-size:30px; line-height:1.25; margin-bottom:22px; display:flex; gap:14px; align-items:center; }
+    .icon { width:34px; height:34px; border-radius:6px; display:grid; place-items:center; background:#dff1fc; font-size:20px; }
+    .body { color:#333; font-size:24px; line-height:1.55; min-height:92px; }
+    .rulebox { margin-top:24px; border:2px solid #0099d8; background:#dff1fc; border-radius:6px; padding:18px 22px; color:#555; font-size:21px; line-height:1.42; }
+    .rulebox strong { display:block; color:#0099d8; font-size:24px; margin-bottom:8px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="title">{{claim_title}}</div>
+    <div class="grid">
+      <div class="card"><h2><span class="icon">{{icon_1}}</span>{{card_1_title}}</h2><div class="body">{{card_1_body}}</div><div class="rulebox"><strong>{{card_1_rule_title}}</strong>{{card_1_rule}}</div></div>
+      <div class="card"><h2><span class="icon">{{icon_2}}</span>{{card_2_title}}</h2><div class="body">{{card_2_body}}</div><div class="rulebox"><strong>{{card_2_rule_title}}</strong>{{card_2_rule}}</div></div>
+      <div class="card"><h2><span class="icon">{{icon_3}}</span>{{card_3_title}}</h2><div class="body">{{card_3_body}}</div><div class="rulebox"><strong>{{card_3_rule_title}}</strong>{{card_3_rule}}</div></div>
+      <div class="card"><h2><span class="icon">{{icon_4}}</span>{{card_4_title}}</h2><div class="body">{{card_4_body}}</div><div class="rulebox"><strong>{{card_4_rule_title}}</strong>{{card_4_rule}}</div></div>
+    </div>
+    <div class="chrome-footer"><div class="src">{{source_note}}</div><div class="pagenum">{{page_number}}</div></div>
+  </div>
+</body>
+</html>

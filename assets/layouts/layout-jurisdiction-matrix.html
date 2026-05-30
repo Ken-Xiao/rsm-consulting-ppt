@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Jurisdiction Matrix</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .title {
+      position: absolute; left: 60px; top: 60px; right: 60px;
+      color: #0099d8; font-size: 42px; font-weight: 800;
+      display: flex; align-items: center; gap: 28px;
+    }
+    .title:after { content: ""; height: 4px; flex: 1; background: #0099d8; }
+    table {
+      position: absolute; left: 60px; top: 142px; width: 1800px;
+      border-collapse: separate; border-spacing: 0; table-layout: fixed;
+      font-size: 15px; color: #111827;
+      box-shadow: 0 8px 20px rgba(6,27,58,.08);
+    }
+    th, td {
+      border-right: 2px solid #e5e7eb; border-bottom: 2px solid #e5e7eb;
+      padding: 13px 10px; text-align: center; vertical-align: middle;
+      line-height: 1.35; font-weight: 600;
+    }
+    th {
+      background: #0099d8; color: white; font-size: 16px; font-weight: 800;
+    }
+    th:first-child { width: 118px; border-top-left-radius: 2px; }
+    th:last-child { border-top-right-radius: 2px; }
+    td.dim {
+      background: #05739d; color: white; font-weight: 800; width: 118px;
+      font-size: 15px;
+    }
+    td span { display: block; color: #374151; font-weight: 500; margin-top: 3px; }
+    .us { background: #e5f3fd; }
+    .eu { background: #f1e5f3; }
+    .sg { background: #e8f7ec; }
+    .hk { background: #fff4df; }
+    .jp { background: #fff8bf; }
+    .br { background: #dff3f2; }
+    .pa { background: #f7dee7; }
+    .ky { background: #f0eeee; }
+    .legend {
+      position: absolute; left: 400px; right: 400px; bottom: 54px;
+      display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+      font-size: 13px; color: #374151;
+    }
+    .legend span { display: flex; align-items: center; gap: 6px; }
+    .swatch { width: 16px; height: 16px; border-radius: 3px; border: 1px solid #cbd5e1; }
+  </style>
+</head>
+<body>
+  <div class="slide-container" style="background:#fff">
+    <div class="title">全球八大司法辖区制度对比矩阵表</div>
+    <table>
+      <thead>
+        <tr>
+          <th>对比维度</th><th>美国</th><th>欧洲</th><th>新加坡</th><th>香港</th>
+          <th>日本</th><th>巴西</th><th>巴拿马</th><th>开曼</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="dim">监管哲学</td><td class="us">市场清洁型<span>规则导向 / 快速出清</span></td><td class="eu">资本惩罚型<span>日历拨备 / 资本约束</span></td><td class="sg">财政协同型<span>税收激励 / 量化底线</span></td><td class="hk">资本约束型<span>监管储备 / 收益留存</span></td><td class="jp">审慎重组型<span>长期处置 / 市场化转型</span></td><td class="br">改革转型型<span>算法治理 / 司法脱钩</span></td><td class="pa">防御型<span>动态拨备 / 逆周期调节</span></td><td class="ky">效率型<span>原则导向 / 零税负环境</span></td></tr>
+        <tr><td class="dim">会计准则</td><td class="us">CECL<span>终身预期损失</span></td><td class="eu">IFRS 9<span>三阶段 ECL</span></td><td class="sg">SFRS 109<span>IFRS 9 本地版</span></td><td class="hk">HKFRS 9<span>IFRS 9 本地版</span></td><td class="jp">JGAAP<span>IFRS 9 适配</span></td><td class="br">IFRS 9<span>第 4.966 号决议</span></td><td class="pa">IFRS 9<span>本地化适配</span></td><td class="ky">IFRS 9 / US GAAP</td></tr>
+        <tr><td class="dim">核销触发</td><td class="us">时间驱动<span>120/180 天</span></td><td class="eu">预期驱动<span>无法收回原则</span></td><td class="sg">预期驱动<span>无回收预期</span></td><td class="hk">法律驱动<span>无法追索</span></td><td class="jp">预期驱动<span>无合理预期</span></td><td class="br">时间驱动<span>H 级滞留 6 月</span></td><td class="pa">时间驱动<span>270/360 天</span></td><td class="ky">预期驱动<span>无法收回</span></td></tr>
+        <tr><td class="dim">税务协同</td><td class="us">高度协同<span>一致性选择</span></td><td class="eu">中等协同<span>DTA 依赖</span></td><td class="sg">高度协同<span>14G 条税前抵扣</span></td><td class="hk">低度协同<span>需证实坏账</span></td><td class="jp">中等协同<span>法人税法框架</span></td><td class="br">高度协同<span>算法公式抵扣</span></td><td class="pa">低度协同<span>需司法证据</span></td><td class="ky">无税负<span>零所得税</span></td></tr>
+        <tr><td class="dim">处置模式</td><td class="us">市场出清<span>二级市场</span></td><td class="eu">打包出售<span>证券化 ABS</span></td><td class="sg">跨境重组<span>区域市场</span></td><td class="hk">展期为主<span>避免清盘</span></td><td class="jp">批量转让<span>AMC / ABS</span></td><td class="br">司法脱钩<span>快速出清</span></td><td class="pa">DTA 积压<span>税务摩擦</span></td><td class="ky">极速清理<span>市场化</span></td></tr>
+      </tbody>
+    </table>
+    <div class="legend">
+      <span><i class="swatch us"></i>美国</span><span><i class="swatch eu"></i>欧洲</span>
+      <span><i class="swatch sg"></i>新加坡</span><span><i class="swatch hk"></i>香港</span>
+      <span><i class="swatch jp"></i>日本</span><span><i class="swatch br"></i>巴西</span>
+      <span><i class="swatch pa"></i>巴拿马</span><span><i class="swatch ky"></i>开曼</span>
+    </div>
+    <div class="chrome-footer"><div class="src">来源：用户材料；项目组整理</div><div class="pagenum">08</div></div>
+  </div>
+</body>
+</html>

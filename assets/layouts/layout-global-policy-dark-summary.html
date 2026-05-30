@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Global Policy Dark Summary</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .slide-container { background:linear-gradient(120deg,#061b3a 0%,#0077aa 100%); color:white; }
+    .title { position:absolute; left:270px; top:126px; right:220px; text-align:center; font-size:54px; font-weight:900; line-height:1.25; }
+    .panel { position:absolute; top:300px; width:840px; height:660px; border-radius:14px; background:rgba(255,255,255,.12); padding:34px 30px; }
+    .left { left:90px; }
+    .right { right:90px; background:rgba(0,153,216,.38); }
+    .panel h2 { font-size:34px; margin-bottom:26px; color:white; }
+    .panel ul { list-style:none; }
+    .panel li { position:relative; padding-left:28px; margin-bottom:22px; font-size:27px; line-height:1.45; }
+    .panel li:before { content:""; position:absolute; left:0; top:16px; width:9px; height:9px; border-radius:50%; background:var(--bullet-color,#10f3a0); }
+    .right li:before { background:#ffd400; }
+    .metric-strip { position:absolute; left:240px; right:240px; bottom:58px; display:grid; grid-template-columns:repeat(4,1fr); gap:38px; text-align:center; }
+    .metric strong { display:block; font-size:46px; font-weight:900; line-height:1.0; }
+    .metric span { display:block; margin-top:14px; font-size:21px; color:rgba(255,255,255,.88); }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="title">{{claim_title}}</div>
+    <div class="panel left">
+      <h2>{{left_title}}</h2>
+      <ul>
+        <li>{{left_finding_1}}</li>
+        <li>{{left_finding_2}}</li>
+        <li>{{left_finding_3}}</li>
+        <li>{{left_finding_4}}</li>
+      </ul>
+    </div>
+    <div class="panel right">
+      <h2>{{right_title}}</h2>
+      <ul>
+        <li>{{right_outlook_1}}</li>
+        <li>{{right_outlook_2}}</li>
+        <li>{{right_outlook_3}}</li>
+        <li>{{right_outlook_4}}</li>
+      </ul>
+    </div>
+    <div class="metric-strip">
+      <div class="metric"><strong>{{metric_1_value}}</strong><span>{{metric_1_label}}</span></div>
+      <div class="metric"><strong>{{metric_2_value}}</strong><span>{{metric_2_label}}</span></div>
+      <div class="metric"><strong>{{metric_3_value}}</strong><span>{{metric_3_label}}</span></div>
+      <div class="metric"><strong>{{metric_4_value}}</strong><span>{{metric_4_label}}</span></div>
+    </div>
+  </div>
+</body>
+</html>

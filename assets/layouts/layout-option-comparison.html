@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="chrome.css" />
+  <title>Option Comparison</title>
+  <style>
+    .comparison { position:absolute; left:105px; top:310px; width:1710px; height:520px; display:grid; grid-template-columns:270px repeat(3, 1fr); border:1px solid #D9E1EA; background:#fff; box-shadow:0 14px 28px rgba(6,27,58,.10); }
+    .cell { border-right:1px solid #D9E1EA; border-bottom:1px solid #D9E1EA; padding:18px 20px; font-size:21px; line-height:1.35; color:#2F3A4A; }
+    .head { background:#0099D8; color:#fff; font-weight:800; font-size:24px; }
+    .rowhead { background:#F7F8FA; color:#061B3A; font-weight:750; }
+    .recommended { background:#F4FBFF; box-shadow:inset 0 0 0 5px #0099D8; }
+    .tag { display:inline-block; background:#061B3A; color:#fff; padding:4px 10px; border-radius:999px; font-size:16px; margin-bottom:8px; }
+    .rationale { position:absolute; left:105px; top:858px; width:1710px; height:104px; display:grid; grid-template-columns:1.2fr 1fr; gap:20px; }
+    .note { background:#F3F3F3; border-left:14px solid #0099D8; padding:18px 24px; font-size:22px; line-height:1.35; color:#333; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="results-brand-bars"><span class="gray"></span><span class="green"></span><span class="blue"></span></div>
+    <header class="results-header"><div class="deck-title">2025年度上市保险公司业绩盘点</div><div class="module-pill"><span>路径选择</span><span class="module-num">04</span></div></header>
+    <h1 class="results-subtitle">三线监控优于维持总量口径，可更早识别利润质量分化</h1>
+    <section class="results-takeaway">推荐路径应同时考虑决策相关性、执行成本、数据可得性和风险识别能力；不建议仅沿用总量利润口径。</section>
+    <main class="comparison">
+      <div class="cell head">评价维度</div><div class="cell head">方案 A：维持现状</div><div class="cell head recommended"><span class="tag">推荐</span><br/>方案 B：三线监控</div><div class="cell head">方案 C：全面模型化</div>
+      <div class="cell rowhead">决策相关性</div><div class="cell">只能看到总量改善，难以识别来源</div><div class="cell recommended">区分承保、投资、费用三类驱动</div><div class="cell">信息最全，但解释成本高</div>
+      <div class="cell rowhead">数据可得性</div><div class="cell">现有数据即可</div><div class="cell recommended">需统一披露口径，落地可控</div><div class="cell">需要明细数据和模型治理</div>
+      <div class="cell rowhead">执行成本</div><div class="cell">低</div><div class="cell recommended">中等，适合管理层月度跟踪</div><div class="cell">高，适合后续专项</div>
+      <div class="cell rowhead">风险识别</div><div class="cell">滞后</div><div class="cell recommended">可提前识别结构性分化</div><div class="cell">强，但短期推进难度高</div>
+    </main>
+    <section class="rationale"><div class="note">推荐理由：方案 B 能在可执行成本下提升利润质量识别能力，并能直接转化为月度监控指标。</div><div class="note">前提边界：需先统一样本公司披露口径，避免把口径差异写成经营差异。</div></section>
+    <footer class="chrome-footer"><div class="src">数据来源：示例数据，不用于正式结论</div><div class="pagenum">10</div></footer>
+  </div>
+</body>
+</html>
+

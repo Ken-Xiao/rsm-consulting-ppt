@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Sunong Chart Diagnostic</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .title-block { position:absolute; left:60px; top:84px; width:1800px; }
+    .rule { width:76px; height:4px; background:#0099d8; margin-bottom:18px; }
+    .title { color:#061b3a; font-size:46px; line-height:1.16; font-weight:800; }
+    .subtitle { color:#667085; font-size:22px; line-height:1.45; margin-top:10px; }
+    .main { position:absolute; left:60px; top:230px; width:1220px; height:690px; background:white; border:1px solid #d9e1ea; box-shadow:0 2px 4px rgba(26,58,92,.05); }
+    .chart-placeholder { height:100%; display:grid; place-items:center; color:#667085; font-size:28px; border:1px dashed #a6b0be; }
+    .side { position:absolute; right:60px; top:230px; width:520px; height:690px; display:grid; grid-template-rows:auto 1fr auto; gap:18px; }
+    .card { background:#f7f8fa; border-left:5px solid #0099d8; padding:24px 26px; }
+    .card h3 { color:#0099d8; font-size:24px; margin-bottom:12px; }
+    .card p { color:#2f3a4a; font-size:21px; line-height:1.55; }
+    .metric-strip { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .metric { background:white; border:1px solid #d9e1ea; padding:20px 18px; }
+    .metric strong { color:#061b3a; font-size:40px; display:block; line-height:1.0; }
+    .metric span { color:#667085; font-size:16px; display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="title-block"><div class="rule"></div><div class="title">{{claim_title}}</div><div class="subtitle">{{story_subtitle}}</div></div>
+    <div class="main"><div class="chart-placeholder">{{chart_placeholder}}</div></div>
+    <div class="side">
+      <div class="card"><h3>图表读法</h3><p>{{chart_readout}}</p></div>
+      <div class="card"><h3>诊断含义</h3><p>{{diagnostic_readout}}</p></div>
+      <div class="metric-strip">
+        <div class="metric"><strong>{{metric_1}}</strong><span>{{metric_1_label}}</span></div>
+        <div class="metric"><strong>{{metric_2}}</strong><span>{{metric_2_label}}</span></div>
+      </div>
+    </div>
+    <div class="chrome-footer"><div class="src">{{source_note}}</div><div class="pagenum">{{page_number}}</div></div>
+  </div>
+</body>
+</html>

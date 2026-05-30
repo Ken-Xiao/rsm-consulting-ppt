@@ -1,0 +1,67 @@
+{
+  "profile": "sunong-value-creation",
+  "reference_style": "苏农汇报材料",
+  "minimum_pages": 8,
+  "storyline": {
+    "client_question": "苏农银行估值修复应优先验证哪些经营指标？",
+    "client_answer": "账面利润具备支撑，但估值修复更依赖核心营收、中收转化、资产质量和资本效率四类指标同步改善"
+  },
+  "sample_pages": [
+    {
+      "page_id": "sample_01_dark_cover",
+      "preset_family": "sunong_dark_cover",
+      "template_file": "assets/layouts/layout-sunong-dark-cover.html",
+      "purpose": "验证深蓝封面、元数据栏和阅读路径",
+      "required_checks": ["title_wrap", "metadata_column", "logo_position", "dark_contrast"]
+    },
+    {
+      "page_id": "sample_02_kpi_dashboard",
+      "preset_family": "kpi_dashboard",
+      "template_file": "assets/layouts/layout-kpi-summary.html",
+      "purpose": "验证 4 KPI、排名 badge 和双视角结论",
+      "required_checks": ["metric_readability", "rank_badges", "conclusion_blocks"]
+    },
+    {
+      "page_id": "sample_03_chart_diagnostic",
+      "preset_family": "sunong_chart_diagnostic",
+      "template_file": "assets/layouts/layout-sunong-chart-diagnostic.html",
+      "purpose": "验证左主图 + 右诊断卡结构",
+      "required_checks": ["chart_focus", "readout_specificity", "source_traceability"]
+    },
+    {
+      "page_id": "sample_04_ranking_bar",
+      "preset_family": "chart_plus_insight_panel",
+      "template_file": "assets/layouts/layout-chart-plus-insight-panel.html",
+      "purpose": "验证同业排名条、焦点主体和中位线",
+      "required_checks": ["benchmark_visible", "focus_subject", "insight_card_alignment"]
+    },
+    {
+      "page_id": "sample_05_bridge",
+      "preset_family": "sunong_chart_diagnostic",
+      "template_file": "assets/layouts/layout-sunong-chart-diagnostic.html",
+      "purpose": "验证利润/EVA/PB 桥接图和诊断含义",
+      "required_checks": ["waterfall_start_end", "driver_labels", "diagnostic_readout"]
+    },
+    {
+      "page_id": "sample_06_scenario",
+      "preset_family": "comparison_table",
+      "template_file": "assets/layouts/layout-comparison-table.html",
+      "purpose": "验证基准/压力/修复情景对比",
+      "required_checks": ["scenario_assumptions", "output_metrics", "management_implication"]
+    },
+    {
+      "page_id": "sample_07_action_plan",
+      "preset_family": "management_action_plan",
+      "template_file": "assets/layouts/layout-management-action-plan.html",
+      "purpose": "验证 12 个月行动路径、责任主体和指标",
+      "required_checks": ["owner_timeline_metric_presence", "action_specificity", "table_fit"]
+    },
+    {
+      "page_id": "sample_08_module_summary",
+      "preset_family": "module_summary",
+      "template_file": "assets/layouts/layout-module-summary.html",
+      "purpose": "验证模块小结、证据回链和下一模块提示",
+      "required_checks": ["evidence_backlinks", "module_transition", "card_fullness"]
+    }
+  ]
+}

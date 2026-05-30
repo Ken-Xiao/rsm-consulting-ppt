@@ -1,0 +1,4 @@
+interface:
+  display_name: "RSM Consulting PPT Skills"
+  short_description: "金融咨询与政策比较 PPT 管线、双轨渲染与视觉 QA"
+  default_prompt: "Use $rsm-consulting-ppt-skills to plan, structure, design, build, or optimize a finance consulting or policy-comparison presentation with guided questions, scene routing, data traceability, mixed editable/pixel-perfect rendering, and review QA."

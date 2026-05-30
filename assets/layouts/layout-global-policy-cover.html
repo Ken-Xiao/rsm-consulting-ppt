@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Global Policy Cover</title>
+  <link rel="stylesheet" href="chrome.css">
+  <style>
+    .cover { background:#f7fbff; }
+    .hero {
+      position:absolute; inset:0 0 0 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 46%, rgba(255,255,255,.38) 100%),
+        var(--hero-image, url('{{hero_image_url}}')) center right / cover no-repeat;
+      filter:saturate(.65) hue-rotate(174deg);
+      opacity:.62;
+    }
+    .brand-rail { position:absolute; left:0; top:324px; width:30px; height:432px; background:#0099d8; }
+    .brand-rail:after { content:""; position:absolute; left:0; bottom:0; width:30px; height:114px; background:#061b3a; }
+    .title {
+      position:absolute; left:118px; top:245px; width:990px;
+      color:#0099d8; font-size:64px; line-height:1.15; font-weight:900;
+      text-shadow:0 4px 0 rgba(6,27,58,.10);
+    }
+    .subtitle {
+      position:absolute; left:118px; top:488px; width:1120px;
+      color:#333; font-size:36px; line-height:1.55; font-weight:750;
+    }
+    .subtitle strong { color:#0099d8; }
+    .purpose {
+      position:absolute; left:118px; top:660px; width:1030px;
+      color:#666; font-size:26px; line-height:1.65; font-weight:500;
+    }
+    .meta {
+      position:absolute; left:118px; bottom:94px; width:620px;
+      color:#333; font-size:24px; line-height:1.8; font-weight:700;
+    }
+    .meta .date { display:block; color:#777; font-weight:500; margin-top:8px; }
+    .logo {
+      position:absolute; right:118px; bottom:92px; width:210px; height:58px;
+      border-radius:6px; background:#0099d8; color:white;
+      display:grid; place-items:center; font-size:25px; font-weight:900; letter-spacing:.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container cover">
+    <div class="hero"></div>
+    <div class="brand-rail"></div>
+    <div class="title">{{title}}</div>
+    <div class="subtitle">{{subtitle}}</div>
+    <div class="purpose">{{study_purpose}}</div>
+    <div class="meta">{{team_or_org}}<span class="date">{{date}}</span></div>
+    <div class="logo">{{logo}}</div>
+  </div>
+</body>
+</html>
