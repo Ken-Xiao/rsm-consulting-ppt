@@ -2,6 +2,8 @@
 
 用于把 PPT 任务按复杂度分级，避免小任务被完整生产管线拖慢，也避免客户交付项目跳过关键 gate。进入事实池、故事线或构建前先读取本文件。
 
+涉及中间产物字段时读取 `references/artifact-schema-library.md`；涉及视觉模式命名时读取 `references/visual-profile-registry.md`。
+
 ## Tier Decision
 
 先判断任务属于哪一档：

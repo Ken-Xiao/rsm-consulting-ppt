@@ -16,23 +16,42 @@ const argSkillRoot = process.argv.includes("--skill-root")
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const skillRoot = argSkillRoot ? path.resolve(argSkillRoot) : path.resolve(scriptDir, "..");
 const manifestFile = path.join(skillRoot, "assets", "layouts", "template-manifest.json");
+const profileRegistryFile = path.join(skillRoot, "references", "visual-profile-registry.md");
 const report = {
   status: "pass",
   templates: 0,
   missing: [],
   duplicate: [],
+  unregisteredProfiles: [],
   structuralWarnings: [],
   templatePlaceholders: [],
   profileCoverage: {},
 };
 
 const manifest = JSON.parse(fs.readFileSync(manifestFile, "utf8"));
+const registeredProfiles = new Set();
+if (fs.existsSync(profileRegistryFile)) {
+  const registry = fs.readFileSync(profileRegistryFile, "utf8");
+  let activeTable = null;
+  for (const line of registry.split(/\r?\n/)) {
+    if (line.startsWith("## Canonical Profiles")) activeTable = "profiles";
+    else if (line.startsWith("## Supported Secondary Profiles")) activeTable = "profiles";
+    else if (line.startsWith("## ")) activeTable = null;
+    const match = line.match(/^\| `([^`]+)` \|/);
+    if (activeTable === "profiles" && match) {
+      registeredProfiles.add(match[1]);
+    }
+  }
+}
 const seen = new Set();
 for (const tpl of manifest.templates || []) {
   report.templates += 1;
   if (seen.has(tpl.preset_family)) report.duplicate.push(tpl.preset_family);
   seen.add(tpl.preset_family);
   report.profileCoverage[tpl.visual_profile] = (report.profileCoverage[tpl.visual_profile] || 0) + 1;
+  if (registeredProfiles.size > 0 && !registeredProfiles.has(tpl.visual_profile)) {
+    report.unregisteredProfiles.push({ preset_family: tpl.preset_family, visual_profile: tpl.visual_profile });
+  }
   const file = path.join(skillRoot, tpl.template_file);
   if (!fs.existsSync(file)) {
     report.missing.push({ preset_family: tpl.preset_family, template_file: tpl.template_file });
@@ -51,7 +70,7 @@ for (const tpl of manifest.templates || []) {
   }
 }
 
-if (report.missing.length || report.duplicate.length) report.status = "fail";
+if (report.missing.length || report.duplicate.length || report.unregisteredProfiles.length) report.status = "fail";
 else if (report.structuralWarnings.length) report.status = "warning";
 
 console.log(JSON.stringify(report, null, 2));

@@ -62,7 +62,7 @@
 
 ## Pipeline Artifacts
 
-复杂项目建议在工作目录保留 6 个中间产物，供后续迭代复用：
+复杂项目建议在工作目录保留以下中间产物，供后续迭代复用。字段结构和命名先读取 `references/artifact-schema-library.md`，不要临时发明 JSON 结构。
 
 - `project_config.yaml`：场景路由、默认框架、模块序列、视觉配置。
 - `brief.json`：受众、决策问题、对象、数据口径、目标页数。

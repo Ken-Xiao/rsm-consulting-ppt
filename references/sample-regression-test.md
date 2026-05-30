@@ -14,7 +14,29 @@
 - 每页是否符合 exhibit composition，而不是只有标题和图。
 - 是否通过 thumbnail、print 和 partner flip 三类成熟咨询观感测试。
 
-如果更新涉及四套 visual profile、template manifest、HTML layout 或 PPTX 渲染策略，还必须读取 `references/profile-regression-matrix.md`，按 profile 分组做样张覆盖。
+如果更新涉及四套 visual profile、template manifest、HTML layout 或 PPTX 渲染策略，还必须读取 `references/visual-profile-registry.md` 和 `references/profile-regression-matrix.md`，按 profile 分组做样张覆盖。
+
+## Profile Coverage Minimum
+
+四个 canonical profile 的回归样张不得只覆盖单页视觉。每个 profile 至少覆盖 6 类页面；缺任一类时，该 profile 的 regression status 只能标记为 `partial`。
+
+| Profile | Required sample coverage |
+|---|---|
+| `rsm-insurance-results` | cover, agenda/scope, section divider, chart card, chart+insight, executive summary/action |
+| `rsm-practice-sharing` | cover, agenda, section divider, observation/case page, mechanism/process page, recommendation cards |
+| `rsm-global-policy` | cover, agenda/framework, dark summary, policy philosophy map, jurisdiction matrix, policy framework cards/action implications |
+| `sunong-value-creation` | dark cover, KPI dashboard, chart diagnostic, ranking/trend page, bridge/regression/sensitivity page, module summary/action page |
+
+每类样张必须记录：
+
+- `preset_family`
+- `visual_profile`
+- `template_file`
+- `required_fields_present`
+- `editable_elements_checked`
+- `rasterized_elements_checked`
+- `placeholder_leakage`
+- `style_drift`
 
 ## Required Client-Delivery Sample Pages
 
@@ -182,3 +204,4 @@ outputs/skill_regression/
 - 是否出现 placeholder 泄露。
 - 是否存在 profile 风格漂移。
 - 是否存在不可编辑的客户关键内容。
+- 是否满足 `visual-profile-registry.md` 的 6 类样张覆盖；不满足时标记为 `partial`。

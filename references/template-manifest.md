@@ -1,6 +1,6 @@
 # Template Manifest
 
-用于把 `preset_family` 稳定映射到 HTML 模板、必填字段、渲染轨道和 QA 重点。完整项目在生成 `preset_map.json` 后，应使用本规则形成 `template_manifest` 或读取 `assets/layouts/template-manifest.json`。
+用于把 `preset_family` 稳定映射到 HTML 模板、必填字段、渲染轨道和 QA 重点。完整项目在生成 `preset_map.json` 后，应使用本规则形成 `template_manifest` 或读取 `assets/layouts/template-manifest.json`。新增或修改 `visual_profile` 前先读取 `references/visual-profile-registry.md`。
 
 ## Why It Exists
 
@@ -69,3 +69,4 @@ If a template still contains sample text, it must be replaced during build and f
 - No `{{placeholder}}` remains in the final slide.
 - No sample text from the HTML template remains unless intentionally used.
 - Page family in manifest matches `visual_profile`.
+- `visual_profile` 必须出现在 `visual-profile-registry.md` 的 canonical 或 supported secondary profile 中。

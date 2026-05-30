@@ -1,6 +1,6 @@
 # Visual System
 
-用于定义金融咨询 PPT 的视觉系统、图表选择、渲染路线和反模式检查。读取 `outline.json` 后使用。
+用于定义金融咨询 PPT 的视觉系统、图表选择、渲染路线和反模式检查。读取 `outline.json` 后使用。选择或新增 `visual_profile` 前先读取 `references/visual-profile-registry.md`，确保名称、别名和回归覆盖一致。
 
 ## V3 Visual Principle
 
@@ -25,14 +25,14 @@
 | `minimal-data` | 投行/投委会、数据优先 | 白底、高留白、图表直接标签 |
 | `original-template` | 用户要求沿用原稿 | 保留母版、字体、色板，局部优化 |
 | `pitchbook` | 融资、估值、交易谈判 | 高密度表格、估值区间、交易对比 |
-| `global-policy-light` | 跨国家/司法辖区政策比较、监管制度研究 | 白底、亮蓝标题线、浅色国家列、卡片化制度解释 |
+| `global-policy-light` | deprecated alias | 旧名；全球制度比较统一使用 `rsm-global-policy`，普通政策页使用 `rsm-policy-light` |
 | `rsm-practice-sharing` | 不良处置、监管培训、行业实践分享、案例复盘 | 白底、书法感蓝色大标题、分段标题线、建筑照片拼贴、案例卡、流程/关系图 |
 | `rsm-global-policy` | 全球贷款核销、会计准则、税务协同、跨司法辖区监管政策比较 | 白底亮蓝大标题、三段横线、浅建筑底纹、2x2 坐标、司法辖区矩阵、深色总结页 |
 | `sunong-value-creation` | 银行董事会/管理层价值创造、经营对标、PB/EVA/ROA/RAROC 诊断 | 深蓝封面、白底高密度诊断页、KPI 仪表盘、模块小结、经营/资本市场双视角 |
 
 默认优先使用 `rsm-insurance-results`。只有用户明确要求监管政策矩阵/合规方案，才切换到 `rsm-policy-light`；原稿是深色模板、董事会强仪式感章节或用户明确要求深色时，才切换到 `rsm-dark`。
 
-当用户给出或提到 `global_loan_writeoff_policy_comparison`、全球贷款核销、跨国家/司法辖区政策比较、IFRS 9/CECL/税务协同等内容时，优先使用 `rsm-global-policy`。当用户给出或提到 `苏农汇报材料`、苏州农商行、价值创造、经营对标、ROA/RAROC/EVA/PB、董事会经营诊断时，优先使用 `sunong-value-creation`。
+当用户给出或提到 `global_loan_writeoff_policy_comparison`、全球贷款核销、跨国家/司法辖区政策比较、IFRS 9/CECL/税务协同等内容时，优先使用 `rsm-global-policy`。当用户给出或提到 `苏农汇报材料`、苏州农商行、价值创造、经营对标、ROA/RAROC/EVA/PB、董事会经营诊断时，优先使用 `sunong-value-creation`。旧名或口语别名按 `visual-profile-registry.md` 归一化后再写入产物。
 
 ## RSM Insurance Results Profile
 
