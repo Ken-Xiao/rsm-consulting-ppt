@@ -56,6 +56,28 @@
       "qa_focus": ["chart_card_fullness", "insight_card_alignment", "source_traceability", "placeholder_replacement"]
     },
     {
+      "preset_family": "paired_period_comparison",
+      "visual_profile": "rsm-insurance-results",
+      "template_file": "assets/layouts/layout-paired-period-comparison.html",
+      "required_fields": ["claim_title", "story_subtitle", "period_a", "period_b", "chart_data", "source_note", "difference_labels"],
+      "optional_fields": ["module_name", "module_number", "takeaway_text", "metric_strip"],
+      "render_tracks": ["html-image", "native-text-overlay"],
+      "editable_elements": ["claim_title", "story_subtitle", "period_a", "period_b", "source_note", "page_number"],
+      "rasterized_elements": ["comparison_chart_body"],
+      "qa_focus": ["period_axis_consistency", "delta_visibility", "chart_card_alignment", "source_traceability"]
+    },
+    {
+      "preset_family": "stacked_contribution_split",
+      "visual_profile": "rsm-insurance-results",
+      "template_file": "assets/layouts/layout-stacked-contribution-split.html",
+      "required_fields": ["claim_title", "story_subtitle", "components", "chart_data", "source_note", "contribution_readout"],
+      "optional_fields": ["module_name", "module_number", "metric_strip", "negative_value_note"],
+      "render_tracks": ["html-image", "native-text-overlay"],
+      "editable_elements": ["claim_title", "story_subtitle", "contribution_readout", "source_note", "page_number"],
+      "rasterized_elements": ["stacked_chart_body"],
+      "qa_focus": ["component_order", "label_readability", "negative_value_handling", "side_metric_fullness"]
+    },
+    {
       "preset_family": "executive_summary_grid",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-executive-summary-grid.html",
@@ -264,5 +286,64 @@
       "rasterized_elements": ["recommendation_cards"],
       "qa_focus": ["three_card_alignment", "recommendation_specificity", "text_fit"]
     }
-  ]
+  ],
+  "layout_locks": {
+    "rsm-insurance-results": {
+      "allowed": [
+        "insurance_cover",
+        "insurance_agenda",
+        "insurance_section_divider",
+        "insurance_results_chart_card",
+        "chart_plus_insight_panel",
+        "executive_summary_grid",
+        "paired_period_comparison",
+        "stacked_contribution_split",
+        "management_action_plan"
+      ],
+      "fallback": ["comparison_table", "option_comparison"]
+    },
+    "rsm-practice-sharing": {
+      "allowed": [
+        "practice_cover",
+        "practice_agenda",
+        "practice_section_divider",
+        "case_evidence_panel",
+        "three_recommendation_cards",
+        "management_action_plan"
+      ],
+      "fallback": ["comparison_table"]
+    },
+    "rsm-global-policy": {
+      "allowed": [
+        "global_policy_cover",
+        "global_policy_agenda",
+        "global_policy_dark_summary",
+        "policy_framework_cards",
+        "policy_philosophy_map",
+        "jurisdiction_matrix",
+        "comparison_table",
+        "option_comparison"
+      ],
+      "fallback": ["comparison_table", "option_comparison"]
+    },
+    "sunong-value-creation": {
+      "allowed": [
+        "sunong_dark_cover",
+        "kpi_dashboard",
+        "module_summary",
+        "sunong_chart_diagnostic",
+        "comparison_table",
+        "management_action_plan"
+      ],
+      "fallback": ["comparison_table", "management_action_plan"]
+    },
+    "rsm-policy-light": {
+      "allowed": [
+        "comparison_table",
+        "option_comparison",
+        "management_action_plan"
+      ],
+      "fallback": ["jurisdiction_matrix", "policy_framework_cards"]
+    }
+  }
 }

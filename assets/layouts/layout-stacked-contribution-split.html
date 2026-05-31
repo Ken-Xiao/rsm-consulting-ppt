@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1920,height=1080,initial-scale=1" />
+  <link rel="stylesheet" href="./chrome.css" />
+  <style>
+    .module-pill {
+      position: absolute; right: 62px; top: 70px;
+      min-width: 220px; height: 46px; border-radius: 999px;
+      background: var(--rsm-soft-module); color: var(--rsm-blue-deep);
+      font-size: var(--fs-caption); font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .takeaway {
+      position: absolute; left: 66px; top: 205px;
+      width: 1788px; min-height: 96px;
+      background: var(--rsm-takeaway);
+      border-left: 10px solid var(--rsm-blue);
+      padding: 20px 28px;
+      font-size: var(--fs-body-lg); line-height: 1.35;
+      color: var(--rsm-grey); font-weight: 650;
+    }
+    .body-grid {
+      position: absolute; left: 66px; top: 335px;
+      width: 1788px; height: 632px;
+      display: grid; grid-template-columns: 1.48fr 0.52fr;
+      gap: 28px;
+    }
+    .chart-card {
+      background: #fff; border: 1px solid var(--rsm-line);
+      box-shadow: var(--rsm-shadow-card); border-radius: var(--rsm-radius-card);
+      padding: 30px 34px;
+    }
+    .chart-title {
+      font-size: var(--fs-h3); color: var(--rsm-navy); font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .chart-zone {
+      height: 470px;
+      border: 2px dashed #C8D5E2;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rsm-grey-light);
+      font-size: var(--fs-body);
+      background: #FBFCFE;
+    }
+    .side-panel {
+      display: grid; grid-template-rows: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .insight-card {
+      background: var(--rsm-sky-light);
+      border-left: 7px solid var(--rsm-blue);
+      border-radius: 8px;
+      padding: 24px 24px 20px;
+      box-shadow: var(--rsm-shadow-soft);
+    }
+    .insight-card .k {
+      font-size: var(--fs-stat-md);
+      line-height: 1;
+      color: var(--rsm-navy);
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+    .insight-card .t {
+      font-size: var(--fs-body);
+      color: var(--rsm-grey);
+      line-height: 1.32;
+      font-weight: 600;
+    }
+    .legend-strip {
+      margin-top: 20px;
+      display: flex; gap: 18px; align-items: center;
+      font-size: var(--fs-caption);
+      color: var(--rsm-grey-mid);
+    }
+    .legend-strip span::before {
+      content: "";
+      display: inline-block;
+      width: 18px; height: 10px;
+      background: var(--rsm-blue);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <section class="slide-container">
+    <div class="chrome-header">
+      <div class="module-tag"><span class="dot"></span><span class="label">{{module_name}}</span></div>
+      <div class="breadcrumb">RSM Consulting</div>
+    </div>
+    <div class="page-title-block">
+      <div class="h1">{{claim_title}}</div>
+      <div class="h2">{{story_subtitle}}</div>
+      <div class="rule"></div>
+    </div>
+    <div class="module-pill">{{module_number}}</div>
+    <div class="takeaway">{{contribution_readout}}</div>
+    <main class="body-grid">
+      <section class="chart-card">
+        <div class="chart-title">{{chart_title}}</div>
+        <div class="chart-zone">{{chart_placeholder}}</div>
+        <div class="legend-strip">
+          <span>{{component_1}}</span>
+          <span>{{component_2}}</span>
+          <span>{{component_3}}</span>
+          <span>{{component_4}}</span>
+        </div>
+      </section>
+      <aside class="side-panel">
+        <div class="insight-card"><div class="k">{{metric_1}}</div><div class="t">{{metric_1_label}}</div></div>
+        <div class="insight-card"><div class="k">{{metric_2}}</div><div class="t">{{metric_2_label}}</div></div>
+        <div class="insight-card"><div class="k">{{metric_3}}</div><div class="t">{{metric_3_label}}</div></div>
+      </aside>
+    </main>
+    <div class="chrome-footer">
+      <div class="src">{{source_note}}</div>
+      <div class="pagenum">{{page_number}}</div>
+    </div>
+  </section>
+</body>
+</html>

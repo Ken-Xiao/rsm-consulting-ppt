@@ -30,12 +30,14 @@
 | 3. Framework Confirmation | 基于材料确认核心问题、总答案假设、分析框架、章节结构和页数预算 | `framework_confirmation.md` |
 | 4. Fact/Data Pool | 结构化事实、指标、口径、来源 | `data_pool.json` + `lineage_map.json` |
 | 5. Insight Spine | 找主要发现和叙事张力 | `insights.json` |
-| 6. Conclusion Evidence Matrix | 绑定核心结论、证据强度、限制和页面 | `conclusion_evidence_matrix.json` |
-| 7. Contradiction & Action Synthesis | 提炼结构性矛盾、压力情景和行动推导链 | `contradiction_map.json` + `action_derivation_map.json` + `scenario_analysis.json` |
-| 8. Argument Map | 建立客户问题、章节答案、页面判断和证据对象 | `argument_map.json` |
-| 9. Storyline Split | 拆主标题故事线、副标题和逐页角色 | `title_spine.md` + `storyline_map.json` |
-| 10. Slide Plan | 页级标题、证明对象、版式 | `outline.json` |
-| 11. Design Blueprint | visual profile、网格、字号、preset 映射 | `design_system.json` |
+| 6. Insight-To-Layout Mapping | 将洞察类型映射到页面角色、逻辑关系和推荐版式 | `insight_layout_map.json` |
+| 7. Content Density Precheck | 判断每页证据量是否过薄、均衡或过载 | `content_density_report.json` |
+| 8. Conclusion Evidence Matrix | 绑定核心结论、证据强度、限制和页面 | `conclusion_evidence_matrix.json` |
+| 9. Contradiction & Action Synthesis | 提炼结构性矛盾、压力情景和行动推导链 | `contradiction_map.json` + `action_derivation_map.json` + `scenario_analysis.json` |
+| 10. Argument Map | 建立客户问题、章节答案、页面判断和证据对象 | `argument_map.json` |
+| 11. Storyline Split | 拆主标题故事线、副标题、标题适配和逐页角色 | `title_spine.md` + `storyline_map.json` |
+| 12. Slide Plan | 页级标题、证明对象、版式 | `outline.json` |
+| 13. Design Blueprint | visual profile、网格、字号、preset 映射 | `design_system.json` |
 
 ### Layer 2: Preset Build Workflow
 
@@ -43,17 +45,19 @@
 
 | Stage | Role | Output |
 |---|---|---|
-| 12. Template Manifest | 将 page family 映射到模板、必填字段和 QA 重点 | `template_manifest.json` |
-| 13. Preset Assignment | 给每页分配 page family | `preset_map.json` |
-| 14. Page Visual Intent | 为每页定义逻辑关系和视觉表达 | `visual_intent/Pxx.json` |
-| 15. Page Family Contract | 校验每页 preset 输入字段和版式约束 | `preset_map.json` updated |
-| 16. Chart Data Adapter | 把数据转成图表输入并补图表观点/基准/口径 | `chart_data/Pxx.json` |
-| 17. Image Asset Register | 登记封面图、章节图、案例图、AI 生成图和使用边界 | `image_assets.json` |
-| 18. Milestone Preview | 分段预览封面摘要、首个诊断模块和综合行动页 | `milestone_review.json` |
-| 19. HTML/PPT Draft | 用 preset 生成页面主体 | `draft_pages/` |
-| 20. PPTX Assembly | 组装可编辑 PPTX | `.pptx` |
-| 21. Visual QA | 渲染截图检查溢出/重叠/字号/图表/图片 | `review_report.json` |
-| 22. Repair Loop | 修复最弱页面并重渲染 | final `.pptx` |
+| 14. Template Manifest | 将 page family 映射到模板、必填字段和 QA 重点 | `template_manifest.json` |
+| 15. Preset Assignment | 给每页分配 page family，并按 visual profile 锁定白名单版式 | `preset_map.json` |
+| 16. Layout Analysis | 生成全 deck 版式分配、密度风险和 fallback 报告，等待用户确认 | `layout_analysis_report.json` |
+| 17. HTML Key Preview | 生成 3-5 张关键页 HTML/截图样张，等待用户确认 | `html_preview_report.json` |
+| 18. Page Visual Intent | 为每页定义逻辑关系和视觉表达 | `visual_intent/Pxx.json` |
+| 19. Page Family Contract | 校验每页 preset 输入字段和版式约束 | `preset_map.json` updated |
+| 20. Chart Data Adapter | 把数据转成图表输入并补图表观点/基准/口径 | `chart_data/Pxx.json` |
+| 21. Image Asset Register | 登记封面图、章节图、案例图、AI 生成图和使用边界 | `image_assets.json` |
+| 22. Milestone Preview | 分段预览封面摘要、首个诊断模块和综合行动页 | `milestone_review.json` |
+| 23. HTML/PPT Draft | 用 preset 生成页面主体 | `draft_pages/` |
+| 24. PPTX Assembly | 组装可编辑 PPTX | `.pptx` |
+| 25. Visual QA | 渲染截图检查溢出/重叠/字号/图表/图片 | `review_report.json` |
+| 26. Repair Loop | 修复最弱页面并重渲染 | final `.pptx` |
 
 ## Required Checkpoints
 
@@ -63,7 +67,10 @@
 2. **Framework checkpoint**：基于材料先确认总答案假设、分析框架、章节结构和页数预算。
 3. **Storyline checkpoint**：确认主标题连读能形成完整故事线，副标题能承接上下页。
 4. **Outline checkpoint**：确认模块、页序、每页一句结论和一个证明对象。
-5. **Visual checkpoint**：确认 visual profile、页面 family、样张。
+5. **Density checkpoint**：确认 `content_density_report.json` 中偏薄、过载和需要拆并页的页面。
+6. **Layout checkpoint**：确认 `layout_analysis_report.json` 中的版式分配、密度风险和 fallback 页。
+7. **HTML preview checkpoint**：确认关键页 HTML 样张的字号、版式、密度和视觉方向。
+8. **Visual checkpoint**：确认 visual profile、页面 family、样张。
 
 用户明确要求“直接按现有材料优化”时，可合并 checkpoint，但仍要在内部形成 `outline` 和 `preset_map`。
 
@@ -77,6 +84,9 @@
 - `action-derivation-chain.md`：检查行动项是否回链矛盾、根因、改善路径、责任和指标。
 - `stress-scenario-content-standard.md`：检查压力情景、敏感性和两种图景是否有假设、输出和 delta。
 - `storyline-page-planning.md`：检查主标题故事线、副标题承接、逐页角色和逻辑关系。
+- `insight-to-layout-mapper.md`：把数据发现转为页面角色、逻辑关系和推荐 page family。
+- `content-density-precheck.md`：在版式前判断页面证据量，避免空页或过载页。
+- `title-fit-standard.md`：检查中文主标题和副标题长度、行数、字号和改写。
 - `data-lineage-protocol.md`：建立关键数字和图表的血缘表。
 - `methodology-packs.md`：按场景补齐样本、指标、口径、限制和方法论页。
 - `financial-chart-grammar.md`：检查图表画法是否符合金融咨询规范。
@@ -86,6 +96,7 @@
 - `editability-check.md`：检查最终 PPTX 是否可维护，不把关键内容整页图片化。
 - `deck-quality-scorecard.md`：对最终 deck 做量化评分。
 - `milestone-preview-protocol.md`：长 deck 分段预览，降低后期大返工风险。
+- `html-preview-protocol.md`：正式 PPTX 构建前生成关键页 HTML 预览并等待用户确认。
 - `incremental-edit-protocol.md`：局部反馈只改必要范围，并记录 edit log。
 
 这些 gate 的输出应进入 `review_report.json` 或等价审校记录。
@@ -181,10 +192,13 @@
 
 - `claim_title`：一句结论，不是主题词。
 - `story_subtitle`：补充细节、承上启下，并连接页面主体。
+- `title_fit`：中文标题长度、行数、字号和改写状态。
 - `page_role`：本页在故事线中的角色，如 `setup`、`diagnosis`、`evidence`、`transition`、`implication`、`action`。
 - `logic_relationship`：本页与前后页的逻辑关系，如 `progression`、`parallel`、`comparison`、`causal_chain`、`drill_down`、`synthesis`。
 - `previous_link` / `next_link`：本页如何承接上一页、引导下一页。
 - `evidence_object`：主图/表/流程/案例卡。
+- `evidence_items_count` / `content_density_status`：页面证据量和密度状态。
+- `insight_type` / `recommended_page_family` / `layout_reason`：洞察类型、推荐页面家族和选择理由。
 - `takeaway_text`：1-3 条短句。
 - `data_source`：来源文件、页码、口径。
 - `lineage_ids`：关键数字和图表对应的血缘记录。

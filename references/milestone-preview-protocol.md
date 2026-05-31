@@ -6,6 +6,19 @@
 
 复杂 deck 不应一次性从 outline 直接生成 final。每个关键里程碑只审查“方向是否正确”和“证据是否足以继续”，不做琐碎美化。
 
+## Three Confirmation Nodes
+
+完整项目至少设置三个用户确认节点；25 页以上或客户正式交付项目建议拆成四个：
+
+| Node | Confirmation target | Minimum artifact |
+|---|---|---|
+| `CN1` | 客户问题、总答案假设、分析框架、章节结构和页数预算 | `framework_confirmation.md` |
+| `CN2` | 主标题故事线、逐页证明对象、内容密度和版式分配 | `title_spine.md` + `content_density_report.json` + `layout_analysis_report.json` |
+| `CN3` | 关键页 HTML 样张：字号、密度、图表卡、章节页和整体视觉方向 | `html_preview_report.json` |
+| `CN4` optional | 初稿 contact sheet 和首轮 final review | `contact_sheet.png` + `review_report.json` |
+
+没有完成 `CN1`，不得生成逐页正文。没有完成 `CN2`，不得批量渲染。没有完成 `CN3`，不得声称 `client-ready`。
+
 ## Standard Milestones
 
 ### MP1: Opening Direction Preview
@@ -18,6 +31,7 @@
 - 总答案假设是否过强或过弱？
 - 默认中文语言和视觉风格是否符合客户场景？
 - 摘要是否回答客户问题，而不是复述目录？
+- 主标题是否通过 `title-fit-standard.md`，没有因过长而被迫缩小字号？
 
 若不通过：回到 `framework_confirmation` 或 `brief`，不要继续生成后续章节。
 
@@ -31,6 +45,8 @@
 - 核心发现是否由数据支撑？
 - 章节小结是否能自然引出下一章？
 - 页面密度和图表形式是否符合模板风格？
+- `content_density_report.json` 中偏薄或过载页面是否已经处理？
+- `layout_analysis_report.json` 中的 page family 是否由 `layout_reason` 支撑？
 
 若不通过：只回退该章节和其前后桥接页。
 
@@ -44,6 +60,7 @@
 - 行动项是否回链矛盾和根因？
 - 压力情景是否与执行摘要 KPI 对齐？
 - 建议是否具备责任、时间、指标和触发条件？
+- 关键页 HTML 预览是否已经确认，是否存在视觉方向返工风险？
 
 若不通过：回退综合章节和行动章节，不重写事实页。
 
@@ -67,8 +84,11 @@
 }
 ```
 
+`CN3` / HTML preview 输出还必须包含 `html_preview_report.json`，至少覆盖执行摘要、一个核心分析页、一个章节页或小结页和一个行动页。
+
 ## Rules
 
 - milestone 通过后，可对该范围启用 `phase_lock`。
 - milestone 修订只影响覆盖范围和直接相邻桥接页。
 - 若用户要求快速出稿，可合并 milestone，但交付说明中必须标记未做完整预览。
+- 若用户明确要求跳过 HTML preview，必须记录 `assumed_user_requested_direct`，不得把跳过视为通过。

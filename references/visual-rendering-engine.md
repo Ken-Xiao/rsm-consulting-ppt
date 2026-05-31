@@ -13,6 +13,12 @@
 
 完整项目先读取 `references/workflow-san-pipeline.md`，生成 `preset_map.json` 后再进入构建。构建阶段只执行已确认的 preset/page family，不在渲染时临时重写叙事结构。
 
+进入渲染前必须读取 `references/layout-lock-protocol.md` 和 `references/layout-analysis-report.md`：
+
+- `preset_map.json` 中每页 page family 必须被 visual profile 白名单允许。
+- `layout_analysis_report.json` 必须在正式 PPTX build 前生成，并经用户确认或明确标记为 `assumed_user_requested_direct`。
+- 若存在 `layout_gap`、未知 page family 或 `fullness_risk=high`，不得批量构建。
+
 每页渲染前还必须读取 `references/storyline-page-planning.md` 中的 `visual_intent` 要求，先判断本页逻辑关系是递进、并列、对比、因果、下钻还是综合，再选择图表、表格、流程、卡片或图片。
 
 选择 page family 后读取 `references/page-family-contracts.md`，确认必填字段、最大文字量、主视觉对象、禁用项和可编辑性要求。导出前读取 `references/editability-check.md`，不得把关键文字、数字、来源和结论整页图片化。

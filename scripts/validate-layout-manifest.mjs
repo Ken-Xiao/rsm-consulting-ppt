@@ -24,6 +24,7 @@ const report = {
   duplicate: [],
   unregisteredProfiles: [],
   structuralWarnings: [],
+  layoutLockWarnings: [],
   templatePlaceholders: [],
   profileCoverage: {},
 };
@@ -70,8 +71,23 @@ for (const tpl of manifest.templates || []) {
   }
 }
 
+for (const [profile, lock] of Object.entries(manifest.layout_locks || {})) {
+  if (registeredProfiles.size > 0 && !registeredProfiles.has(profile)) {
+    report.unregisteredProfiles.push({ layout_lock_profile: profile, visual_profile: profile });
+  }
+  if (!Array.isArray(lock.allowed) || lock.allowed.length === 0) {
+    report.structuralWarnings.push({ visual_profile: profile, issue: "layout_locks.allowed is empty or not an array" });
+    continue;
+  }
+  for (const family of [...(lock.allowed || []), ...(lock.fallback || [])]) {
+    if (!seen.has(family)) {
+      report.layoutLockWarnings.push({ visual_profile: profile, issue: `layout lock references unregistered preset_family: ${family}` });
+    }
+  }
+}
+
 if (report.missing.length || report.duplicate.length || report.unregisteredProfiles.length) report.status = "fail";
-else if (report.structuralWarnings.length) report.status = "warning";
+else if (report.structuralWarnings.length || report.layoutLockWarnings.length) report.status = "warning";
 
 console.log(JSON.stringify(report, null, 2));
 process.exit(report.status === "fail" ? 1 : 0);

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1920,height=1080,initial-scale=1" />
+  <link rel="stylesheet" href="./chrome.css" />
+  <style>
+    .module-pill {
+      position: absolute; right: 62px; top: 70px;
+      min-width: 220px; height: 46px; border-radius: 999px;
+      background: var(--rsm-soft-module);
+      color: var(--rsm-blue-deep);
+      font-size: var(--fs-caption); font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .takeaway {
+      position: absolute; left: 66px; top: 205px;
+      width: 1788px; min-height: 98px;
+      background: var(--rsm-takeaway);
+      border-left: 10px solid var(--rsm-blue);
+      padding: 20px 28px;
+      font-size: var(--fs-body-lg);
+      line-height: 1.35;
+      color: var(--rsm-grey);
+      font-weight: 650;
+    }
+    .comparison-grid {
+      position: absolute; left: 66px; top: 335px;
+      width: 1788px; height: 630px;
+      display: grid; grid-template-columns: 1fr 130px 1fr;
+      gap: 26px;
+    }
+    .period-card {
+      background: #fff;
+      border-radius: var(--rsm-radius-card);
+      box-shadow: var(--rsm-shadow-card);
+      border: 1px solid var(--rsm-line);
+      padding: 30px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .period-label {
+      color: var(--rsm-blue);
+      font-size: var(--fs-h3);
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+    .chart-zone {
+      height: 390px;
+      border: 2px dashed #C8D5E2;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--rsm-grey-light);
+      font-size: var(--fs-body);
+      background: #FBFCFE;
+    }
+    .readout {
+      margin-top: 22px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .metric-mini {
+      background: var(--rsm-sky-light);
+      border-left: 5px solid var(--rsm-blue);
+      padding: 13px 15px;
+      min-height: 82px;
+    }
+    .metric-mini .v { font-size: var(--fs-stat-sm); font-weight: 800; color: var(--rsm-navy); line-height: 1; }
+    .metric-mini .l { font-size: var(--fs-caption); color: var(--rsm-grey-mid); margin-top: 8px; line-height: 1.2; }
+    .delta-rail {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 18px;
+    }
+    .delta-arrow {
+      width: 92px; height: 92px; border-radius: 50%;
+      background: var(--rsm-blue); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40pt; font-weight: 800;
+    }
+    .delta-note {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: var(--fs-caption);
+      color: var(--rsm-grey-mid);
+      letter-spacing: 0.08em;
+      max-height: 360px;
+    }
+  </style>
+</head>
+<body>
+  <section class="slide-container">
+    <div class="chrome-header">
+      <div class="module-tag"><span class="dot"></span><span class="label">{{module_name}}</span></div>
+      <div class="breadcrumb">RSM Consulting</div>
+    </div>
+    <div class="page-title-block">
+      <div class="h1">{{claim_title}}</div>
+      <div class="h2">{{story_subtitle}}</div>
+      <div class="rule"></div>
+    </div>
+    <div class="module-pill">{{module_number}}</div>
+    <div class="takeaway">{{takeaway_text}}</div>
+    <main class="comparison-grid">
+      <div class="period-card">
+        <div class="period-label">{{period_a}}</div>
+        <div class="chart-zone">{{chart_a_placeholder}}</div>
+        <div class="readout">
+          <div class="metric-mini"><div class="v">{{metric_a_1}}</div><div class="l">{{metric_a_1_label}}</div></div>
+          <div class="metric-mini"><div class="v">{{metric_a_2}}</div><div class="l">{{metric_a_2_label}}</div></div>
+          <div class="metric-mini"><div class="v">{{metric_a_3}}</div><div class="l">{{metric_a_3_label}}</div></div>
+        </div>
+      </div>
+      <div class="delta-rail">
+        <div class="delta-arrow">→</div>
+        <div class="delta-note">{{difference_labels}}</div>
+      </div>
+      <div class="period-card">
+        <div class="period-label">{{period_b}}</div>
+        <div class="chart-zone">{{chart_b_placeholder}}</div>
+        <div class="readout">
+          <div class="metric-mini"><div class="v">{{metric_b_1}}</div><div class="l">{{metric_b_1_label}}</div></div>
+          <div class="metric-mini"><div class="v">{{metric_b_2}}</div><div class="l">{{metric_b_2_label}}</div></div>
+          <div class="metric-mini"><div class="v">{{metric_b_3}}</div><div class="l">{{metric_b_3_label}}</div></div>
+        </div>
+      </div>
+    </main>
+    <div class="chrome-footer">
+      <div class="src">{{source_note}}</div>
+      <div class="pagenum">{{page_number}}</div>
+    </div>
+  </section>
+</body>
+</html>

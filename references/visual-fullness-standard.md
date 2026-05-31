@@ -128,8 +128,15 @@
 {
   "visual_fullness": {
     "body_occupancy_target": "74%-82%",
+    "body_occupancy_target_pct": [74, 82],
     "evidence_layers": ["takeaway_bar", "main_chart", "insight_cards", "source_note"],
     "primary_visual_scale": "large",
+    "primary_visual_min_height_px": 480,
+    "primary_visual_width_pct": 82,
+    "supporting_layer_count": 3,
+    "callout_count": 2,
+    "metric_strip_required": true,
+    "content_density_status": "balanced",
     "supporting_elements": ["3 insight cards", "benchmark line", "2 chart callouts"],
     "empty_space_risk": "low"
   }
@@ -137,6 +144,30 @@
 ```
 
 如果 `empty_space_risk` 为 `medium` 或 `high`，必须在构建前调整版式。
+
+## Hard Field Requirements
+
+`partner-ready` 以上项目的正文页必须在 `preset_map.json` 或 `visual_intent/Pxx.json` 中写明：
+
+- `body_occupancy_target_pct`
+- `primary_visual_min_height_px`
+- `primary_visual_width_pct`
+- `supporting_layer_count`
+- `callout_count`
+- `metric_strip_required`
+- `content_density_status`
+
+建议阈值：
+
+| Field | Pass threshold |
+|---|---:|
+| `body_occupancy_target_pct[0]` | ≥ 70 |
+| `primary_visual_min_height_px` | ≥ 430, insurance 默认 ≥ 480 |
+| `primary_visual_width_pct` | ≥ 78 |
+| `supporting_layer_count` | ≥ 2 |
+| `callout_count` | 0-2 |
+
+如果页面是章节页、封面或目录页，可用 `fullness_exempt_reason` 豁免。
 
 ## Page Family Fullness Requirements
 
@@ -155,10 +186,10 @@
 截图或 contact sheet 审查时检查：
 
 - 页面中部是否有明确、大尺度主证据对象。
+- `visual_fullness` 是否包含硬字段，且达到阈值。
 - 主图是否过小，周围是否出现大片无目的空白。
 - 结论条、主图、辅助证据是否形成完整阅读路径。
 - 页面是否有 2-4 个与主结论相关的辅助证据点。
 - 图表卡内部是否过空：图太小、图例太大、坐标区占比不足。
 - 章节小结页是否具备 3+3 结构。
 - 页面看起来是否像“成稿”，而不是仅完成了标题和一个图。
-

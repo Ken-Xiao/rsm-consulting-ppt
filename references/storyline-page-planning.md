@@ -96,6 +96,18 @@
   "previous_link": "上一页确认样本公司净利润普遍增长",
   "next_link": "下一页进一步拆解综合收益和投资波动来源",
   "evidence_object": "2025 vs 2024 利润构成堆叠条",
+  "insight_type": "contribution_split",
+  "recommended_page_family": "stacked_contribution_split",
+  "layout_reason": "本页要解释净利润增长来源，堆叠贡献图能直接拆出投资、承保、所得税和其他项的贡献差异",
+  "evidence_items_count": 4,
+  "content_density_status": "balanced",
+  "title_fit": {
+    "char_count": 24,
+    "line_count_target": 2,
+    "font_size_pt": 38,
+    "rewrite_required": false,
+    "fit_status": "pass"
+  },
   "visual_intent": {
     "emphasis": ["投资贡献", "承保贡献下降"],
     "highlight_method": ["deep_navy_for_focus", "bold_labels", "callout_note"],
@@ -103,6 +115,31 @@
   }
 }
 ```
+
+## Insight And Density Fields Before Preset
+
+在分配 `preset_family` 前，`storyline_map.json` 或 `outline.json` 每个正文页必须补齐：
+
+| Field | Source | Purpose |
+|---|---|---|
+| `insight_type` | `insight-to-layout-mapper.md` | 说明本页洞察类型，如排名背离、趋势背离、贡献拆分 |
+| `recommended_page_family` | `insight_layout_map.json` | 进入 visual profile 白名单前的推荐版式 |
+| `layout_reason` | `insight_layout_map.json` | 解释为什么该版式最适合证明本页结论 |
+| `evidence_items_count` | `content_density_report.json` | 判断页面是否过薄或过载 |
+| `content_density_status` | `content_density_report.json` | 取值为 `content_empty`、`content_thin`、`balanced`、`content_heavy`、`overloaded` |
+| `title_fit` | `title-fit-standard.md` | 中文标题长度、行数、字号和改写状态 |
+
+章节页、封面、目录页可以豁免 `evidence_items_count`，但必须写明 `density_exempt_reason`。
+
+## Preset Entry Gate
+
+进入 `preset_map.json` 前检查：
+
+- 正文页没有 `content_empty`。
+- `content_thin` 页面已有补强方案，如 benchmark、metric strip、callout、合并或用户确认。
+- `content_heavy` 或 `overloaded` 页面已拆页、分组或转附录。
+- 每页 `recommended_page_family` 有 `layout_reason`。
+- 每页 `title_fit.fit_status` 不是 `rewrite_required` 或 `split_page_required`。
 
 ## Section Divider Planning
 
@@ -180,6 +217,9 @@
 - 每页是否有 `previous_link` 和 `next_link`，封面/结尾除外。
 - 每页是否只有一个主证明对象。
 - 每页 visual intent 是否明确。
+- 每页是否有 `insight_type`、`recommended_page_family` 和 `layout_reason`。
+- 每页是否通过 `content_density_status` 检查。
+- 每页是否通过 `title_fit` 检查，长标题是否已改写。
 - preset family 是否匹配逻辑关系。
 - 每个正式章节是否有 `section_divider` 或清楚的章节锚点。
 - 章节页是否只包含章节编号、章节名、章节问题/答案和专业图片，不承担正文证明。

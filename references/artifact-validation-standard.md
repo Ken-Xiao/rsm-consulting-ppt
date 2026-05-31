@@ -12,10 +12,12 @@ brief.json
   -> source_digest.md
   -> data_pool.json + lineage_map.json
   -> insights.json
+  -> insight_layout_map.json
+  -> content_density_report.json
   -> consulting_pyramid.json + conclusion_evidence_matrix.json + argument_map.json
   -> contradiction_map.json + action_derivation_map.json + scenario_analysis.json
   -> storyline_map.json + outline.json
-  -> design_system.json + template_manifest + preset_map.json
+  -> design_system.json + template_manifest + preset_map.json + layout_analysis_report.json + html_preview_report.json
   -> chart_data/Pxx.json + image_assets.json + visual_intent/Pxx.json
   -> review_report.json + final_review_report.json
 ```
@@ -39,8 +41,12 @@ brief.json
 | `contradiction_map.json` | optional | required if synthesis/action | required if synthesis/action |
 | `action_derivation_map.json` | optional | required if recommendations | required if recommendations |
 | `scenario_analysis.json` | optional | required if stress pages | required if stress pages |
+| `insight_layout_map.json` | optional | required | required |
+| `content_density_report.json` | optional | required | required |
 | `storyline_map.json` | title spine ok | required | required |
 | `preset_map.json` | visual notes ok | required | required |
+| `layout_analysis_report.json` | optional | required | required |
+| `html_preview_report.json` | optional | preferred | required before batch build |
 | `chart_data/` | if chart changed | core charts | all core charts |
 | `review_report.json` | polish notes | required | required |
 | `contact_sheet.png` | optional | preferred | required |
@@ -258,6 +264,68 @@ Fail if:
 - 输出指标与执行摘要核心 KPI 不一致且没有解释。
 - 两种图景页没有展示 delta。
 
+### `insight_layout_map.json`
+
+Required before `storyline_map.json` and `preset_map.json` for complete projects:
+
+- `pages[]` or `insights[]`
+- `page_id`
+- `insight_id`
+- `insight_type`
+- `recommended_page_family`
+- `page_role`
+- `logic_relationship`
+- `layout_reason`
+- `required_evidence`
+
+Fail if:
+
+- 核心洞察没有 `insight_type`。
+- 推荐 page family 没有 `layout_reason`。
+- 推荐 page family 与 visual profile 白名单明显不匹配，且没有 fallback。
+- 行动页没有回链洞察或矛盾。
+
+### `content_density_report.json`
+
+Required before `preset_map.json` for complete projects:
+
+- `status`
+- `summary`
+- `pages[]`
+- `pages[].page_id`
+- `pages[].evidence_items_count`
+- `pages[].density_status`
+- `pages[].required_action`
+- `pages[].can_enter_layout_analysis`
+
+Fail if:
+
+- 正文页 `content_empty` 仍进入 `preset_map.json`。
+- `overloaded` 页面未拆页或转附录。
+- `content_thin` 页面没有补强方案、合并说明或用户确认。
+- `can_enter_layout_analysis=false` 但仍进入 layout analysis。
+
+### `html_preview_report.json`
+
+Required before batch build for `client-ready`; preferred for `partner-ready`:
+
+- `status`
+- `visual_profile`
+- `preview_pages[]`
+- `preview_pages[].page_id`
+- `preview_pages[].page_family`
+- `preview_pages[].title_fit_status`
+- `preview_pages[].density_status`
+- `preview_pages[].fullness_risk`
+- `summary`
+
+Fail if:
+
+- `client-ready` 项目状态仍为 `pending_user_confirmation`。
+- `revise_required` 状态下进入批量构建。
+- `preview_unavailable` 但没有用户确认或交付风险说明。
+- 关键页预览没有覆盖执行摘要、核心分析页和章节/小结页。
+
 ### `storyline_map.json`
 
 Required per page:
@@ -270,12 +338,22 @@ Required per page:
 - `previous_link`
 - `next_link`
 - `chapter_answer_link`
+- `evidence_object`
+- `insight_type`
+- `recommended_page_family`
+- `layout_reason`
+- `evidence_items_count`
+- `content_density_status`
+- `title_fit`
 
 Fail if:
 
 - 标题不是判断。
 - 页面无法回链章节答案。
 - 前后页逻辑断裂。
+- 副标题不能说明口径、承接或下一页引导。
+- 正文页缺少 `layout_reason`。
+- 正文页 `title_fit.fit_status` 为 `rewrite_required` 或 `split_page_required`。
 - 正式章节缺少 `section_divider` 或章节锚点。
 - 章节页承担正文证明任务，或文字量超过章节页限制。
 
@@ -310,6 +388,8 @@ Required per page:
 - `qa_focus`
 - `exhibit_structure`
 - `visual_fullness`
+- `layout_lock_status`
+- `layout_lock_reason`
 
 Fail if:
 
@@ -317,6 +397,32 @@ Fail if:
 - 没有 `density_level`。
 - 没有可编辑性说明。
 - 未按 `editable-component-standard.md` 区分 `native_editable_layer`、`rendered_evidence_layer` 和 `metadata_layer`。
+- `page_family` 不在当前 `visual_profile` 的 layout lock 白名单内，且没有 `fallback_reason`。
+- `layout_lock_status` 缺失或为 `unlocked`。
+
+### `layout_analysis_report.json`
+
+Required:
+
+- `visual_profile`
+- `status`
+- `summary.page_count`
+- `summary.layout_gaps`
+- `summary.content_thin_pages`
+- `summary.content_heavy_pages`
+- `pages[].page_id`
+- `pages[].page_family`
+- `pages[].layout_lock_status`
+- `pages[].density_level`
+- `pages[].fullness_risk`
+- `pages[].layout_reason`
+
+Fail if:
+
+- `partner-ready` 或 `client-ready` 项目缺少 layout analysis。
+- `status` 不是 `confirmed` 或 `assumed_user_requested_direct`。
+- 存在 `layout_gaps > 0`。
+- 存在 `fullness_risk=high` 且没有用户确认。
 
 Section divider pages additionally require:
 

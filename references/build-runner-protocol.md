@@ -59,6 +59,8 @@ Read:
 - `source_digest.md`
 - `data_pool.json`
 - `lineage_map.json`
+- `insight_layout_map.json`
+- `content_density_report.json`
 - `consulting_pyramid.json`
 - `conclusion_evidence_matrix.json`
 - `argument_map.json`
@@ -67,6 +69,8 @@ Read:
 - `design_system.json`
 - `template_manifest` or `assets/layouts/template-manifest.json`
 - `preset_map.json`
+- `layout_analysis_report.json`
+- `html_preview_report.json`
 - `chart_data/`
 - `image_assets.json`
 - `visual_intent/`
@@ -103,6 +107,33 @@ Default preview points:
 
 Milestone failure should roll back only the affected page range and direct bridge pages, not the full deck.
 
+### Stage 1.6: Insight Mapping And Density Gate
+
+在进入 `storyline_map.json`、`outline.json` 和 `preset_map.json` 前，必须先确认洞察映射、内容密度和标题适配。
+
+Read:
+
+- `insights.json`
+- `insight_layout_map.json`
+- `content_density_report.json`
+- `storyline_map.json`
+- `references/insight-to-layout-mapper.md`
+- `references/content-density-precheck.md`
+- `references/title-fit-standard.md`
+
+Output:
+
+- updated `storyline_map.json`
+- updated `outline.json`
+
+Gate:
+
+- 每页必须有 `insight_type`、`recommended_page_family` 和 `layout_reason`。
+- `content_empty` 不得进入正文构建。
+- `content_thin` 必须有补强、合并或用户确认。
+- `overloaded` 必须拆页或转附录。
+- 正文页 `title_fit.fit_status` 不得为 `rewrite_required` 或 `split_page_required`。
+
 ### Stage 2: Build Draft PPTX
 
 Read:
@@ -131,6 +162,63 @@ Output:
 
 - `draft_deck.pptx`
 - `render_metadata.json`
+
+### Stage 2.5: Layout Analysis Gate
+
+在正式 PPTX build 或批量 HTML 渲染前，必须先完成版式分析。
+
+Read:
+
+- `preset_map.json`
+- `design_system.json`
+- `storyline_map.json`
+- `template_manifest` or `assets/layouts/template-manifest.json`
+- `references/layout-lock-protocol.md`
+- `references/layout-analysis-report.md`
+
+Output:
+
+- `layout_analysis_report.json`
+
+Gate:
+
+- 每页 `page_family` 必须通过 visual profile 白名单。
+- 每页必须有 `layout_lock_status`，正文页必须为 `locked` 或 `fallback_confirmed`。
+- `fullness_risk=high` 的页面不得进入 build，除非用户确认。
+- 缺少 `layout_analysis_report.json` 时不得标记 `partner-ready` 或 `client-ready`。
+
+User checkpoint:
+
+- 向用户展示版式分配、密度风险和 fallback 页。
+- 用户确认后，将 `layout_analysis_report.status` 标记为 `confirmed`。
+
+### Stage 2.6: HTML Preview Gate
+
+正式 PPTX build 前，先生成关键页 HTML 预览或说明无法预览。
+
+Read:
+
+- `layout_analysis_report.json`
+- `storyline_map.json`
+- `preset_map.json`
+- `design_system.json`
+- `assets/layouts/`
+- `references/html-preview-protocol.md`
+- `references/title-fit-standard.md`
+- `references/visual-fullness-standard.md`
+
+Output:
+
+- `html_preview_report.json`
+- `preview_html/Pxx.html`
+- `preview_pages/Pxx.png` where rendering is available
+
+Gate:
+
+- `client-ready` 项目必须有 `html_preview_report.status = confirmed`，或 `preview_unavailable / assumed_user_requested_direct` 且有用户确认和风险说明。
+- `partner-ready` 项目若跳过 HTML preview，必须在交付说明中写明。
+- `revise_required` 状态不得进入批量构建。
+- 关键页预览至少覆盖执行摘要、核心分析页和章节/小结页。
 
 ### Stage 3: Render Preview
 
