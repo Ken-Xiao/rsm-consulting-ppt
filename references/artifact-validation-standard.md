@@ -9,11 +9,13 @@
 ```text
 brief.json
   -> framework_confirmation.md
+  -> confirmation_log.json
   -> source_digest.md
   -> data_pool.json + lineage_map.json
   -> insights.json
   -> insight_layout_map.json
   -> content_density_report.json
+  -> reference_layout_profile.json
   -> consulting_pyramid.json + conclusion_evidence_matrix.json + argument_map.json
   -> contradiction_map.json + action_derivation_map.json + scenario_analysis.json
   -> storyline_map.json + outline.json
@@ -32,6 +34,7 @@ brief.json
 |---|---|---|---|
 | `brief.json` | optional note | required | required |
 | `framework_confirmation.md` | optional | required | required |
+| `confirmation_log.json` | optional | required | required |
 | `source_digest.md` | source boundaries | required | required |
 | `data_pool.json` | only if new data | key facts/metrics | required |
 | `lineage_map.json` | not required | key numbers | required |
@@ -43,6 +46,7 @@ brief.json
 | `scenario_analysis.json` | optional | required if stress pages | required if stress pages |
 | `insight_layout_map.json` | optional | required | required |
 | `content_density_report.json` | optional | required | required |
+| `reference_layout_profile.json` | optional | optional if no external reference | required if external reference is used |
 | `storyline_map.json` | title spine ok | required | required |
 | `preset_map.json` | visual notes ok | required | required |
 | `layout_analysis_report.json` | optional | required | required |
@@ -112,6 +116,34 @@ Fail if:
 - 直接进入逐页细节，但 `confirmation_status` 仍为 `pending`。
 - 章节只是主题词，没有章节问题、章节作用或暂定答案。
 - 默认语言不是中文，且没有用户明确英文/双语要求。
+
+### `confirmation_log.json`
+
+Required for `partner-ready`, `client-ready`, and `pipeline`:
+
+- `project_id`
+- `tier`
+- `nodes[]`
+- `nodes[].node`
+- `nodes[].status`
+- `nodes[].requested_at`
+- `nodes[].user_signal`
+- `nodes[].artifact_versions_locked`
+
+Required nodes:
+
+- `partner-ready`: `CN1_framework`, `CN2_layout`
+- `client-ready`: `CN1_framework`, `CN2_layout`, `CN3_html_preview`
+- `pipeline`: all above plus schema/version lock notes where relevant
+
+Fail if:
+
+- Required node is missing.
+- Required node status is `pending` or `blocked`.
+- `CN1_framework` is not confirmed before `storyline_map.json` or `preset_map.json` exists.
+- `CN2_layout` is not confirmed before `draft_deck.pptx` or equivalent build output exists.
+- `CN3_html_preview` is not confirmed before `client-ready` delivery.
+- `assumed_user_requested_direct` exists but delivery note does not disclose skipped confirmation risk.
 
 ### `data_pool.json`
 
@@ -305,6 +337,32 @@ Fail if:
 - `content_thin` 页面没有补强方案、合并说明或用户确认。
 - `can_enter_layout_analysis=false` 但仍进入 layout analysis。
 
+### `reference_layout_profile.json`
+
+Required when using `assets/reference-layouts/` or user-provided `ppt版式/` samples:
+
+- `profile_id`
+- `source_path`
+- `preview_count`
+- `best_for`
+- `slide_geometry`
+- `layout_anatomy`
+- `typography`
+- `color_system`
+- `page_families[]`
+- `page_families[].family_id`
+- `page_families[].source_preview`
+- `page_families[].use_when`
+- `page_families[].required_content`
+- `page_families[].replication_notes`
+
+Fail if:
+
+- 引用了外部版式但没有 `source_preview`。
+- 没有说明字体、字号、颜色、图表/表格规则。
+- 没有说明哪些页面采用参考版式、哪些保持 RSM 默认。
+- 声称像素级复刻但没有 `replication_notes` 或复刻风险。
+
 ### `html_preview_report.json`
 
 Required before batch build for `client-ready`; preferred for `partner-ready`:
@@ -390,6 +448,7 @@ Required per page:
 - `visual_fullness`
 - `layout_lock_status`
 - `layout_lock_reason`
+- `fill_level` for high-frequency HTML page families
 
 Fail if:
 
@@ -399,6 +458,8 @@ Fail if:
 - 未按 `editable-component-standard.md` 区分 `native_editable_layer`、`rendered_evidence_layer` 和 `metadata_layer`。
 - `page_family` 不在当前 `visual_profile` 的 layout lock 白名单内，且没有 `fallback_reason`。
 - `layout_lock_status` 缺失或为 `unlocked`。
+- 高频正文页模板仍为 `skeleton` 且没有 `template_gap` 说明。
+- 客户交付页存在可见 placeholder 文本。
 
 ### `layout_analysis_report.json`
 
@@ -416,6 +477,7 @@ Required:
 - `pages[].density_level`
 - `pages[].fullness_risk`
 - `pages[].layout_reason`
+- `reference_layout_choice` if external reference layouts are used
 
 Fail if:
 
@@ -423,6 +485,7 @@ Fail if:
 - `status` 不是 `confirmed` 或 `assumed_user_requested_direct`。
 - 存在 `layout_gaps > 0`。
 - 存在 `fullness_risk=high` 且没有用户确认。
+- 使用外部参考版式但缺少 `reference_layout_choice.pages_using_reference[].source_preview`。
 
 Section divider pages additionally require:
 

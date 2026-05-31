@@ -1,0 +1,22 @@
+/* Shared design tokens — Goldman-style sell-side earnings note */
+/* Palette: navy primary, ledger gold accent, stone-white page, ink body */
+/* Forbidden: cream/ivory/sand. Reading context: Bloomberg terminals + 7am sales desks. */
+
+:root {
+  --navy: #082147;
+  --navy-700: #0e2f63;
+  --navy-300: #6d83a8;
+  --gold: #B8975A;
+  --gold-soft: #D8C291;
+  --stone: #F4F4F0;
+  --stone-line: #E2E0D6;
+  --ink: #1A1A1A;
+  --ink-muted: #5A5A55;
+  --pos: #1A7F37;
+  --neg: #C8102E;
+  --neutral: #5A5A55;
+
+  --font-display: "Roboto Slab", "Tiempos Headline", Georgia, serif;
+  --font-body: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", Consolas, monospace;
+}

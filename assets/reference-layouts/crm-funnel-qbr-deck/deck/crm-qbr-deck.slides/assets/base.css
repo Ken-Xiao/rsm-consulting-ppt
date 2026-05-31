@@ -1,0 +1,38 @@
+/* RevOps QBR — shared tokens */
+:root{
+  --indigo:#3D52F0;
+  --indigo-700:#2A3BC2;
+  --indigo-50:#E7EBFE;
+  --slate:#0A2540;
+  --slate-2:#1B3358;
+  --ink:#0B1220;
+  --mist:#EEF1F5;
+  --mist-2:#E2E7EF;
+  --line:#C9D1DC;
+  --muted:#5B6B82;
+  --white:#FFFFFF;
+  --green:#16A34A;
+  --amber:#D97706;
+  --red:#DC2626;
+  --green-50:#E7F6EC;
+  --amber-50:#FDF1DC;
+  --red-50:#FCE7E7;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow:hidden;background:var(--mist);color:var(--ink);
+  font-family:"Inter","Söhne","Helvetica Neue",Arial,sans-serif;
+  font-feature-settings:"tnum" 1,"ss01" 1;}
+.h-display{font-family:"Inter Tight","Inter",sans-serif;font-weight:700;letter-spacing:-0.02em;color:var(--slate);}
+.mono{font-family:"JetBrains Mono","SF Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums;}
+.tnum{font-variant-numeric:tabular-nums;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.02em;}
+.pill-stage{background:var(--indigo-50);color:var(--indigo-700);border:1px solid #C9D2FB;font-family:"JetBrains Mono",monospace;}
+.pill-green{background:var(--green-50);color:#0F6E33;}
+.pill-amber{background:var(--amber-50);color:#8A4B05;}
+.pill-red{background:var(--red-50);color:#A2161A;}
+.foot{position:absolute;left:64px;right:64px;bottom:28px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);}
+.foot .crumb{display:flex;gap:16px;align-items:center}
+.cite{font-size:13px;color:var(--muted);}
+.cite sup{color:var(--indigo);font-weight:700;margin-right:2px;}
+.rule{height:1px;background:var(--line);}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--indigo);}

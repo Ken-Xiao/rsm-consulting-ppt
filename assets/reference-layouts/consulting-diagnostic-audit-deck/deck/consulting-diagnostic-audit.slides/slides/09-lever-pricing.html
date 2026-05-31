@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lever 3 — Pricing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="09 Lever Pricing" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 9 · Lever 3 · Pricing — List-to-pocket leakage</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">Net pocket realisation is 71.2% vs benchmark 82.0% — recovering half the gap is worth <span style="color:#B91C1C;">$9.8M annualized</span>.</div>
+  </div>
+
+  <!-- Waterfall chart left -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:1180px; height:780px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:228px; width:1124px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#94A3B8; text-transform:uppercase;">Price-pocket waterfall · FY25 · $M</div>
+    <div style="margin-top:8px; font-size:18px; color:#334155;">From list price to net pocket — 28.8% of list value leaks before margin recognition.</div>
+  </div>
+
+  <!-- Scale: baseline (y=$0) at top=820; 1px = $4M; $1,656M = 414px tall
+       List: 820 → 406 (414px), full bar
+       After −$260 (Std):  top moves from 406 to 471 (deduction 65px = $260 / 4)
+       After −$108 (Vol):  471 → 498 (27px)
+       After −$61 (Off-i): 498 → 513 (15px)
+       After −$34 (Payt):  513 → 522 (9px)
+       After −$14 (Rtns):  522 → 525 (3px)
+       Net pocket: 820 → 525 (295px, $1,179M)
+  -->
+
+  <!-- Baseline -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:820px; width:1080px; height:2px; background:#0B1729; z-index:3;"></div>
+
+  <!-- Y-axis ticks for scale -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:813px; width:48px; text-align:right; z-index:10;"><div style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#94A3B8;">$0</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:713px; width:48px; text-align:right; z-index:10;"><div style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#94A3B8;">$400</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:613px; width:48px; text-align:right; z-index:10;"><div style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#94A3B8;">$800</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:513px; width:48px; text-align:right; z-index:10;"><div style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#94A3B8;">$1,200</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:413px; width:48px; text-align:right; z-index:10;"><div style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#94A3B8;">$1,600</div></div>
+
+  <!-- Bar 1: List price $1,656M, full from baseline -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:160px; top:406px; width:130px; height:414px; background:#0B1729; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:145px; top:366px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:18px; font-weight:600; color:#0B1729;">$1,656</div>
+    <div style="font-size:12px; color:#64748B;">List price</div>
+  </div>
+
+  <!-- Connector dashed line: top of List → top of next bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:290px; top:406px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Deduction 1: Std discount $260 (floats from 406 down to 471) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:320px; top:406px; width:130px; height:65px; background:#94A3B8; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:305px; top:476px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:16px; font-weight:600; color:#475569;">−$260</div>
+    <div style="font-size:12px; color:#64748B;">Std. discount</div>
+  </div>
+
+  <!-- Connector -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:450px; top:471px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Deduction 2: Vol rebate $108 (471 → 498) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:480px; top:471px; width:130px; height:27px; background:#94A3B8; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:465px; top:505px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:16px; font-weight:600; color:#475569;">−$108</div>
+    <div style="font-size:12px; color:#64748B;">Vol. rebate</div>
+  </div>
+
+  <!-- Connector -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:610px; top:498px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Deduction 3: Off-invoice $61 (LEAKAGE, red) (498 → 513) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:640px; top:498px; width:130px; height:15px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:625px; top:520px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:16px; font-weight:600; color:#B91C1C;">−$61</div>
+    <div style="font-size:12px; color:#64748B;">Off-invoice</div>
+  </div>
+
+  <!-- Connector -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:770px; top:513px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Deduction 4: Payment terms $34 (LEAKAGE, red) (513 → 522) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:800px; top:513px; width:130px; height:9px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:785px; top:528px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:16px; font-weight:600; color:#B91C1C;">−$34</div>
+    <div style="font-size:12px; color:#64748B;">Payment terms</div>
+  </div>
+
+  <!-- Connector -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:930px; top:522px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Deduction 5: Returns $14 (522 → 525) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:522px; width:130px; height:3px; background:#94A3B8; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:945px; top:530px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:16px; font-weight:600; color:#475569;">−$14</div>
+    <div style="font-size:12px; color:#64748B;">Returns</div>
+  </div>
+
+  <!-- Connector -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1090px; top:525px; width:30px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 5px, transparent 5px 10px); z-index:4;"></div>
+
+  <!-- Net pocket bar $1,179M (820 → 525, 295px) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:525px; width:130px; height:295px; background:#0B1729; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:525px; width:130px; height:6px; background:#1E40AF; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1105px; top:485px; width:160px; text-align:center; z-index:10;">
+    <div class="num" style="font-size:18px; font-weight:600; color:#0B1729;">$1,179</div>
+    <div style="font-size:12px; color:#64748B;">Net pocket (71.2%)</div>
+  </div>
+
+  <!-- Category labels under x-axis -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:840px; width:1080px; z-index:10;">
+    <div style="display:grid; grid-template-columns:repeat(7, 1fr); font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.10em; color:#64748B; text-align:center; text-transform:uppercase;">
+      <div>List</div><div>Std disc.</div><div>Vol. rebate</div><div>Off-invoice</div><div>Payment t.</div><div>Returns</div><div>Net pocket</div>
+    </div>
+  </div>
+
+  <!-- Leakage callout (re-positioned below chart) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:884px; width:1124px; height:74px; background:#FEE2E2; border-left:6px solid #B91C1C; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:138px; top:898px; width:1078px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#B91C1C; text-transform:uppercase;">Discretionary leakage</div>
+    <div style="margin-top:6px; font-size:16px; color:#0B1729; line-height:1.35;"><span class="num" style="font-weight:600;">$95M</span> / yr in off-invoice + payment-term discounts is not tied to contracts — half of this gap (~$9.8M EBITDA at 73% drop-through) is the OP-2 prize.</div>
+  </div>
+
+  <!-- RIGHT panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:200px; width:560px; height:780px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1308px; top:228px; width:504px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">Mechanism</div>
+    <div style="margin-top:14px; font-size:16px; color:#E2E8F0; line-height:1.6;">
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">a · Discount guard-rails.</b> SKU-level floor pricing in CPQ; auto-block bids below floor. Today 11% of SKUs invoice below floor.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">b · RAPID redesign for exceptions.</b> Sales VP = R; CFO = D; Product + Legal = I (slide 12). Cycle 9 days → 36 hrs.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">c · Volume-rebate refresh.</b> 18 rebate programmes; consolidate to 6 tiers; remove uncapped accelerators.</div>
+      <div><b style="color:#FFFFFF;">d · Sales-rep scorecard.</b> Compensation linked to net pocket, not invoiced revenue.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1308px; top:758px; width:504px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">$ IMPACT</div>
+    <div class="num" style="font-size:34px; font-weight:600; color:#FFFFFF; margin-top:6px;">$9.8M</div>
+    <div style="font-size:13px; color:#94A3B8; margin-top:2px;">annualized · MED confidence · 9-month build</div>
+    <div style="margin-top:22px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">OWNER</div>
+    <div style="font-size:18px; font-weight:600; color:#FFFFFF; margin-top:6px;">D. Park · CRO</div>
+    <div style="margin-top:16px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">RISK</div>
+    <div style="font-size:14px; color:#CBD5E1; margin-top:6px; line-height:1.5;">Top-12 customers may demand price-hold concessions; sequence engagement around contract renewals.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: 12-mo invoice extract (n = 412K lines); 4 sales interviews · Bench: external industrials peer set FY24</div>
+      <div>09 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

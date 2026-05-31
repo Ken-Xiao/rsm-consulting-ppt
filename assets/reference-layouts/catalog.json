@@ -1,0 +1,48 @@
+{
+  "source": "User-provided ppt版式 directory",
+  "library_version": "2026-05-31",
+  "profiles": [
+    {
+      "profile_id": "consulting-final-deck",
+      "source_path": "assets/reference-layouts/consulting-final-deck",
+      "preview_count": 20,
+      "best_for": ["client_final_readout", "board_strategy_synthesis", "due_diligence_final_report", "transaction_recommendation"],
+      "signature_pages": ["governing_thought", "chapter_divider", "evidence_exhibit", "so_what_synthesis", "option_comparison", "implementation_roadmap", "decisions_required"]
+    },
+    {
+      "profile_id": "consulting-diagnostic-audit-deck",
+      "source_path": "assets/reference-layouts/consulting-diagnostic-audit-deck",
+      "preview_count": 18,
+      "best_for": ["performance_diagnostic", "cost_transformation", "opportunity_prioritization", "phase_2_transformation_pitch"],
+      "signature_pages": ["executive_answer", "baseline_performance", "top5_opportunities", "effort_impact_2x2", "lever_deep_dive", "rapid_root_cause", "phase2_roadmap"]
+    },
+    {
+      "profile_id": "consulting-capability-pitch",
+      "source_path": "assets/reference-layouts/consulting-capability-pitch",
+      "preview_count": 17,
+      "best_for": ["consulting_capability_pitch", "rfp_response", "beauty_parade", "vendor_selection"],
+      "signature_pages": ["right_to_win", "client_understanding", "differentiation", "proof_stack", "comparable_case", "methodology", "named_team", "commercials"]
+    },
+    {
+      "profile_id": "equity-research-earnings-deck",
+      "source_path": "assets/reference-layouts/equity-research-earnings-deck",
+      "preview_count": 14,
+      "best_for": ["earnings_review", "equity_research_update", "valuation_update", "investment_committee_market_readout"],
+      "signature_pages": ["rating_cover", "earnings_summary", "print_snapshot", "revenue_bridge", "eps_bridge", "estimate_revisions", "valuation_update", "risk_catalyst_map"]
+    },
+    {
+      "profile_id": "crm-funnel-qbr-deck",
+      "source_path": "assets/reference-layouts/crm-funnel-qbr-deck",
+      "preview_count": 16,
+      "best_for": ["sales_qbr", "crm_pipeline_review", "revops_dashboard", "forecast_review"],
+      "signature_pages": ["stage_lockin", "push_pull_kill", "top_of_funnel", "stage_conversion", "pipeline_waterfall", "forecast_accuracy", "quota_attainment"]
+    },
+    {
+      "profile_id": "sbir-rd-grant-deck",
+      "source_path": "assets/reference-layouts/sbir-rd-grant-deck",
+      "preview_count": 16,
+      "best_for": ["government_grant", "rd_project_review", "technology_roadmap", "commercialization_plan", "rubric_based_evaluation"],
+      "signature_pages": ["rubric_significance", "technical_objectives", "workplan_gantt", "trl_progression", "commercial_market", "transition_partner", "risk_register", "budget", "rubric_map"]
+    }
+  ]
+}

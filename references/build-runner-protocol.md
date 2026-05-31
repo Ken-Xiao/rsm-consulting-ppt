@@ -28,6 +28,30 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 
 ## Runner Stages
 
+## Tier-Stage Matrix
+
+先按 `references/tier-stage-matrix.md` 选择 stage 列表，不要让所有任务都进入完整管线。
+
+| Stage | express | quick-polish | partner-ready | client-ready | pipeline |
+|---|---|---|---|---|---|
+| `S0` Phase Lock | skip | skip | required | required | required |
+| `S1` Validate Artifacts | minimal | minimal | full | full | full |
+| `S1.5` Milestone Preview | skip | skip | optional if >25 pages | required if >15 pages | required |
+| `S1.6` Insight Mapping & Density | skip | skip | required | required | required |
+| `S2` Build Draft | simple | patch | full | full | full |
+| `S2.5` Layout Analysis Gate | skip | skip | required | required | required |
+| `S2.6` HTML Preview Gate | skip | skip | recommended | required | required |
+| `S3` Render Preview | optional | optional | required | required | required |
+| `S4` Review | basic QA | basic QA | full review | full review + regression | full review + regression |
+| `S5` Auto-Fix | if critical | if critical | all critical/major | all critical/major | all critical/major |
+| `S6` Delivery | internal draft note | polish notes | delivery note | full delivery package | full delivery package + artifacts |
+
+Gate:
+
+- `express` 和 `quick-polish` 不应读取完整 stage 体系，除非用户升档。
+- `partner-ready` 和 `client-ready` 必须维护 `confirmation_log.json`。
+- `client-ready` 的 `S2.6` 不得跳过，除非记录 `assumed_user_requested_direct` 或 `preview_unavailable_confirmed`。
+
 ### Stage 0: Phase Lock Check
 
 `partner-ready` 以上项目启用 `phase_lock`。当用户、项目经理或合伙人确认了关键产物后，在对应 artifact 中写入：
@@ -56,6 +80,7 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 Read:
 
 - `brief.json`
+- `confirmation_log.json`
 - `source_digest.md`
 - `data_pool.json`
 - `lineage_map.json`
@@ -78,6 +103,9 @@ Read:
 Apply:
 
 - `references/task-tier-protocol.md`
+- `references/tier-stage-matrix.md`
+- `references/confirmation-state-machine.md`
+- `references/confirmation-log-standard.md`
 - `references/v2-capability-router.md`
 - `references/artifact-validation-standard.md`
 - `references/logic-gate-checklist.md`
@@ -152,6 +180,7 @@ Apply:
 - `references/visual-rendering-engine.md`
 - `references/visual-rhythm-orchestrator.md` for rhythm score and buffer page decisions
 - `references/page-family-contracts.md`
+- `references/template-fill-level-standard.md`
 - `references/section-divider-image-protocol.md` for section pages
 - `references/professional-chart-rulebook.md` for all core charts
 - `references/professional-image-rulebook.md` for all images
@@ -219,6 +248,7 @@ Gate:
 - `partner-ready` 项目若跳过 HTML preview，必须在交付说明中写明。
 - `revise_required` 状态不得进入批量构建。
 - 关键页预览至少覆盖执行摘要、核心分析页和章节/小结页。
+- 高频正文模板必须达到 `structured` 或 `filled` 的 fill level；出现可见 placeholder 时不得进入客户交付。
 
 ### Stage 3: Render Preview
 

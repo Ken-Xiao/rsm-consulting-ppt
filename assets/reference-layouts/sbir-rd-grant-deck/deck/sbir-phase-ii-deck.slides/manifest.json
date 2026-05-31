@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "SBIR Phase II — Nanomolar Biomarker Assay Platform",
+    "description": "NIH Phase II SBIR application deck, rubric-mapped, commercialization-grade",
+    "author": "Helix Diagnostics, Inc."
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-significance.html",
+    "03-innovation.html",
+    "04-phase-i-results.html",
+    "05-technical-objectives.html",
+    "06-work-plan-gantt.html",
+    "07-trl-progression.html",
+    "08-rigor-feasibility.html",
+    "09-investigators-environment.html",
+    "10-commercial-market.html",
+    "11-commercial-channel-revenue.html",
+    "12-transition-partner.html",
+    "13-risk-register.html",
+    "14-budget.html",
+    "15-team-past-performance.html",
+    "16-rubric-map.html"
+  ]
+}

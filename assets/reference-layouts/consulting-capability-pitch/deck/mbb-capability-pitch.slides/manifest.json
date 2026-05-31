@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Capability Pitch — Specialty Chemicals Revenue-Growth Mandate",
+    "description": "MBB partner-grade beauty-parade deck. 16 slides + sources appendix. Right-to-Win on slide 02, Proof Stack on 06-08, Named Team on 13, Decisions Required on 16.",
+    "author": "Capability Pitch Skill"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "cover.html",
+    "right-to-win.html",
+    "our-understanding.html",
+    "differentiation.html",
+    "proof-stack-overview.html",
+    "comparable-01.html",
+    "comparable-02.html",
+    "comparable-03.html",
+    "methodology.html",
+    "what-is-different.html",
+    "workplan.html",
+    "engagement-model.html",
+    "named-team.html",
+    "commercials.html",
+    "risks.html",
+    "decisions-required.html",
+    "sources.html"
+  ]
+}

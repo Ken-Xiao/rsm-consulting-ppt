@@ -90,6 +90,7 @@ function layoutLockFor(profile) {
 }
 
 const brief = readArtifactJson("brief.json", false);
+const taskTier = brief?.tier || brief?.task_tier || brief?.delivery_tier || null;
 if (brief) {
   requireFields(brief, "brief.json", [
     "audience",
@@ -110,6 +111,34 @@ if (brief) {
   if ((brief.tier === "express" || brief.delivery_status === "internal-draft") && brief.client_ready === true) {
     result.critical.push({ artifact: "brief.json", issue: "express/internal-draft cannot be marked client-ready" });
   }
+}
+
+const confirmationLog = readArtifactJson("confirmation_log.json", false);
+const requiresConfirmationLog = ["partner-ready", "client-ready", "pipeline"].includes(taskTier);
+if (confirmationLog) {
+  requireFields(confirmationLog, "confirmation_log.json", ["project_id", "tier", "nodes"], "major");
+  const nodes = arr(confirmationLog.nodes);
+  const nodeByName = new Map(nodes.map((node) => [node.node, node]));
+  const requiredNodes = taskTier === "client-ready" || taskTier === "pipeline"
+    ? ["CN1_framework", "CN2_layout", "CN3_html_preview"]
+    : taskTier === "partner-ready"
+      ? ["CN1_framework", "CN2_layout"]
+      : [];
+  for (const name of requiredNodes) {
+    const node = nodeByName.get(name);
+    if (!node) {
+      result.major.push({ artifact: "confirmation_log.json", issue: `missing confirmation node: ${name}` });
+      continue;
+    }
+    for (const field of ["status", "requested_at", "user_signal"]) {
+      if (!node[field]) result.major.push({ artifact: "confirmation_log.json", node: name, issue: `missing ${field}` });
+    }
+    if (["pending", "blocked", "pending_user_answers", "pending_framework_confirmation", "pending_layout_confirmation", "pending_html_preview_confirmation"].includes(node.status)) {
+      result.major.push({ artifact: "confirmation_log.json", node: name, issue: `confirmation status blocks build: ${node.status}` });
+    }
+  }
+} else if (requiresConfirmationLog) {
+  result.warning.push({ artifact: "confirmation_log.json", issue: "missing confirmation log for gated workflow" });
 }
 
 const consultingPyramid = readArtifactJson("consulting_pyramid.json", false);
@@ -172,6 +201,21 @@ if (insightLayoutMap) {
 
 const presetMap = readArtifactJson("preset_map.json", false);
 
+if (confirmationLog) {
+  const nodeByName = new Map(arr(confirmationLog.nodes).map((node) => [node.node, node]));
+  const cn1Status = nodeByName.get("CN1_framework")?.status;
+  const cn2Status = nodeByName.get("CN2_layout")?.status;
+  const pendingStatuses = new Set(["pending", "blocked", "pending_user_answers", "pending_framework_confirmation", "pending_layout_confirmation"]);
+  if ((presetMap || storyline) && pendingStatuses.has(cn1Status)) {
+    result.critical.push({ artifact: "confirmation_log.json", issue: `CN1_framework blocks storyline/preset build: ${cn1Status}` });
+  }
+  if (presetMap && pendingStatuses.has(cn2Status)) {
+    result.major.push({ artifact: "confirmation_log.json", issue: `CN2_layout blocks build: ${cn2Status}` });
+  }
+} else if (presetMap) {
+  result.warning.push({ artifact: "confirmation_log.json", issue: "missing confirmation log while preset_map exists" });
+}
+
 const contentDensity = readArtifactJson("content_density_report.json", false);
 if (contentDensity) {
   requireFields(contentDensity, "content_density_report.json", ["status", "summary", "pages"], "major");
@@ -193,6 +237,27 @@ if (contentDensity) {
   result.warning.push({ artifact: "content_density_report.json", issue: "missing content density precheck before layout build" });
 }
 
+const referenceLayoutProfile = readArtifactJson("reference_layout_profile.json", false);
+if (referenceLayoutProfile) {
+  requireFields(referenceLayoutProfile, "reference_layout_profile.json", [
+    "profile_id",
+    "source_path",
+    "preview_count",
+    "best_for",
+    "slide_geometry",
+    "layout_anatomy",
+    "typography",
+    "color_system",
+    "page_families",
+  ], "major");
+  for (const family of arr(referenceLayoutProfile.page_families)) {
+    const id = family.family_id || "unknown";
+    for (const field of ["source_preview", "use_when", "required_content", "replication_notes"]) {
+      if (!family[field]) result.major.push({ artifact: "reference_layout_profile.json", family_id: id, issue: `missing ${field}` });
+    }
+  }
+}
+
 if (presetMap) {
   const pages = arr(presetMap.pages || presetMap);
   for (const page of pages) {
@@ -202,6 +267,23 @@ if (presetMap) {
     }
     if (!page.exhibit_structure && !/cover|agenda|section/i.test(page.page_family || "")) {
       result.major.push({ page: id, artifact: "preset_map.json", issue: "body page missing exhibit_structure" });
+    }
+    const highFrequencyFamilies = new Set([
+      "insurance_results_chart_card",
+      "chart_plus_insight_panel",
+      "paired_period_comparison",
+      "stacked_contribution_split",
+      "financial_metric_grid",
+      "executive_takeaways",
+      "management_action_plan",
+      "practice_section_divider",
+      "case_evidence_panel",
+    ]);
+    if (highFrequencyFamilies.has(page.page_family) && page.fill_level && page.fill_level !== "filled") {
+      result.warning.push({ page: id, artifact: "preset_map.json", issue: "high-frequency page family should use fill_level=filled" });
+    }
+    if ((page.visible_placeholders || []).length > 0) {
+      result.major.push({ page: id, artifact: "preset_map.json", issue: "visible placeholders remain", placeholders: page.visible_placeholders });
     }
     if (!page.visual_fullness && !/cover|agenda|section/i.test(page.page_family || "")) {
       result.warning.push({ page: id, artifact: "preset_map.json", issue: "missing visual_fullness" });
@@ -259,6 +341,21 @@ if (layoutAnalysis) {
   }
   if ((summary.layout_gaps || 0) > 0) {
     result.major.push({ artifact: "layout_analysis_report.json", issue: "layout_gaps must be 0 before build" });
+  }
+  const refChoice = layoutAnalysis.reference_layout_choice;
+  if (refChoice) {
+    if (!refChoice.primary_visual_profile || !refChoice.selection_reason) {
+      result.major.push({ artifact: "layout_analysis_report.json", issue: "reference_layout_choice missing primary_visual_profile or selection_reason" });
+    }
+    for (const pageRef of arr(refChoice.pages_using_reference)) {
+      const id = pageRef.page_id || "unknown";
+      for (const field of ["reference_profile", "reference_page_family", "source_preview", "replication_scope", "best_rsm_profile_match"]) {
+        if (!pageRef[field]) result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: `reference layout choice missing ${field}` });
+      }
+    }
+    if (!referenceLayoutProfile && arr(refChoice.pages_using_reference).length > 0) {
+      result.warning.push({ artifact: "reference_layout_profile.json", issue: "layout_analysis_report uses reference layouts but reference_layout_profile.json is missing" });
+    }
   }
   for (const page of arr(layoutAnalysis.pages)) {
     const id = page.page_id || "unknown";

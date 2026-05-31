@@ -20,6 +20,12 @@
 
 ## Non-Negotiable Gate
 
+执行本协议前必须读取：
+
+- `confirmation-state-machine.md`
+- `confirmation-log-standard.md`
+- `agent-behavioral-guardrail.md`
+
 本协议有两个连续门槛：
 
 1. **Question Gate**：先问 4-8 个确认问题，并等待用户回答。
@@ -31,6 +37,8 @@
 - 详细图表数据、图表样式和页面视觉稿。
 - PPTX 正式构建。
 - 对客户可见的 final deck。
+
+当输出问题或框架确认包后，当前回复必须停在用户确认请求，不得继续生成后续 stage。
 
 允许先生成：
 
@@ -126,6 +134,8 @@
 | `confirmed_with_changes` | 用户提出调整 | 先更新框架，再进入细节 |
 | `assumed_user_requested_direct` | 用户明确要求跳过提问并直接生成最终 PPT | 可以推进，但交付说明中标记风险 |
 | `blocked` | 用户未确认且无法合理假设 | 不进入逐页生成 |
+
+确认状态应同时写入 `confirmation_log.json` 的 `CN1_framework` 节点。`partner-ready` 以上项目如果没有该日志，不得进入 `preset_map.json`。
 
 ## Quality Rules
 

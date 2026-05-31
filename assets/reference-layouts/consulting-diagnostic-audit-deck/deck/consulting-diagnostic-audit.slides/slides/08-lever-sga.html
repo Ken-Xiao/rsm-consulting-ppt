@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lever 2 — SG&amp;A</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="08 Lever SG&amp;A" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 8 · Lever 2 · SG&amp;A — Span-of-control normalisation</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">Average span is 5.2 vs benchmark 7.0; 184 managers fall below span&nbsp;5. Collapsing layers L2→L4 removes 41 positions and <span style="color:#B91C1C;">$7.1M of cost</span>.</div>
+  </div>
+
+  <!-- LEFT: Span distribution histogram -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:1080px; height:780px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:228px; width:1024px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#94A3B8; text-transform:uppercase;">Distribution of manager spans (n = 372 people-managers)</div>
+    <div style="margin-top:10px; font-size:18px; color:#334155; line-height:1.4;">Benchmark target span = 7. Bars left of the dashed line are <span style="color:#B91C1C; font-weight:600;">under-spanned</span> — addressable in normalisation.</div>
+  </div>
+
+  <!-- Histogram (12 buckets) -->
+  <!-- Baseline -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:780px; width:980px; height:2px; background:#0B1729; z-index:3;"></div>
+  <!-- Benchmark dashed line at span 7 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:340px; width:2px; height:440px; background:repeating-linear-gradient(to bottom, #1E40AF 0 6px, transparent 6px 12px); z-index:4;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:600px; top:308px; width:200px; text-align:center; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#1E40AF; letter-spacing:0.16em;">▼ BENCHMARK = 7</div>
+  </div>
+
+  <!-- Bars (12 buckets, widths 60px, gap 16px). Start left:140 -->
+  <!-- span 1: 22 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:152px; top:660px; width:60px; height:120px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:142px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">1</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:142px; top:638px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">22</div></div>
+
+  <!-- span 2: 28 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:228px; top:628px; width:60px; height:152px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:218px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">2</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:218px; top:606px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">28</div></div>
+
+  <!-- span 3: 42 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:304px; top:548px; width:60px; height:232px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:294px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">3</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:294px; top:526px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">42</div></div>
+
+  <!-- span 4: 48 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:380px; top:516px; width:60px; height:264px; background:#B91C1C; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:370px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">4</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:370px; top:494px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">48</div></div>
+
+  <!-- span 5: 44 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:456px; top:540px; width:60px; height:240px; background:#94A3B8; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:446px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">5</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:446px; top:518px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">44</div></div>
+
+  <!-- span 6: 52 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:532px; top:494px; width:60px; height:286px; background:#94A3B8; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:522px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">6</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:522px; top:472px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">52</div></div>
+
+  <!-- span 7: 56 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:608px; top:470px; width:60px; height:310px; background:#1E40AF; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:598px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569; font-weight:600;">7</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:598px; top:448px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">56</div></div>
+
+  <!-- span 8: 34 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:684px; top:594px; width:60px; height:186px; background:#1E40AF; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:674px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">8</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:674px; top:572px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">34</div></div>
+
+  <!-- span 9: 24 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:660px; width:60px; height:120px; background:#1E40AF; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:750px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">9</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:750px; top:638px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">24</div></div>
+
+  <!-- span 10: 14 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:836px; top:700px; width:60px; height:80px; background:#1E40AF; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:826px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">10</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:826px; top:678px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">14</div></div>
+
+  <!-- span 11+: 8 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:912px; top:730px; width:60px; height:50px; background:#1E40AF; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:902px; top:790px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#475569;">11+</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:902px; top:708px; width:80px; text-align:center; z-index:10;"><div class="num" style="font-size:13px; color:#0B1729; font-weight:600;">8</div></div>
+
+  <!-- Y axis label / axis title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:820px; width:980px; text-align:center; z-index:10;">
+    <div style="font-family:'Inter', sans-serif; font-size:14px; font-weight:600; color:#0B1729;">Direct reports per manager (span)</div>
+  </div>
+
+  <!-- callout band beneath the chart -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:866px; width:1024px; height:88px; background:#FEE2E2; border-left:6px solid #B91C1C; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:132px; top:884px; width:976px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.18em; color:#B91C1C; text-transform:uppercase;">Under-span (span &lt; 5)</div>
+    <div style="margin-top:6px; font-size:18px; color:#0B1729; line-height:1.4;"><span class="num" style="font-weight:600;">184 managers</span> (49% of total) span &lt; 5 · normalise to span 7 → <span class="num" style="font-weight:600;">−41 positions</span> · avg loaded cost <span class="num" style="font-weight:600;">$173K</span> · <span class="num" style="font-weight:600; color:#B91C1C;">$7.1M</span> annualized</div>
+  </div>
+
+  <!-- RIGHT panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:200px; width:660px; height:780px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1208px; top:228px; width:604px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">Mechanism</div>
+    <div style="margin-top:14px; font-size:17px; color:#E2E8F0; line-height:1.6;">
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">Step 1.</b> Org-design refresh L2 → L4: target span = 7 (people) / 5 (specialists). Lock 5 design principles with CHRO + CEO.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">Step 2.</b> Position-by-position review (n=372 managers); 41 positions eliminated via attrition + selective exits.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">Step 3.</b> Manager toolkit (delegation matrix, decision rights, 1:1 rituals) so larger spans are sustainable.</div>
+      <div><b style="color:#FFFFFF;">Step 4.</b> Spans reported in the standing CEO scorecard; no manager re-enters &lt;5 span without CFO sign-off.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1208px; top:744px; width:604px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+      <div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">$ IMPACT</div>
+        <div class="num" style="font-size:34px; font-weight:600; color:#FFFFFF; margin-top:6px;">$7.1M</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">annualized · HIGH confidence</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">OWNER</div>
+        <div style="font-size:18px; font-weight:600; color:#FFFFFF; margin-top:6px;">L. Okafor · CHRO</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">CFO co-sign on severance envelope</div>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">TOP RISK</div>
+      <div style="font-size:15px; color:#CBD5E1; margin-top:8px; line-height:1.5;">Knowledge loss in 2 specialist sub-functions (regulatory affairs, controllership) — mitigate with 90-day overlap and transition plans.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: Workday org export 2026-04-30; engagement team org-design build · Bench. Bain PI org-effectiveness lever<sup>[2]</sup></div>
+      <div>08 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

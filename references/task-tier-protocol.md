@@ -16,6 +16,20 @@
 | `client-ready` | 正式客户交付、董事会/管理层/投委会/监管汇报，或用户明确要求高质量成稿 | 可转发/上会的完整 deck | 必须有完整事实池、lineage、证据矩阵、preset map、contact sheet、final review 和 scorecard |
 | `pipeline` | 用户要求搭建、复刻或自动化 PPT 生产系统 | 模板、脚本、manifest、样张回归 | 必须有 manifest、样张、回归报告和可维护目录 |
 
+## Tier Build Stages
+
+选定 tier 后，读取 `references/tier-stage-matrix.md` 并使用对应 stage 列表：
+
+| Tier | Stage list |
+|---|---|
+| `express` | `S1-minimal → S2-simple → S4-basic → S6-draft` |
+| `quick-polish` | `S1-minimal → S2-patch → S3-optional → S4-basic → S6-polish` |
+| `partner-ready` | `S0 → S1 → S1.6 → S2.5 → S2.6 recommended → S2 → S3 → S4 → S5 → S6` |
+| `client-ready` | `S0 → S1 → S1.5 → S1.6 → S2.5 → S2.6 → S2 → S3 → S4 → S5 → S6` |
+| `pipeline` | `S0 → S1 → S1.5 → S1.6 → S2.5 → S2.6 → S2 → S3 → S4 → S5 → S6 → regression` |
+
+不要在 `express` 或 `quick-polish` 中默认加载完整 `client-ready` references。
+
 ## Express Minimum
 
 `express` 是 Genspark-style 快速通道，只适用于内部讨论和初稿探索。
@@ -77,6 +91,8 @@
 - `sample-regression-test.md` 或等价 contact sheet 检查
 - `client-meeting-minutes-test.md`
 - `deck-quality-scorecard.md`
+- `confirmation-state-machine.md`
+- `confirmation-log-standard.md`
 
 交付前必须生成：
 
@@ -86,6 +102,7 @@
   "required_artifacts": {
     "brief": true,
     "source_digest": true,
+    "confirmation_log": true,
     "data_pool": true,
     "lineage_map": true,
     "consulting_pyramid": true,

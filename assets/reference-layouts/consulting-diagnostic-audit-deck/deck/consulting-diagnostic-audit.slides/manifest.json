@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Operational Diagnostic — Meridian Industrial Components",
+    "description": "10-day diagnostic readout: $42M annualized improvement opportunity across 5 levers; Phase-2 implementation ask",
+    "author": "Engagement Team"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-executive-answer.html",
+    "03-diagnostic-approach.html",
+    "04-baseline-performance.html",
+    "05-top5-opportunities.html",
+    "06-effort-impact-2x2.html",
+    "07-lever-procurement.html",
+    "08-lever-sga.html",
+    "09-lever-pricing.html",
+    "10-lever-working-capital.html",
+    "11-lever-footprint.html",
+    "12-rapid-root-cause.html",
+    "13-quick-wins.html",
+    "14-phase2-roadmap.html",
+    "15-risks-dependencies.html",
+    "16-governance.html",
+    "17-the-ask.html",
+    "18-appendix-sources.html"
+  ]
+}

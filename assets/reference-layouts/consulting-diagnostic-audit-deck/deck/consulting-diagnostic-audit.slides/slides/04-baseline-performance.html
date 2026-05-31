@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Baseline Performance</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="04 Baseline" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 4 · Baseline performance — Meridian vs internal best vs external benchmark</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">Meridian trails benchmark on <span style="color:#B91C1C;">7 of 10 levers</span>; the gap is largest in pricing realisation, indirect spend, and span-of-control.</div>
+  </div>
+
+  <!-- TABLE -->
+  <!-- Header row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:1760px; height:54px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:216px; width:1728px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; gap:0; font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:0.10em; color:#94A3B8; text-transform:uppercase;">
+      <div>#</div>
+      <div>Performance lever</div>
+      <div style="text-align:right; padding-right:16px;">Meridian FY25</div>
+      <div style="text-align:right; padding-right:16px;">Internal best (plant)</div>
+      <div style="text-align:right; padding-right:16px;">External benchmark</div>
+      <div style="text-align:right; padding-right:16px;">Gap to bench.</div>
+      <div style="padding-left:16px;">Status</div>
+    </div>
+  </div>
+
+  <!-- Rows -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:254px; width:1760px; height:680px; background:#FFFFFF; border:1px solid #E2E8F0; border-top:0; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:268px; width:1728px; z-index:10;">
+    <div style="font-size:16px; color:#0F172A;">
+      <!-- helper class via inline grid -->
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">01</div>
+        <div>Procurement — indirect spend / revenue</div>
+        <div class="num" style="text-align:right; padding-right:16px;">14.8%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">11.9%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">10.6%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B91C1C; font-weight:600;">−420 bps</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEE2E2; color:#B91C1C; border-radius:2px; font-size:12px; font-weight:600;">RED</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">02</div>
+        <div>Pricing — list-to-pocket realisation</div>
+        <div class="num" style="text-align:right; padding-right:16px;">71.2%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">78.4%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">82.0%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B91C1C; font-weight:600;">−1,080 bps</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEE2E2; color:#B91C1C; border-radius:2px; font-size:12px; font-weight:600;">RED</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">03</div>
+        <div>SG&amp;A — span-of-control (avg)</div>
+        <div class="num" style="text-align:right; padding-right:16px;">5.2</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">6.9</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">7.0</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B91C1C; font-weight:600;">−1.8</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEE2E2; color:#B91C1C; border-radius:2px; font-size:12px; font-weight:600;">RED</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">04</div>
+        <div>Working capital — DSO (days)</div>
+        <div class="num" style="text-align:right; padding-right:16px;">62</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">51</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">48</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B91C1C; font-weight:600;">+14 days</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEE2E2; color:#B91C1C; border-radius:2px; font-size:12px; font-weight:600;">RED</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">05</div>
+        <div>Footprint — DC utilisation (avg)</div>
+        <div class="num" style="text-align:right; padding-right:16px;">58%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">74%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">76%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B91C1C; font-weight:600;">−18 pp</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEE2E2; color:#B91C1C; border-radius:2px; font-size:12px; font-weight:600;">RED</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">06</div>
+        <div>Manufacturing — OEE (top-5 plants)</div>
+        <div class="num" style="text-align:right; padding-right:16px;">63%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">71%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">72%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B45309; font-weight:600;">−9 pp</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEF3C7; color:#B45309; border-radius:2px; font-size:12px; font-weight:600;">AMBER</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">07</div>
+        <div>Logistics — cost / order</div>
+        <div class="num" style="text-align:right; padding-right:16px;">$27.40</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">$22.10</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">$21.80</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B45309; font-weight:600;">+$5.60</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEF3C7; color:#B45309; border-radius:2px; font-size:12px; font-weight:600;">AMBER</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">08</div>
+        <div>R&amp;D / NPI — % revenue from &lt;3-yr SKUs</div>
+        <div class="num" style="text-align:right; padding-right:16px;">14%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">19%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">21%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#B45309; font-weight:600;">−7 pp</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#FEF3C7; color:#B45309; border-radius:2px; font-size:12px; font-weight:600;">AMBER</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0; border-bottom:1px solid #E2E8F0;">
+        <div class="num" style="color:#64748B;">09</div>
+        <div>Quality — PPM defects</div>
+        <div class="num" style="text-align:right; padding-right:16px;">412</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">280</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">350</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#15803D; font-weight:600;">−62 vs ext.</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#DCFCE7; color:#15803D; border-radius:2px; font-size:12px; font-weight:600;">GREEN</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns: 70px 360px 220px 220px 220px 220px 1fr; align-items:center; padding:14px 0;">
+        <div class="num" style="color:#64748B;">10</div>
+        <div>Talent — voluntary attrition</div>
+        <div class="num" style="text-align:right; padding-right:16px;">8.1%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">6.4%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#64748B;">9.6%</div>
+        <div class="num" style="text-align:right; padding-right:16px; color:#15803D; font-weight:600;">−1.5 pp vs ext.</div>
+        <div style="padding-left:16px;"><span style="display:inline-block; padding:3px 10px; background:#DCFCE7; color:#15803D; border-radius:2px; font-size:12px; font-weight:600;">GREEN</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Callout strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:954px; width:1760px; height:50px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:968px; width:1704px; z-index:10;">
+    <div style="font-size:15px; color:#E2E8F0; line-height:1.4;"><span style="color:#60A5FA; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase;">SO WHAT ·</span> &nbsp; Five RED lines map directly to Levers 1–5 prioritised on slide 6. Two AMBER (manufacturing OEE, logistics) deferred to Phase-2 wave 2.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: Meridian GL FY25; 10-K filings of Roper, Parker, Watts FY24; IBISWorld Industrial Components benchmarks 2025</div>
+      <div>04 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>02 — Stage Definitions Lock-in</title>
+<link rel="stylesheet" href="../assets/base.css">
+</head>
+<body>
+<div class="slide-container" data-screen-label="02 Stage Lock-in" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--mist);">
+
+  <!-- Slide number -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:64px;top:48px;width:200px;height:28px;z-index:10;">
+    <div class="kicker">02 · Stage Lock-in</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:64px;top:90px;width:1300px;height:80px;z-index:10;">
+    <div class="h-display" style="font-size:56px;line-height:1.1;">Stage definitions, locked to the CRM.</div>
+  </div>
+
+  <!-- Subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:64px;top:180px;width:1380px;height:54px;z-index:10;">
+    <div style="font-size:22px;line-height:1.4;color:var(--muted);">
+      Every percentage in this deck cites these stage IDs. If a stage has no exit criteria, downstream conversion is refused.
+    </div>
+  </div>
+
+  <!-- Right-side stat strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1456px;top:90px;width:400px;height:160px;background:var(--slate);border-radius:6px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1480px;top:104px;width:360px;height:132px;z-index:10;color:#fff;">
+    <div class="kicker" style="color:#9FB0FF;">Lock-in status</div>
+    <div style="display:flex;gap:22px;margin-top:12px;align-items:flex-end;">
+      <div>
+        <div class="h-display" style="font-size:54px;color:#fff;line-height:1;">6 / 7</div>
+        <div style="font-size:13px;color:#9FB0FF;margin-top:4px;">stages with exit criteria</div>
+      </div>
+      <div style="border-left:1px solid #2A3E5E;padding-left:22px;">
+        <div class="h-display" style="font-size:54px;color:#FBBF24;line-height:1;">1</div>
+        <div style="font-size:13px;color:#9FB0FF;margin-top:4px;">flag — Stage 4 lacks exit criteria</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table header -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:64px;top:268px;width:1792px;height:50px;background:var(--slate);border-radius:6px 6px 0 0;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:84px;top:268px;width:1752px;height:50px;z-index:10;">
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:50px;color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">
+      <div>Stage ID</div>
+      <div>Stage Name</div>
+      <div>Exit Criteria</div>
+      <div style="text-align:right;">Avg Days</div>
+      <div style="text-align:right;">Open Count</div>
+      <div style="text-align:right;padding-right:8px;">Status</div>
+    </div>
+  </div>
+
+  <!-- Table body -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:64px;top:318px;width:1792px;height:610px;z-index:10;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px;">
+    <!-- Row template -->
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);">
+      <div><span class="pill pill-stage">SF.01</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Prospecting</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">ICP fit confirmed · primary contact + role identified · discovery call booked</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">12</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">184</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);">
+      <div><span class="pill pill-stage">SF.02</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Qualification</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">Pain quantified · MEDDIC M + I scored · budget range disclosed · next step on calendar</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">18</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">96</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);">
+      <div><span class="pill pill-stage">SF.03</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Discovery & Demo</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">Technical demo delivered · Champion identified (MEDDIC C) · Decision Criteria documented</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">22</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">71</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);background:#FFFBEB;">
+      <div><span class="pill pill-stage">SF.04</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Proposal</div>
+      <div style="font-size:15px;color:#8A4B05;line-height:1.4;font-style:italic;">⚠ No formal exit criteria documented. Q3 ask: define before Q4 kickoff (owner: M. Bianchi).</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">26</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">48</div>
+      <div style="text-align:right;"><span class="pill pill-amber">⚠ flag</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);">
+      <div><span class="pill pill-stage">SF.05</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Negotiation</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">Economic Buyer named (MEDDIC E) · redlines exchanged · verbal commit on price/terms</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">19</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">29</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;border-bottom:1px solid var(--mist-2);">
+      <div><span class="pill pill-stage">SF.06</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Closing</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">Order form sent · procurement queue confirmed · signature ETA on calendar</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">11</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">17</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:120px 220px 1fr 130px 130px 120px;align-items:center;height:87px;padding:0 20px;">
+      <div><span class="pill pill-stage">SF.07</span></div>
+      <div style="font-size:18px;font-weight:600;color:var(--slate);">Closed-Won / Lost</div>
+      <div style="font-size:15px;color:var(--ink);line-height:1.4;">Counter-signed contract OR Closed-Lost reason picklist + verbatim quote</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">—</div>
+      <div style="text-align:right;font-size:22px;" class="tnum">—</div>
+      <div style="text-align:right;"><span class="pill pill-green">● locked</span></div>
+    </div>
+  </div>
+
+  <!-- Footnote -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:64px;top:952px;width:1792px;height:40px;z-index:10;">
+    <div class="cite">
+      Source: Salesforce Opportunity object, custom <span class="mono">StageName</span> picklist; refreshed via read-only REST API on 14 May 26 06:00 UTC<sup>[9]</sup>.
+      Stage lock-in concept is the foundation of every percentage in this deck.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot" data-object="true" data-object-type="textbox">
+    <div class="crumb"><span>HELIX CLOUD · QBR Q3 FY26</span></div>
+    <div>02 / 16</div>
+  </div>
+</div>
+</body>
+</html>

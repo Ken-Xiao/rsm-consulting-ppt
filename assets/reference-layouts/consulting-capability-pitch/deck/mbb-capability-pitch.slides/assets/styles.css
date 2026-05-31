@@ -1,0 +1,34 @@
+/* MBB Capability Pitch — shared style tokens
+ * Palette: navy #1F2A44, ochre #B68C2E, slate #5A6271, white, charcoal #1B1B1B
+ * Type:   Source Serif 4 (headings), Inter (body), IBM Plex Mono (chips)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --navy:    #1F2A44;
+  --navy-2:  #2A375A;
+  --ochre:   #B68C2E;
+  --ochre-2: #D9A538;
+  --slate:   #5A6271;
+  --slate-2: #8A909C;
+  --rule:    #D8DAE0;
+  --rule-2:  #E8E9ED;
+  --bg:      #FFFFFF;
+  --ink:     #1B1B1B;
+  --paper:   #F4F5F7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Source Serif 4', Georgia, serif; }
+.mono  { font-family: 'IBM Plex Mono', monospace; }

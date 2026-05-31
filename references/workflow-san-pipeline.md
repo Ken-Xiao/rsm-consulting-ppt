@@ -28,16 +28,18 @@
 | 1. Strategic Brief | 受众、决策、范围、视觉偏好 | `brief.json` |
 | 2. Source Digest | 提取用户材料、PDF/PPT/Excel事实 | `source_digest.md` |
 | 3. Framework Confirmation | 基于材料确认核心问题、总答案假设、分析框架、章节结构和页数预算 | `framework_confirmation.md` |
-| 4. Fact/Data Pool | 结构化事实、指标、口径、来源 | `data_pool.json` + `lineage_map.json` |
-| 5. Insight Spine | 找主要发现和叙事张力 | `insights.json` |
-| 6. Insight-To-Layout Mapping | 将洞察类型映射到页面角色、逻辑关系和推荐版式 | `insight_layout_map.json` |
-| 7. Content Density Precheck | 判断每页证据量是否过薄、均衡或过载 | `content_density_report.json` |
-| 8. Conclusion Evidence Matrix | 绑定核心结论、证据强度、限制和页面 | `conclusion_evidence_matrix.json` |
-| 9. Contradiction & Action Synthesis | 提炼结构性矛盾、压力情景和行动推导链 | `contradiction_map.json` + `action_derivation_map.json` + `scenario_analysis.json` |
-| 10. Argument Map | 建立客户问题、章节答案、页面判断和证据对象 | `argument_map.json` |
-| 11. Storyline Split | 拆主标题故事线、副标题、标题适配和逐页角色 | `title_spine.md` + `storyline_map.json` |
-| 12. Slide Plan | 页级标题、证明对象、版式 | `outline.json` |
-| 13. Design Blueprint | visual profile、网格、字号、preset 映射 | `design_system.json` |
+| 4. Confirmation Log | 记录 CN1/CN2/CN3 用户确认、修改和跳过风险 | `confirmation_log.json` |
+| 5. Fact/Data Pool | 结构化事实、指标、口径、来源 | `data_pool.json` + `lineage_map.json` |
+| 6. Insight Spine | 找主要发现和叙事张力 | `insights.json` |
+| 7. Insight-To-Layout Mapping | 将洞察类型映射到页面角色、逻辑关系和推荐版式 | `insight_layout_map.json` |
+| 8. Content Density Precheck | 判断每页证据量是否过薄、均衡或过载 | `content_density_report.json` |
+| 9. Conclusion Evidence Matrix | 绑定核心结论、证据强度、限制和页面 | `conclusion_evidence_matrix.json` |
+| 10. Contradiction & Action Synthesis | 提炼结构性矛盾、压力情景和行动推导链 | `contradiction_map.json` + `action_derivation_map.json` + `scenario_analysis.json` |
+| 11. Argument Map | 建立客户问题、章节答案、页面判断和证据对象 | `argument_map.json` |
+| 12. Storyline Split | 拆主标题故事线、副标题、标题适配和逐页角色 | `title_spine.md` + `storyline_map.json` |
+| 13. Slide Plan | 页级标题、证明对象、版式 | `outline.json` |
+| 14. Design Blueprint | visual profile、网格、字号、preset 映射 | `design_system.json` |
+| 14.5. Reference Layout Selection | 按场景选择 `assets/reference-layouts/` 中的候选版式并提取复刻规则 | `reference_layout_profile.json` |
 
 ### Layer 2: Preset Build Workflow
 
@@ -45,19 +47,19 @@
 
 | Stage | Role | Output |
 |---|---|---|
-| 14. Template Manifest | 将 page family 映射到模板、必填字段和 QA 重点 | `template_manifest.json` |
-| 15. Preset Assignment | 给每页分配 page family，并按 visual profile 锁定白名单版式 | `preset_map.json` |
-| 16. Layout Analysis | 生成全 deck 版式分配、密度风险和 fallback 报告，等待用户确认 | `layout_analysis_report.json` |
-| 17. HTML Key Preview | 生成 3-5 张关键页 HTML/截图样张，等待用户确认 | `html_preview_report.json` |
-| 18. Page Visual Intent | 为每页定义逻辑关系和视觉表达 | `visual_intent/Pxx.json` |
-| 19. Page Family Contract | 校验每页 preset 输入字段和版式约束 | `preset_map.json` updated |
-| 20. Chart Data Adapter | 把数据转成图表输入并补图表观点/基准/口径 | `chart_data/Pxx.json` |
-| 21. Image Asset Register | 登记封面图、章节图、案例图、AI 生成图和使用边界 | `image_assets.json` |
-| 22. Milestone Preview | 分段预览封面摘要、首个诊断模块和综合行动页 | `milestone_review.json` |
-| 23. HTML/PPT Draft | 用 preset 生成页面主体 | `draft_pages/` |
-| 24. PPTX Assembly | 组装可编辑 PPTX | `.pptx` |
-| 25. Visual QA | 渲染截图检查溢出/重叠/字号/图表/图片 | `review_report.json` |
-| 26. Repair Loop | 修复最弱页面并重渲染 | final `.pptx` |
+| 15. Template Manifest | 将 page family 映射到模板、必填字段和 QA 重点 | `template_manifest.json` |
+| 16. Preset Assignment | 给每页分配 page family，并按 visual profile 锁定白名单版式 | `preset_map.json` |
+| 17. Layout Analysis | 生成全 deck 版式分配、密度风险和 fallback 报告，等待用户确认 | `layout_analysis_report.json` |
+| 18. HTML Key Preview | 生成 3-5 张关键页 HTML/截图样张，等待用户确认 | `html_preview_report.json` |
+| 19. Page Visual Intent | 为每页定义逻辑关系和视觉表达 | `visual_intent/Pxx.json` |
+| 20. Page Family Contract | 校验每页 preset 输入字段和版式约束 | `preset_map.json` updated |
+| 21. Chart Data Adapter | 把数据转成图表输入并补图表观点/基准/口径 | `chart_data/Pxx.json` |
+| 22. Image Asset Register | 登记封面图、章节图、案例图、AI 生成图和使用边界 | `image_assets.json` |
+| 23. Milestone Preview | 分段预览封面摘要、首个诊断模块和综合行动页 | `milestone_review.json` |
+| 24. HTML/PPT Draft | 用 preset 生成页面主体 | `draft_pages/` |
+| 25. PPTX Assembly | 组装可编辑 PPTX | `.pptx` |
+| 26. Visual QA | 渲染截图检查溢出/重叠/字号/图表/图片 | `review_report.json` |
+| 27. Repair Loop | 修复最弱页面并重渲染 | final `.pptx` |
 
 ## Required Checkpoints
 
@@ -97,6 +99,12 @@
 - `deck-quality-scorecard.md`：对最终 deck 做量化评分。
 - `milestone-preview-protocol.md`：长 deck 分段预览，降低后期大返工风险。
 - `html-preview-protocol.md`：正式 PPTX 构建前生成关键页 HTML 预览并等待用户确认。
+- `confirmation-state-machine.md`：把 CN1/CN2/CN3 从自然语言确认升级为状态机。
+- `confirmation-log-standard.md`：记录确认信号、修改和锁定产物。
+- `template-fill-level-standard.md`：检查高频模板是否达到填充级，而不是只有 placeholder 骨架。
+- `reference-layout-library.md`：登记 `ppt版式/` 备选样本库。
+- `reference-layout-analysis-framework.md`：提取版面布局、字体、字号、结构、图表、表格和图片规则。
+- `scenario-layout-selector.md`：按场景选择默认 RSM profile 与备选参考版式。
 - `incremental-edit-protocol.md`：局部反馈只改必要范围，并记录 edit log。
 
 这些 gate 的输出应进入 `review_report.json` 或等价审校记录。

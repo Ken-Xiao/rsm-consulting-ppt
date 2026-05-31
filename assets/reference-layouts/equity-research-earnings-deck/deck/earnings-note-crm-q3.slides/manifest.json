@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Salesforce (CRM) — Q3 FY26 Earnings Note",
+    "description": "Pre-call sell-side earnings note: Reiterate Buy, PT $340. Revenue beat $190M on Data Cloud net-new ARR; guide implies Q4 reset.",
+    "author": "Maya Chen, CFA — Senior Associate, U.S. Enterprise Software"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-executive-summary.html",
+    "03-print-snapshot.html",
+    "04-revenue-bridge.html",
+    "05-eps-bridge.html",
+    "06-segment-geo.html",
+    "07-guidance-readthrough.html",
+    "08-kpi-operator.html",
+    "09-estimate-revisions.html",
+    "10-valuation-update.html",
+    "11-risk-catalyst-map.html",
+    "12-what-were-watching.html",
+    "13-qa-prep.html",
+    "14-disclosures-sources.html"
+  ]
+}

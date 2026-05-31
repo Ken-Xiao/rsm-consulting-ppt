@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risk Register</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+  body { margin:0; padding:0; overflow:hidden; font-family:'Public Sans', system-ui, sans-serif; color:#0F172A; background:#FFFFFF; }
+  .mono { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="13 Risk Register" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:84px; background:#1B3A6B; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:24px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.24em; color:#9CC2FF; text-transform:uppercase;">13 / 16 · Risk Register — likelihood × impact, with owners</div>
+      <div class="mono" style="font-size:14px; letter-spacing:0.18em; color:#9CC2FF;">Quarterly review · live document in Veeva QMS</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:14px; letter-spacing:0.22em; color:#9A2B2B; text-transform:uppercase;">Top-5 risks — named, scored, mitigated, owned</div>
+    <div style="font-size:54px; font-weight:800; line-height:1.06; color:#0F172A; margin-top:14px; letter-spacing:-0.015em;">No risk is &ldquo;a challenge to be addressed.&rdquo;</div>
+  </div>
+
+  <!-- Risk matrix (left) -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:80px; top:340px; width:560px; height:540px; z-index:10;">
+    <svg viewBox="0 0 560 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; font-family:'JetBrains Mono', monospace;">
+      <!-- Title -->
+      <text x="280" y="22" text-anchor="middle" font-size="14" fill="#0F172A" font-weight="700">Likelihood × Impact heat map</text>
+
+      <!-- Axes -->
+      <text x="20" y="290" font-size="12" fill="#0F172A" transform="rotate(-90 20 290)" text-anchor="middle">Likelihood →</text>
+      <text x="280" y="520" font-size="12" fill="#0F172A" text-anchor="middle">Impact →</text>
+
+      <!-- Cells -->
+      <g>
+        <rect x="80" y="40" width="100" height="100" fill="#FEF3C7"/><rect x="180" y="40" width="100" height="100" fill="#FCA5A5"/><rect x="280" y="40" width="100" height="100" fill="#9A2B2B"/><rect x="380" y="40" width="100" height="100" fill="#7C1F1F"/>
+        <rect x="80" y="140" width="100" height="100" fill="#FDE68A"/><rect x="180" y="140" width="100" height="100" fill="#FCA5A5"/><rect x="280" y="140" width="100" height="100" fill="#FCA5A5"/><rect x="380" y="140" width="100" height="100" fill="#9A2B2B"/>
+        <rect x="80" y="240" width="100" height="100" fill="#D9F99D"/><rect x="180" y="240" width="100" height="100" fill="#FDE68A"/><rect x="280" y="240" width="100" height="100" fill="#FCA5A5"/><rect x="380" y="240" width="100" height="100" fill="#FCA5A5"/>
+        <rect x="80" y="340" width="100" height="100" fill="#BBF7D0"/><rect x="180" y="340" width="100" height="100" fill="#D9F99D"/><rect x="280" y="340" width="100" height="100" fill="#FDE68A"/><rect x="380" y="340" width="100" height="100" fill="#FCA5A5"/>
+      </g>
+
+      <!-- Risk markers (R1..R5) plotted; before & after mitigation -->
+      <g font-size="12" font-weight="700">
+        <!-- R1 Cohort enrollment slowdown: L3 I3 before, L2 I2 after -->
+        <circle cx="320" cy="180" r="14" fill="#0F172A"/><text x="320" y="184" text-anchor="middle" fill="#FFFFFF">R1</text>
+        <line x1="320" y1="180" x2="220" y2="280" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mm)"/>
+        <!-- R2 Reagent supply: L4 I2, after L2 I2 -->
+        <circle cx="220" cy="80" r="14" fill="#0F172A"/><text x="220" y="84" text-anchor="middle" fill="#FFFFFF">R2</text>
+        <line x1="220" y1="80" x2="220" y2="280" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mm)"/>
+        <!-- R3 FDA Q-Sub delay: L3 I4 -> L2 I3 -->
+        <circle cx="420" cy="180" r="14" fill="#0F172A"/><text x="420" y="184" text-anchor="middle" fill="#FFFFFF">R3</text>
+        <line x1="420" y1="180" x2="320" y2="280" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mm)"/>
+        <!-- R4 Mfg yield miss: L3 I3 -> L1 I3 -->
+        <circle cx="320" cy="180" r="14" fill="none" stroke="#0F172A" stroke-width="0"/>
+        <circle cx="320" cy="180" r="14" fill="#0F172A" opacity="0"/>
+        <!-- need to offset, place R4 at L3 I2 then mitigated to L1 I2 -->
+        <circle cx="220" cy="180" r="14" fill="#0F172A"/><text x="220" y="184" text-anchor="middle" fill="#FFFFFF">R4</text>
+        <line x1="220" y1="180" x2="220" y2="380" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mm)"/>
+        <!-- R5 Quest partner pull-out: L2 I4 -> L1 I3 -->
+        <circle cx="420" cy="280" r="14" fill="#0F172A"/><text x="420" y="284" text-anchor="middle" fill="#FFFFFF">R5</text>
+        <line x1="420" y1="280" x2="320" y2="380" stroke="#0F172A" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mm)"/>
+      </g>
+      <defs><marker id="mm" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 z" fill="#0F172A"/></marker></defs>
+
+      <!-- Axis tick labels -->
+      <g font-size="10" fill="#475569" text-anchor="middle">
+        <text x="130" y="460">Low</text>
+        <text x="230" y="460">Moderate</text>
+        <text x="330" y="460">High</text>
+        <text x="430" y="460">Critical</text>
+      </g>
+      <g font-size="10" fill="#475569" text-anchor="end">
+        <text x="74" y="94">Almost certain</text>
+        <text x="74" y="194">Likely</text>
+        <text x="74" y="294">Possible</text>
+        <text x="74" y="394">Rare</text>
+      </g>
+      <text x="280" y="490" text-anchor="middle" font-size="11" fill="#475569">Solid = pre-mitigation · dashed arrow = residual after mitigation</text>
+    </svg>
+  </div>
+
+  <!-- Risk table (right) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:680px; top:340px; width:1160px; z-index:10;">
+    <table style="width:100%; border-collapse:collapse; font-size:15px;">
+      <thead>
+        <tr style="background:#0F172A; color:#FFFFFF; text-align:left;">
+          <th style="padding:12px 10px; font-weight:600; width:36px;">#</th>
+          <th style="padding:12px 10px; font-weight:600;">Risk</th>
+          <th style="padding:12px 10px; font-weight:600; width:80px;">Pre L×I</th>
+          <th style="padding:12px 10px; font-weight:600;">Mitigation</th>
+          <th style="padding:12px 10px; font-weight:600; width:140px;">Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #E2E8F0;">
+          <td class="mono" style="padding:14px 10px; color:#1B3A6B; font-weight:700;">R1</td>
+          <td style="padding:14px 10px;"><strong>Cohort enrollment slowdown</strong> (n=240 not met by M14)</td>
+          <td class="mono" style="padding:14px 10px; color:#9A2B2B;">3 × 3 = 9</td>
+          <td style="padding:14px 10px;">2nd biobank (Dana-Farber, App L) pre-IRB'd as substitute; 30% accrual buffer baked in.</td>
+          <td style="padding:14px 10px;">A. Patel (Co-I)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E2E8F0; background:#F8FAFC;">
+          <td class="mono" style="padding:14px 10px; color:#1B3A6B; font-weight:700;">R2</td>
+          <td style="padding:14px 10px;"><strong>Critical reagent (anti-X mAb) sole supplier</strong></td>
+          <td class="mono" style="padding:14px 10px; color:#9A2B2B;">4 × 2 = 8</td>
+          <td style="padding:14px 10px;">6-month safety stock at HQ; secondary clone qualified at Abcam (App M); cross-reactivity already characterized.</td>
+          <td style="padding:14px 10px;">M. Esposito (DoE)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E2E8F0;">
+          <td class="mono" style="padding:14px 10px; color:#1B3A6B; font-weight:700;">R3</td>
+          <td style="padding:14px 10px;"><strong>FDA Q-Sub feedback requires additional study</strong></td>
+          <td class="mono" style="padding:14px 10px; color:#9A2B2B;">3 × 4 = 12</td>
+          <td style="padding:14px 10px;">Pre-Sub meeting requested for Y1 M6 to de-risk; regulatory consultant on retainer; FDA breakthrough device pathway evaluated.</td>
+          <td style="padding:14px 10px;">R. Kim (Reg)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E2E8F0; background:#F8FAFC;">
+          <td class="mono" style="padding:14px 10px; color:#1B3A6B; font-weight:700;">R4</td>
+          <td style="padding:14px 10px;"><strong>Contract mfg yield &lt; 95% at scale-up</strong></td>
+          <td class="mono" style="padding:14px 10px; color:#9A2B2B;">3 × 2 = 6</td>
+          <td style="padding:14px 10px;">DFM review at M12 (Resonetics); fallback to in-house pilot line ($180K budgeted); yield SPC dashboard live from M9.</td>
+          <td style="padding:14px 10px;">M. Esposito (DoE)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E2E8F0;">
+          <td class="mono" style="padding:14px 10px; color:#1B3A6B; font-weight:700;">R5</td>
+          <td style="padding:14px 10px;"><strong>Quest partner pull-out (M&amp;A or strategy shift)</strong></td>
+          <td class="mono" style="padding:14px 10px; color:#9A2B2B;">2 × 4 = 8</td>
+          <td style="padding:14px 10px;">LabCorp LoI (App D) active backstop; DHA Phase III sole-source path active; both negotiated to identical pilot terms.</td>
+          <td style="padding:14px 10px;">W. Chen (PI)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background:#F1F5F9; padding:18px; margin-top:24px; border-left:6px solid #1B3A6B;">
+      <div class="mono" style="font-size:13px; color:#1B3A6B; letter-spacing:0.16em; text-transform:uppercase;">Governance</div>
+      <div style="font-size:17px; color:#0F172A; margin-top:8px; line-height:1.45;">Risk register reviewed quarterly with NIH Program Officer; residual scores reported in each Annual Progress Report. Veeva QMS provides 21 CFR 11 audit trail of changes.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:1020px; width:1920px; height:60px; background:#F1F5F9; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1036px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:13px; color:#475569; letter-spacing:0.1em;">Sources [4] USDA NIFA reviewer instructions. [7] DOT Volpe Phase II/IIB checklist — risk &amp; contingency.</div>
+  </div>
+
+</div>
+</body>
+</html>

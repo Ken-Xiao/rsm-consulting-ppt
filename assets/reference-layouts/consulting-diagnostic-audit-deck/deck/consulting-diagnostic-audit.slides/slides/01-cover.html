@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cover — Meridian Operational Diagnostic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="01 Cover" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <!-- Left navy panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:760px; height:1080px; background:#0B1729; z-index:1;"></div>
+
+  <!-- Accent red bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:8px; height:1080px; background:#B91C1C; z-index:2;"></div>
+
+  <!-- Signal-blue diagonal accent -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:0px; width:14px; height:1080px; background:#1E40AF; z-index:2;"></div>
+
+  <!-- Firm mark / engagement code -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:96px; width:560px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:14px; letter-spacing:0.24em; color:#94A3B8; text-transform:uppercase;">CONFIDENTIAL · DRAFT · STEERCO PRE-READ</div>
+    <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:14px; letter-spacing:0.18em; color:#60A5FA;">ENG-2026-Q2-MERIDIAN-OPS</div>
+  </div>
+
+  <!-- Title block -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:340px; width:600px; z-index:10;">
+    <div style="font-size:22px; font-weight:500; letter-spacing:0.12em; color:#B91C1C; text-transform:uppercase;">Operational Diagnostic</div>
+    <div style="margin-top:28px; font-size:78px; font-weight:600; line-height:1.02; color:#FFFFFF; letter-spacing:-0.02em;">Meridian Industrial Components</div>
+    <div style="margin-top:36px; font-size:26px; font-weight:300; line-height:1.4; color:#CBD5E1;">A 10-day diagnostic of cost, pricing and working-capital performance — and the Phase-2 case for a 26-week implementation.</div>
+  </div>
+
+  <!-- Footer engagement detail (navy side) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:920px; width:600px; z-index:10;">
+    <div style="display:grid; grid-template-columns:160px 1fr; row-gap:8px; font-size:15px; color:#E2E8F0;">
+      <div style="color:#64748B; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Diagnostic Period</div>
+      <div class="num">04 May — 15 May 2026 (10 working days)</div>
+      <div style="color:#64748B; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Readout Date</div>
+      <div class="num">15 May 2026 · Meridian HQ, Cleveland OH</div>
+      <div style="color:#64748B; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Partner-in-Charge</div>
+      <div>M. Albrecht · Senior Partner, Industrials</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: headline number card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:200px; width:920px; height:540px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:3;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:200px; width:920px; height:6px; background:#1E40AF; z-index:4;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:920px; top:240px; width:840px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:13px; letter-spacing:0.20em; color:#64748B; text-transform:uppercase;">Executive Answer — Bottom Line</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:920px; top:290px; width:840px; z-index:10;">
+    <div class="num" style="font-size:144px; font-weight:600; line-height:1; color:#0B1729; letter-spacing:-0.04em;">$42.2M</div>
+    <div style="margin-top:14px; font-size:22px; color:#334155; line-height:1.45;">annualized EBITDA opportunity identified across <span style="color:#0B1729; font-weight:600;">5 levers · 12 named initiatives</span>, deliverable inside 18 months with a <span style="color:#B91C1C; font-weight:600;">5.3× return on Phase-2 cost</span>.</div>
+  </div>
+
+  <!-- KPI strip inside card -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:920px; top:600px; width:840px; z-index:10;">
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#0B1729;">14</div>
+        <div style="font-size:13px; color:#64748B; margin-top:4px; line-height:1.3;">executive<br>interviews</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#0B1729;">3</div>
+        <div style="font-size:13px; color:#64748B; margin-top:4px; line-height:1.3;">external<br>benchmarks</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#0B1729;">11</div>
+        <div style="font-size:13px; color:#64748B; margin-top:4px; line-height:1.3;">internal data<br>pulls</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#B91C1C;">5.3×</div>
+        <div style="font-size:13px; color:#64748B; margin-top:4px; line-height:1.3;">benefit-to-cost<br>(Phase-2)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom exhibit / source line (consultant convention) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:880px; top:1020px; width:920px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">EXHIBIT 1 · COVER · Source: Engagement team analysis · 14 May 2026</div>
+  </div>
+
+  <!-- Page counter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:1020px; width:200px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#64748B; letter-spacing:0.18em;">01 / 18</div>
+  </div>
+
+</div>
+</body>
+</html>

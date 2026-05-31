@@ -21,7 +21,9 @@
 
 每页渲染前还必须读取 `references/storyline-page-planning.md` 中的 `visual_intent` 要求，先判断本页逻辑关系是递进、并列、对比、因果、下钻还是综合，再选择图表、表格、流程、卡片或图片。
 
-选择 page family 后读取 `references/page-family-contracts.md`，确认必填字段、最大文字量、主视觉对象、禁用项和可编辑性要求。导出前读取 `references/editability-check.md`，不得把关键文字、数字、来源和结论整页图片化。
+选择 page family 后读取 `references/page-family-contracts.md` 和 `references/template-fill-level-standard.md`，确认必填字段、最大文字量、主视觉对象、禁用项、填充级别和可编辑性要求。导出前读取 `references/editability-check.md`，不得把关键文字、数字、来源和结论整页图片化。
+
+如果使用 `assets/reference-layouts/` 中的备选版式，先读取 `references/reference-layout-library.md`、`references/reference-layout-analysis-framework.md` 和 `references/scenario-layout-selector.md`。外部参考版式只能作为经过选择和分析的 page family，不得在渲染时临时凭感觉复刻。
 
 ## Rendering Tracks
 
@@ -54,9 +56,10 @@ Use for:
 Build rule:
 
 1. 用 HTML/CSS 生成单页主体区域。
-2. 用 Playwright/Chromium 截图，至少 2x 分辨率。
-3. 把 PNG 放入 PPT 主体区域。
-4. 用原生 PPT 叠加标题、页码、来源和必要关键数字。
+2. 高频模板必须使用 `structured` 或 `filled` 模板，不允许只保留 `主图区域` 这类 placeholder。
+3. 用 Playwright/Chromium 截图，至少 2x 分辨率。
+4. 把 PNG 放入 PPT 主体区域。
+5. 用原生 PPT 叠加标题、页码、来源和必要关键数字。
 
 ### Track C: ECharts / D3 / SVG Chart Layer
 

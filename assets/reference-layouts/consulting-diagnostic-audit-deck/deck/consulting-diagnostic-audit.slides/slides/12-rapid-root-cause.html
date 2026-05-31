@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Organizational Root Cause — RAPID</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="12 RAPID Root Cause" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 12 · Organisational root cause — RAPID® decision-rights mapping<sup>[3][8]</sup></div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">Pricing-exception approval is broken: <span style="color:#B91C1C;">4 Recommenders, 3 Agreers, no clear Decider</span> — defaulting to CEO for ~190 cases/quarter.</div>
+  </div>
+
+  <!-- LEFT: today -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:880px; height:780px; background:#FFFFFF; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:880px; height:8px; background:#B91C1C; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:228px; width:824px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#B91C1C; text-transform:uppercase;">Today — broken state</div>
+    <div style="margin-top:10px; font-size:24px; font-weight:600; color:#0B1729;">Pricing exception &gt; 12% discount</div>
+  </div>
+
+  <!-- 5 RAPID roles list - today -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:312px; width:824px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 90px 1fr; row-gap:18px; align-items:start; font-size:16px;">
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#B91C1C; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">R</span></div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Recommend &nbsp; · &nbsp; <span style="color:#B91C1C;">4 roles (overlap)</span></div>
+        <div style="color:#334155; line-height:1.5; margin-top:4px;">Sales rep, Sales VP, Pricing analyst, Product GM — each independently builds a case; conflicting recommendations escalate up.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#B91C1C; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">A</span></div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Agree &nbsp; · &nbsp; <span style="color:#B91C1C;">3 roles (veto)</span></div>
+        <div style="color:#334155; line-height:1.5; margin-top:4px;">Finance, Legal, Product — each has effective veto. One holdout stalls the case.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#94A3B8; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">P</span></div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Perform &nbsp; · &nbsp; Sales Operations</div>
+        <div style="color:#334155; line-height:1.5; margin-top:4px;">Updates CPQ once a decision is reached; waiting on average 7 days for a ruling.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#94A3B8; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">I</span></div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Input &nbsp; · &nbsp; Finance, Legal (cc'd, but acting as A)</div>
+        <div style="color:#334155; line-height:1.5; margin-top:4px;">No formal input role; "I" collapses into "A" because no Decider was named.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#B91C1C; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">D</span></div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Decide &nbsp; · &nbsp; <span style="color:#B91C1C;">Unowned — defaults to CEO</span></div>
+        <div style="color:#334155; line-height:1.5; margin-top:4px;">CEO ruling on <span class="num" style="font-weight:600;">~190 cases / quarter</span>; CEO calendar a structural bottleneck.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Today's KPIs -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:836px; width:824px; height:124px; background:#FEE2E2; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:132px; top:858px; width:776px; z-index:10;">
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#B91C1C;">9 days</div>
+        <div style="font-size:13px; color:#334155;">avg cycle time</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#B91C1C;">190 / qtr</div>
+        <div style="font-size:13px; color:#334155;">exceptions to CEO</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#B91C1C;">22%</div>
+        <div style="font-size:13px; color:#334155;">deals lost to cycle delay</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: redesign -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:200px; width:860px; height:780px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:200px; width:860px; height:8px; background:#60A5FA; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1008px; top:228px; width:804px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA; text-transform:uppercase;">Redesign — clean RAPID</div>
+    <div style="margin-top:10px; font-size:24px; font-weight:600; color:#FFFFFF;">Pricing exception &gt; 12% discount</div>
+  </div>
+
+  <!-- Redesigned roles -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1008px; top:312px; width:804px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 90px 1fr; row-gap:18px; align-items:start; font-size:16px;">
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#60A5FA; color:#0B1729; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">R</span></div>
+      <div>
+        <div style="font-weight:600; color:#FFFFFF;">Recommend &nbsp; · &nbsp; Sales VP (single accountable role)</div>
+        <div style="color:#CBD5E1; line-height:1.5; margin-top:4px;">Sales VP assembles a single recommendation packet (deal economics, customer context, precedent).</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#94A3B8; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">A</span></div>
+      <div>
+        <div style="font-weight:600; color:#FFFFFF;">Agree &nbsp; · &nbsp; <i style="font-style:normal; color:#60A5FA;">eliminated</i></div>
+        <div style="color:#CBD5E1; line-height:1.5; margin-top:4px;">No Agreers. Veto power collapsed to Input.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#94A3B8; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">P</span></div>
+      <div>
+        <div style="font-weight:600; color:#FFFFFF;">Perform &nbsp; · &nbsp; Sales Operations</div>
+        <div style="color:#CBD5E1; line-height:1.5; margin-top:4px;">CPQ updated within 4 hours of Decide signal.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#60A5FA; color:#0B1729; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">I</span></div>
+      <div>
+        <div style="font-weight:600; color:#FFFFFF;">Input &nbsp; · &nbsp; Product GM, Legal</div>
+        <div style="color:#CBD5E1; line-height:1.5; margin-top:4px;">Consult — opinion sought, no veto. 24-hour SLA.</div>
+      </div>
+
+      <div><span style="display:inline-block; width:46px; height:46px; line-height:46px; text-align:center; background:#B91C1C; color:#FFFFFF; font-family:'JetBrains Mono', monospace; font-weight:600; font-size:18px;">D</span></div>
+      <div>
+        <div style="font-weight:600; color:#FFFFFF;">Decide &nbsp; · &nbsp; CFO (single accountable role)</div>
+        <div style="color:#CBD5E1; line-height:1.5; margin-top:4px;">CFO holds the D for any discount &gt;12% (CEO for &gt;25% only — &lt;18 cases / quarter).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redesigned KPIs -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1008px; top:836px; width:804px; height:124px; background:#1E3A8A; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1032px; top:858px; width:756px; z-index:10;">
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#FFFFFF;">36 hrs</div>
+        <div style="font-size:13px; color:#94A3B8;">target cycle time</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#FFFFFF;">&lt;18 / qtr</div>
+        <div style="font-size:13px; color:#94A3B8;">cases reaching CEO</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#60A5FA;">unblocks $9.8M</div>
+        <div style="font-size:13px; color:#94A3B8;">in Lever-3 value</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: 14 executive interviews; CPQ exception log Q1'26 (n=187 cases) · Method: Bain RAPID® (Rogers &amp; Blenko)<sup>[3]</sup></div>
+      <div>12 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

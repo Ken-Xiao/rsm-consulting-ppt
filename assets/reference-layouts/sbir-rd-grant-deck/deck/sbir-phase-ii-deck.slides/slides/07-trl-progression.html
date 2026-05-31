@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TRL Progression</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+  body { margin:0; padding:0; overflow:hidden; font-family:'Public Sans', system-ui, sans-serif; color:#0F172A; background:#FFFFFF; }
+  .mono { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="07 TRL Progression" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:84px; background:#1B3A6B; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:24px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.24em; color:#9CC2FF; text-transform:uppercase;">07 / 16 · TRL Progression — measurable exit criteria</div>
+      <div class="mono" style="font-size:14px; letter-spacing:0.18em; color:#9CC2FF;">Phase I exit → Phase II exit → Phase III entry</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:14px; letter-spacing:0.22em; color:#9A2B2B; text-transform:uppercase;">DoD/NASA TRL scale — verbatim definitions</div>
+    <div style="font-size:54px; font-weight:800; line-height:1.06; color:#0F172A; margin-top:14px; letter-spacing:-0.015em;">TRL 4 → TRL 7 in 24 months, with named measurements.</div>
+  </div>
+
+  <!-- TRL ladder SVG -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:80px; top:340px; width:1760px; height:520px; z-index:10;">
+    <svg viewBox="0 0 1760 520" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; font-family:'JetBrains Mono', monospace;">
+      <!-- 9 step ladder -->
+      <g>
+        <!-- TRL boxes -->
+        <g font-size="14" fill="#0F172A">
+          <!-- TRL 1-3 (pre-Phase I) -->
+          <rect x="40" y="380" width="160" height="80" fill="#E2E8F0" rx="3"/>
+          <text x="120" y="410" text-anchor="middle" font-weight="700">TRL 1–3</text>
+          <text x="120" y="430" text-anchor="middle" font-size="11" fill="#64748B">Basic principles</text>
+          <text x="120" y="446" text-anchor="middle" font-size="11" fill="#64748B">→ proof-of-concept</text>
+
+          <!-- TRL 4 = Phase I exit -->
+          <rect x="220" y="330" width="220" height="130" fill="#9CC2FF" rx="3"/>
+          <text x="330" y="358" text-anchor="middle" font-weight="700" fill="#0F172A">TRL 4</text>
+          <text x="330" y="378" text-anchor="middle" font-size="12" fill="#0F172A">Component validated</text>
+          <text x="330" y="394" text-anchor="middle" font-size="12" fill="#0F172A">in laboratory</text>
+          <line x1="240" y1="408" x2="420" y2="408" stroke="#1B3A6B" stroke-dasharray="2 2"/>
+          <text x="330" y="425" text-anchor="middle" font-size="11" fill="#1B3A6B" font-weight="700">PHASE I EXIT (Aug 2025)</text>
+          <text x="330" y="443" text-anchor="middle" font-size="11" fill="#0F172A">LOD 0.41 ng/mL · n=72</text>
+
+          <!-- TRL 5 -->
+          <rect x="460" y="280" width="220" height="180" fill="#5A85B7" rx="3"/>
+          <text x="570" y="308" text-anchor="middle" font-weight="700" fill="#FFFFFF">TRL 5</text>
+          <text x="570" y="328" text-anchor="middle" font-size="12" fill="#FFFFFF">Component validated</text>
+          <text x="570" y="344" text-anchor="middle" font-size="12" fill="#FFFFFF">in relevant environment</text>
+          <line x1="480" y1="360" x2="660" y2="360" stroke="#FFFFFF" stroke-dasharray="2 2"/>
+          <text x="570" y="378" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">Y1 mid · M8</text>
+          <text x="570" y="395" text-anchor="middle" font-size="11" fill="#FFFFFF">LOD 0.25 ng/mL on real plasma</text>
+          <text x="570" y="412" text-anchor="middle" font-size="11" fill="#FFFFFF">n=80, single site (MGH)</text>
+          <text x="570" y="430" text-anchor="middle" font-size="11" fill="#FFFFFF">CV ≤ 8%</text>
+
+          <!-- TRL 6 -->
+          <rect x="700" y="230" width="220" height="230" fill="#1B3A6B" rx="3"/>
+          <text x="810" y="258" text-anchor="middle" font-weight="700" fill="#FFFFFF">TRL 6</text>
+          <text x="810" y="278" text-anchor="middle" font-size="12" fill="#FFFFFF">System / subsystem</text>
+          <text x="810" y="294" text-anchor="middle" font-size="12" fill="#FFFFFF">model in relevant env.</text>
+          <line x1="720" y1="310" x2="900" y2="310" stroke="#FFFFFF" stroke-dasharray="2 2"/>
+          <text x="810" y="328" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">Y1 end · M12</text>
+          <text x="810" y="345" text-anchor="middle" font-size="11" fill="#FFFFFF">LOD 0.18 ng/mL</text>
+          <text x="810" y="362" text-anchor="middle" font-size="11" fill="#FFFFFF">3-lab concordance ≥ 92%</text>
+          <text x="810" y="379" text-anchor="middle" font-size="11" fill="#FFFFFF">Cartridge yield 80%</text>
+          <text x="810" y="396" text-anchor="middle" font-size="11" fill="#FFFFFF">21 CFR 11 audit log live</text>
+          <text x="810" y="425" text-anchor="middle" font-size="11" fill="#9CC2FF" font-style="italic">M5 Go/No-Go gate</text>
+
+          <!-- TRL 7 = Phase II exit -->
+          <rect x="940" y="180" width="240" height="280" fill="#9A2B2B" rx="3"/>
+          <text x="1060" y="208" text-anchor="middle" font-weight="700" fill="#FFFFFF">TRL 7</text>
+          <text x="1060" y="228" text-anchor="middle" font-size="12" fill="#FFFFFF">System prototype</text>
+          <text x="1060" y="244" text-anchor="middle" font-size="12" fill="#FFFFFF">demonstrated in operational</text>
+          <text x="1060" y="260" text-anchor="middle" font-size="12" fill="#FFFFFF">environment</text>
+          <line x1="960" y1="276" x2="1160" y2="276" stroke="#FFFFFF" stroke-dasharray="2 2"/>
+          <text x="1060" y="294" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">PHASE II EXIT (Sep 2028)</text>
+          <text x="1060" y="316" text-anchor="middle" font-size="11" fill="#FFFFFF">Quest pilot, ≥ 90% concord.</text>
+          <text x="1060" y="333" text-anchor="middle" font-size="11" fill="#FFFFFF">n=240 locked dataset</text>
+          <text x="1060" y="350" text-anchor="middle" font-size="11" fill="#FFFFFF">Mfg yield ≥ 95%, 1k wk⁻¹</text>
+          <text x="1060" y="367" text-anchor="middle" font-size="11" fill="#FFFFFF">FDA Q-Sub package filed</text>
+          <text x="1060" y="384" text-anchor="middle" font-size="11" fill="#FFFFFF">Reference labs onboarded ×3</text>
+          <text x="1060" y="420" text-anchor="middle" font-size="11" fill="#FCD5D5" font-style="italic">Strategic Breakthrough P-II eligibility</text>
+          <text x="1060" y="438" text-anchor="middle" font-size="11" fill="#FCD5D5" font-style="italic">on completion <sup>[1]</sup></text>
+
+          <!-- TRL 8-9 (Phase III) -->
+          <rect x="1200" y="280" width="240" height="180" fill="#F1F5F9" rx="3" stroke="#9A2B2B" stroke-dasharray="4 4"/>
+          <text x="1320" y="308" text-anchor="middle" font-weight="700" fill="#0F172A">TRL 8 — Phase III</text>
+          <text x="1320" y="328" text-anchor="middle" font-size="12" fill="#0F172A">Pivotal study + 510(k)</text>
+          <text x="1320" y="346" text-anchor="middle" font-size="11" fill="#475569">Q3 2028 – Q4 2029</text>
+          <text x="1320" y="378" text-anchor="middle" font-size="11" fill="#475569">Funded by:</text>
+          <text x="1320" y="396" text-anchor="middle" font-size="11" fill="#0F172A">• Quest contract (revenue)</text>
+          <text x="1320" y="414" text-anchor="middle" font-size="11" fill="#0F172A">• Series A ($14M ready)</text>
+          <text x="1320" y="432" text-anchor="middle" font-size="11" fill="#0F172A">• NCI P50 (matched)</text>
+
+          <!-- TRL 9 -->
+          <rect x="1460" y="380" width="220" height="80" fill="#F1F5F9" rx="3" stroke="#9A2B2B" stroke-dasharray="4 4"/>
+          <text x="1570" y="410" text-anchor="middle" font-weight="700" fill="#0F172A">TRL 9</text>
+          <text x="1570" y="430" text-anchor="middle" font-size="11" fill="#475569">FDA-cleared, in clinic</text>
+          <text x="1570" y="446" text-anchor="middle" font-size="11" fill="#475569">Target 2030</text>
+        </g>
+
+        <!-- Arrow flow -->
+        <g stroke="#0F172A" stroke-width="2" fill="none">
+          <line x1="200" y1="420" x2="218" y2="420" marker-end="url(#arr)"/>
+          <line x1="442" y1="395" x2="458" y2="370" marker-end="url(#arr)"/>
+          <line x1="682" y1="345" x2="698" y2="320" marker-end="url(#arr)"/>
+          <line x1="922" y1="295" x2="938" y2="270" marker-end="url(#arr)"/>
+          <line x1="1182" y1="270" x2="1198" y2="290" marker-end="url(#arr)"/>
+          <line x1="1442" y1="370" x2="1458" y2="390" marker-end="url(#arr)"/>
+        </g>
+        <defs>
+          <marker id="arr" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+
+        <!-- Bottom timeline axis -->
+        <line x1="40" y1="490" x2="1680" y2="490" stroke="#0F172A" stroke-width="1.5"/>
+        <g font-size="12" fill="#0F172A">
+          <text x="330" y="510" text-anchor="middle">Aug 2025</text>
+          <text x="570" y="510" text-anchor="middle">M8 · May 2027</text>
+          <text x="810" y="510" text-anchor="middle">M12 · Sep 2027</text>
+          <text x="1060" y="510" text-anchor="middle" font-weight="700" fill="#9A2B2B">M24 · Sep 2028</text>
+          <text x="1320" y="510" text-anchor="middle">Q4 2029</text>
+          <text x="1570" y="510" text-anchor="middle">2030</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Bottom highlight -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:880px; width:1760px; height:120px; background:#0F172A; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:900px; width:1700px; z-index:10;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.22em; color:#9CC2FF; text-transform:uppercase;">Exit criteria — pre-registered, instrumented, auditable</div>
+    <div style="font-size:22px; color:#FFFFFF; margin-top:12px; line-height:1.45;">Every TRL transition is gated by a quantitative measurement performed on locked instrumentation, with raw data deposited in the NCI Cancer Imaging &amp; Data Commons. No subjective &ldquo;TRL will increase&rdquo; language.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:1020px; width:1920px; height:60px; background:#F1F5F9; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1036px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:13px; color:#475569; letter-spacing:0.1em;">Sources [1] MoFo GovCon — Strategic Breakthrough Phase II up to $30M. [5] Navy SBIR Phase II Initial Proposal Instructions — TRL transition language.</div>
+  </div>
+
+</div>
+</body>
+</html>

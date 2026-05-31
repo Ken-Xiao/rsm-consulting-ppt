@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>01 — Cover</title>
+<link rel="stylesheet" href="../assets/base.css">
+</head>
+<body>
+<div class="slide-container" data-screen-label="01 Cover" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--slate);">
+
+  <!-- Background grid shape -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(61,82,240,.35), transparent 60%),
+      linear-gradient(180deg, #0A2540 0%, #0A2540 70%, #0B1B33 100%);">
+  </div>
+
+  <!-- Faint grid lines -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;opacity:.10;
+    background-image:linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px);
+    background-size:80px 80px;"></div>
+
+  <!-- Indigo bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:160px;width:6px;height:560px;background:var(--indigo);z-index:5;"></div>
+
+  <!-- Kicker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:160px;top:160px;width:1100px;height:32px;z-index:10;">
+    <div class="kicker" style="color:#9FB0FF;">Q3 FY26 · Quarterly Business Review</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:160px;top:218px;width:1500px;height:280px;z-index:10;">
+    <div class="h-display" style="font-size:118px;line-height:1.05;color:#fff;letter-spacing:-0.035em;">
+      Pipeline, Forecast,<br>and Three Calls.
+    </div>
+  </div>
+
+  <!-- Subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:160px;top:520px;width:1380px;z-index:10;">
+    <div style="font-size:30px;line-height:1.4;color:#C7D0E0;font-weight:400;">
+      Every percentage in this deck cites a CRM stage ID. The waterfall reconciles to ±1 % of CRM truth. Forecast accuracy is shown against the last four quarters — not a single hero number.
+    </div>
+  </div>
+
+  <!-- Metadata grid -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:160px;top:780px;width:1620px;height:140px;z-index:10;">
+    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px;color:#fff;">
+      <div>
+        <div class="kicker" style="color:#9FB0FF;margin-bottom:10px;">Quarter</div>
+        <div class="h-display" style="font-size:34px;color:#fff;">Q3 FY26</div>
+        <div style="font-size:15px;color:#8FA0BC;margin-top:4px;">May 1 — Jul 31, 2026</div>
+      </div>
+      <div>
+        <div class="kicker" style="color:#9FB0FF;margin-bottom:10px;">Owner</div>
+        <div class="h-display" style="font-size:34px;color:#fff;">M. Bianchi</div>
+        <div style="font-size:15px;color:#8FA0BC;margin-top:4px;">Director, RevOps · Helix Cloud Inc.</div>
+      </div>
+      <div>
+        <div class="kicker" style="color:#9FB0FF;margin-bottom:10px;">System of Record</div>
+        <div class="h-display" style="font-size:34px;color:#fff;">Salesforce</div>
+        <div style="font-size:15px;color:#8FA0BC;margin-top:4px;">+ HubSpot (MQL inbound)</div>
+      </div>
+      <div>
+        <div class="kicker" style="color:#9FB0FF;margin-bottom:10px;">Snapshot</div>
+        <div class="h-display" style="font-size:34px;color:#fff;">14 May 26 · 06:00 UTC</div>
+        <div style="font-size:15px;color:#8FA0BC;margin-top:4px;">Last refresh, read-only API pull</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:980px;width:1680px;height:1px;background:#1E3357;z-index:5;"></div>
+
+  <!-- Footer -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1004px;width:1680px;height:32px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;color:#8FA0BC;font-size:14px;font-family:'JetBrains Mono',monospace;">
+      <div>HELIX CLOUD · REVOPS · CONFIDENTIAL</div>
+      <div>16 slides · benchmark sources cited on slide 16</div>
+      <div>01 / 16</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

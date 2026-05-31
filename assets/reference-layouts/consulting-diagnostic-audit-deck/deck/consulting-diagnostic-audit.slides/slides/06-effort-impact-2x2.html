@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Effort-vs-Impact 2×2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="06 Effort-Impact 2x2" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 6 · Effort vs impact — 12 opportunities · dot size = $ impact</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">The top-5 cluster in <span style="color:#1E40AF;">high-impact / low-to-medium effort</span>; 4 quick-wins sit below the median size threshold but bank cash in &lt;90 days.</div>
+  </div>
+
+  <!-- CHART AREA (single chart object) -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:80px; top:200px; width:1180px; height:780px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:10;">
+    <!-- Quadrant fills -->
+    <div style="position:absolute; left:80px; top:60px; width:500px; height:340px; background:#ECFDF5;"></div>           <!-- TL: quick wins -->
+    <div style="position:absolute; left:580px; top:60px; width:500px; height:340px; background:#EFF6FF;"></div>          <!-- TR: must-do -->
+    <div style="position:absolute; left:80px; top:400px; width:500px; height:280px; background:#F8FAFC;"></div>           <!-- BL: nice-to-have -->
+    <div style="position:absolute; left:580px; top:400px; width:500px; height:280px; background:#FEF2F2;"></div>          <!-- BR: defer/study -->
+
+    <!-- Axes -->
+    <div style="position:absolute; left:80px; top:60px; width:2px; height:620px; background:#0B1729;"></div>
+    <div style="position:absolute; left:80px; top:678px; width:1000px; height:2px; background:#0B1729;"></div>
+    <!-- Median crosshairs (dashed via repeated gradient) -->
+    <div style="position:absolute; left:580px; top:60px; width:1px; height:620px; background:repeating-linear-gradient(to bottom, #94A3B8 0 6px, transparent 6px 12px);"></div>
+    <div style="position:absolute; left:80px; top:400px; width:1000px; height:1px; background:repeating-linear-gradient(to right, #94A3B8 0 6px, transparent 6px 12px);"></div>
+
+    <!-- Quadrant labels -->
+    <div style="position:absolute; left:96px; top:74px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#15803D;">QUICK WINS</div>
+    <div style="position:absolute; left:596px; top:74px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#1E40AF;">MUST-DO · BIG BETS</div>
+    <div style="position:absolute; left:96px; top:660px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#64748B;">NICE-TO-HAVE</div>
+    <div style="position:absolute; left:596px; top:660px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#B91C1C;">DEFER / STUDY</div>
+
+    <!-- Axis labels -->
+    <div style="position:absolute; left:80px; top:18px; width:1000px; text-align:center; font-family:'Inter', sans-serif; font-size:14px; font-weight:600; color:#0B1729;">↑ Annualized $ impact</div>
+    <div style="position:absolute; left:80px; top:702px; width:1000px; text-align:center; font-family:'Inter', sans-serif; font-size:14px; font-weight:600; color:#0B1729;">Implementation effort (cost + time + change difficulty) →</div>
+    <div style="position:absolute; left:60px; top:60px; width:30px; height:20px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#64748B; text-align:right;">$15M</div>
+    <div style="position:absolute; left:60px; top:670px; width:30px; height:20px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#64748B; text-align:right;">$0</div>
+
+    <!-- DOTS — top-5 in red ring + label, others in grey -->
+    <!-- OP-1 Procurement: high impact, med effort (largest) -->
+    <div style="position:absolute; left:670px; top:140px; width:84px; height:84px; border-radius:50%; background:#B91C1C; border:3px solid #FFFFFF; box-shadow:0 0 0 3px #B91C1C;"></div>
+    <div style="position:absolute; left:760px; top:170px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600; color:#0B1729;">OP-1 Procurement · $14.2M</div>
+
+    <!-- OP-2 Pricing: high impact, med-high effort -->
+    <div style="position:absolute; left:760px; top:230px; width:66px; height:66px; border-radius:50%; background:#B91C1C; border:3px solid #FFFFFF; box-shadow:0 0 0 3px #B91C1C;"></div>
+    <div style="position:absolute; left:836px; top:252px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600; color:#0B1729;">OP-2 Pricing · $9.8M</div>
+
+    <!-- OP-3 SG&A span-of-control: high impact, low-med effort (quick-win-ish) -->
+    <div style="position:absolute; left:440px; top:270px; width:56px; height:56px; border-radius:50%; background:#B91C1C; border:3px solid #FFFFFF; box-shadow:0 0 0 3px #B91C1C;"></div>
+    <div style="position:absolute; left:340px; top:340px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600; color:#0B1729;">OP-3 SG&amp;A · $7.1M</div>
+
+    <!-- OP-4 Working capital: med impact, low effort (quick win) -->
+    <div style="position:absolute; left:280px; top:300px; width:50px; height:50px; border-radius:50%; background:#B91C1C; border:3px solid #FFFFFF; box-shadow:0 0 0 3px #B91C1C;"></div>
+    <div style="position:absolute; left:174px; top:268px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600; color:#0B1729;">OP-4 WC · $6.4M</div>
+
+    <!-- OP-5 Footprint: med impact, HIGH effort -->
+    <div style="position:absolute; left:920px; top:340px; width:46px; height:46px; border-radius:50%; background:#B91C1C; border:3px solid #FFFFFF; box-shadow:0 0 0 3px #B91C1C;"></div>
+    <div style="position:absolute; left:976px; top:354px; font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:600; color:#0B1729;">OP-5 Footprint · $4.7M</div>
+
+    <!-- Below-the-line items in grey -->
+    <div style="position:absolute; left:180px; top:430px; width:30px; height:30px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:215px; top:438px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-6 Invoice automation · $2.8M</div>
+
+    <div style="position:absolute; left:300px; top:475px; width:26px; height:26px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:332px; top:481px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-7 Travel policy · $2.1M</div>
+
+    <div style="position:absolute; left:230px; top:530px; width:24px; height:24px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:260px; top:535px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-8 Software-license audit · $1.6M</div>
+
+    <div style="position:absolute; left:160px; top:580px; width:20px; height:20px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:186px; top:584px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-9 Freight carrier mix · $1.2M</div>
+
+    <!-- BR quadrant (defer / high effort low impact) -->
+    <div style="position:absolute; left:780px; top:460px; width:30px; height:30px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:818px; top:467px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-10 ERP harmonisation · $2.4M (defer)</div>
+
+    <div style="position:absolute; left:870px; top:520px; width:22px; height:22px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:898px; top:525px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-11 Insourcing maint. · $1.4M</div>
+
+    <div style="position:absolute; left:940px; top:600px; width:18px; height:18px; border-radius:50%; background:#94A3B8;"></div>
+    <div style="position:absolute; left:966px; top:603px; font-family:'JetBrains Mono', monospace; font-size:11px; color:#475569;">OP-12 PPM quality re-tier · $0.9M</div>
+  </div>
+
+  <!-- Right side reading panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1300px; top:200px; width:540px; height:780px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1328px; top:228px; width:484px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">HOW TO READ THIS CHART</div>
+    <div style="margin-top:14px; font-size:18px; color:#FFFFFF; line-height:1.55;">Each dot is one initiative from the opportunity register. <b style="color:#FFFFFF;">Dot diameter is proportional to annualized $ impact</b> ($0.9M → $14.2M). Y-axis is $-impact; X-axis is implementation effort (composite: cost, time, change difficulty).</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1328px; top:454px; width:484px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">RECOMMENDATION</div>
+    <div style="margin-top:14px; font-size:16px; color:#E2E8F0; line-height:1.55;">Launch all <b style="color:#FFFFFF;">5 red-ring initiatives</b> in Phase-2; sequence OP-3 / OP-4 first (quick-win quadrant) for &lt;90-day cash. Hold OP-10 (ERP) and OP-11 (insourcing) for a Phase-3 study after Phase-2 stabilises governance.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1328px; top:728px; width:484px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">PARTNER NOTE</div>
+    <div style="margin-top:14px; font-size:15px; color:#CBD5E1; line-height:1.55;">OP-5 (Footprint) sits at the effort boundary; the union dependency in Tulsa is the binding constraint. If consultation slips, sequence after OP-1 / OP-2 land their first wave.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1328px; top:892px; width:484px; z-index:10;">
+    <div style="font-size:14px; color:#94A3B8; line-height:1.5;">Methodology: standard McKinsey 8-Shifts / Bain PI prioritisation<sup style="color:#60A5FA;">[1][2]</sup>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: Opportunity register v3 (2026-05-13) — sized bottom-up; effort composite scored by engagement team + 3 client SMEs</div>
+      <div>06 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

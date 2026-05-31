@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lever 5 — Footprint</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="11 Lever Footprint" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 11 · Lever 5 · Footprint — DC consolidation</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">Two Tier-3 DCs (Indianapolis, Tulsa) run below 40% utilization; Memphis absorbs both at 71% — net <span style="color:#B91C1C;">$4.7M annualized</span>.</div>
+  </div>
+
+  <!-- Network table on left -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:1080px; height:780px; background:#FFFFFF; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:228px; width:1024px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#94A3B8; text-transform:uppercase;">Distribution network — 6 DCs · FY25</div>
+  </div>
+
+  <!-- Header row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:280px; width:1024px; height:42px; background:#0B1729; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:128px; top:293px; width:984px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 200px 110px 140px 200px 180px 1fr; font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em; color:#94A3B8; text-transform:uppercase;">
+      <div>DC</div>
+      <div>Tier</div>
+      <div style="text-align:right;">Sq ft (000s)</div>
+      <div style="text-align:right;">Utilization</div>
+      <div style="text-align:right;">Cost / order</div>
+      <div style="text-align:right; padding-right:8px;">Action</div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:128px; top:336px; width:984px; z-index:10;">
+    <div style="font-size:15px;">
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; border-bottom:1px solid #E2E8F0; align-items:center;">
+        <div style="font-weight:600;">Memphis, TN</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#0B1729; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-1</span></div>
+        <div class="num" style="text-align:right;">680</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:74%; background:#15803D;"></div>
+          </div>
+          <span class="num" style="margin-left:8px;">74%</span>
+        </div>
+        <div class="num" style="text-align:right;">$22.40</div>
+        <div style="text-align:right; padding-right:8px; color:#15803D; font-weight:600;">Absorb hub</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; border-bottom:1px solid #E2E8F0; align-items:center;">
+        <div style="font-weight:600;">Reno, NV</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#0B1729; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-1</span></div>
+        <div class="num" style="text-align:right;">520</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:69%; background:#15803D;"></div>
+          </div>
+          <span class="num" style="margin-left:8px;">69%</span>
+        </div>
+        <div class="num" style="text-align:right;">$24.10</div>
+        <div style="text-align:right; padding-right:8px; color:#475569;">Hold</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; border-bottom:1px solid #E2E8F0; align-items:center;">
+        <div style="font-weight:600;">Atlanta, GA</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#475569; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-2</span></div>
+        <div class="num" style="text-align:right;">340</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:65%; background:#94A3B8;"></div>
+          </div>
+          <span class="num" style="margin-left:8px;">65%</span>
+        </div>
+        <div class="num" style="text-align:right;">$25.80</div>
+        <div style="text-align:right; padding-right:8px; color:#475569;">Hold</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; border-bottom:1px solid #E2E8F0; align-items:center;">
+        <div style="font-weight:600;">Harrisburg, PA</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#475569; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-2</span></div>
+        <div class="num" style="text-align:right;">280</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:58%; background:#94A3B8;"></div>
+          </div>
+          <span class="num" style="margin-left:8px;">58%</span>
+        </div>
+        <div class="num" style="text-align:right;">$27.20</div>
+        <div style="text-align:right; padding-right:8px; color:#475569;">Hold</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; border-bottom:1px solid #FEE2E2; align-items:center; background:#FEF2F2;">
+        <div style="font-weight:600; color:#B91C1C;">Indianapolis, IN</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#B91C1C; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-3</span></div>
+        <div class="num" style="text-align:right;">180</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:38%; background:#B91C1C;"></div>
+          </div>
+          <span class="num" style="margin-left:8px; color:#B91C1C; font-weight:600;">38%</span>
+        </div>
+        <div class="num" style="text-align:right;">$32.40</div>
+        <div style="text-align:right; padding-right:8px; color:#B91C1C; font-weight:600;">CLOSE Q4'26</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:200px 110px 140px 200px 180px 1fr; padding:14px 0; align-items:center; background:#FEF2F2;">
+        <div style="font-weight:600; color:#B91C1C;">Tulsa, OK</div>
+        <div><span style="display:inline-block; padding:2px 10px; background:#B91C1C; color:#FFFFFF; font-size:11px; letter-spacing:0.1em;">TIER-3</span></div>
+        <div class="num" style="text-align:right;">160</div>
+        <div style="text-align:right;">
+          <div style="position:relative; height:12px; background:#F1F5F9; display:inline-block; width:120px; vertical-align:middle;">
+            <div style="position:absolute; left:0; top:0; height:12px; width:32%; background:#B91C1C;"></div>
+          </div>
+          <span class="num" style="margin-left:8px; color:#B91C1C; font-weight:600;">32%</span>
+        </div>
+        <div class="num" style="text-align:right;">$34.80</div>
+        <div style="text-align:right; padding-right:8px; color:#B91C1C; font-weight:600;">CLOSE Q1'27</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom callout band -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:810px; width:1024px; height:142px; background:#0B1729; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:132px; top:830px; width:976px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.18em; color:#60A5FA;">Lease &amp; absorption window</div>
+    <div style="margin-top:10px; font-size:17px; color:#E2E8F0; line-height:1.55;">Indianapolis lease expires <span class="num" style="color:#FFFFFF; font-weight:600;">Dec 2026</span> · Tulsa lease expires <span class="num" style="color:#FFFFFF; font-weight:600;">Mar 2027</span>. Memphis has headroom to <span class="num" style="color:#FFFFFF; font-weight:600;">71%</span> utilization without capex. Capital-light play.</div>
+  </div>
+
+  <!-- RIGHT panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:200px; width:660px; height:780px; background:#0B1729; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1208px; top:228px; width:604px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">Mechanism</div>
+    <div style="margin-top:14px; font-size:16px; color:#E2E8F0; line-height:1.6;">
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">a · Network re-cut.</b> Re-allocate Indianapolis (38% util.) volume to Memphis; Tulsa (32%) split Memphis / Atlanta.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">b · Lease run-off.</b> Time closures to lease expirations — no buy-out cost.</div>
+      <div style="margin-bottom:14px;"><b style="color:#FFFFFF;">c · Labor transition.</b> 132 FTEs across Indy + Tulsa. ~38 transferable to Memphis; balance via voluntary separation.</div>
+      <div><b style="color:#FFFFFF;">d · Service-level guard-rails.</b> Re-route only if next-day-air SLA stays ≥97%.</div>
+    </div>
+  </div>
+
+  <!-- Math -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1208px; top:600px; width:604px; height:200px; background:#1E3A8A; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1228px; top:620px; width:564px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">VALUE BUILD</div>
+    <div style="margin-top:10px; font-size:14px; color:#E2E8F0; line-height:1.7;">
+      <div style="display:grid; grid-template-columns: 1fr 100px;">
+        <div>Lease + fixed overhead avoided (Indy + Tulsa)</div><div class="num" style="text-align:right;">+$5.4M</div>
+        <div>Labor cost avoided (net of severance amort.)</div><div class="num" style="text-align:right;">+$1.6M</div>
+        <div>One-time exit costs (severance, exit fees)</div><div class="num" style="text-align:right; color:#F87171;">−$1.6M</div>
+        <div>Incremental freight to re-route</div><div class="num" style="text-align:right; color:#F87171;">−$0.7M</div>
+        <div style="border-top:1px solid #60A5FA; padding-top:8px; margin-top:6px; font-weight:600; color:#FFFFFF;">Net annualised</div>
+        <div class="num" style="text-align:right; border-top:1px solid #60A5FA; padding-top:8px; margin-top:6px; font-weight:600; color:#FFFFFF;">$4.7M</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Owner / risk -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1208px; top:822px; width:604px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#60A5FA;">OWNER · RISK</div>
+    <div style="margin-top:10px; font-size:16px; font-weight:600; color:#FFFFFF;">T. Lindqvist · COO</div>
+    <div style="margin-top:8px; font-size:14px; color:#CBD5E1; line-height:1.5;">Union consultation in Tulsa (IAM Local 871) is the binding constraint. 60-day notice + good-faith bargaining built into timeline.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: TMS pull (Manhattan WMS) FY25; lease schedule via CFO; engagement team network optimisation model</div>
+      <div>11 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

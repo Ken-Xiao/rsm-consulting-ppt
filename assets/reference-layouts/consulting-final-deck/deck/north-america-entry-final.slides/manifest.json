@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "North America Entry — Strategic Options Review",
+    "description": "Partner-to-CEO end-of-engagement readout. Governing Thought on slide 02, action titles on every body slide, Implementation Roadmap on slide 18.",
+    "author": "Engagement Manager"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-governing-thought.html",
+    "03-approach.html",
+    "04-chapter-1-divider.html",
+    "05-market-evidence.html",
+    "06-customer-evidence.html",
+    "07-competitive-evidence.html",
+    "08-chapter-1-so-what.html",
+    "09-chapter-2-divider.html",
+    "10-build-option.html",
+    "11-buy-option.html",
+    "12-build-vs-buy-comparison.html",
+    "13-chapter-2-so-what.html",
+    "14-chapter-3-divider.html",
+    "15-execution-evidence.html",
+    "16-sensitivity-tornado.html",
+    "17-risks.html",
+    "18-implementation-roadmap.html",
+    "19-decisions-required.html",
+    "20-appendix-cover.html"
+  ]
+}

@@ -26,6 +26,7 @@ const report = {
   structuralWarnings: [],
   layoutLockWarnings: [],
   templatePlaceholders: [],
+  fillLevelWarnings: [],
   profileCoverage: {},
 };
 
@@ -66,6 +67,25 @@ for (const tpl of manifest.templates || []) {
   if (!Array.isArray(tpl.editable_elements) || tpl.editable_elements.length === 0) {
     report.structuralWarnings.push({ preset_family: tpl.preset_family, issue: "editable_elements is empty or not an array" });
   }
+  if (!tpl.fill_level) {
+    report.fillLevelWarnings.push({ preset_family: tpl.preset_family, issue: "missing fill_level" });
+  } else if (!["skeleton", "structured", "filled"].includes(tpl.fill_level)) {
+    report.fillLevelWarnings.push({ preset_family: tpl.preset_family, issue: `invalid fill_level: ${tpl.fill_level}` });
+  }
+  const highFrequency = new Set([
+    "insurance_results_chart_card",
+    "chart_plus_insight_panel",
+    "paired_period_comparison",
+    "stacked_contribution_split",
+    "financial_metric_grid",
+    "executive_takeaways",
+    "management_action_plan",
+    "practice_section_divider",
+    "case_evidence_panel",
+  ]);
+  if (highFrequency.has(tpl.preset_family) && tpl.fill_level !== "filled") {
+    report.fillLevelWarnings.push({ preset_family: tpl.preset_family, issue: "high-frequency page family should be fill_level=filled" });
+  }
   if (placeholders.length > 0) {
     report.templatePlaceholders.push({ preset_family: tpl.preset_family, placeholders });
   }
@@ -87,7 +107,7 @@ for (const [profile, lock] of Object.entries(manifest.layout_locks || {})) {
 }
 
 if (report.missing.length || report.duplicate.length || report.unregisteredProfiles.length) report.status = "fail";
-else if (report.structuralWarnings.length || report.layoutLockWarnings.length) report.status = "warning";
+else if (report.structuralWarnings.length || report.layoutLockWarnings.length || report.fillLevelWarnings.length) report.status = "warning";
 
 console.log(JSON.stringify(report, null, 2));
 process.exit(report.status === "fail" ? 1 : 0);

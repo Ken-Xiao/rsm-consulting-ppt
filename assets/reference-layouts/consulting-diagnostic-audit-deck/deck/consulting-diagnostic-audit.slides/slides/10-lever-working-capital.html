@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lever 4 — Working Capital</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  body { margin:0; padding:0; overflow:hidden; font-family:'Inter', sans-serif; color:#0F172A; background:#FFFFFF; }
+  .num { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div data-screen-label="10 Lever Working Capital" class="slide-container" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#0B1729; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:48px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.22em; color:#94A3B8; text-transform:uppercase;">Exhibit 10 · Lever 4 · Working Capital — DSO compression</div>
+    <div style="margin-top:10px; font-size:34px; font-weight:600; line-height:1.15; color:#0B1729;">DSO 62 → 48 days unlocks <span style="color:#B91C1C;">$6.4M one-time cash</span> + <span style="color:#B91C1C;">$0.9M run-rate</span>; the gap concentrates in 12 customers and a broken dispute-resolution loop.</div>
+  </div>
+
+  <!-- LEFT: AR ageing chart -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:200px; width:880px; height:780px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:228px; width:824px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#94A3B8; text-transform:uppercase;">AR ageing profile · 30 Apr 2026 · $M</div>
+  </div>
+
+  <!-- Ageing bars (horizontal stacked) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:300px; width:824px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 140px 1fr 100px; row-gap:24px; align-items:center;">
+      <div style="font-size:15px; color:#334155;">Current (≤30 d)</div>
+      <div style="position:relative; height:40px; background:#F1F5F9;">
+        <div style="position:absolute; left:0; top:0; height:40px; width:48%; background:#15803D;"></div>
+      </div>
+      <div class="num" style="font-size:18px; font-weight:600; color:#0B1729; text-align:right;">$98.4</div>
+
+      <div style="font-size:15px; color:#334155;">31–60 days</div>
+      <div style="position:relative; height:40px; background:#F1F5F9;">
+        <div style="position:absolute; left:0; top:0; height:40px; width:32%; background:#94A3B8;"></div>
+      </div>
+      <div class="num" style="font-size:18px; font-weight:600; color:#0B1729; text-align:right;">$66.7</div>
+
+      <div style="font-size:15px; color:#B91C1C; font-weight:600;">61–90 days</div>
+      <div style="position:relative; height:40px; background:#F1F5F9;">
+        <div style="position:absolute; left:0; top:0; height:40px; width:24%; background:#F87171;"></div>
+      </div>
+      <div class="num" style="font-size:18px; font-weight:600; color:#B91C1C; text-align:right;">$48.9</div>
+
+      <div style="font-size:15px; color:#B91C1C; font-weight:600;">91–180 days</div>
+      <div style="position:relative; height:40px; background:#F1F5F9;">
+        <div style="position:absolute; left:0; top:0; height:40px; width:14%; background:#B91C1C;"></div>
+      </div>
+      <div class="num" style="font-size:18px; font-weight:600; color:#B91C1C; text-align:right;">$28.6</div>
+
+      <div style="font-size:15px; color:#B91C1C; font-weight:600;">&gt;180 days</div>
+      <div style="position:relative; height:40px; background:#F1F5F9;">
+        <div style="position:absolute; left:0; top:0; height:40px; width:7%; background:#7F1D1D;"></div>
+      </div>
+      <div class="num" style="font-size:18px; font-weight:600; color:#B91C1C; text-align:right;">$15.0</div>
+    </div>
+  </div>
+
+  <!-- Aged buckets summary -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:580px; width:824px; height:160px; background:#FFFFFF; border:1px solid #E2E8F0; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:132px; top:602px; width:776px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#94A3B8; text-transform:uppercase;">Concentration</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-top:14px;">
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#0B1729;">32%</div>
+        <div style="font-size:14px; color:#334155; margin-top:4px;">of AR is &gt;60 days past due</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:36px; font-weight:600; color:#B91C1C;">18%</div>
+        <div style="font-size:14px; color:#334155; margin-top:4px;">of AR value sits in top-12 customer disputes — invoicing errors, missing PODs</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bench card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:108px; top:766px; width:824px; height:182px; background:#0B1729; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:132px; top:790px; width:776px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#60A5FA;">DSO trajectory</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:16px; margin-top:18px;">
+      <div>
+        <div class="num" style="font-size:38px; font-weight:600; color:#FFFFFF;">62</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">Today</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:38px; font-weight:600; color:#FFFFFF;">54</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">90-day</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:38px; font-weight:600; color:#60A5FA;">48</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">12-month target</div>
+      </div>
+      <div>
+        <div class="num" style="font-size:38px; font-weight:600; color:#94A3B8;">48</div>
+        <div style="font-size:13px; color:#94A3B8; margin-top:2px;">External bench.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:200px; width:860px; height:780px; background:#FFFFFF; border:1px solid #E2E8F0; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1008px; top:228px; width:804px; z-index:10;">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.20em; color:#94A3B8; text-transform:uppercase;">Mechanism · 4 plays</div>
+    <div style="margin-top:14px; font-size:22px; font-weight:600; color:#0B1729;">Cash-acceleration plan</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1008px; top:312px; width:804px; z-index:10;">
+    <div style="display:grid; grid-template-columns:60px 1fr 130px; row-gap:24px; align-items:start; font-size:16px; line-height:1.55;">
+      <div class="num" style="font-size:24px; font-weight:600; color:#1E40AF;">01</div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Top-12 dispute clearance taskforce</div>
+        <div style="color:#334155; margin-top:4px;">Cross-functional war-room (Sales + Finance + Ops) — 60-day SLA per account; named root-cause owner.</div>
+      </div>
+      <div class="num" style="font-weight:600; color:#0B1729; text-align:right;">$3.4M cash</div>
+
+      <div class="num" style="font-size:24px; font-weight:600; color:#1E40AF;">02</div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Collections cadence redesign</div>
+        <div style="color:#334155; margin-top:4px;">Automated dunning at day 3 / 15 / 25; collector portfolios resized; weekly DSO scorecard with CFO.</div>
+      </div>
+      <div class="num" style="font-weight:600; color:#0B1729; text-align:right;">$1.7M cash</div>
+
+      <div class="num" style="font-size:24px; font-weight:600; color:#1E40AF;">03</div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Billing-quality remediation</div>
+        <div style="color:#334155; margin-top:4px;">14% of invoices have ≥1 error (PO mismatch, missing POD). Fix-on-first-pass programme; system controls in ERP.</div>
+      </div>
+      <div class="num" style="font-weight:600; color:#0B1729; text-align:right;">$1.3M cash</div>
+
+      <div class="num" style="font-size:24px; font-weight:600; color:#1E40AF;">04</div>
+      <div>
+        <div style="font-weight:600; color:#0B1729;">Selective dynamic discounting</div>
+        <div style="color:#334155; margin-top:4px;">2/10 net 30 offered selectively on top-quartile customers; payback under 30 days.</div>
+      </div>
+      <div class="num" style="font-weight:600; color:#0B1729; text-align:right;">$0.9M run-rate</div>
+    </div>
+  </div>
+
+  <!-- Owner / total card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1008px; top:768px; width:804px; height:188px; background:#F8FAFC; border:1px solid #E2E8F0; z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1032px; top:790px; width:756px; z-index:10;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:18px;">
+      <div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#94A3B8;">TOTAL</div>
+        <div class="num" style="font-size:30px; font-weight:600; color:#0B1729; margin-top:6px;">$6.4M + $0.9M</div>
+        <div style="font-size:12px; color:#64748B; margin-top:2px;">one-time cash + annualised</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#94A3B8;">OWNER</div>
+        <div style="font-size:17px; font-weight:600; color:#0B1729; margin-top:6px;">R. Sato · CFO</div>
+        <div style="font-size:12px; color:#64748B; margin-top:2px;">Treasury &amp; OTC; quick win</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.18em; color:#94A3B8;">CONFIDENCE</div>
+        <div style="font-size:17px; font-weight:600; color:#15803D; margin-top:6px;">HIGH</div>
+        <div style="font-size:12px; color:#64748B; margin-top:2px;">grounded in transactional data</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono', monospace; font-size:11px; color:#94A3B8; letter-spacing:0.10em;">
+      <div>Source: AR ageing report 30 Apr 2026; dispute log triangulation with CRM (Salesforce); engagement team build</div>
+      <div>10 / 18</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

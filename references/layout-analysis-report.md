@@ -43,6 +43,21 @@ insight_layout_map.json
     "content_heavy_pages": 1,
     "repeated_family_warnings": 0
   },
+  "reference_layout_choice": {
+    "primary_visual_profile": "rsm-insurance-results",
+    "backup_layouts": ["consulting-final-deck"],
+    "selection_reason": "客户正式交付以 RSM 保险财务报告风为主，最终建议和路线图借用 tier-1 final deck 结构",
+    "pages_using_reference": [
+      {
+        "page_id": "P18",
+        "reference_profile": "consulting-final-deck",
+        "reference_page_family": "implementation_roadmap",
+        "source_preview": "assets/reference-layouts/consulting-final-deck/previews/18-18-implementation-roadmap.png",
+        "replication_scope": ["body_grid", "roadmap_structure", "owner_milestone_table"],
+        "best_rsm_profile_match": "rsm-insurance-results"
+      }
+    ]
+  },
   "pages": [
     {
       "page_id": "P05",
@@ -112,3 +127,4 @@ insight_layout_map.json
 - 所有正文页已从 `insight_layout_map.json` 继承 `insight_type` 和 `layout_reason`。
 - 所有正文页已从 `content_density_report.json` 继承 `content_density_status`。
 - 所有正文页 `title_fit_status` 不是 `rewrite_required`。
+- 如使用外部参考版式，必须有 `reference_layout_choice`，且每个引用页有 `source_preview`、`replication_scope` 和 `best_rsm_profile_match`。

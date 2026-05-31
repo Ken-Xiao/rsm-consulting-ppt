@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>04 — Revenue Bridge · CRM Q3 FY26</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; background:#F4F4F0; font-family:"IBM Plex Sans",sans-serif; color:#1A1A1A; }
+  .slab { font-family:"Roboto Slab", Georgia, serif; }
+  .mono { font-family:"IBM Plex Mono", Consolas, monospace; }
+</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="04 Revenue Bridge" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F4F0;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:8px; background:#082147; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:36px; width:1200px; height:24px; z-index:10;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.28em; color:#082147; font-weight:600;">04 · REVENUE BRIDGE &nbsp;·&nbsp; CONSENSUS → REPORTED, RECONCILED TO THE CENT</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1620px; top:36px; width:220px; height:24px; z-index:10;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.2em; color:#5A5A55; text-align:right;">14 MAY 2026 · 17:18 ET</div>
+  </div>
+
+  <!-- Bridge headline (matches the spec's example) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:96px; width:1180px; height:152px; z-index:10;">
+    <div class="slab" style="font-size:34px; font-weight:600; color:#082147; line-height:1.22;">
+      Revenue beat of <span class="mono" style="font-weight:700;">$190M</span> — <span class="mono">$160M</span> from Data Cloud net-new ARR, <span class="mono">$50M</span> from FX tailwind, <span class="mono" style="color:#C8102E;">($20M)</span> from Marketing Cloud renewals. Reconciles to reported <span class="mono" style="font-weight:700;">$8.20B</span> to the cent.
+    </div>
+  </div>
+
+  <!-- Bridge anchors (consensus / reported) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:262px; width:1180px; height:40px; background:#082147; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:262px; width:1180px; height:40px; z-index:10;">
+    <div class="mono" style="display:grid; grid-template-columns:200px 1fr 200px; height:40px; align-items:center; padding:0 18px; font-size:11px; letter-spacing:0.2em; color:#D8C291; font-weight:600;">
+      <div>CONSENSUS START</div>
+      <div style="text-align:center;">LINE-ITEM RECONCILIATION ($M)</div>
+      <div style="text-align:right;">REPORTED END</div>
+    </div>
+  </div>
+
+  <!-- Bar canvas: starting anchor at $8,011, ending at $8,201, range = 190 -->
+  <!-- Use 1180px wide column. Scale a "magnitude" px = 4.5 per $M -->
+
+  <!-- START anchor card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:310px; width:200px; height:546px; background:#FFFFFF; border:1px solid #E2E0D6; border-top:6px solid #082147; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:330px; width:168px; height:506px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#082147; font-weight:600; margin-bottom:14px;">CONS Q3 FY26E</div>
+    <div class="slab" style="font-size:34px; font-weight:700; color:#082147; line-height:1.05;">$8,011</div>
+    <div class="mono" style="font-size:12px; color:#5A5A55; margin-top:8px;">VA snapshot · 15:55 ET</div>
+    <div class="mono" style="font-size:12px; color:#5A5A55;">n = 42 contributors</div>
+
+    <div style="border-top:1px solid #E2E0D6; margin-top:20px; padding-top:14px;">
+      <div class="mono" style="font-size:11px; color:#5A5A55; letter-spacing:0.14em;">YoY IMPLIED</div>
+      <div style="font-size:18px; color:#082147; font-weight:600;">+6.8%</div>
+    </div>
+    <div style="border-top:1px solid #E2E0D6; margin-top:14px; padding-top:14px;">
+      <div class="mono" style="font-size:11px; color:#5A5A55; letter-spacing:0.14em;">OUR PRIOR EST.</div>
+      <div style="font-size:18px; color:#082147; font-weight:600;" class="mono">$8,054</div>
+    </div>
+    <div style="border-top:1px solid #E2E0D6; margin-top:14px; padding-top:14px;">
+      <div class="mono" style="font-size:11px; color:#5A5A55; letter-spacing:0.14em;">vs ACTUAL</div>
+      <div style="font-size:18px; color:#C8102E; font-weight:600;" class="mono">−$147 / −1.8%</div>
+    </div>
+  </div>
+
+  <!-- WATERFALL middle -->
+  <!-- Container -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:300px; top:310px; width:740px; height:546px; background:#FFFFFF; border:1px solid #E2E0D6; z-index:1;"></div>
+
+  <!-- Grid baseline at 8000 -> roughly y=720 ; scale 1 $M -> 2.4 px height; max bar 160 -> 384px -->
+  <!-- We'll position 6 buckets across 740px = 6 cols ~ 110px each, gap ~13 -->
+
+  <!-- Bucket 1: Data Cloud +160 (positive, green) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:330px; top:394px; width:90px; height:320px; background:#1A7F37; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:316px; top:362px; width:120px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#1A7F37;">+$160</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:316px; top:726px; width:118px; height:120px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:6px;">BUCKET 01</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.25;">Data Cloud<br>net-new ARR</div>
+    <div class="mono" style="font-size:10.5px; color:#5A5A55; margin-top:6px; line-height:1.3;">Organic · 1,180 logos</div>
+  </div>
+
+  <!-- Bucket 2: Pro Services +30 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:440px; top:654px; width:90px; height:60px; background:#1A7F37; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:430px; top:622px; width:110px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#1A7F37;">+$30</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:436px; top:726px; width:98px; height:120px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:6px;">BUCKET 02</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.25;">Pro Services<br>over-attach</div>
+    <div class="mono" style="font-size:10.5px; color:#5A5A55; margin-top:6px; line-height:1.3;">Slack migrations</div>
+  </div>
+
+  <!-- Bucket 3: FX +50 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:550px; top:614px; width:90px; height:100px; background:#B8975A; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:582px; width:110px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#B8975A;">+$50</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:546px; top:726px; width:98px; height:120px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:6px;">BUCKET 03</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.25;">FX tailwind<br>(DXY −2.8%)</div>
+    <div class="mono" style="font-size:10.5px; color:#5A5A55; margin-top:6px; line-height:1.3;">EUR/JPY mix</div>
+  </div>
+
+  <!-- Bucket 4: Marketing Cloud −20 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:714px; width:90px; height:40px; background:#C8102E; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:650px; top:758px; width:110px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#C8102E;">−$20</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:656px; top:792px; width:98px; height:54px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:4px;">BUCKET 04</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.2;">Mkt Cloud<br>renewal slip</div>
+  </div>
+
+  <!-- Bucket 5: One-time / M&A 0 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:770px; top:712px; width:90px; height:4px; background:#5A5A55; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:680px; width:110px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#5A5A55;">$0</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:766px; top:726px; width:98px; height:54px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:4px;">BUCKET 05</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.2;">M&amp;A /<br>one-time</div>
+  </div>
+
+  <!-- Bucket 6: Non-GAAP adj. −30 (rounding to consensus def diff) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:714px; width:90px; height:60px; background:#C8102E; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:870px; top:778px; width:110px; height:30px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:15px; font-weight:700; color:#C8102E;">−$30</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:876px; top:812px; width:98px; height:54px; z-index:10; text-align:center;">
+    <div class="mono" style="font-size:10px; letter-spacing:0.16em; color:#082147; font-weight:600; margin-bottom:4px;">BUCKET 06</div>
+    <div style="font-size:13px; color:#082147; font-weight:600; line-height:1.2;">Non-GAAP<br>def. recon</div>
+  </div>
+
+  <!-- Y-axis baseline at $8,011 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:330px; top:714px; width:640px; height:2px; background:#082147; opacity:0.6; z-index:2;"></div>
+
+  <!-- END anchor card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:310px; width:200px; height:546px; background:#082147; border-top:6px solid #B8975A; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1076px; top:330px; width:168px; height:506px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#B8975A; font-weight:600; margin-bottom:14px;">REPORTED Q3 FY26</div>
+    <div class="slab" style="font-size:34px; font-weight:700; color:#F4F4F0; line-height:1.05;">$8,201</div>
+    <div class="mono" style="font-size:12px; color:#D8C291; margin-top:8px;">10-Q · 14-May 16:05 ET</div>
+
+    <div style="border-top:1px solid #B8975A; margin-top:20px; padding-top:14px; opacity:0.85;">
+      <div class="mono" style="font-size:11px; color:#D8C291; letter-spacing:0.14em;">BEAT vs CONS</div>
+      <div style="font-size:18px; color:#1A7F37; font-weight:600;" class="mono">+$190 / +2.4%</div>
+    </div>
+    <div style="border-top:1px solid #B8975A; margin-top:14px; padding-top:14px; opacity:0.85;">
+      <div class="mono" style="font-size:11px; color:#D8C291; letter-spacing:0.14em;">BEAT vs OUR EST.</div>
+      <div style="font-size:18px; color:#1A7F37; font-weight:600;" class="mono">+$147 / +1.8%</div>
+    </div>
+    <div style="border-top:1px solid #B8975A; margin-top:14px; padding-top:14px; opacity:0.85;">
+      <div class="mono" style="font-size:11px; color:#D8C291; letter-spacing:0.14em;">YoY GROWTH</div>
+      <div style="font-size:18px; color:#F4F4F0; font-weight:600;" class="mono">+9.4% rep · +9.2% cc</div>
+    </div>
+    <div style="border-top:1px solid #B8975A; margin-top:14px; padding-top:14px; opacity:0.85;">
+      <div class="mono" style="font-size:11px; color:#D8C291; letter-spacing:0.14em;">RECONCILIATION</div>
+      <div style="font-size:14px; color:#F4F4F0; font-weight:600;" class="mono">$0 unexplained</div>
+    </div>
+  </div>
+
+  <!-- Sum-check row underneath waterfall -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1180px; height:62px; z-index:10;">
+    <div class="mono" style="font-size:13px; color:#082147; background:#FFFFFF; border:1px solid #E2E0D6; padding:14px 18px; border-left:4px solid #B8975A;">
+      <strong style="letter-spacing:0.14em;">CHECK ·</strong> &nbsp; $8,011 (cons) &nbsp;<span style="color:#1A7F37;">+ $160</span>&nbsp;<span style="color:#1A7F37;">+ $30</span>&nbsp;<span style="color:#B8975A;">+ $50</span>&nbsp;<span style="color:#C8102E;">− $20</span>&nbsp;+ $0&nbsp;<span style="color:#C8102E;">− $30</span>&nbsp;<strong style="color:#082147;">= $8,201 (reported)</strong> &nbsp;·&nbsp; <span style="color:#1A7F37; font-weight:600;">Δ = $0.00</span> &nbsp;·&nbsp; bridge ties to the cent.
+    </div>
+  </div>
+
+  <!-- RIGHT: rating boxout (compact) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:96px; width:520px; height:846px; background:#082147; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:96px; width:520px; height:6px; background:#B8975A; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:120px; width:470px; height:30px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#B8975A; font-weight:600;">RATING · 12M PT · METHODOLOGY</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1346px; top:166px; width:110px; height:42px; background:#B8975A; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:174px; width:110px; height:28px; z-index:10; text-align:center;">
+    <div class="slab" style="font-size:20px; font-weight:700; color:#082147; letter-spacing:0.06em;">BUY</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1476px; top:172px; width:340px; height:36px; z-index:10;">
+    <div class="mono" style="font-size:11px; color:#D8C291; letter-spacing:0.16em;">CONVICTION LIST · 248 DAYS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:236px; width:470px; height:100px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:#D8C291; margin-bottom:10px;">12-MONTH PRICE TARGET</div>
+    <div style="display:flex; align-items:baseline; gap:14px;">
+      <div class="slab" style="font-size:62px; font-weight:700; color:#F4F4F0; line-height:0.9;">$340</div>
+      <div style="color:#1A7F37; font-weight:600; font-size:20px;" class="mono">+18.0%</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1346px; top:360px; width:470px; height:1px; background:#B8975A; opacity:0.5; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:378px; width:470px; height:360px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:#D8C291; margin-bottom:14px;">BRIDGE DISCIPLINE — METHOD NOTE</div>
+    <div style="font-size:14px; line-height:1.55; color:#F4F4F0;">
+      The waterfall buckets are defined per CFA Institute curriculum on equity asset valuation<sup>[4][8]</sup>: <strong style="color:#B8975A;">(i) organic growth</strong> (Data Cloud, Pro Services), <strong style="color:#B8975A;">(ii) FX</strong> (currency translation), <strong style="color:#B8975A;">(iii) M&amp;A / one-time</strong> (none this Q), <strong style="color:#B8975A;">(iv) non-GAAP definitional reconciliation</strong> (warrant-related rev haircut).
+      <br><br>
+      Reconciliation is exact: bucket sum + consensus = reported, to the cent. No methodology footnote required.
+      <br><br>
+      cc growth derived using prior-year FX rates per company definition (10-Q §3); FX tailwind buckets translation only (not transactional).
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1346px; top:760px; width:470px; height:1px; background:#B8975A; opacity:0.5; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:776px; width:470px; height:140px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:#D8C291; margin-bottom:8px;">PM READ</div>
+    <div style="font-size:14px; line-height:1.5; color:#F4F4F0;">
+      The signal is bucket 01: Data Cloud net-new ARR is now the marginal $1 of growth. Strip FX, strip the warrant haircut, and the organic beat is <span class="mono" style="font-weight:600; color:#B8975A;">$170M / +2.1%</span>. This is the cleanest organic-driven beat of FY26.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:1006px; width:1760px; height:1px; background:#082147; opacity:0.35; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1024px; width:1760px; height:40px; z-index:10;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.16em; color:#5A5A55;">
+      Source: Visible Alpha deep consensus<sup style="color:#082147;">[6]</sup> as of <span style="color:#082147; font-weight:600;">15:55 ET, 14-May-2026</span> (pre-print, n=42); CRM 10-Q 14-May-2026; firm models. Bridge methodology per CFA Institute equity asset valuation<sup style="color:#082147;">[4][8]</sup>.
+      &nbsp;|&nbsp; 04 / 14
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

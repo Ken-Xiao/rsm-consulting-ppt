@@ -4,287 +4,1014 @@
       "preset_family": "insurance_cover",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-insurance-cover.html",
-      "required_fields": ["title", "subtitle", "team_or_org", "date", "logo", "hero_image"],
-      "optional_fields": ["cover_statement", "copyright"],
-      "render_tracks": ["native-text", "background-image", "brand-shapes"],
-      "editable_elements": ["title", "subtitle", "team_or_org", "date", "logo_text"],
-      "rasterized_elements": ["hero_image", "decorative_grid"],
-      "qa_focus": ["hero_image_crop", "title_readability", "rsm_side_bars", "logo_alignment", "text_volume"]
+      "required_fields": [
+        "title",
+        "subtitle",
+        "team_or_org",
+        "date",
+        "logo",
+        "hero_image"
+      ],
+      "optional_fields": [
+        "cover_statement",
+        "copyright"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image",
+        "brand-shapes"
+      ],
+      "editable_elements": [
+        "title",
+        "subtitle",
+        "team_or_org",
+        "date",
+        "logo_text"
+      ],
+      "rasterized_elements": [
+        "hero_image",
+        "decorative_grid"
+      ],
+      "qa_focus": [
+        "hero_image_crop",
+        "title_readability",
+        "rsm_side_bars",
+        "logo_alignment",
+        "text_volume"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "insurance_agenda",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-practice-agenda.html",
-      "required_fields": ["agenda_items", "page_ranges", "logo"],
-      "optional_fields": ["hero_image", "agenda_title", "copyright"],
-      "render_tracks": ["native-text", "background-image"],
-      "editable_elements": ["agenda_items", "page_ranges", "agenda_title", "footer"],
-      "rasterized_elements": ["hero_image"],
-      "qa_focus": ["agenda_alignment", "page_range_alignment", "photo_panel_crop", "line_spacing"]
+      "required_fields": [
+        "agenda_items",
+        "page_ranges",
+        "logo"
+      ],
+      "optional_fields": [
+        "hero_image",
+        "agenda_title",
+        "copyright"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image"
+      ],
+      "editable_elements": [
+        "agenda_items",
+        "page_ranges",
+        "agenda_title",
+        "footer"
+      ],
+      "rasterized_elements": [
+        "hero_image"
+      ],
+      "qa_focus": [
+        "agenda_alignment",
+        "page_range_alignment",
+        "photo_panel_crop",
+        "line_spacing"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "insurance_section_divider",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-insurance-section.html",
-      "required_fields": ["section_number", "section_title", "hero_image", "logo", "copyright"],
-      "optional_fields": ["chapter_question", "chapter_answer", "image_prompt", "image_asset_id"],
-      "render_tracks": ["native-text", "background-image"],
-      "editable_elements": ["section_number", "section_title", "chapter_question", "chapter_answer", "footer"],
-      "rasterized_elements": ["hero_image"],
-      "qa_focus": ["image_crop", "title_band_alignment", "section_number_readability", "text_volume"]
+      "required_fields": [
+        "section_number",
+        "section_title",
+        "hero_image",
+        "logo",
+        "copyright"
+      ],
+      "optional_fields": [
+        "chapter_question",
+        "chapter_answer",
+        "image_prompt",
+        "image_asset_id"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image"
+      ],
+      "editable_elements": [
+        "section_number",
+        "section_title",
+        "chapter_question",
+        "chapter_answer",
+        "footer"
+      ],
+      "rasterized_elements": [
+        "hero_image"
+      ],
+      "qa_focus": [
+        "image_crop",
+        "title_band_alignment",
+        "section_number_readability",
+        "text_volume"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "insurance_results_chart_card",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-insurance-results-chart-card.html",
-      "required_fields": ["claim_title", "story_subtitle", "takeaway_text", "chart_data", "source_note", "lineage_ids"],
-      "optional_fields": ["module_name", "module_number", "supporting_evidence", "chart_readout"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "takeaway_text", "source_note", "page_number"],
-      "rasterized_elements": ["main_chart"],
-      "qa_focus": ["header_pill_alignment", "takeaway_bar_readability", "chart_card_fullness", "chart_labels", "source_traceability"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "takeaway_text",
+        "chart_data",
+        "source_note",
+        "lineage_ids"
+      ],
+      "optional_fields": [
+        "module_name",
+        "module_number",
+        "supporting_evidence",
+        "chart_readout"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "takeaway_text",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "main_chart"
+      ],
+      "qa_focus": [
+        "header_pill_alignment",
+        "takeaway_bar_readability",
+        "chart_card_fullness",
+        "chart_labels",
+        "source_traceability"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "chart_plus_insight_panel",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-chart-plus-insight-panel.html",
-      "required_fields": ["claim_title", "story_subtitle", "chart_data", "insight_cards", "source_note"],
-      "optional_fields": ["metric_strip", "module_name", "module_number"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["main_chart", "insight_panel"],
-      "qa_focus": ["chart_card_fullness", "insight_card_alignment", "source_traceability", "placeholder_replacement"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "chart_data",
+        "insight_cards",
+        "source_note"
+      ],
+      "optional_fields": [
+        "metric_strip",
+        "module_name",
+        "module_number"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "main_chart",
+        "insight_panel"
+      ],
+      "qa_focus": [
+        "chart_card_fullness",
+        "insight_card_alignment",
+        "source_traceability",
+        "placeholder_replacement"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "paired_period_comparison",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-paired-period-comparison.html",
-      "required_fields": ["claim_title", "story_subtitle", "period_a", "period_b", "chart_data", "source_note", "difference_labels"],
-      "optional_fields": ["module_name", "module_number", "takeaway_text", "metric_strip"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "period_a", "period_b", "source_note", "page_number"],
-      "rasterized_elements": ["comparison_chart_body"],
-      "qa_focus": ["period_axis_consistency", "delta_visibility", "chart_card_alignment", "source_traceability"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "period_a",
+        "period_b",
+        "chart_data",
+        "source_note",
+        "difference_labels"
+      ],
+      "optional_fields": [
+        "module_name",
+        "module_number",
+        "takeaway_text",
+        "metric_strip"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "period_a",
+        "period_b",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "comparison_chart_body"
+      ],
+      "qa_focus": [
+        "period_axis_consistency",
+        "delta_visibility",
+        "chart_card_alignment",
+        "source_traceability"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "stacked_contribution_split",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-stacked-contribution-split.html",
-      "required_fields": ["claim_title", "story_subtitle", "components", "chart_data", "source_note", "contribution_readout"],
-      "optional_fields": ["module_name", "module_number", "metric_strip", "negative_value_note"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "contribution_readout", "source_note", "page_number"],
-      "rasterized_elements": ["stacked_chart_body"],
-      "qa_focus": ["component_order", "label_readability", "negative_value_handling", "side_metric_fullness"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "components",
+        "chart_data",
+        "source_note",
+        "contribution_readout"
+      ],
+      "optional_fields": [
+        "module_name",
+        "module_number",
+        "metric_strip",
+        "negative_value_note"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "contribution_readout",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "stacked_chart_body"
+      ],
+      "qa_focus": [
+        "component_order",
+        "label_readability",
+        "negative_value_handling",
+        "side_metric_fullness"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "executive_summary_grid",
       "visual_profile": "rsm-insurance-results",
       "template_file": "assets/layouts/layout-executive-summary-grid.html",
-      "required_fields": ["answer_to_client_question", "key_findings", "evidence_numbers", "recommended_actions", "source_note"],
-      "optional_fields": ["client_question", "implications", "next_steps"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "answer_to_client_question", "source_note", "page_number"],
-      "rasterized_elements": ["summary_grid"],
-      "qa_focus": ["answer_prominence", "card_density", "evidence_numbers", "action_specificity"]
+      "required_fields": [
+        "answer_to_client_question",
+        "key_findings",
+        "evidence_numbers",
+        "recommended_actions",
+        "source_note"
+      ],
+      "optional_fields": [
+        "client_question",
+        "implications",
+        "next_steps"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "answer_to_client_question",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "summary_grid"
+      ],
+      "qa_focus": [
+        "answer_prominence",
+        "card_density",
+        "evidence_numbers",
+        "action_specificity"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "kpi_dashboard",
       "visual_profile": "sunong-value-creation",
       "template_file": "assets/layouts/layout-kpi-summary.html",
-      "required_fields": ["claim_title", "story_subtitle", "kpis", "source_note"],
-      "optional_fields": ["industry_anchor", "conclusion_blocks", "reading_path"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["kpi_cards"],
-      "qa_focus": ["metric_readability", "rank_badges", "card_alignment", "conclusion_blocks"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "kpis",
+        "source_note"
+      ],
+      "optional_fields": [
+        "industry_anchor",
+        "conclusion_blocks",
+        "reading_path"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "kpi_cards"
+      ],
+      "qa_focus": [
+        "metric_readability",
+        "rank_badges",
+        "card_alignment",
+        "conclusion_blocks"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "module_summary",
       "visual_profile": "sunong-value-creation",
       "template_file": "assets/layouts/layout-module-summary.html",
-      "required_fields": ["module_number", "module_title", "summary_claims", "evidence_links", "next_module"],
-      "optional_fields": ["key_numbers", "source_note"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["module_title", "summary_claims", "source_note", "page_number"],
-      "rasterized_elements": ["summary_cards"],
-      "qa_focus": ["evidence_backlinks", "module_transition", "card_fullness", "next_module_prompt"]
+      "required_fields": [
+        "module_number",
+        "module_title",
+        "summary_claims",
+        "evidence_links",
+        "next_module"
+      ],
+      "optional_fields": [
+        "key_numbers",
+        "source_note"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "module_title",
+        "summary_claims",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "summary_cards"
+      ],
+      "qa_focus": [
+        "evidence_backlinks",
+        "module_transition",
+        "card_fullness",
+        "next_module_prompt"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "comparison_table",
       "visual_profile": "rsm-policy-light",
       "template_file": "assets/layouts/layout-comparison-table.html",
-      "required_fields": ["claim_title", "story_subtitle", "comparison_rows", "source_note"],
-      "optional_fields": ["highlight_column", "method_note", "decision_readout"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["comparison_table"],
-      "qa_focus": ["table_hierarchy", "highlight_column", "text_overflow", "source_traceability"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "comparison_rows",
+        "source_note"
+      ],
+      "optional_fields": [
+        "highlight_column",
+        "method_note",
+        "decision_readout"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "comparison_table"
+      ],
+      "qa_focus": [
+        "table_hierarchy",
+        "highlight_column",
+        "text_overflow",
+        "source_traceability"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "jurisdiction_matrix",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-jurisdiction-matrix.html",
-      "required_fields": ["claim_title", "jurisdictions", "dimensions", "matrix_cells", "source_note"],
-      "optional_fields": ["legend", "method_note", "focus_jurisdiction"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "source_note", "page_number"],
-      "rasterized_elements": ["matrix_body"],
-      "qa_focus": ["matrix_text_fit", "jurisdiction_color_consistency", "dimension_column_readability", "legend_alignment"]
+      "required_fields": [
+        "claim_title",
+        "jurisdictions",
+        "dimensions",
+        "matrix_cells",
+        "source_note"
+      ],
+      "optional_fields": [
+        "legend",
+        "method_note",
+        "focus_jurisdiction"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "matrix_body"
+      ],
+      "qa_focus": [
+        "matrix_text_fit",
+        "jurisdiction_color_consistency",
+        "dimension_column_readability",
+        "legend_alignment"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "policy_philosophy_map",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-policy-philosophy-map.html",
-      "required_fields": ["claim_title", "axis_x", "axis_y", "policy_positions", "type_cards", "source_note"],
-      "optional_fields": ["subtitle", "legend", "quadrant_labels"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["map_body"],
-      "qa_focus": ["axis_label_readability", "point_label_overlap", "type_card_alignment", "color_semantics"]
+      "required_fields": [
+        "claim_title",
+        "axis_x",
+        "axis_y",
+        "policy_positions",
+        "type_cards",
+        "source_note"
+      ],
+      "optional_fields": [
+        "subtitle",
+        "legend",
+        "quadrant_labels"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "map_body"
+      ],
+      "qa_focus": [
+        "axis_label_readability",
+        "point_label_overlap",
+        "type_card_alignment",
+        "color_semantics"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "global_policy_cover",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-global-policy-cover.html",
-      "required_fields": ["title", "subtitle", "jurisdiction_scope", "date", "team_or_org"],
-      "optional_fields": ["hero_image", "study_purpose", "logo"],
-      "render_tracks": ["native-text", "background-image", "brand-shapes"],
-      "editable_elements": ["title", "subtitle", "jurisdiction_scope", "date", "team_or_org", "logo_text"],
-      "rasterized_elements": ["hero_image", "background_texture"],
-      "qa_focus": ["title_contrast", "building_image_lightness", "left_brand_bar", "metadata_readability"]
+      "required_fields": [
+        "title",
+        "subtitle",
+        "jurisdiction_scope",
+        "date",
+        "team_or_org"
+      ],
+      "optional_fields": [
+        "hero_image",
+        "study_purpose",
+        "logo"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image",
+        "brand-shapes"
+      ],
+      "editable_elements": [
+        "title",
+        "subtitle",
+        "jurisdiction_scope",
+        "date",
+        "team_or_org",
+        "logo_text"
+      ],
+      "rasterized_elements": [
+        "hero_image",
+        "background_texture"
+      ],
+      "qa_focus": [
+        "title_contrast",
+        "building_image_lightness",
+        "left_brand_bar",
+        "metadata_readability"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "global_policy_agenda",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-global-policy-agenda.html",
-      "required_fields": ["research_framework", "core_dimensions", "scope_note", "source_note"],
-      "optional_fields": ["agenda_items", "page_ranges"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "source_note", "page_number"],
-      "rasterized_elements": ["agenda_body"],
-      "qa_focus": ["two_column_balance", "number_alignment", "bottom_note_readability", "segmented_rule"]
+      "required_fields": [
+        "research_framework",
+        "core_dimensions",
+        "scope_note",
+        "source_note"
+      ],
+      "optional_fields": [
+        "agenda_items",
+        "page_ranges"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "agenda_body"
+      ],
+      "qa_focus": [
+        "two_column_balance",
+        "number_alignment",
+        "bottom_note_readability",
+        "segmented_rule"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "global_policy_dark_summary",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-global-policy-dark-summary.html",
-      "required_fields": ["claim_title", "left_findings", "right_outlook", "metric_strip"],
-      "optional_fields": ["source_note", "footer_labels"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "source_note", "page_number"],
-      "rasterized_elements": ["summary_body"],
-      "qa_focus": ["dark_contrast", "card_readability", "bullet_density", "metric_strip_alignment"]
+      "required_fields": [
+        "claim_title",
+        "left_findings",
+        "right_outlook",
+        "metric_strip"
+      ],
+      "optional_fields": [
+        "source_note",
+        "footer_labels"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "summary_body"
+      ],
+      "qa_focus": [
+        "dark_contrast",
+        "card_readability",
+        "bullet_density",
+        "metric_strip_alignment"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "policy_framework_cards",
       "visual_profile": "rsm-global-policy",
       "template_file": "assets/layouts/layout-policy-framework-cards.html",
-      "required_fields": ["claim_title", "framework_cards", "source_note"],
-      "optional_fields": ["subtitle", "icons", "rule_boxes"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["framework_cards"],
-      "qa_focus": ["card_pair_alignment", "rule_box_readability", "icon_consistency", "text_volume"]
+      "required_fields": [
+        "claim_title",
+        "framework_cards",
+        "source_note"
+      ],
+      "optional_fields": [
+        "subtitle",
+        "icons",
+        "rule_boxes"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "framework_cards"
+      ],
+      "qa_focus": [
+        "card_pair_alignment",
+        "rule_box_readability",
+        "icon_consistency",
+        "text_volume"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "sunong_dark_cover",
       "visual_profile": "sunong-value-creation",
       "template_file": "assets/layouts/layout-sunong-dark-cover.html",
-      "required_fields": ["client_name", "ticker", "title", "subtitle", "meta_items", "date"],
-      "optional_fields": ["reading_path", "logo", "cover_note"],
-      "render_tracks": ["native-text", "brand-shapes"],
-      "editable_elements": ["client_name", "ticker", "title", "subtitle", "meta_items", "date", "reading_path"],
-      "rasterized_elements": ["dark_gradient_background"],
-      "qa_focus": ["title_wrap", "metadata_column", "reading_path", "logo_position", "dark_contrast"]
+      "required_fields": [
+        "client_name",
+        "ticker",
+        "title",
+        "subtitle",
+        "meta_items",
+        "date"
+      ],
+      "optional_fields": [
+        "reading_path",
+        "logo",
+        "cover_note"
+      ],
+      "render_tracks": [
+        "native-text",
+        "brand-shapes"
+      ],
+      "editable_elements": [
+        "client_name",
+        "ticker",
+        "title",
+        "subtitle",
+        "meta_items",
+        "date",
+        "reading_path"
+      ],
+      "rasterized_elements": [
+        "dark_gradient_background"
+      ],
+      "qa_focus": [
+        "title_wrap",
+        "metadata_column",
+        "reading_path",
+        "logo_position",
+        "dark_contrast"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "sunong_chart_diagnostic",
       "visual_profile": "sunong-value-creation",
       "template_file": "assets/layouts/layout-sunong-chart-diagnostic.html",
-      "required_fields": ["claim_title", "story_subtitle", "chart_data", "diagnostic_readout", "source_note"],
-      "optional_fields": ["module_name", "benchmark_note", "method_note"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["main_chart", "diagnostic_panel"],
-      "qa_focus": ["dark_header_absence", "chart_focus", "readout_specificity", "source_traceability"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "chart_data",
+        "diagnostic_readout",
+        "source_note"
+      ],
+      "optional_fields": [
+        "module_name",
+        "benchmark_note",
+        "method_note"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "main_chart",
+        "diagnostic_panel"
+      ],
+      "qa_focus": [
+        "dark_header_absence",
+        "chart_focus",
+        "readout_specificity",
+        "source_traceability"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "option_comparison",
       "visual_profile": "rsm-policy-light",
       "template_file": "assets/layouts/layout-option-comparison.html",
-      "required_fields": ["claim_title", "options", "evaluation_criteria", "recommended_option", "rationale", "source_note"],
-      "optional_fields": ["scoring_method", "implementation_note"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "source_note", "page_number"],
-      "rasterized_elements": ["option_matrix"],
-      "qa_focus": ["recommended_option_visible", "criteria_fit", "rationale_presence", "text_overflow"]
+      "required_fields": [
+        "claim_title",
+        "options",
+        "evaluation_criteria",
+        "recommended_option",
+        "rationale",
+        "source_note"
+      ],
+      "optional_fields": [
+        "scoring_method",
+        "implementation_note"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "option_matrix"
+      ],
+      "qa_focus": [
+        "recommended_option_visible",
+        "criteria_fit",
+        "rationale_presence",
+        "text_overflow"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "management_action_plan",
       "visual_profile": "rsm-policy-light",
       "template_file": "assets/layouts/layout-management-action-plan.html",
-      "required_fields": ["claim_title", "actions", "owners", "timeline", "metrics", "source_note"],
-      "optional_fields": ["dependencies", "risk_notes"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "source_note", "page_number"],
-      "rasterized_elements": ["action_table"],
-      "qa_focus": ["owner_timeline_metric_presence", "table_fit", "action_specificity"]
+      "required_fields": [
+        "claim_title",
+        "actions",
+        "owners",
+        "timeline",
+        "metrics",
+        "source_note"
+      ],
+      "optional_fields": [
+        "dependencies",
+        "risk_notes"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "action_table"
+      ],
+      "qa_focus": [
+        "owner_timeline_metric_presence",
+        "table_fit",
+        "action_specificity"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "practice_cover",
       "visual_profile": "rsm-practice-sharing",
       "template_file": "assets/layouts/layout-practice-cover.html",
-      "required_fields": ["title", "subtitle", "team_or_org", "date", "hero_image"],
-      "optional_fields": ["logo", "cover_tag"],
-      "render_tracks": ["native-text", "background-image"],
-      "editable_elements": ["title", "subtitle", "team_or_org", "date"],
-      "rasterized_elements": ["hero_image", "geometric_overlay"],
-      "qa_focus": ["photo_crop", "calligraphy_title", "blue_vertical_accent", "text_contrast"]
+      "required_fields": [
+        "title",
+        "subtitle",
+        "team_or_org",
+        "date",
+        "hero_image"
+      ],
+      "optional_fields": [
+        "logo",
+        "cover_tag"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image"
+      ],
+      "editable_elements": [
+        "title",
+        "subtitle",
+        "team_or_org",
+        "date"
+      ],
+      "rasterized_elements": [
+        "hero_image",
+        "geometric_overlay"
+      ],
+      "qa_focus": [
+        "photo_crop",
+        "calligraphy_title",
+        "blue_vertical_accent",
+        "text_contrast"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "practice_agenda",
       "visual_profile": "rsm-practice-sharing",
       "template_file": "assets/layouts/layout-practice-agenda.html",
-      "required_fields": ["agenda_items", "page_ranges", "hero_image"],
-      "optional_fields": ["logo", "agenda_title"],
-      "render_tracks": ["native-text", "background-image"],
-      "editable_elements": ["agenda_items", "page_ranges", "agenda_title"],
-      "rasterized_elements": ["hero_image", "geometric_overlay"],
-      "qa_focus": ["photo_panel_crop", "agenda_line_spacing", "page_range_alignment"]
+      "required_fields": [
+        "agenda_items",
+        "page_ranges",
+        "hero_image"
+      ],
+      "optional_fields": [
+        "logo",
+        "agenda_title"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image"
+      ],
+      "editable_elements": [
+        "agenda_items",
+        "page_ranges",
+        "agenda_title"
+      ],
+      "rasterized_elements": [
+        "hero_image",
+        "geometric_overlay"
+      ],
+      "qa_focus": [
+        "photo_panel_crop",
+        "agenda_line_spacing",
+        "page_range_alignment"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     },
     {
       "preset_family": "practice_section_divider",
       "visual_profile": "rsm-practice-sharing",
       "template_file": "assets/layouts/layout-practice-section-divider.html",
-      "required_fields": ["section_number", "section_title", "hero_image", "chapter_question"],
-      "optional_fields": ["chapter_answer", "logo", "copyright", "image_prompt", "image_asset_id"],
-      "render_tracks": ["native-text", "background-image"],
-      "editable_elements": ["section_number", "section_title", "chapter_question", "chapter_answer", "footer"],
-      "rasterized_elements": ["hero_image"],
-      "qa_focus": ["image_crop", "title_readability", "blue_vertical_accent", "geometric_overlay", "text_volume"]
+      "required_fields": [
+        "section_number",
+        "section_title",
+        "hero_image",
+        "chapter_question"
+      ],
+      "optional_fields": [
+        "chapter_answer",
+        "logo",
+        "copyright",
+        "image_prompt",
+        "image_asset_id"
+      ],
+      "render_tracks": [
+        "native-text",
+        "background-image"
+      ],
+      "editable_elements": [
+        "section_number",
+        "section_title",
+        "chapter_question",
+        "chapter_answer",
+        "footer"
+      ],
+      "rasterized_elements": [
+        "hero_image"
+      ],
+      "qa_focus": [
+        "image_crop",
+        "title_readability",
+        "blue_vertical_accent",
+        "geometric_overlay",
+        "text_volume"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "case_evidence_panel",
       "visual_profile": "rsm-practice-sharing",
       "template_file": "assets/layouts/layout-practice-observation.html",
-      "required_fields": ["claim_title", "story_subtitle", "case_fact", "basis", "finding", "recommendation", "source_note"],
-      "optional_fields": ["side_image", "evidence_tags"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["case_panel", "side_image"],
-      "qa_focus": ["case_text_density", "basis_source", "recommendation_specificity", "image_lightness"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "case_fact",
+        "basis",
+        "finding",
+        "recommendation",
+        "source_note"
+      ],
+      "optional_fields": [
+        "side_image",
+        "evidence_tags"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "case_panel",
+        "side_image"
+      ],
+      "qa_focus": [
+        "case_text_density",
+        "basis_source",
+        "recommendation_specificity",
+        "image_lightness"
+      ],
+      "fill_level": "filled",
+      "minimum_supporting_slots": 3,
+      "placeholder_policy": "no visible placeholder text in client-ready output",
+      "body_grid": "fixed content grid with primary evidence and supporting layer"
     },
     {
       "preset_family": "three_recommendation_cards",
       "visual_profile": "rsm-practice-sharing",
       "template_file": "assets/layouts/layout-practice-three-cards.html",
-      "required_fields": ["claim_title", "story_subtitle", "recommendations", "source_note"],
-      "optional_fields": ["icons", "evidence_links"],
-      "render_tracks": ["html-image", "native-text-overlay"],
-      "editable_elements": ["claim_title", "story_subtitle", "source_note", "page_number"],
-      "rasterized_elements": ["recommendation_cards"],
-      "qa_focus": ["three_card_alignment", "recommendation_specificity", "text_fit"]
+      "required_fields": [
+        "claim_title",
+        "story_subtitle",
+        "recommendations",
+        "source_note"
+      ],
+      "optional_fields": [
+        "icons",
+        "evidence_links"
+      ],
+      "render_tracks": [
+        "html-image",
+        "native-text-overlay"
+      ],
+      "editable_elements": [
+        "claim_title",
+        "story_subtitle",
+        "source_note",
+        "page_number"
+      ],
+      "rasterized_elements": [
+        "recommendation_cards"
+      ],
+      "qa_focus": [
+        "three_card_alignment",
+        "recommendation_specificity",
+        "text_fit"
+      ],
+      "fill_level": "structured",
+      "placeholder_policy": "replace all visible placeholders before delivery"
     }
   ],
   "layout_locks": {
@@ -300,7 +1027,10 @@
         "stacked_contribution_split",
         "management_action_plan"
       ],
-      "fallback": ["comparison_table", "option_comparison"]
+      "fallback": [
+        "comparison_table",
+        "option_comparison"
+      ]
     },
     "rsm-practice-sharing": {
       "allowed": [
@@ -311,7 +1041,9 @@
         "three_recommendation_cards",
         "management_action_plan"
       ],
-      "fallback": ["comparison_table"]
+      "fallback": [
+        "comparison_table"
+      ]
     },
     "rsm-global-policy": {
       "allowed": [
@@ -324,7 +1056,10 @@
         "comparison_table",
         "option_comparison"
       ],
-      "fallback": ["comparison_table", "option_comparison"]
+      "fallback": [
+        "comparison_table",
+        "option_comparison"
+      ]
     },
     "sunong-value-creation": {
       "allowed": [
@@ -335,7 +1070,10 @@
         "comparison_table",
         "management_action_plan"
       ],
-      "fallback": ["comparison_table", "management_action_plan"]
+      "fallback": [
+        "comparison_table",
+        "management_action_plan"
+      ]
     },
     "rsm-policy-light": {
       "allowed": [
@@ -343,7 +1081,10 @@
         "option_comparison",
         "management_action_plan"
       ],
-      "fallback": ["jurisdiction_matrix", "policy_framework_cards"]
+      "fallback": [
+        "jurisdiction_matrix",
+        "policy_framework_cards"
+      ]
     }
   }
 }

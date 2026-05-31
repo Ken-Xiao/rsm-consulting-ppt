@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work Plan — Gantt</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+  body { margin:0; padding:0; overflow:hidden; font-family:'Public Sans', system-ui, sans-serif; color:#0F172A; background:#FFFFFF; }
+  .mono { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="06 Work Plan" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:84px; background:#1B3A6B; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:24px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.24em; color:#9CC2FF; text-transform:uppercase;">06 / 16 · Approach — Work Plan Gantt</div>
+      <div class="mono" style="font-size:14px; letter-spacing:0.18em; color:#9CC2FF;">Every milestone ↔ named rubric criterion</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:14px; letter-spacing:0.22em; color:#9A2B2B; text-transform:uppercase;">24-month Gantt — 8 tasks · 6 decision gates · 12 deliverables</div>
+    <div style="font-size:46px; font-weight:800; line-height:1.06; color:#0F172A; margin-top:10px; letter-spacing:-0.015em;">Each Gantt milestone is colour-coded to its review criterion.</div>
+  </div>
+
+  <!-- Gantt SVG -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:80px; top:300px; width:1760px; height:620px; z-index:10;">
+    <svg viewBox="0 0 1760 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; font-family:'JetBrains Mono', monospace;">
+      <!-- Header band -->
+      <rect x="0" y="0" width="1760" height="50" fill="#F1F5F9"/>
+      <text x="20" y="32" font-size="13" fill="#0F172A" font-weight="700" letter-spacing="0.12em">TASK</text>
+      <!-- Month headers Y1 / Y2 -->
+      <g font-size="12" fill="#475569" text-anchor="middle">
+        <text x="500" y="20" font-weight="700" fill="#1B3A6B">YEAR 1</text>
+        <text x="1300" y="20" font-weight="700" fill="#9A2B2B">YEAR 2</text>
+      </g>
+      <g font-size="11" fill="#475569" text-anchor="middle" font-family="'JetBrains Mono'">
+        <text x="370" y="40">M1</text><text x="430" y="40">M2</text><text x="490" y="40">M3</text>
+        <text x="550" y="40">M4</text><text x="610" y="40">M5</text><text x="670" y="40">M6</text>
+        <text x="730" y="40">M7</text><text x="790" y="40">M8</text><text x="850" y="40">M9</text>
+        <text x="910" y="40">M10</text><text x="970" y="40">M11</text><text x="1030" y="40">M12</text>
+        <text x="1090" y="40">M13</text><text x="1150" y="40">M14</text><text x="1210" y="40">M15</text>
+        <text x="1270" y="40">M16</text><text x="1330" y="40">M17</text><text x="1390" y="40">M18</text>
+        <text x="1450" y="40">M19</text><text x="1510" y="40">M20</text><text x="1570" y="40">M21</text>
+        <text x="1630" y="40">M22</text><text x="1690" y="40">M23</text><text x="1750" y="40" fill="#9A2B2B">M24</text>
+      </g>
+
+      <!-- Vertical grid -->
+      <g stroke="#E2E8F0" stroke-width="1">
+        <line x1="340" y1="50" x2="340" y2="560"/>
+        <line x1="700" y1="50" x2="700" y2="560"/>
+        <line x1="1060" y1="50" x2="1060" y2="560"/>
+        <line x1="1420" y1="50" x2="1420" y2="560"/>
+        <line x1="1780" y1="50" x2="1780" y2="560"/>
+      </g>
+
+      <!-- Tasks (y per row) -->
+      <g font-size="13" fill="#0F172A">
+        <!-- Row helper template: each row 60px tall starting y=60 -->
+        <!-- T1 -->
+        <rect x="0" y="60" width="1760" height="60" fill="#FFFFFF"/>
+        <text x="20" y="92" font-weight="600">T1 · Assay optimization → LOD 0.18</text>
+        <text x="20" y="110" font-size="11" fill="#64748B">D1.1 Reagent lot lock · D1.2 SOP v2</text>
+        <rect x="340" y="74" width="420" height="22" fill="#1B3A6B" rx="2"/>
+        <circle cx="760" cy="85" r="8" fill="#1B3A6B"/>
+        <text x="772" y="89" font-size="11" fill="#1B3A6B">M1: LOD lock</text>
+
+        <!-- T2 -->
+        <rect x="0" y="120" width="1760" height="60" fill="#F8FAFC"/>
+        <text x="20" y="152" font-weight="600">T2 · Clinical cohort enrollment (n=240)</text>
+        <text x="20" y="170" font-size="11" fill="#64748B">D2.1 IRB approval · D2.2 60% accrual · D2.3 lock</text>
+        <rect x="400" y="134" width="780" height="22" fill="#1B3A6B" rx="2"/>
+        <circle cx="1180" cy="145" r="8" fill="#1B3A6B"/>
+        <text x="1192" y="149" font-size="11" fill="#1B3A6B">M2: Cohort locked</text>
+
+        <!-- T3 -->
+        <rect x="0" y="180" width="1760" height="60" fill="#FFFFFF"/>
+        <text x="20" y="212" font-weight="600">T3 · Pre-registered SAP + OSF lock</text>
+        <text x="20" y="230" font-size="11" fill="#64748B">D3.1 SAP v1 · D3.2 OSF DOI</text>
+        <rect x="340" y="194" width="240" height="22" fill="#9A2B2B" rx="2"/>
+        <circle cx="580" cy="205" r="8" fill="#9A2B2B"/>
+        <text x="592" y="209" font-size="11" fill="#9A2B2B">M3: SAP locked</text>
+
+        <!-- T4 -->
+        <rect x="0" y="240" width="1760" height="60" fill="#F8FAFC"/>
+        <text x="20" y="272" font-weight="600">T4 · 3-lab concordance study</text>
+        <text x="20" y="290" font-size="11" fill="#64748B">D4.1 lab onboard · D4.2 split-sample run · D4.3 κ report</text>
+        <rect x="700" y="254" width="660" height="22" fill="#1B3A6B" rx="2"/>
+        <circle cx="1360" cy="265" r="8" fill="#1B3A6B"/>
+        <text x="1372" y="269" font-size="11" fill="#1B3A6B">M4: κ ≥ 0.85</text>
+
+        <!-- T5 -->
+        <rect x="0" y="300" width="1760" height="60" fill="#FFFFFF"/>
+        <text x="20" y="332" font-weight="600">T5 · Cartridge DFM + mfg transfer</text>
+        <text x="20" y="350" font-size="11" fill="#64748B">D5.1 DFM review · D5.2 yield 80% · D5.3 yield 95%</text>
+        <rect x="580" y="314" width="540" height="22" fill="#0F172A" rx="2"/>
+        <circle cx="1120" cy="325" r="8" fill="#0F172A"/>
+        <text x="1132" y="329" font-size="11" fill="#0F172A">M5: 95% / 1k wk⁻¹</text>
+
+        <!-- T6 -->
+        <rect x="0" y="360" width="1760" height="60" fill="#F8FAFC"/>
+        <text x="20" y="392" font-weight="600">T6 · Software / firmware + 21 CFR 11 audit trail</text>
+        <text x="20" y="410" font-size="11" fill="#64748B">D6.1 firmware v1 · D6.2 audit log · D6.3 IQ/OQ pkg</text>
+        <rect x="340" y="374" width="780" height="22" fill="#0F172A" rx="2"/>
+        <circle cx="1120" cy="385" r="8" fill="#0F172A"/>
+        <text x="1132" y="389" font-size="11" fill="#0F172A">M6: IQ/OQ</text>
+
+        <!-- T7 -->
+        <rect x="0" y="420" width="1760" height="60" fill="#FFFFFF"/>
+        <text x="20" y="452" font-weight="600">T7 · Quest pilot (transition partner)</text>
+        <text x="20" y="470" font-size="11" fill="#64748B">D7.1 protocol signed · D7.2 mid-pilot interim · D7.3 final report</text>
+        <rect x="1330" y="434" width="300" height="22" fill="#9A2B2B" rx="2"/>
+        <circle cx="1630" cy="445" r="8" fill="#9A2B2B"/>
+        <text x="1535" y="430" font-size="11" fill="#9A2B2B">M7: Quest ≥ 90% concord.</text>
+
+        <!-- T8 -->
+        <rect x="0" y="480" width="1760" height="60" fill="#F8FAFC"/>
+        <text x="20" y="512" font-weight="600">T8 · FDA pre-Sub + Phase III plan</text>
+        <text x="20" y="530" font-size="11" fill="#64748B">D8.1 Q-Sub Pkg · D8.2 Phase III plan</text>
+        <rect x="1180" y="494" width="540" height="22" fill="#1B3A6B" rx="2"/>
+        <circle cx="1720" cy="505" r="8" fill="#1B3A6B"/>
+        <text x="1605" y="490" font-size="11" fill="#1B3A6B">M8: FDA Q-Sub</text>
+      </g>
+
+      <!-- Phase-divider -->
+      <line x1="1060" y1="50" x2="1060" y2="560" stroke="#9A2B2B" stroke-width="2" stroke-dasharray="4 4"/>
+      <text x="1066" y="558" font-size="11" fill="#9A2B2B">Year 1 / Year 2 gate</text>
+    </svg>
+  </div>
+
+  <!-- Legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:935px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:36px; font-size:15px; color:#0F172A; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:22px; height:14px; background:#1B3A6B;"></span> Significance / Approach (Factor 1)</div>
+      <div style="display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:22px; height:14px; background:#9A2B2B;"></span> Rigor &amp; Feasibility (Factor 2) / Commercialization</div>
+      <div style="display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:22px; height:14px; background:#0F172A;"></span> Environment / Manufacturing (Factor 3)</div>
+      <div style="margin-left:auto;" class="mono">Decision gates M1…M8 · Go/No-Go criteria in Appx B</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:1020px; width:1920px; height:60px; background:#F1F5F9; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1036px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:13px; color:#475569; letter-spacing:0.1em;">Sources [4] USDA NIFA reviewer instructions — milestone-to-criterion mapping. [5] Navy SBIR Phase II Initial Proposal Instructions. [8] NC SBTDC 12-week proposal planning guide.</div>
+  </div>
+
+</div>
+</body>
+</html>

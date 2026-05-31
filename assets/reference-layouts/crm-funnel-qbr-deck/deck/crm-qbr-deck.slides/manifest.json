@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Q3 FY26 QBR — Pipeline, Forecast & Push/Pull/Kill",
+    "description": "RevOps quarterly business review tied to CRM stage IDs. Stage lock-in, Push/Pull/Kill, Pipeline Waterfall, Forecast Accuracy.",
+    "author": "RevOps — Marco Bianchi"
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-stage-lockin.html",
+    "03-push-pull-kill.html",
+    "04-top-of-funnel.html",
+    "05-stage-conversion.html",
+    "06-meddic-score.html",
+    "07-pipeline-waterfall.html",
+    "08-bookings-vs-plan.html",
+    "09-deal-velocity.html",
+    "10-winrate-rep.html",
+    "11-lost-deal.html",
+    "12-forecast-accuracy.html",
+    "13-quota-attainment.html",
+    "14-operational-health.html",
+    "15-asks-decisions.html",
+    "16-appendix-sources.html"
+  ]
+}

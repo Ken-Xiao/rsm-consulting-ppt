@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rigor &amp; Feasibility</title>
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+  body { margin:0; padding:0; overflow:hidden; font-family:'Public Sans', system-ui, sans-serif; color:#0F172A; background:#FFFFFF; }
+  .mono { font-family:'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div class="slide-container" data-screen-label="08 Rigor Feasibility" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:84px; background:#1B3A6B; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:24px; width:1760px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div class="mono" style="font-size:14px; letter-spacing:0.24em; color:#9CC2FF; text-transform:uppercase;">08 / 16 · Rigor &amp; Feasibility — Scored Factor 2</div>
+      <div class="mono" style="font-size:14px; letter-spacing:0.18em; color:#9CC2FF;">Pre-registered SAP · power · controls · replication</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:14px; letter-spacing:0.22em; color:#9A2B2B; text-transform:uppercase;">Statistical Analysis Plan — pre-registered before Y1-M3</div>
+    <div style="font-size:54px; font-weight:800; line-height:1.06; color:#0F172A; margin-top:14px; letter-spacing:-0.015em;">n=240 powered from Phase I variance, α=0.05, β=0.20.</div>
+  </div>
+
+  <!-- Left: power / design -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:860px; height:600px; background:#F1F5F9; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:116px; top:368px; width:790px; z-index:10;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.2em; color:#1B3A6B; text-transform:uppercase;">Statistical design</div>
+    <div style="font-size:30px; font-weight:700; color:#0F172A; margin-top:10px;">Pre-registered, two-sided, paired-sample concordance</div>
+    <div style="height:1px; background:#CBD5E1; margin-top:18px;"></div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:22px 32px; margin-top:22px;">
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">Primary endpoint</div>
+        <div style="font-size:17px; color:#0F172A; margin-top:6px; line-height:1.4;">Cohen's κ vs. gold-standard ELISA, threshold ≥ 0.85</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">Secondary</div>
+        <div style="font-size:17px; color:#0F172A; margin-top:6px; line-height:1.4;">AUC at Stage I, LOD, intra-day CV, inter-lab CV</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">α / β</div>
+        <div class="mono" style="font-size:22px; color:#0F172A; margin-top:6px;">0.05 / 0.20</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">Power calc.</div>
+        <div style="font-size:17px; color:#0F172A; margin-top:6px; line-height:1.4;">n=240 detects Δκ ≥ 0.07 with 84% power (σ²=0.024, Phase I)</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">Pre-registration</div>
+        <div style="font-size:17px; color:#0F172A; margin-top:6px; line-height:1.4;">OSF DOI locked Y1-M3 · amendments tracked via Git</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:13px; color:#64748B; letter-spacing:0.16em; text-transform:uppercase;">Blinding</div>
+        <div style="font-size:17px; color:#0F172A; margin-top:6px; line-height:1.4;">Operators blinded to clinical status until lock</div>
+      </div>
+    </div>
+
+    <div style="height:1px; background:#CBD5E1; margin-top:28px;"></div>
+    <div class="mono" style="font-size:13px; color:#9A2B2B; letter-spacing:0.16em; text-transform:uppercase; margin-top:18px;">Sensitivity analysis (a priori)</div>
+    <div style="font-size:16px; color:#0F172A; margin-top:8px; line-height:1.5;">Bootstrapped CIs over 5,000 resamples · subgroup analyses by sex / age band / tumour subtype · stratified by collection site.</div>
+  </div>
+
+  <!-- Right: controls + replication -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:980px; top:340px; width:860px; z-index:10;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.2em; color:#1B3A6B; text-transform:uppercase;">Controls — analytical &amp; clinical</div>
+    <table style="width:100%; border-collapse:collapse; font-size:15px; margin-top:14px;">
+      <thead>
+        <tr style="background:#0F172A; color:#FFFFFF; text-align:left;">
+          <th style="padding:10px 12px; font-weight:600;">Control type</th>
+          <th style="padding:10px 12px; font-weight:600;">N / freq.</th>
+          <th style="padding:10px 12px; font-weight:600;">Acceptance</th>
+        </tr>
+      </thead>
+      <tbody style="background:#FFFFFF;">
+        <tr style="border-bottom:1px solid #E2E8F0;"><td style="padding:10px 12px;">Blank buffer</td><td class="mono" style="padding:10px 12px;">2 / plate</td><td class="mono" style="padding:10px 12px;">signal &lt; 3·SD</td></tr>
+        <tr style="border-bottom:1px solid #E2E8F0;"><td style="padding:10px 12px;">Low spike (0.2 ng/mL)</td><td class="mono" style="padding:10px 12px;">2 / plate</td><td class="mono" style="padding:10px 12px;">CV ≤ 12%</td></tr>
+        <tr style="border-bottom:1px solid #E2E8F0;"><td style="padding:10px 12px;">High spike (5.0 ng/mL)</td><td class="mono" style="padding:10px 12px;">2 / plate</td><td class="mono" style="padding:10px 12px;">recovery 90–110%</td></tr>
+        <tr style="border-bottom:1px solid #E2E8F0;"><td style="padding:10px 12px;">Pooled normal plasma</td><td class="mono" style="padding:10px 12px;">3 / plate</td><td class="mono" style="padding:10px 12px;">drift ≤ 6%</td></tr>
+        <tr style="border-bottom:1px solid #E2E8F0;"><td style="padding:10px 12px;">Lot-to-lot bridging</td><td class="mono" style="padding:10px 12px;">each lot</td><td class="mono" style="padding:10px 12px;">bias ≤ 8%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mono" style="font-size:13px; letter-spacing:0.2em; color:#1B3A6B; text-transform:uppercase; margin-top:30px;">Replication plan — 3 independent sites</div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:14px;">
+      <div style="background:#FFFFFF; border-top:4px solid #1B3A6B; padding:14px;">
+        <div style="font-size:17px; font-weight:700;">MGH (PI site)</div>
+        <div style="font-size:14px; color:#475569; margin-top:6px;">n=120 · Boston, MA · Dr Patel co-I</div>
+      </div>
+      <div style="background:#FFFFFF; border-top:4px solid #9A2B2B; padding:14px;">
+        <div style="font-size:17px; font-weight:700;">Quest Marlborough</div>
+        <div style="font-size:14px; color:#475569; margin-top:6px;">n=60 · commercial ref. lab · CLIA-certified</div>
+      </div>
+      <div style="background:#FFFFFF; border-top:4px solid #0F172A; padding:14px;">
+        <div style="font-size:17px; font-weight:700;">ARUP Salt Lake</div>
+        <div style="font-size:14px; color:#475569; margin-top:6px;">n=60 · CAP-accredited · independent operator</div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px; font-size:15px; color:#475569; line-height:1.5;">Inter-lab CV target ≤ 10%. All raw runs deposited to NCI Imaging Data Commons within 30 days of lock.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:1020px; width:1920px; height:60px; background:#F1F5F9; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1036px; width:1760px; z-index:10;">
+    <div class="mono" style="font-size:13px; color:#475569; letter-spacing:0.1em;">Sources [2] NIH Simplified Peer Review — Rigor &amp; Feasibility factor. [4] USDA NIFA reviewer instructions — pre-registration expectations.</div>
+  </div>
+
+</div>
+</body>
+</html>
