@@ -40,6 +40,10 @@
   --fs-table-dense:  14pt;
   --fs-kpi-num:      92pt;
   --fs-kpi-unit:     34pt;
+  --fs-stat-xl:      72pt;  /* 超大统计数字：摘要或章节英雄数字 */
+  --fs-stat-lg:      64pt;  /* 模块小结数字卡 */
+  --fs-stat-md:      48pt;  /* 行内强调数字 / 指标 strip */
+  --fs-stat-sm:      36pt;  /* 证据卡编号 / 小型统计数字 */
 
   /* —— 保险业绩盘点 / 不良处置实践分享扩展 —— */
   --rsm-chart-cyan:  #00A3D9;
@@ -218,6 +222,11 @@ body {
 }
 .kpi-card .num.pos { color: var(--rsm-green); }
 .kpi-card .num.neg { color: var(--rsm-red); }
+
+.stat-xl { font-size: var(--fs-stat-xl); line-height: 1.0; font-weight: 800; }
+.stat-lg { font-size: var(--fs-stat-lg); line-height: 1.0; font-weight: 800; }
+.stat-md { font-size: var(--fs-stat-md); line-height: 1.05; font-weight: 750; }
+.stat-sm { font-size: var(--fs-stat-sm); line-height: 1.1; font-weight: 750; }
 .kpi-card .num.warn { color: var(--rsm-amber); }
 .kpi-card .meta {
   font-size: 13.5pt;

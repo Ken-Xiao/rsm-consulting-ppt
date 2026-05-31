@@ -91,6 +91,18 @@ Gate:
 - `scripts/validate-layout-manifest.mjs` must pass before using HTML templates.
 - `scripts/validate-rsm-deck.mjs` should return no critical issue before final build; major issues block `client-ready`.
 
+### Stage 1.5: Milestone Preview Plan
+
+For long decks, `partner-ready`, `client-ready`, board-level materials, and decks above 25 pages, read `references/milestone-preview-protocol.md` and define milestone preview points before bulk build.
+
+Default preview points:
+
+- `MP1`：封面、执行摘要、方法论或前 5-7 页。
+- `MP2`：第一个核心诊断模块及其小结。
+- `MP3`：矛盾提炼、行动地图、压力情景和建议页。
+
+Milestone failure should roll back only the affected page range and direct bridge pages, not the full deck.
+
 ### Stage 2: Build Draft PPTX
 
 Read:
@@ -151,6 +163,41 @@ Output:
 - `final_review_report.json`
 - optional `logic_health_dashboard.json`
 - optional `deck_quality_radar.json`
+
+## Check Frequency Layers
+
+不要把所有检查都压到每一页。按频率分层：
+
+### Per-Page Checks
+
+每页生成后立即执行：
+
+- 标题是否是结论。
+- 证明对象是否支撑标题。
+- 来源条、页码、单位、口径是否存在。
+- 文字是否溢出，字号是否低于限制。
+- 页面是否只有一个主阅读路径。
+- 若为表格，解读列是否满足 `page-family-contracts.md` 的最低含义要求。
+
+### Per-Batch Checks
+
+每完成一个章节或模块后执行：
+
+- 章节答案是否被页面支撑。
+- 小结页是否只压缩已出现内容。
+- 章节内数字、排名、样本和口径是否一致。
+- 该章节是否自然引出下一章。
+- 若有多视角分析，经营/市场/风险视角是否一致或已解释分歧。
+
+### Deck-Level Checks
+
+全 deck 完成后执行：
+
+- 标题链是否能连读成完整故事线。
+- 三大矛盾是否由前文证据推导。
+- 行动项是否回链矛盾、根因和改善路径。
+- 压力情景是否与执行摘要 KPI 对齐。
+- contact sheet、profile regression、final review 和 scorecard 是否通过。
 
 ### Stage 5: Auto-Fix
 

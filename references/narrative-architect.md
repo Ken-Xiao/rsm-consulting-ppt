@@ -4,6 +4,16 @@
 
 专业金融咨询项目先读取 `references/professional-consulting-standard.md`、`references/storyline-page-planning.md` 和 `references/methodology-packs.md`。先完成主标题故事线和副标题承接，再进入页面版式与视觉设计。
 
+## Framework Confirmation Before Detail
+
+进入任何逐页正文、图表细节或正式 PPTX 构建前，先读取 `references/structure-first-confirmation-protocol.md` 并检查是否已有 `framework_confirmation_status`。
+
+- 若状态为 `confirmed` 或 `confirmed_with_changes`：可以继续拆标题链、页面角色和页级结构。
+- 若状态为 `pending` 或不存在：只输出框架确认包，暂停细节生成。
+- 若状态为 `assumed_user_requested_direct`：可以继续，但需在 outline 和交付说明中标记未确认风险。
+
+框架确认至少覆盖：客户核心问题、总答案假设、推荐分析框架、章节序列、页数预算、默认视觉风格和中文为主的语言策略。
+
 ## Insight Discovery First
 
 如果存在 `data_pool.json`，在提出叙事原型前先读取 `references/insight-discovery.md`，扫描数据中的模式，输出或等价整理 `insights.json`。
@@ -21,7 +31,7 @@
 ## Checkpoints
 
 0. **数据驱动发现确认**：哪些 insight 进入主线。
-1. **叙事原型与模块序列确认**
+1. **整体框架确认**：客户问题、总答案假设、叙事原型、模块序列、页数预算和视觉方向。
 2. **主标题故事线确认**：只读主标题，是否能看清整份报告的逻辑链条。
 3. **逐页副标题和页面角色确认**：副标题是否承上启下，每页是否只证明一个环节。
 4. **每个模块的页级结构确认**
@@ -92,14 +102,18 @@
 ### Checkpoint 1
 
 ```text
-基于材料，我建议使用 [叙事原型]：
-[一句话解释]
+我先不进入逐页生成。基于材料，我建议这份报告按以下框架走：
+
+核心问题：[客户需要回答的问题]
+暂定总答案：[整份报告要证明的主判断]
+推荐框架：[叙事原型/分析框架]
+原因：[为什么该框架适合材料和汇报场景]
 
 模块建议：
 1. [模块] — [作用] — [预估页数]
 ...
 
-这个结构是否符合你的汇报意图？要不要增删模块？
+请先确认：核心问题是否准确、模块是否需要增删或调序、页数和默认视觉是否可接受。确认后我再展开每页主标题、副标题、图表/表格形式和正文内容。
 ```
 
 ### Checkpoint 2

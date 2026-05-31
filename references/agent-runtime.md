@@ -6,7 +6,14 @@
 
 ## Before Building
 
-默认先判断是否需要策略访谈。用户只给主题、材料或一句“帮我做 PPT”时，先读取 `references/strategy-brief.md`，提出一组精简问题；收到回答后再继续。只有在用户明确要求“直接做/不要提问/按现有材料优化”或任务是小范围 targeted-edit 时，才跳过访谈。
+默认必须先进行策略访谈。用户要求新建、整体优化、升级、重构、复刻模板、客户交付或董事会/管理层汇报时，先读取 `references/strategy-brief.md`，提出一组精简问题；收到回答后再继续。
+
+只有在以下情况下才跳过访谈：
+
+- 小范围 `targeted-edit`，例如只改某页标题、错字、颜色、对齐。
+- 用户明确写出“跳过提问，直接生成最终 PPT / skip questions and build”。
+
+“按现有材料处理”“直接优化”“继续做一版”不等于跳过访谈。
 
 必须确认或推断：
 
@@ -15,6 +22,8 @@
 3. 核心问题：可行性、风险、价值、行动方案或综合判断。
 4. 数据/事实来源：用户材料、原始 PPT、合同、模型、报告或公开资料。
 5. 输出范围：新建、整体优化、局部修改。
+6. 语言需求：默认中文；如用户明确要求，切换为中英双语或英文。
+7. 场景变体：完整金融机构深度分析、非金融上市公司、转型/并购、风险/合规、政策比较或轻量快稿。
 
 ## Guided Strategy Brief
 
@@ -23,7 +32,8 @@
 - 一次提出 4-8 个最高影响问题，不要分散成十几轮。
 - 对能从文件名、材料内容或上下文合理推断的信息，先给出假设，让用户确认或修正。
 - 问题必须覆盖内容、版式和交付约束，不只问业务背景。
-- 用户回答后，先形成 `brief.json` 或等价 brief，再进入 `Source read`。
+- 用户回答后，先形成 `brief.json` 或等价 brief，再进入 `framework_confirmation`。
+- 用户确认整体框架后，才进入 `Source read`、`Claim spine`、版式选择和构建。
 
 ## Workflow
 
@@ -75,6 +85,20 @@
 - `chart_data/`：每页图表的标准化输入数据。
 - `review_report.json`：数据一致性、叙事自洽性、视觉质量问题和修复建议。
 
+## Scene Variant Routing
+
+当用户要求董事会深度分析或经营诊断，但对象不是标准银行经营对标时，按下表调整模块，不要机械套 46 页结构。
+
+| Variant | Input condition | Keep | Replace / adjust | Page range |
+|---|---|---|---|---|
+| `financial_institution_full` | 银行、保险、信托、券商等金融机构，数据较完整 | 摘要、方法论、对标、专题穿透、矛盾、行动 | 按行业替换指标包 | 35-55 |
+| `non_financial_listed_company` | 非金融上市公司经营复盘 | 摘要、方法论、对标、盈利、现金流、估值、行动 | 将 NIM/资产质量替换为收入质量、毛利、费用、现金流 | 25-40 |
+| `transformation_or_mna` | 转型、并购、重组、价值创造 | 摘要、问题定义、价值抓手、路径比较、行动 | 弱化同业排名，强化方案比较和协同/风险 | 25-35 |
+| `risk_compliance` | 风险、合规、监管、审计关注 | 摘要、规则依据、风险矩阵、案例、整改 | 去掉估值实证，增加控制点和证据链 | 20-35 |
+| `policy_comparison` | 跨地区/跨司法辖区政策制度比较 | 研究框架、分类、矩阵、深挖、启示 | 用政策 taxonomy 替代经营对标 | 25-45 |
+
+每个变体仍必须遵守：中文优先、框架先确认、标题链、来源血缘和 review gate。
+
 ## Page-Level Checklist
 
 每一页生成后检查：
@@ -86,6 +110,26 @@
 - 页面是否只有一个主阅读路径。
 - 同一类卡片是否对齐、同高、同宽。
 - 文本是否不挤、不贴边、不溢出。
+
+## Batch-Level Checklist
+
+每完成一个模块后检查：
+
+- 章节答案是否清楚。
+- 小结是否只压缩本章已证明内容。
+- 数字、排名、样本、期间和口径是否一致。
+- 本章是否自然引出下一章。
+- 如果本章包含双视角或多视角，是否已通过 `logic-gate-checklist.md` 的 G8。
+
+## Deck-Level Checklist
+
+全 deck 完成后检查：
+
+- 是否通过 `milestone-preview-protocol.md` 的必要节点，或说明为何合并。
+- 是否完成 `contradiction-synthesis-protocol.md` 中的矛盾提炼。
+- 行动地图是否符合 `action-derivation-chain.md`。
+- 压力情景是否符合 `stress-scenario-content-standard.md`。
+- 如为局部修改，是否按 `incremental-edit-protocol.md` 留存修改记录。
 
 ## Layout Rules
 

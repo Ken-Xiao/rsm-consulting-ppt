@@ -42,7 +42,8 @@
       "language_strength": "strong_but_bounded",
       "allowed_wording": "主要由...驱动；仍需...验证",
       "forbidden_wording": "完全来自；必然持续",
-      "pages": ["P04", "P06", "P12"]
+      "pages": ["P04", "P06", "P12"],
+      "recommended_action_ids": ["act_001"]
     }
   ]
 }
@@ -63,6 +64,7 @@
 - 正文页强判断必须回链到 `conclusion_id`。
 - 没有证据的判断不得进入主标题；可降级为 `hypothesis` 或 `open_question`。
 - 如存在替代解释，必须在副标题、脚注或限制页中体现边界。
+- 如结论进入行动计划，必须填写 `recommended_action_ids`，并按 `action-derivation-chain.md` 回链到矛盾、根因、改善路径和行动项。
 
 ## Fix Rules
 

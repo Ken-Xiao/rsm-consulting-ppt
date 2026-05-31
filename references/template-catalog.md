@@ -115,6 +115,41 @@
 **Required content**：表头、分组、来源。
 **Layout cue**：只在附录中使用相对密集字号；正文页不要用附录小字。即使是附录，也必须有清晰行列层级和页脚来源。
 
+## 15A. scqa_turning_point
+
+**Use when**：北极星结论、SCQA 中的复杂化/转折页、全 deck 第一次改变读者预期的页面。
+**Do not use when**：普通章节页或数据页。
+**Required content**：一句强结论、2-3 个矛盾预告卡、下一章阅读路径。
+**Layout cue**：全宽深蓝或深蓝横条 + 高对比核心句；下方 3 张矛盾卡。文字极少，制造“请重视这一页”的节奏。
+
+## 15B. methodology_framework_figure
+
+**Use when**：说明 VQA、SCQA、三线水位、风险矩阵、现金流瀑布等分析框架。
+**Do not use when**：只是列指标定义，用 `appendix_dense_table`。
+**Required content**：框架层级、输入数据、输出判断、适用限制。
+**Layout cue**：中部一张可编辑框架图，左右或底部放 3-4 个方法说明卡。
+
+## 15C. action_roadmap
+
+**Use when**：展示 0-3 / 3-6 / 6-12 个月行动地图、整改路线或实施计划。
+**Do not use when**：只是普通流程，用 `process_sequence`。
+**Required content**：阶段、行动项、责任方、指标、回链矛盾或根因。
+**Layout cue**：三阶段横向时间轴；每阶段 3-4 个动作，底部放验收指标 strip。
+
+## 15D. stress_scenario_panel
+
+**Use when**：展示基线、温和压力、极端压力等情景和核心输出。
+**Do not use when**：需要连续二维变量，用 `sensitivity_matrix`。
+**Required content**：情景名称、假设参数、核心输出指标、管理含义。
+**Layout cue**：上方假设参数条，中部三列情景表，右侧或底部放含义卡。读取 `stress-scenario-content-standard.md`。
+
+## 15E. two_scenario_future
+
+**Use when**：比较“若行动/若不行动”“基线/行动后”“现状延续/转型达成”。
+**Do not use when**：只是两个主体比较，用 `standard_dual_compare`。
+**Required content**：两个图景、共同指标、delta、触发条件、行动含义。
+**Layout cue**：左右两栏 + 中间 delta 箭头；每栏最多 3 个指标和 2 条解释。
+
 ## 16. kpi_dashboard
 
 **Use when**：需要在一页展示 4-8 个核心指标，作为执行摘要、经营复盘或 KPI 目标页。

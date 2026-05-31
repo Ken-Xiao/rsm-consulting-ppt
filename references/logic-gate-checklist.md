@@ -4,7 +4,7 @@
 
 ## Core Logic Gates
 
-每份正式 deck 必须通过 7 个逻辑 gate：
+每份正式 deck 必须通过 8 个逻辑 gate：
 
 | Gate | Pass condition | Fail signal |
 |---|---|---|
@@ -15,6 +15,7 @@
 | G5 Evidence fit | 主证据能证明页面 claim | 图表与标题不对应 |
 | G6 Implication | 核心页有 So what，决策页有 Now what | 只有事实，没有管理含义 |
 | G7 Decision path | 有建议时比较路径、推荐理由、不行动后果 | 只写“建议关注/加强/优化” |
+| G8 Cross-perspective consistency | 经营视角、市场/实证视角、风险视角之间能互相印证，或明确解释分歧 | 两个视角给出相反结论但没有调和解释 |
 
 ## Page Logic Schema
 
@@ -81,6 +82,26 @@ Pass example:
 - 不行动后果。
 - 下一步验证事项、责任主体、时间或指标。
 
+### Cross-Perspective Consistency Test
+
+当 deck 使用双视角、多视角或交叉验证方法时，必须检查：
+
+- 经营视角核心结论 `C1` 与市场/实证视角核心结论 `C2` 是否指向同一管理含义。
+- 如果 `C1` 与 `C2` 一致，在摘要或小结中标注“经营与实证双重确认”或等价表达。
+- 如果 `C1` 与 `C2` 不一致，触发三选一：
+  1. 深挖调和解释，例如口径差异、时点差异、样本差异、一次性因素。
+  2. 用更谨慎措辞呈现分歧，例如“两个视角尚未形成一致证据”。
+  3. 将其中一个结论降级为 `待验证` 或 `假设`。
+
+Fail examples:
+
+- 经营页说“指标改善具备持续性”，估值页说“市场未认可且驱动因子缺失”，但没有解释。
+- 内部管理视角和资本市场视角只是换标签复述同一段话，没有独立证据。
+
+Pass example:
+
+- `ROA 排名前段` 与 `RAROC 排名后段` 不一致，因此结论写成“账面收益与风险调整收益背离”，并引出风险定价行动。
+
 ## Logic Issue Severity
 
 | Severity | Definition | Delivery impact |
@@ -103,6 +124,7 @@ Pass example:
     "evidence_fit": "warning",
     "implication": "pass",
     "decision_path": "pass",
+    "cross_perspective_consistency": "pass",
     "critical": [],
     "major": [
       {

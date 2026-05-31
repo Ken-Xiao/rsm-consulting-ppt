@@ -8,10 +8,12 @@
 
 ```text
 brief.json
+  -> framework_confirmation.md
   -> source_digest.md
   -> data_pool.json + lineage_map.json
   -> insights.json
   -> consulting_pyramid.json + conclusion_evidence_matrix.json + argument_map.json
+  -> contradiction_map.json + action_derivation_map.json + scenario_analysis.json
   -> storyline_map.json + outline.json
   -> design_system.json + template_manifest + preset_map.json
   -> chart_data/Pxx.json + image_assets.json + visual_intent/Pxx.json
@@ -27,12 +29,16 @@ brief.json
 | Artifact | quick-polish | partner-ready | client-ready |
 |---|---|---|---|
 | `brief.json` | optional note | required | required |
+| `framework_confirmation.md` | optional | required | required |
 | `source_digest.md` | source boundaries | required | required |
 | `data_pool.json` | only if new data | key facts/metrics | required |
 | `lineage_map.json` | not required | key numbers | required |
 | `consulting_pyramid.json` | draft ok | required | required |
 | `conclusion_evidence_matrix.json` | not required | key conclusions | required |
 | `argument_map.json` | not required | required | required |
+| `contradiction_map.json` | optional | required if synthesis/action | required if synthesis/action |
+| `action_derivation_map.json` | optional | required if recommendations | required if recommendations |
+| `scenario_analysis.json` | optional | required if stress pages | required if stress pages |
 | `storyline_map.json` | title spine ok | required | required |
 | `preset_map.json` | visual notes ok | required | required |
 | `chart_data/` | if chart changed | core charts | all core charts |
@@ -79,6 +85,27 @@ Fail if:
 - `client_question` 只是主题描述。
 - 没有受众或决策场景。
 - 视觉 profile 未指定且未使用默认 `rsm-insurance-results`。
+
+### `framework_confirmation.md`
+
+Required:
+
+- `language_policy`
+- `material_readout`
+- `client_question`
+- `deck_answer_hypothesis`
+- `recommended_framework`
+- `module_sequence`
+- `page_budget`
+- `visual_profile`
+- `confirmation_status`
+
+Fail if:
+
+- `partner-ready` 或 `client-ready` 项目缺少整体框架确认记录。
+- 直接进入逐页细节，但 `confirmation_status` 仍为 `pending`。
+- 章节只是主题词，没有章节问题、章节作用或暂定答案。
+- 默认语言不是中文，且没有用户明确英文/双语要求。
 
 ### `data_pool.json`
 
@@ -178,6 +205,58 @@ Fail if:
 - 执行摘要或章节答案中的核心结论没有 `conclusion_id`。
 - 结论没有证据或证据强度不足以支撑措辞。
 - 替代解释或口径限制没有记录。
+
+### `contradiction_map.json`
+
+Required when deck contains 三大矛盾、结构性矛盾、问题诊断综合页 or action plan:
+
+- `contradictions[].contradiction_id`
+- `positive_signal`
+- `negative_signal`
+- `driver_cluster`
+- `decision_implication`
+- `recommended_action_links`
+
+Fail if:
+
+- 矛盾没有正负信号。
+- 矛盾首次出现在综合页，前文没有来源页面。
+- 行动项无法回链矛盾。
+
+### `action_derivation_map.json`
+
+Required when deck contains recommendations, roadmap, action plan, rectification plan or authorization ask:
+
+- `recommended_action_id`
+- `linked_contradiction_id` or `linked_risk_id`
+- `linked_root_cause`
+- `improvement_path`
+- `owner`
+- `timeline`
+- `kpi`
+- `evidence_pages`
+
+Fail if:
+
+- 行动项只写方向，没有责任、时间或指标。
+- 行动项与前文诊断没有链路。
+- 行动页新增前文未证明的判断。
+
+### `scenario_analysis.json`
+
+Required when deck contains stress scenario, sensitivity matrix, financial projection, two-scenario future:
+
+- `scenario_names`
+- `parameter_axes`
+- `output_indicators`
+- `baseline_case`
+- `management_implication`
+
+Fail if:
+
+- 情景假设无来源或未标记为 RSM 假设。
+- 输出指标与执行摘要核心 KPI 不一致且没有解释。
+- 两种图景页没有展示 delta。
 
 ### `storyline_map.json`
 

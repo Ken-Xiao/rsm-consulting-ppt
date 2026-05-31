@@ -1,6 +1,28 @@
 # Strategy Brief Questions
 
-用于在正式生成或深度优化 PPT 前，先把金融行业汇报的目标、内容和版式约束问清楚。默认先判断访谈深度：轻量任务一次性提出 4-8 个问题；复杂 pipeline 项目按阶段一问一答，不要直接生成 PPT。
+用于在正式生成或深度优化 PPT 前，先把金融行业汇报的目标、内容和版式约束问清楚。默认必须先提问、等待回答、形成 brief，再进入后续步骤。轻量任务一次性提出 4-8 个问题；复杂 pipeline 项目按阶段一问一答，不要直接生成 PPT。
+
+## Hard Interaction Gate
+
+除非任务是纯 `quick-polish` / `targeted-edit`，或用户明确写出“跳过提问，直接生成最终 PPT”，否则必须先向用户提问并等待回答。
+
+以下表达不等于跳过提问：
+
+- `按材料处理`
+- `帮我优化`
+- `整体升级`
+- `继续做一版`
+- `参考这个模板`
+- `根据这个规则更新`
+
+这些情况下，先提出确认问题。不要因为可以从材料中推断，就自动进入生成；能推断的内容应写成“我的默认假设是...请确认”。
+
+## Default Language Policy
+
+- 默认输出语言为中文（`zh-CN`）。
+- 不主动启用英文或双语；只有用户明确要求英文/双语、海外总部/外资机构汇报，或原始材料中存在必须保留的英文术语时，才切换到 `bilingual-output-standard.md`。
+- 提问、brief、框架确认、标题链、逐页说明和审校意见均以中文为主。
+- 英文机构名、准则名、指标缩写可以保留，但首次出现应给中文解释。
 
 ## When To Ask
 
@@ -11,11 +33,12 @@
 - 需要新增叙事、重排结构、选择对标样本或设定分析框架。
 - 用户要求复刻 Genspark/Guide Mode 或搭建可复用生产管线。
 
-可以跳过：
+可以跳过的唯一情况：
 
-- 用户明确说“不要问，直接按材料做”。
+- 用户明确说“跳过提问，直接生成最终 PPT / skip questions and build”。
 - 只是改错字、换颜色、统一字体、追加一页等 targeted-edit。
-- 原材料已经清楚包含 brief、目录、受众、页数、模板和数据口径。
+
+不能仅因为原材料已经清楚包含 brief、目录、受众、页数、模板和数据口径就跳过；此时应快速提出 4-6 个确认问题，让用户确认默认假设。
 
 ## Question Bank
 
@@ -26,6 +49,8 @@
 ### Quick Mode
 
 适用于整体优化、短 PPT、材料较完整的任务。一次提出 4-8 个问题，用户回答后形成 brief。
+
+Quick Mode 也必须等待用户回答后才能进入生成。
 
 ### Deep Mode
 
@@ -43,6 +68,16 @@ Deep Mode 规则：
 - 不生成大纲、图表或 PPT。
 - 每阶段结束时用一句话复述用户回答。
 - 五段完成后输出 brief，并请用户确认。
+- 对完整生成、整体重构、`partner-ready` 或 `client-ready` 项目，brief 确认后必须进入 `structure-first-confirmation-protocol.md`，先确认整体结构和分析框架，再展开逐页细节。
+
+## Structure-First Mode
+
+当用户提供材料并希望生成或整体优化 PPT 时，先做两层确认：
+
+1. **Brief confirmation**：确认受众、决策、主体、数据边界、页数、视觉风格和语言。
+2. **Framework confirmation**：基于材料内容提出核心问题、总答案假设、推荐框架、章节结构和页数预算，请用户确认。
+
+在第二层确认前，不生成逐页正文、详细图表或 PPTX。输出形式参考 `references/structure-first-confirmation-protocol.md`。
 
 ### 1. Audience And Decision
 
@@ -94,6 +129,24 @@ Deep Mode 规则：
 5. 目标页数、阅读时长和信息密度偏好是什么？
 6. 版式风格默认按保险财务报告风走；是否需要沿用原稿、切换实践分享风、McKinsey-like，还是其他模板？
 
+## Mandatory First Response Template
+
+当用户要求新建、整体优化或升级 PPT 时，第一轮回复必须类似下面结构，不能直接生成：
+
+```text
+我先确认几个关键点，避免直接生成后方向不对。基于你提供的材料，我的初步假设是：[1-2 句假设]。
+
+请你先确认：
+1. 这份 PPT 的主要受众是谁？读完后希望他们做什么决定？
+2. 这次更偏“重构故事线”还是“保留原结构、重点提升表达和视觉”？
+3. 哪些结论、数字或口径必须严格保留？
+4. 目标页数/阅读时长/信息密度大概是什么？
+5. 默认视觉是否按 `rsm-insurance-results`，还是沿用原稿或切换其他风格？
+6. 有没有不希望我触碰或不能写得太直接的内容？
+
+你确认后，我会先输出整体结构和框架方案；框架确认后再展开逐页内容。
+```
+
 ## Brief Output
 
 用户回答后，形成 `brief.json` 或等价文字 brief。字段尽量使用通用金融口径：
@@ -115,6 +168,8 @@ Deep Mode 规则：
   "density": "high/medium/low",
   "style": "RSM blue-gray/McKinsey-like/original-template/pitchbook/regulatory",
   "language": "zh-CN",
+  "language_policy": "Chinese primary unless user explicitly requests English or bilingual output",
+  "framework_confirmation_status": "pending/confirmed/confirmed_with_changes/assumed_user_requested_direct",
   "must_keep": ["不能改动的数字、法律结论、合同表述"],
   "deliverables": ["pptx", "pdf", "preview"]
 }

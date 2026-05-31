@@ -72,6 +72,45 @@
 - `该差距更可能来自 [驱动因素]，仍需结合 [口径/样本限制] 验证。`
 - `排名结论只在当前 peer set 和披露期间内成立。`
 
+## Peer Tier Classification Module
+
+当需要形成“第一梯队/第二梯队/第三梯队/第四梯队”或竞争格局分层时，必须记录分类方法，不得凭印象分组。
+
+### Tiering Method Choices
+
+| Method | Use when | Required note |
+|---|---|---|
+| `percentile_split` | 样本数量较多，指标分布平滑 | 分位点和排序方向 |
+| `natural_breaks` | 指标出现明显断点或聚类 | 断点位置和解释 |
+| `two_axis_matrix` | 两个指标共同决定定位 | x/y 轴定义、象限含义 |
+| `expert_adjusted` | 数据不足或存在不可比因素 | 专家调整原因和限制 |
+
+### Required Fields
+
+```json
+{
+  "peer_tier_classification": {
+    "tiering_method": "two_axis_matrix",
+    "dimensions": [
+      {"name": "ROA", "direction": "higher_better"},
+      {"name": "风险调整收益率", "direction": "higher_better"}
+    ],
+    "threshold_policy": "样本中位数切分 + 自然断点复核",
+    "tiers": [
+      {"tier": "第一梯队", "criteria": "两项指标均高于样本中位", "members": ["A银行"]},
+      {"tier": "第二梯队", "criteria": "账面收益高但风险调整收益待验证", "members": ["B银行"]}
+    ],
+    "limitations": ["样本仅覆盖上市同业", "不同机构披露口径存在差异"]
+  }
+}
+```
+
+### Wording
+
+- `基于 [X] 和 [Y] 两个维度，样本自然形成 [N] 个梯队；[主体] 位于第 [N] 梯队。`
+- `该分层反映当前样本和口径下的相对位置，不代表绝对经营优劣。`
+- `若采用 [替代指标]，梯队位置可能变化，需在方法论页披露限制。`
+
 ## Insurance Results Review Pack
 
 Use when:
