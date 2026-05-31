@@ -104,8 +104,40 @@
 ## How To Use
 
 1. 先用 `scenario-layout-selector.md` 判断业务场景。
-2. 从本文件选 1-2 套候选版式。
-3. 用 `reference-layout-analysis-framework.md` 提取像素级复刻规则。
-4. 在 `layout_analysis_report.json` 中写明：采用哪套参考、哪些页面采用、哪些仍沿用 RSM 默认。
-5. 在 HTML preview 阶段至少预览 2 张采用参考版式的关键页。
+2. 再用 `universal-page-family-registry.md` 把内容逻辑映射到跨主题 `canonical_family`。
+3. 从本文件选 1-2 套候选版式，只提取版面结构，不复制英文叙事、颜色、字体或整套主题。
+4. 用 `reference-layout-analysis-framework.md` 提取像素级复刻规则。
+5. 在 `layout_analysis_report.json` 中写明：采用哪套参考、哪些页面采用、哪些仍沿用 RSM 默认、注入哪个 `token_set`。
+6. 在 HTML preview 阶段至少预览 2 张采用参考版式的关键页。
 
+## Agent Loading Guidance
+
+为避免 100+ 个 HTML slide 把上下文挤满，读取参考版式时按以下顺序渐进加载：
+
+| Situation | Read | Do not read |
+|---|---|---|
+| 只需要选择候选版式 | 本文件 + `scenario-layout-selector.md` + `universal-page-family-registry.md` | 不读具体 HTML |
+| 需要理解某套 deck 的 page family | 对应 `assets/reference-layouts/<profile>/SKILL.md` + 2-3 张 preview 文件名 | 不批量读取全部 slide HTML |
+| 需要像素级复刻某一页 | 对应单页 HTML + 对应 CSS + preview PNG | 不读取该 deck 所有 HTML |
+| 需要做完整模板沉淀 | 逐页读取，但分批处理，每批不超过 5 页 | 不在一次回复中读完整套库 |
+
+参考版式在本 skill 中的角色是 **structure reference**：
+
+- 可以继承：栅格比例、主证据区位置、卡片数量、图表/表格结构、标注位、图片裁切方式。
+- 不默认继承：英文标题风格、英文 deck 的色板、logo/chrome、页脚系统、叙事顺序。
+- 必须注入：当前 `visual_profile` 的 `assets/design-tokens.json` token set。
+
+## Chinese Financial Translation Notes
+
+英文 page family 进入中文金融材料时，按下列方式转译：
+
+| English reference family | 中文金融常见用途 | 中文标题示范 |
+|---|---|---|
+| `governing_thought` | 执行摘要、董事会总答案 | `利润改善尚未完全转化为核心经营质量，应优先验证三项驱动` |
+| `evidence_exhibit` | 单图/单表证明页 | `保费增长主要由寿险业务驱动，财险承保利润仍低于样本中位` |
+| `option_comparison` | 方案比较、路径选择 | `方案二在资本占用和落地周期之间更均衡，适合作为优先路径` |
+| `implementation_roadmap` | 12 个月行动计划 | `短期先锁定数据口径，中期再推进产品与渠道的结构调整` |
+| `decisions_required` | 上会授权事项 | `本次会议需确认三项授权：样本口径、专项诊断范围和下一阶段里程碑` |
+| `risk_register` | 风险与限制条件 | `三类风险需要在方案落地前设置触发阈值和责任部门` |
+
+如果生成中文标题时只得到“背景介绍 / 方案说明 / 数据分析”这类主题词，必须回到 `consulting-language-playbook.md` 和 `number-expression-standard.md` 改写为判断句。

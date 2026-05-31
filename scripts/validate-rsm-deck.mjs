@@ -74,7 +74,9 @@ function readArtifactJson(name, required = true) {
 }
 
 const manifestPath = path.join(skillRoot, "assets", "layouts", "template-manifest.json");
+const designTokensPath = path.join(skillRoot, "assets", "design-tokens.json");
 let skillManifest = null;
+let designTokens = null;
 if (fs.existsSync(manifestPath)) {
   try {
     skillManifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
@@ -83,6 +85,16 @@ if (fs.existsSync(manifestPath)) {
   }
 } else {
   result.critical.push({ artifact: "template-manifest.json", issue: "missing skill manifest" });
+}
+
+if (fs.existsSync(designTokensPath)) {
+  try {
+    designTokens = JSON.parse(fs.readFileSync(designTokensPath, "utf8"));
+  } catch (error) {
+    result.critical.push({ artifact: "design-tokens.json", issue: "invalid JSON", detail: error.message });
+  }
+} else {
+  result.major.push({ artifact: "design-tokens.json", issue: "missing design token file" });
 }
 
 function layoutLockFor(profile) {
@@ -262,8 +274,17 @@ if (presetMap) {
   const pages = arr(presetMap.pages || presetMap);
   for (const page of pages) {
     const id = page.page_id || "unknown";
-    for (const field of ["visual_profile", "page_family", "density_level", "render_strategy", "editable_elements", "rasterized_elements", "qa_focus"]) {
+    for (const field of ["visual_profile", "canonical_family", "page_family", "token_set", "density_level", "render_strategy", "editable_elements", "rasterized_elements", "qa_focus", "design_token_status"]) {
       if (!page[field]) result.major.push({ page: id, artifact: "preset_map.json", issue: `missing ${field}` });
+    }
+    if (page.token_set && page.visual_profile && page.token_set !== page.visual_profile) {
+      result.major.push({ page: id, artifact: "preset_map.json", issue: `token_set does not match visual_profile: ${page.token_set} vs ${page.visual_profile}` });
+    }
+    if (page.design_token_status && page.design_token_status !== "applied") {
+      result.major.push({ page: id, artifact: "preset_map.json", issue: `design_token_status blocks build: ${page.design_token_status}` });
+    }
+    if (designTokens && page.visual_profile && !designTokens.token_sets?.[page.visual_profile]) {
+      result.major.push({ page: id, artifact: "preset_map.json", issue: `visual_profile missing from design-tokens.json: ${page.visual_profile}` });
     }
     if (!page.exhibit_structure && !/cover|agenda|section/i.test(page.page_family || "")) {
       result.major.push({ page: id, artifact: "preset_map.json", issue: "body page missing exhibit_structure" });
@@ -318,7 +339,10 @@ if (presetMap) {
     } else {
       const allowed = new Set([...(lock.allowed || []), ...(lock.fallback || [])]);
       if (page.page_family && !allowed.has(page.page_family)) {
-        result.major.push({ page: id, artifact: "preset_map.json", issue: `page_family not allowed by layout lock: ${page.page_family}` });
+        const referenceDerivedComplete = page.source_reference_profile && page.source_preview && page.replication_scope && page.best_rsm_profile_match && page.adaptation_notes;
+        if (!referenceDerivedComplete) {
+          result.major.push({ page: id, artifact: "preset_map.json", issue: `page_family not allowed by layout lock and reference_derived fields are incomplete: ${page.page_family}` });
+        }
       }
       if ((lock.fallback || []).includes(page.page_family) && !page.fallback_reason) {
         result.warning.push({ page: id, artifact: "preset_map.json", issue: "fallback page_family requires fallback_reason" });
@@ -352,6 +376,9 @@ if (layoutAnalysis) {
       for (const field of ["reference_profile", "reference_page_family", "source_preview", "replication_scope", "best_rsm_profile_match"]) {
         if (!pageRef[field]) result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: `reference layout choice missing ${field}` });
       }
+      for (const field of ["canonical_family", "token_set", "adaptation_notes"]) {
+        if (!pageRef[field]) result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: `reference layout choice missing ${field}` });
+      }
     }
     if (!referenceLayoutProfile && arr(refChoice.pages_using_reference).length > 0) {
       result.warning.push({ artifact: "reference_layout_profile.json", issue: "layout_analysis_report uses reference layouts but reference_layout_profile.json is missing" });
@@ -359,8 +386,14 @@ if (layoutAnalysis) {
   }
   for (const page of arr(layoutAnalysis.pages)) {
     const id = page.page_id || "unknown";
-    for (const field of ["page_family", "layout_lock_status", "density_level", "fullness_risk", "layout_reason"]) {
+    for (const field of ["canonical_family", "page_family", "token_set", "layout_lock_status", "density_level", "fullness_risk", "layout_reason", "design_token_status"]) {
       if (!page[field]) result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: `missing ${field}` });
+    }
+    if (page.token_set && layoutAnalysis.visual_profile && page.token_set !== layoutAnalysis.visual_profile) {
+      result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: "token_set does not match layout visual_profile" });
+    }
+    if (page.design_token_status === "mixed_profile_risk") {
+      result.major.push({ page: id, artifact: "layout_analysis_report.json", issue: "mixed_profile_risk blocks build" });
     }
     for (const field of ["insight_type", "evidence_items_count", "content_density_status", "title_fit_status"]) {
       if (page[field] === undefined || page[field] === null || page[field] === "") {

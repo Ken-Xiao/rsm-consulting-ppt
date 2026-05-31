@@ -1,6 +1,6 @@
 # Consulting Language Playbook
 
-用于把中文金融 PPT 的表达压缩为专业咨询口径。写标题、副标题、结论条、建议和风险提示时读取本文件，并与 `language-discipline.md` 同时使用。
+用于把中文金融 PPT 的表达压缩为专业咨询口径。写标题、副标题、结论条、建议和风险提示时读取本文件，并与 `language-discipline.md`、`number-expression-standard.md` 同时使用。
 
 ## Writing Principles
 
@@ -131,6 +131,19 @@
 | `需加强资产质量管理` | `建议对关注类贷款迁徙率连续两个季度上行的分行启动专项复盘` |
 | `应优化资本使用效率` | `建议优先压降低收益高资本占用资产，并按季度跟踪 RWA 密度变化` |
 | `进一步完善风险控制机制` | `建议为方案落地设置触发阈值、责任部门和月度监控表` |
+
+## Chinese Financial Page Family Examples
+
+从英文参考版式迁移到中文金融材料时，语言只继承“标题必须有判断、数字和决策含义”的原则，不继承英文句式。
+
+| Page family | Weak Chinese | Consulting Chinese |
+|---|---|---|
+| `governing_thought` | `执行摘要` | `利润改善已形成表观优势，但费用效率和资本占用仍限制估值修复` |
+| `evidence_exhibit` | `收入情况分析` | `保险服务收入同比+8.4%，但增长贡献集中在两家公司` |
+| `comparison_table` | `同业对比` | `样本公司在投资收益率上的差距大于承保端，成为利润分化主因` |
+| `bridge_waterfall` | `利润拆解` | `净利润增长主要来自投资收益回升，承保利润贡献仍需验证` |
+| `action_roadmap` | `下一步计划` | `建议先统一数据口径，再用两轮诊断锁定可执行改善抓手` |
+| `decision_required` | `需要讨论的问题` | `本次会议需确认三项事项：样本口径、专项诊断范围和下一阶段交付节奏` |
 
 ## Sensitive Expression Replacement
 

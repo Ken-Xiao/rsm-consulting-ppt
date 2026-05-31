@@ -100,5 +100,5 @@ insights.json
 - 每条核心洞察有 `insight_type`。
 - 每页有 `recommended_page_family`。
 - 每页有 `layout_reason`。
-- 推荐 page family 在当前 visual profile 的 layout lock 白名单或 fallback 中。
+- 推荐 page family 先映射到 `universal-page-family-registry.md` 的 `canonical_family`，再由当前 visual profile 的 design token 和 layout lock 选择具体模板；不直接从英文参考版式继承颜色或主题。
 - 每页的证据形态与 page family 契约一致。

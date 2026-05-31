@@ -52,9 +52,12 @@ insight_layout_map.json
         "page_id": "P18",
         "reference_profile": "consulting-final-deck",
         "reference_page_family": "implementation_roadmap",
+        "canonical_family": "action_roadmap",
+        "token_set": "rsm-insurance-results",
         "source_preview": "assets/reference-layouts/consulting-final-deck/previews/18-18-implementation-roadmap.png",
         "replication_scope": ["body_grid", "roadmap_structure", "owner_milestone_table"],
-        "best_rsm_profile_match": "rsm-insurance-results"
+        "best_rsm_profile_match": "rsm-insurance-results",
+        "adaptation_notes": "只复用路线图结构，颜色、标题层级、页脚和模块胶囊使用 rsm-insurance-results token"
       }
     ]
   },
@@ -62,8 +65,11 @@ insight_layout_map.json
     {
       "page_id": "P05",
       "claim_title": "利润改善主要来自投资端，承保端仍需单独验证",
+      "canonical_family": "bridge_waterfall",
       "page_family": "stacked_contribution_split",
       "visual_profile": "rsm-insurance-results",
+      "token_set": "rsm-insurance-results",
+      "design_token_status": "applied",
       "layout_lock_status": "locked",
       "insight_type": "contribution_split",
       "evidence_items_count": 4,

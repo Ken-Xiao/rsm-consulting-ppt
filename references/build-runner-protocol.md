@@ -18,10 +18,12 @@ npm run regression:rsm-deck
 
 ```bash
 node scripts/validate-layout-manifest.mjs
+node scripts/validate-confirmation-state.mjs outputs/rsm_deck --tier client-ready --stage S2.5
 node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 ```
 
 `validate-layout-manifest.mjs` 检查 `assets/layouts/template-manifest.json`、模板文件存在性、重复 page family 和必填字段映射。  
+`validate-confirmation-state.mjs` 检查 CN1/CN2/CN3 是否允许进入当前 stage。  
 `validate-rsm-deck.mjs` 检查 deck artifacts、逻辑 gate 所需字段、preset map、图表数据、review report 和 contact sheet。
 
 如果当前环境没有这些脚本，Codex 应按同等步骤手动执行，并输出等价产物。
@@ -50,6 +52,7 @@ Gate:
 
 - `express` 和 `quick-polish` 不应读取完整 stage 体系，除非用户升档。
 - `partner-ready` 和 `client-ready` 必须维护 `confirmation_log.json`。
+- `partner-ready` 以上每个 stage 切换前必须运行或等价执行 `validate-confirmation-state.mjs`。确认节点未通过时，当前回复必须停在确认请求或修正计划，不得继续生成下游产物。
 - `client-ready` 的 `S2.6` 不得跳过，除非记录 `assumed_user_requested_direct` 或 `preview_unavailable_confirmed`。
 
 ### Stage 0: Phase Lock Check
@@ -178,6 +181,8 @@ Read:
 Apply:
 
 - `references/visual-rendering-engine.md`
+- `references/universal-page-family-registry.md`
+- `assets/design-tokens.json`
 - `references/visual-rhythm-orchestrator.md` for rhythm score and buffer page decisions
 - `references/page-family-contracts.md`
 - `references/template-fill-level-standard.md`
@@ -200,8 +205,10 @@ Read:
 
 - `preset_map.json`
 - `design_system.json`
+- `assets/design-tokens.json`
 - `storyline_map.json`
 - `template_manifest` or `assets/layouts/template-manifest.json`
+- `references/universal-page-family-registry.md`
 - `references/layout-lock-protocol.md`
 - `references/layout-analysis-report.md`
 
@@ -211,7 +218,9 @@ Output:
 
 Gate:
 
-- 每页 `page_family` 必须通过 visual profile 白名单。
+- 每页必须有 `canonical_family`，且与 `logic_relationship`、`insight_type` 和页面角色一致。
+- 每页 `token_set` 必须等于当前 `visual_profile`，且 `design_token_status=applied`。
+- 每页 `page_family` 必须通过当前 profile 推荐清单、fallback 清单或完整 `reference_derived` 记录。
 - 每页必须有 `layout_lock_status`，正文页必须为 `locked` 或 `fallback_confirmed`。
 - `fullness_risk=high` 的页面不得进入 build，除非用户确认。
 - 缺少 `layout_analysis_report.json` 时不得标记 `partner-ready` 或 `client-ready`。

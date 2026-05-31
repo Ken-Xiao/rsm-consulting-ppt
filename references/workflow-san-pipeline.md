@@ -38,8 +38,8 @@
 | 11. Argument Map | 建立客户问题、章节答案、页面判断和证据对象 | `argument_map.json` |
 | 12. Storyline Split | 拆主标题故事线、副标题、标题适配和逐页角色 | `title_spine.md` + `storyline_map.json` |
 | 13. Slide Plan | 页级标题、证明对象、版式 | `outline.json` |
-| 14. Design Blueprint | visual profile、网格、字号、preset 映射 | `design_system.json` |
-| 14.5. Reference Layout Selection | 按场景选择 `assets/reference-layouts/` 中的候选版式并提取复刻规则 | `reference_layout_profile.json` |
+| 14. Design Blueprint | visual profile、网格、字号、通用 page family 和 design token | `design_system.json` + `design_tokens` |
+| 14.5. Reference Layout Selection | 按场景选择 `assets/reference-layouts/` 中的候选版式，并将其结构映射为通用 `canonical_family` | `reference_layout_profile.json` |
 
 ### Layer 2: Preset Build Workflow
 
@@ -48,7 +48,7 @@
 | Stage | Role | Output |
 |---|---|---|
 | 15. Template Manifest | 将 page family 映射到模板、必填字段和 QA 重点 | `template_manifest.json` |
-| 16. Preset Assignment | 给每页分配 page family，并按 visual profile 锁定白名单版式 | `preset_map.json` |
+| 16. Preset Assignment | 给每页分配 `canonical_family`、具体 `page_family` 和 `token_set`，用当前 profile token 锁定颜色/字体/chrome | `preset_map.json` |
 | 17. Layout Analysis | 生成全 deck 版式分配、密度风险和 fallback 报告，等待用户确认 | `layout_analysis_report.json` |
 | 18. HTML Key Preview | 生成 3-5 张关键页 HTML/截图样张，等待用户确认 | `html_preview_report.json` |
 | 19. Page Visual Intent | 为每页定义逻辑关系和视觉表达 | `visual_intent/Pxx.json` |
@@ -105,6 +105,8 @@
 - `reference-layout-library.md`：登记 `ppt版式/` 备选样本库。
 - `reference-layout-analysis-framework.md`：提取版面布局、字体、字号、结构、图表、表格和图片规则。
 - `scenario-layout-selector.md`：按场景选择默认 RSM profile 与备选参考版式。
+- `universal-page-family-registry.md`：把跨主题参考结构归并为通用 page family，避免版式与主题强绑定。
+- `assets/design-tokens.json`：按 visual profile 注入颜色、字体、间距、chrome 和密度 token，防止颜色前后漂移。
 - `incremental-edit-protocol.md`：局部反馈只改必要范围，并记录 edit log。
 
 这些 gate 的输出应进入 `review_report.json` 或等价审校记录。

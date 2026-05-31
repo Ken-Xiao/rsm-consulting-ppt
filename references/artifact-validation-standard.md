@@ -19,7 +19,7 @@ brief.json
   -> consulting_pyramid.json + conclusion_evidence_matrix.json + argument_map.json
   -> contradiction_map.json + action_derivation_map.json + scenario_analysis.json
   -> storyline_map.json + outline.json
-  -> design_system.json + template_manifest + preset_map.json + layout_analysis_report.json + html_preview_report.json
+  -> design_system.json + design_tokens + template_manifest + preset_map.json + layout_analysis_report.json + html_preview_report.json
   -> chart_data/Pxx.json + image_assets.json + visual_intent/Pxx.json
   -> review_report.json + final_review_report.json
 ```
@@ -48,6 +48,7 @@ brief.json
 | `content_density_report.json` | optional | required | required |
 | `reference_layout_profile.json` | optional | optional if no external reference | required if external reference is used |
 | `storyline_map.json` | title spine ok | required | required |
+| `assets/design-tokens.json` or `design_tokens.json` | optional | required | required |
 | `preset_map.json` | visual notes ok | required | required |
 | `layout_analysis_report.json` | optional | required | required |
 | `html_preview_report.json` | optional | preferred | required before batch build |
@@ -438,7 +439,9 @@ Required per page:
 
 - `page_id`
 - `visual_profile`
+- `canonical_family`
 - `page_family`
+- `token_set`
 - `density_level`
 - `render_strategy`
 - `editable_elements`
@@ -446,6 +449,7 @@ Required per page:
 - `qa_focus`
 - `exhibit_structure`
 - `visual_fullness`
+- `design_token_status`
 - `layout_lock_status`
 - `layout_lock_reason`
 - `fill_level` for high-frequency HTML page families
@@ -453,7 +457,10 @@ Required per page:
 Fail if:
 
 - 正文页没有 `exhibit_structure`。
+- 没有 `canonical_family`。
 - 没有 `density_level`。
+- `token_set` 与 `visual_profile` 不一致。
+- `design_token_status` 不是 `applied`。
 - 没有可编辑性说明。
 - 未按 `editable-component-standard.md` 区分 `native_editable_layer`、`rendered_evidence_layer` 和 `metadata_layer`。
 - `page_family` 不在当前 `visual_profile` 的 layout lock 白名单内，且没有 `fallback_reason`。
@@ -472,11 +479,14 @@ Required:
 - `summary.content_thin_pages`
 - `summary.content_heavy_pages`
 - `pages[].page_id`
+- `pages[].canonical_family`
 - `pages[].page_family`
+- `pages[].token_set`
 - `pages[].layout_lock_status`
 - `pages[].density_level`
 - `pages[].fullness_risk`
 - `pages[].layout_reason`
+- `pages[].design_token_status`
 - `reference_layout_choice` if external reference layouts are used
 
 Fail if:
@@ -484,7 +494,9 @@ Fail if:
 - `partner-ready` 或 `client-ready` 项目缺少 layout analysis。
 - `status` 不是 `confirmed` 或 `assumed_user_requested_direct`。
 - 存在 `layout_gaps > 0`。
+- 存在 `design_token_status=mixed_profile_risk`。
 - 存在 `fullness_risk=high` 且没有用户确认。
+- 使用参考版式但没有 `canonical_family`、`token_set` 或 `adaptation_notes`。
 - 使用外部参考版式但缺少 `reference_layout_choice.pages_using_reference[].source_preview`。
 
 Section divider pages additionally require:
