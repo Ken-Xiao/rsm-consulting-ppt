@@ -4,16 +4,20 @@
 
 每页都要能脱离讲者独立阅读：标题给结论，图表/矩阵给证据，短句给解释，页脚给来源。
 
+本 skill 是所有中文金融咨询 PPT 任务的前置治理层。通用 `Presentations`、`pitch-deck`、`deck-refresh` 或 reference-layout 子 skill 只能作为下游渲染/素材工具；不得在 `CN0_interview` 完成前直接调用这些工具生成内容、预览或 PPTX。
+
+用户的每个关键选择都必须转化为 PPT 属性锁定项。所有 PPT 项目先读取 `references/guided-interaction-pattern.md` 和 `references/decision-to-deck-attribute-map.md`，通过最小或阶段式问题锁定受众语气、范围、不可改边界、信息密度、核心信息、研究深度、页数预算、叙事框架、风险处理、模板保留度、样章节奏和批量节奏。
+
 ## Before Building
 
-默认必须先进行策略访谈。用户要求新建、整体优化、升级、重构、复刻模板、客户交付或董事会/管理层汇报时，先读取 `references/strategy-brief.md`，提出一组精简问题；收到回答后再继续。
+默认必须先进行策略访谈。用户提出任何 PPT 相关任务时，先读取 `references/strategy-brief.md`，提出一组精简问题；收到回答后再继续。
 
-只有在以下情况下才跳过访谈：
+不得跳过访谈。只有在以下情况下可以使用最小访谈：
 
 - 小范围 `targeted-edit`，例如只改某页标题、错字、颜色、对齐。
 - 用户明确写出“跳过提问，直接生成最终 PPT / skip questions and build”。
 
-“按现有材料处理”“直接优化”“继续做一版”不等于跳过访谈。
+“按现有材料处理”“直接优化”“继续做一版”不等于完成访谈。用户要求跳过提问时，也只能跳过完整深度访谈，不能跳过最小访谈和风险确认。
 
 必须确认或推断：
 
@@ -29,9 +33,11 @@
 
 当需要提问时：
 
-- 一次提出 4-8 个最高影响问题，不要分散成十几轮。
+- Quick Mode 一次提出 4-8 个最高影响问题；Deep Mode 每轮 1-4 个问题，按 Strategy/Substance/Structure/Surface/Execution 推进。
 - 对能从文件名、材料内容或上下文合理推断的信息，先给出假设，让用户确认或修正。
 - 问题必须覆盖内容、版式和交付约束，不只问业务背景。
+- 问题必须带推荐选项，并说明选项会锁定哪些 PPT 属性。
+- 用户回答后，必须回显“已锁定的 PPT 属性”，例如 `信息密度=hybrid`、`风险态度=confront`、`样章=three_samples`。
 - 用户回答后，先形成 `brief.json` 或等价 brief，再进入 `framework_confirmation`。
 - 用户确认整体框架后，才进入 `Source read`、`Claim spine`、版式选择和构建。
 

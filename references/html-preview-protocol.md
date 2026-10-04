@@ -77,7 +77,7 @@ layout_analysis_report.json
 - `confirmed`：用户确认可批量构建。
 - `revise_required`：预览有 blocking issue，需要修订后重看。
 - `preview_unavailable`：当前环境无法渲染预览，必须说明原因并让用户确认是否继续。
-- `assumed_user_requested_direct`：用户明确要求跳过预览直接生成。
+- `direct_build_after_minimal_interview`：用户在完成最小访谈后明确要求跳过预览直接生成。
 
 `client-ready` 不得在 `pending_user_confirmation` 状态下进入正式构建。
 

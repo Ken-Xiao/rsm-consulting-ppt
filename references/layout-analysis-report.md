@@ -10,7 +10,7 @@
 - 任何需要生成 `preset_map.json` 的项目。
 - 用户反馈“版面空/密”“需要先看结构和版式”的项目。
 
-可以跳过：
+可以简化，但不得跳过 `CN0_interview`：
 
 - `quick-polish` 或 `targeted-edit`，且没有重排版式。
 
@@ -126,7 +126,7 @@ insight_layout_map.json
 
 进入 PPTX build 前必须满足：
 
-- `status` 为 `confirmed` 或 `assumed_user_requested_direct`。
+- `status` 为 `confirmed` 或 `direct_build_after_minimal_interview`。
 - 无 `layout_gaps`。
 - 无 `fullness_risk=high`，除非用户明确确认。
 - 所有 `page_family` 通过 `layout-lock-protocol.md`。

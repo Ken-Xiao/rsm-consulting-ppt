@@ -1,11 +1,12 @@
 # Tier Stage Matrix
 
-用于把任务档位转成明确的 build runner stage 列表，减少 Agent 自行判断哪些步骤可以跳过。
+用于把任务档位转成明确的 build runner stage 列表，减少 Agent 自行判断哪些步骤可以跳过。所有 PPT 任务都必须先完成 `I0-forced-interview`，再进入下表任何 stage。
 
 ## Stage Matrix
 
 | Stage | express | quick-polish | partner-ready | client-ready | pipeline |
 |---|---|---|---|---|---|
+| `I0` Forced Interview | required | required | required | required | required |
 | `S0` Phase Lock | skip | skip | required | required | required |
 | `S1` Validate Artifacts | minimal | minimal | full | full | full |
 | `S1.5` Milestone Preview | skip | skip | optional if >25 pages | required if >15 pages | required |
@@ -24,15 +25,14 @@ Use these lists after tier routing:
 
 ```json
 {
-  "express": ["S1-minimal", "S2-simple", "S4-basic", "S6-draft"],
-  "quick-polish": ["S1-minimal", "S2-patch", "S3-optional", "S4-basic", "S6-polish"],
-  "partner-ready": ["S0", "S1", "S1.6", "S2.5", "S2.6-recommended", "S2", "S3", "S4", "S5", "S6"],
-  "client-ready": ["S0", "S1", "S1.5", "S1.6", "S2.5", "S2.6", "S2", "S3", "S4", "S5", "S6"],
-  "pipeline": ["S0", "S1", "S1.5", "S1.6", "S2.5", "S2.6", "S2", "S3", "S4", "S5", "S6", "regression"]
+  "express": ["I0-forced-interview", "S1-minimal", "S2-simple", "S4-basic", "S6-draft"],
+  "quick-polish": ["I0-forced-interview", "S1-minimal", "S2-patch", "S3-optional", "S4-basic", "S6-polish"],
+  "partner-ready": ["I0-forced-interview", "S0", "S1", "S1.6", "S2.5", "S2.6-recommended", "S2", "S3", "S4", "S5", "S6"],
+  "client-ready": ["I0-forced-interview", "S0", "S1", "S1.5", "S1.6", "S2.5", "S2.6", "S2", "S3", "S4", "S5", "S6"],
+  "pipeline": ["I0-forced-interview", "S0", "S1", "S1.5", "S1.6", "S2.5", "S2.6", "S2", "S3", "S4", "S5", "S6", "regression"]
 }
 ```
 
 ## Rule
 
 Once tier is selected, the agent should follow the corresponding list. Do not read or execute stages outside the tier unless the user escalates the task or risk conditions require it.
-

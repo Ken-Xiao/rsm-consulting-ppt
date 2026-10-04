@@ -10,7 +10,7 @@
 
 - 若状态为 `confirmed` 或 `confirmed_with_changes`：可以继续拆标题链、页面角色和页级结构。
 - 若状态为 `pending` 或不存在：只输出框架确认包，暂停细节生成。
-- 若状态为 `assumed_user_requested_direct`：可以继续，但需在 outline 和交付说明中标记未确认风险。
+- 若状态为 `direct_build_after_minimal_interview`：可以继续，但需在 outline 和交付说明中标记未做完整框架确认的风险。
 
 框架确认至少覆盖：客户核心问题、总答案假设、推荐分析框架、章节序列、页数预算、默认视觉风格和中文为主的语言策略。
 

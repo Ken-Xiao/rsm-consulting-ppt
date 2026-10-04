@@ -2,6 +2,54 @@
   "version": "2026-05-31",
   "principle": "Use universal page families for structure; inject one canonical visual profile token set for color, type, spacing, chrome, and density.",
   "token_sets": {
+    "rsm-light": {
+      "language": "zh-CN",
+      "scene_overlay": "bank-real-estate-value-service",
+      "canvas": { "width_px": 1600, "height_px": 900, "safe_margin_px": 56 },
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#FFFFFF",
+        "surface_alt": "#F3F7FA",
+        "primary": "#00153D",
+        "primary_dark": "#0F2747",
+        "secondary": "#1E73A8",
+        "accent": "#009CDE",
+        "text": "#1F2937",
+        "muted": "#64748B",
+        "line": "#D9E2EA",
+        "positive": "#1E73A8",
+        "negative": "#475569",
+        "neutral": "#64748B",
+        "warning": "#0F2747"
+      },
+      "typography": {
+        "font_zh": "Microsoft YaHei",
+        "font_latin": "Arial",
+        "title_pt": 24,
+        "subtitle_pt": 12,
+        "body_pt": 12,
+        "secondary_pt": 10.5,
+        "small_pt": 8.5,
+        "data_label_pt": 15,
+        "kpi_pt": 28
+      },
+      "chrome": {
+        "top_rsm_bars": false,
+        "left_blue_rule": true,
+        "module_capsule": false,
+        "footer_minimal": true,
+        "heavy_dark_header": false
+      },
+      "density": {
+        "body_occupancy_target_pct": [70, 82],
+        "primary_visual_min_height_px": 400,
+        "supporting_layer_target": [1, 3]
+      },
+      "restrictions": {
+        "palette_only": ["blue", "white", "gray"],
+        "forbidden": ["gold", "brown", "gradient", "heavy_shadow", "decorative_icon_pile"]
+      }
+    },
     "rsm-insurance-results": {
       "default": true,
       "language": "zh-CN",

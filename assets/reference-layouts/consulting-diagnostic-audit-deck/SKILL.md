@@ -58,6 +58,10 @@ thumbnails:
 
 # Diagnose a Client like a Tier-1 Implementation Lead
 
+## RSM Governance Gate
+
+If this skill is used for a Chinese finance/consulting PPT request, do not generate slides directly. First invoke `rsm-consulting-ppt-skills` and complete `CN0_interview`; use this reference-layout skill only after the RSM forced interview has locked scope, audience, must-keep boundaries, visual style, and sample cadence.
+
 > 12 opportunities, dollar-sized, ranked on a 2×2 — in one week.
 
 ![consulting-diagnostic-audit-deck methodology illustration](https://cdn1.genspark.ai/user-upload-image/slide_agent/v2-catalog-hero/135-mckinsey-diagnostic-audit.png)

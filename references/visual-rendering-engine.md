@@ -16,7 +16,7 @@
 进入渲染前必须读取 `references/layout-lock-protocol.md` 和 `references/layout-analysis-report.md`：
 
 - `preset_map.json` 中每页 page family 必须被 visual profile 白名单允许。
-- `layout_analysis_report.json` 必须在正式 PPTX build 前生成，并经用户确认或明确标记为 `assumed_user_requested_direct`。
+- `layout_analysis_report.json` 必须在正式 PPTX build 前生成，并经用户确认；若用户要求跳过深度确认，必须先完成 `CN0_interview`，再明确标记为 `direct_build_after_minimal_interview`。
 - 若存在 `layout_gap`、未知 page family 或 `fullness_risk=high`，不得批量构建。
 
 每页渲染前还必须读取 `references/storyline-page-planning.md` 中的 `visual_intent` 要求，先判断本页逻辑关系是递进、并列、对比、因果、下钻还是综合，再选择图表、表格、流程、卡片或图片。

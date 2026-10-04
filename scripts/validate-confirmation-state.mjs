@@ -47,7 +47,15 @@ function readJson(name) {
   }
 }
 
-const allowed = new Set(["confirmed", "confirmed_with_changes", "assumed_user_requested_direct", "preview_unavailable_confirmed"]);
+const allowed = new Set([
+  "interview_complete",
+  "minimal_interview_complete",
+  "confirmed",
+  "confirmed_with_changes",
+  "direct_build_after_minimal_interview",
+  "assumed_user_requested_direct",
+  "preview_unavailable_confirmed",
+]);
 const blocking = new Set([
   "pending",
   "blocked",
@@ -59,22 +67,30 @@ const blocking = new Set([
 ]);
 
 const requirementsByStage = {
-  S0: [],
-  S1: [],
-  "S1.5": ["CN1_framework"],
-  "S1.6": ["CN1_framework"],
-  S2: ["CN1_framework", "CN2_layout"],
-  "S2.5": ["CN1_framework", "CN2_layout"],
-  "S2.6": ["CN1_framework", "CN2_layout"],
-  S3: ["CN1_framework", "CN2_layout", "CN3_html_preview"],
-  S4: ["CN1_framework", "CN2_layout", "CN3_html_preview"],
-  S5: ["CN1_framework", "CN2_layout", "CN3_html_preview"],
-  S6: ["CN1_framework", "CN2_layout", "CN3_html_preview"],
+  "I0-forced-interview": ["CN0_interview"],
+  S0: ["CN0_interview"],
+  S1: ["CN0_interview"],
+  "S1-minimal": ["CN0_interview"],
+  "S2-simple": ["CN0_interview"],
+  "S2-patch": ["CN0_interview"],
+  "S3-optional": ["CN0_interview"],
+  "S4-basic": ["CN0_interview"],
+  "S6-draft": ["CN0_interview"],
+  "S6-polish": ["CN0_interview"],
+  "S1.5": ["CN0_interview", "CN1_framework"],
+  "S1.6": ["CN0_interview", "CN1_framework"],
+  S2: ["CN0_interview", "CN1_framework", "CN2_layout"],
+  "S2.5": ["CN0_interview", "CN1_framework", "CN2_layout"],
+  "S2.6": ["CN0_interview", "CN1_framework", "CN2_layout"],
+  S3: ["CN0_interview", "CN1_framework", "CN2_layout", "CN3_html_preview"],
+  S4: ["CN0_interview", "CN1_framework", "CN2_layout", "CN3_html_preview"],
+  S5: ["CN0_interview", "CN1_framework", "CN2_layout", "CN3_html_preview"],
+  S6: ["CN0_interview", "CN1_framework", "CN2_layout", "CN3_html_preview"],
 };
 
 function requiredNodesFor(tierName, stageName) {
-  if (["express", "quick-polish"].includes(tierName)) return [];
   const base = requirementsByStage[stageName] || [];
+  if (["express", "quick-polish"].includes(tierName)) return ["CN0_interview"];
   if (tierName === "partner-ready") {
     return base.filter((node) => node !== "CN3_html_preview");
   }

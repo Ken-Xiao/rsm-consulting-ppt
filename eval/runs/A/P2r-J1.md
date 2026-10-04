@@ -1,0 +1,3 @@
+判定：Y 更好
+强度：slight（略优）
+理由：两份候选均已完整纳入 A 组 9 件每任务必读文件（cand1.md 与 cand2.md 的加载表逐件点名 agent-behavioral-guardrail.md、strategy-brief.md、guided-interaction-pattern.md、decision-to-deck-attribute-map.md、task-tier-protocol.md、v2-capability-router.md、confirmation-state-machine.md、progressive-loading-protocol.md、failure-modes.md），均无硬伤且无过度加载。关键差异在权威裁决的使用：cand2.md 明确引用 progressive-loading-protocol 的并集规则（Layer 0 ∪ Decision Router 下限件 ∪ 条件触发件），将 client-delivery-standard.md、data-lineage-protocol.md、visual-qa-protocol.md 等下限件逐件列入加载计划排期，符合地面真值「加载集 = 下限 ∪ A 组清单」；cand1.md 则以 SKILL.md:54「当前阶段至少要读」的较弱表述将下限件整体排除出本轮加载集（列入「本轮不读」），偏离并集规则。cand1.md 的行号锚点（如 progressive-loading-protocol.md:11-20）更细，但不足以抵消其在加载集确定上对权威裁决的偏离。

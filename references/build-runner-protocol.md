@@ -23,7 +23,7 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 ```
 
 `validate-layout-manifest.mjs` 检查 `assets/layouts/template-manifest.json`、模板文件存在性、重复 page family 和必填字段映射。  
-`validate-confirmation-state.mjs` 检查 CN1/CN2/CN3 是否允许进入当前 stage。  
+`validate-confirmation-state.mjs` 检查 CN0/CN1/CN2/CN3 是否允许进入当前 stage。  
 `validate-rsm-deck.mjs` 检查 deck artifacts、逻辑 gate 所需字段、preset map、图表数据、review report 和 contact sheet。
 
 如果当前环境没有这些脚本，Codex 应按同等步骤手动执行，并输出等价产物。
@@ -36,6 +36,7 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 
 | Stage | express | quick-polish | partner-ready | client-ready | pipeline |
 |---|---|---|---|---|---|
+| `I0` Forced Interview | required | required | required | required | required |
 | `S0` Phase Lock | skip | skip | required | required | required |
 | `S1` Validate Artifacts | minimal | minimal | full | full | full |
 | `S1.5` Milestone Preview | skip | skip | optional if >25 pages | required if >15 pages | required |
@@ -51,9 +52,9 @@ node scripts/validate-rsm-deck.mjs outputs/rsm_deck
 Gate:
 
 - `express` 和 `quick-polish` 不应读取完整 stage 体系，除非用户升档。
-- `partner-ready` 和 `client-ready` 必须维护 `confirmation_log.json`。
+- 所有档位都必须先完成 `CN0_interview`；`partner-ready` 和 `client-ready` 必须维护 `confirmation_log.json`。
 - `partner-ready` 以上每个 stage 切换前必须运行或等价执行 `validate-confirmation-state.mjs`。确认节点未通过时，当前回复必须停在确认请求或修正计划，不得继续生成下游产物。
-- `client-ready` 的 `S2.6` 不得跳过，除非记录 `assumed_user_requested_direct` 或 `preview_unavailable_confirmed`。
+- `client-ready` 的 `S2.6` 不得跳过，除非在已完成 `CN0_interview` 后记录 `direct_build_after_minimal_interview` 或 `preview_unavailable_confirmed`。
 
 ### Stage 0: Phase Lock Check
 
@@ -253,7 +254,7 @@ Output:
 
 Gate:
 
-- `client-ready` 项目必须有 `html_preview_report.status = confirmed`，或 `preview_unavailable / assumed_user_requested_direct` 且有用户确认和风险说明。
+- `client-ready` 项目必须有 `html_preview_report.status = confirmed`，或 `preview_unavailable / direct_build_after_minimal_interview` 且有用户确认和风险说明。
 - `partner-ready` 项目若跳过 HTML preview，必须在交付说明中写明。
 - `revise_required` 状态不得进入批量构建。
 - 关键页预览至少覆盖执行摘要、核心分析页和章节/小结页。

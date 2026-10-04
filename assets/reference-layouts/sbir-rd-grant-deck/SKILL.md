@@ -54,6 +54,10 @@ thumbnails:
 
 # Win an SBIR Grant like a Phase II awardee
 
+## RSM Governance Gate
+
+If this skill is used for a Chinese finance/consulting PPT request, do not generate slides directly. First invoke `rsm-consulting-ppt-skills` and complete `CN0_interview`; use this reference-layout skill only after the RSM forced interview has locked scope, audience, must-keep boundaries, visual style, and sample cadence.
+
 > Every Gantt milestone maps 1:1 to a scored rubric line.
 
 ![sbir-rd-grant-deck methodology illustration](https://cdn1.genspark.ai/user-upload-image/slide_agent/v2-catalog-hero/134-sbir-phase2-grant.png)

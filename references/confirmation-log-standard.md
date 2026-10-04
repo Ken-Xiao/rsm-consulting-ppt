@@ -1,6 +1,6 @@
 # Confirmation Log Standard
 
-用于记录用户在关键 gate 的确认、修改和跳过确认风险。`partner-ready` 及以上项目必须生成或维护 `confirmation_log.json`。
+用于记录用户在关键 gate 的访谈、确认、修改和未确认风险。所有 PPT 任务都应记录 `CN0_interview` 或等价最小访谈记录；`partner-ready` 及以上项目必须生成或维护 `confirmation_log.json`。
 
 ## Core Principle
 
@@ -15,6 +15,15 @@
   "project_id": "rsm_project_001",
   "tier": "client-ready",
   "nodes": [
+    {
+      "node": "CN0_interview",
+      "status": "interview_complete",
+      "requested_at": "2026-05-31T09:50:00+08:00",
+      "confirmed_at": "2026-05-31T09:58:00+08:00",
+      "user_signal": "给董事会看，正式交付，按保险财务报告风，先看三张样章",
+      "changes_applied": [],
+      "artifact_versions_locked": ["interaction_locks v1.0", "brief.json v0.1"]
+    },
     {
       "node": "CN1_framework",
       "status": "confirmed_with_changes",
@@ -32,15 +41,17 @@
 
 | Tier | Required nodes |
 |---|---|
-| `express` | optional, only if user confirms direction |
-| `quick-polish` | optional, record scope confirmation if available |
-| `partner-ready` | `CN1_framework`, `CN2_layout` |
-| `client-ready` | `CN1_framework`, `CN2_layout`, `CN3_html_preview` |
+| `express` | `CN0_interview` or equivalent minimal interview note |
+| `quick-polish` | `CN0_interview` or equivalent scope confirmation note |
+| `partner-ready` | `CN0_interview`, `CN1_framework`, `CN2_layout` |
+| `client-ready` | `CN0_interview`, `CN1_framework`, `CN2_layout`, `CN3_html_preview` |
 | `pipeline` | all nodes plus schema/version lock notes |
 
 ## Status Values
 
 - `pending`
+- `interview_complete`
+- `minimal_interview_complete`
 - `confirmed`
 - `confirmed_with_changes`
 - `assumed_user_requested_direct`
@@ -52,12 +63,13 @@
 For `partner-ready`:
 
 - `confirmation_log.json` must exist.
+- `CN0_interview` must not be `pending`.
 - `CN1_framework` must not be `pending`.
 - `CN2_layout` must not be `pending` before build.
 
 For `client-ready`:
 
 - `CN1_framework`, `CN2_layout`, and `CN3_html_preview` must exist.
+- `CN0_interview` must exist.
 - No required node may be `pending` or `blocked`.
-- If any node is `assumed_user_requested_direct`, delivery note must disclose the skipped confirmation risk.
-
+- If any node uses `direct_build_after_minimal_interview` or `assumed_user_requested_direct`, delivery note must disclose the limited-confirmation risk.

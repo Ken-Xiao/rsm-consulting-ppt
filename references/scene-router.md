@@ -15,6 +15,7 @@
 | `transaction-structure` | 交易结构/融资方案 | 信托、ABS、资管、融资、交易结构、三流合一 | 约束→结构→风控→落地 | 12-30 |
 | `insurance-results-review` | 保险公司新准则财务结果/业绩盘点 | 保险公司、上市险企、新准则、IFRS 17、财务结果、承保、投资收益、偿付能力 | 结果→结构分化→驱动解释→风险提示 | 25-40 |
 | `npl-practice-sharing` | 银行/保险不良处置行业实践分享 | 不良处置、核销、批量转让、责任认定、资产减值、非标不良、案例分享 | 概况→观察→案例→建议 | 25-40 |
+| `bank-real-estate-value-service` | 银行不动产价值管理服务 | 押品、不动产价值、按揭、年度重估、价值认定、联合运营、专项支持意见 | 运营模式→生产机制→按揭案例→治理边界→试点决策 | 18-28 |
 | `custom` | 自定义金融汇报 | 无法匹配以上场景 | 由访谈确定 | 用户指定 |
 
 ## Routing Rules
@@ -119,3 +120,11 @@ visual_profile: rsm-insurance-results
 - 常见模块：封面、团队/目录、行业概况、银行不良处置观察、保险资产减值概况、保险不良资产案例、管理影响和建议。
 - 默认视觉：`rsm-practice-sharing`。
 - 默认版式：`practice_photo_cover`、`practice_agenda`、`practice_section_divider`、`observation_with_timeline`、`two_case_with_center_mechanism`、`case_evidence_panel`、`risk_network_diagram`。
+
+### bank-real-estate-value-service
+
+- 数据结构：房屋标识、市场事实、方法与版本、专业复核、银行认定、贷后资产池和区域风险信号。
+- 常见图表：三层运营架构、模式对照表、责任泳道、生命周期流程、候选池表、合理区间、例外分流、双时钟试点路径。
+- 常见模块：整体运营模式、服务生产机制、按揭案例、治理边界、试点决策。
+- 默认视觉：`rsm-light`，并读取 `references/bank-real-estate-value-service-standard.md` 作为场景覆盖层。
+- 默认页面家族：`F1` 至 `F7`；仅使用蓝、白、灰，禁止金色和装饰性渐变。

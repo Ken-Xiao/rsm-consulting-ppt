@@ -91,4 +91,4 @@
 - milestone 通过后，可对该范围启用 `phase_lock`。
 - milestone 修订只影响覆盖范围和直接相邻桥接页。
 - 若用户要求快速出稿，可合并 milestone，但交付说明中必须标记未做完整预览。
-- 若用户明确要求跳过 HTML preview，必须记录 `assumed_user_requested_direct`，不得把跳过视为通过。
+- 若用户明确要求跳过 HTML preview，必须先完成 `CN0_interview`，再记录 `direct_build_after_minimal_interview`，不得把跳过视为通过。

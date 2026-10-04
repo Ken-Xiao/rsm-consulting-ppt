@@ -61,6 +61,10 @@ thumbnails:
 
 # Write a Client Final Deck like a Tier-1 Strategy Engagement Manager
 
+## RSM Governance Gate
+
+If this skill is used for a Chinese finance/consulting PPT request, do not generate slides directly. First invoke `rsm-consulting-ppt-skills` and complete `CN0_interview`; use this reference-layout skill only after the RSM forced interview has locked scope, audience, must-keep boundaries, visual style, and sample cadence.
+
 > One Governing Thought, ten action titles, zero topic words.
 
 ![consulting-final-deck methodology illustration](https://cdn1.genspark.ai/user-upload-image/slide_agent/v2-catalog-hero/083-mckinsey-final-deliverable.png)

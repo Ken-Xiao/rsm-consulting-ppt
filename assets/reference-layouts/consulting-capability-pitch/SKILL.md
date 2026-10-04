@@ -55,6 +55,10 @@ thumbnails:
 
 # Write a Consulting Capability Pitch like an MBB Partner Beating Big 4
 
+## RSM Governance Gate
+
+If this skill is used for a Chinese finance/consulting PPT request, do not generate slides directly. First invoke `rsm-consulting-ppt-skills` and complete `CN0_interview`; use this reference-layout skill only after the RSM forced interview has locked scope, audience, must-keep boundaries, visual style, and sample cadence.
+
 > Answer 'why us, not Big 4' on slide 02 — not slide 20.
 
 ![consulting-capability-pitch methodology illustration](https://cdn1.genspark.ai/user-upload-image/slide_agent/v2-catalog-hero/086-mbb-capability-pitch.png)

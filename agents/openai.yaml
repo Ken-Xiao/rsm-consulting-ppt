@@ -1,4 +1,4 @@
 interface:
   display_name: "RSM Consulting PPT Skills"
-  short_description: "金融咨询 PPT 分档路由、V2 质量仪表盘、Schema 与视觉 QA"
-  default_prompt: "Use $rsm-consulting-ppt-skills to route, plan, structure, design, build, or optimize a finance consulting presentation by tier, with PRD V2 controls for phase lock, freshness, evidence credibility, visual rhythm, language calibration, editable rendering, and review QA."
+  short_description: "中文金融咨询 PPT：所有任务先强制访谈，再结构、视觉、构建和审校"
+  default_prompt: "For any Chinese finance/consulting PPT request, invoke $rsm-consulting-ppt-skills BEFORE generic Presentations, pitch-deck, deck-refresh, or layout/reference skills. This includes full creation, overall optimization, restructuring, style replication, quick polish, targeted edits, internal drafts, and client-ready presentations. First response must be a Chinese forced interview only; wait for answers before planning, editing, generating slide details, HTML previews, or PPTX. Use Guide Mode interaction to lock audience, decision, scenario, scope, must-keep boundaries, core message, research depth, page count, narrative, risk posture, visual style, sample-preview cadence, and batch cadence before proceeding."

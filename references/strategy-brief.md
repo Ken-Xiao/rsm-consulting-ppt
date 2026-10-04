@@ -1,12 +1,14 @@
 # Strategy Brief Questions
 
-用于在正式生成或深度优化 PPT 前，先把金融行业汇报的目标、内容和版式约束问清楚。默认必须先提问、等待回答、形成 brief，再进入后续步骤。轻量任务一次性提出 4-8 个问题；复杂 pipeline 项目按阶段一问一答，不要直接生成 PPT。
+用于在任何 PPT 相关任务开始前，先把金融行业汇报的目标、内容和版式约束问清楚。默认必须先提问、等待回答、形成 brief 或最小访谈记录，再进入后续步骤。轻量任务一次性提出 2-4 个问题；完整任务一次性提出 4-8 个问题；复杂 pipeline 项目按阶段一问一答。不要在访谈完成前直接生成 PPT、逐页内容、HTML 预览或 PPTX。
+
+提问时同时读取 `guided-interaction-pattern.md` 和 `decision-to-deck-attribute-map.md`。每个问题都必须锁定下游 PPT 属性；用户回答后要写入 `interaction_locks` 或等价 brief 字段。
 
 ## Hard Interaction Gate
 
-除非任务是纯 `quick-polish` / `targeted-edit`，或用户明确写出“跳过提问，直接生成最终 PPT”，否则必须先向用户提问并等待回答。
+所有 PPT 任务必须先向用户提问并等待回答。`quick-polish` / `targeted-edit` 不能跳过访谈，只能使用最小访谈；用户明确写出“跳过提问，直接生成最终 PPT”时，也只能减少访谈深度，不能无交互开工。
 
-以下表达不等于跳过提问：
+以下表达不等于完成访谈：
 
 - `按材料处理`
 - `帮我优化`
@@ -33,12 +35,22 @@
 - 需要新增叙事、重排结构、选择对标样本或设定分析框架。
 - 用户要求复刻 Genspark/Guide Mode 或搭建可复用生产管线。
 
-可以跳过的唯一情况：
+访谈不可跳过；可以简化为最小访谈的唯一情况：
 
-- 用户明确说“跳过提问，直接生成最终 PPT / skip questions and build”。
-- 只是改错字、换颜色、统一字体、追加一页等 targeted-edit。
+- 只是改错字、换颜色、统一字体、追加一页等 targeted-edit，且用户明确限定少量页面、页码范围或具体元素，不改变故事线、不新增分析结论。
+- 用户明确说“跳过提问，直接生成最终 PPT / skip questions and build”。此时仍必须先问最小访谈问题，确认是否接受未做完整框架访谈的风险。
 
-不能仅因为原材料已经清楚包含 brief、目录、受众、页数、模板和数据口径就跳过；此时应快速提出 4-6 个确认问题，让用户确认默认假设。
+不能仅因为原材料已经清楚包含 brief、目录、受众、页数、模板和数据口径就跳过；此时应快速提出确认问题，让用户确认默认假设。
+
+以下说法必须触发提问，不得直接生成：
+
+- `整体优化`
+- `整体升级`
+- `重新 review`
+- `再做一轮`
+- `继续优化`
+- `先出一版看看`
+- `根据这个规则更新`
 
 ## Question Bank
 
@@ -46,11 +58,40 @@
 
 ## Interview Modes
 
+### Mandatory Minimal Interview
+
+适用于任何 PPT 任务的最小入口，尤其是 `express`、`quick-polish`、`targeted-edit` 或用户要求跳过深度提问的场景。只问 2-4 个问题，但必须等待回答。
+
+最小访谈必须覆盖：
+
+1. **范围**：本次是全 deck、指定页码，还是指定元素？
+2. **目标**：主要改故事线、内容逻辑、视觉版式、语言表达、图表图片，还是只做错字/格式？
+3. **不可改边界**：哪些数字、来源、logo、页码、母版、法律/财务结论或客户措辞必须保留？
+4. **风险接受**：若用户要求跳过完整访谈，是否接受基于有限信息先做、后续可能返工？
+
+最小访谈完成后，记录为：
+
+```json
+{
+  "confirmation_node": "CN0_interview",
+  "status": "interview_complete",
+  "mode": "minimal",
+  "locked_attributes": ["scope", "edit_goal", "must_keep", "risk_acceptance"]
+}
+```
+
 ### Quick Mode
 
 适用于整体优化、短 PPT、材料较完整的任务。一次提出 4-8 个问题，用户回答后形成 brief。
 
 Quick Mode 也必须等待用户回答后才能进入生成。
+
+Quick Mode 的问题必须覆盖至少 4 类属性：
+
+- 受众和决策动作。
+- 信息密度和阅读场景。
+- 风险态度或敏感边界。
+- 视觉风格、模板保留度或样章节奏。
 
 ### Deep Mode
 
@@ -67,6 +108,7 @@ Deep Mode 规则：
 - 一次只问一个主问题，必要时追问。
 - 不生成大纲、图表或 PPT。
 - 每阶段结束时用一句话复述用户回答。
+- 每阶段结束时说明“这些回答已锁定哪些 PPT 属性”。
 - 五段完成后输出 brief，并请用户确认。
 - 对完整生成、整体重构、`partner-ready` 或 `client-ready` 项目，brief 确认后必须进入 `structure-first-confirmation-protocol.md`，先确认整体结构和分析框架，再展开逐页细节。
 
@@ -122,16 +164,16 @@ Deep Mode 规则：
 
 当用户没有提供足够信息时，优先问下面 6 个问题：
 
-1. 这份 PPT 给谁看，读完后希望他们做什么决定？
-2. 被分析对象和金融场景是什么（例如银行对标、信托/资管交易、资产池、估值、法律合规、经营复盘）？
-3. 可用材料有哪些，哪些数字/结论必须严格保留？
-4. 是否需要同业或交易对标？如果需要，对标对象你指定还是我建议？
-5. 目标页数、阅读时长和信息密度偏好是什么？
-6. 版式风格默认按保险财务报告风走；是否需要沿用原稿、切换实践分享风、McKinsey-like，还是其他模板？
+1. **Q1.1 决策者**：这份 PPT 最终给谁拍板？[A] 董事会/管理层（推荐：战略意义+路线图） [B] 投委会/投资人（回报+风险） [C] 监管/合规（依据+边界） [D] 内部项目组（执行+分工）。
+2. **Q1.2 汇报场景**：它更像哪种使用场景？[A] 现场讲 30-45 分钟 [B] 现场讲 + 会后传阅（推荐） [C] 邮件/网盘传阅为主。
+3. **Q1.3 说服目标**：读完后希望对方做什么决定？[A] 批准方案/立项 [B] 识别风险/确认边界 [C] 投资或交易决策 [D] 沟通同步。
+4. **Q1.4 风险态度**：风险和不确定性怎么处理？[A] 弱化 [B] 适度提示 [C] 主动直面并配应对（推荐用于正式咨询交付）。
+5. **Q2.1 材料和数字边界**：哪些数字、结论或口径必须严格保留？未提供数字时按 [A] 待确认 [B] 公开数据可用、内部数据待补（推荐） [C] 区间估算并标供讨论。
+6. **Q4.1 视觉和样章**：默认按保险财务报告风；模板保留度按 [A] 100% 沿用 [B] 80% 保留+关键页破格（推荐） [C] 只借颜色；正式构建前是否先看 3 张样章？
 
 ## Mandatory First Response Template
 
-当用户要求新建、整体优化或升级 PPT 时，第一轮回复必须类似下面结构，不能直接生成：
+当用户提出任何 PPT 任务时，第一轮回复必须类似下面结构，不能直接生成：
 
 ```text
 我先确认几个关键点，避免直接生成后方向不对。基于你提供的材料，我的初步假设是：[1-2 句假设]。
@@ -145,6 +187,18 @@ Deep Mode 规则：
 6. 有没有不希望我触碰或不能写得太直接的内容？
 
 你确认后，我会先输出整体结构和框架方案；框架确认后再展开逐页内容。
+```
+
+针对小范围修改或用户要求跳过提问时，第一轮回复必须改用最小访谈，不能直接动手：
+
+```text
+我先做一个最小访谈，确认清楚后再动手，避免把不该改的内容改掉。
+
+请你确认：
+1. 本次只改哪些页/哪些元素？如果是整份，请直接说“整份”。
+2. 主要目标是语言、版式、颜色、图表、图片，还是故事线？
+3. 哪些数字、来源、logo、页码、母版或结论必须保留？
+4. 如果你希望跳过完整框架访谈，是否接受我先按有限信息处理，并在交付说明中标记未确认风险？
 ```
 
 ## Brief Output
@@ -169,9 +223,19 @@ Deep Mode 规则：
   "style": "RSM blue-gray/McKinsey-like/original-template/pitchbook/regulatory",
   "language": "zh-CN",
   "language_policy": "Chinese primary unless user explicitly requests English or bilingual output",
-  "framework_confirmation_status": "pending/confirmed/confirmed_with_changes/assumed_user_requested_direct",
+  "framework_confirmation_status": "pending/confirmed/confirmed_with_changes/direct_build_after_minimal_interview",
   "must_keep": ["不能改动的数字、法律结论、合同表述"],
-  "deliverables": ["pptx", "pdf", "preview"]
+  "deliverables": ["pptx", "pdf", "preview"],
+  "interaction_locks": {
+    "audience_weight": "strategy/governance/compliance/investment/execution",
+    "information_density": "presentation/hybrid/reading",
+    "persuasion_goal": "approve_project/identify_risk/decide_transaction/sync",
+    "risk_posture": "hide/moderate/confront",
+    "research_depth": "materials_only/public_background/benchmark_research",
+    "number_precision": "strict_pending/public_ok_internal_pending/range_estimate",
+    "template_retention": "100/80_plus_breakout/color_only",
+    "sample_checkpoint": "three_samples/one_sample/skipped"
+  }
 }
 ```
 

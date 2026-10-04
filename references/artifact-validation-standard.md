@@ -144,7 +144,7 @@ Fail if:
 - `CN1_framework` is not confirmed before `storyline_map.json` or `preset_map.json` exists.
 - `CN2_layout` is not confirmed before `draft_deck.pptx` or equivalent build output exists.
 - `CN3_html_preview` is not confirmed before `client-ready` delivery.
-- `assumed_user_requested_direct` exists but delivery note does not disclose skipped confirmation risk.
+- `direct_build_after_minimal_interview` exists but delivery note does not disclose limited-confirmation risk.
 
 ### `data_pool.json`
 
@@ -492,7 +492,7 @@ Required:
 Fail if:
 
 - `partner-ready` 或 `client-ready` 项目缺少 layout analysis。
-- `status` 不是 `confirmed` 或 `assumed_user_requested_direct`。
+- `status` 不是 `confirmed` 或 `direct_build_after_minimal_interview`。
 - 存在 `layout_gaps > 0`。
 - 存在 `design_token_status=mixed_profile_risk`。
 - 存在 `fullness_risk=high` 且没有用户确认。

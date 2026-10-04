@@ -12,11 +12,21 @@
 - 用户要求“按照咨询原则拆故事线”“先看逻辑”“先搭框架”。
 - 材料涉及金融、法律、估值、监管、风险、合规、投资、交易结构等高影响结论。
 
-可以简化或跳过：
+可以简化，但不得跳过 `CN0_interview`：
 
-- `quick-polish`：只改字体、颜色、错别字、个别页面排版。
+- `quick-polish`：用户明确指定少量页码、页面范围或具体元素，只改字体、颜色、错别字、标题或个别页面排版，且不改变故事线、不新增分析结论。
 - `targeted-edit`：用户明确指定只改某一页或某个元素。
-- 用户明确说“不要确认，直接按材料做”。此时仍需记录假设和未确认风险。
+- 用户明确说“不要确认，直接按材料做”。此时仍需完成最小访谈，记录假设和未确认风险。
+
+不能简化或跳过：
+
+- `整体优化`
+- `整体升级`
+- `重新 review`
+- `再做一轮`
+- `继续优化`
+- `先出一版看看`
+- `根据这个规则更新`
 
 ## Non-Negotiable Gate
 
@@ -25,6 +35,8 @@
 - `confirmation-state-machine.md`
 - `confirmation-log-standard.md`
 - `agent-behavioral-guardrail.md`
+- `guided-interaction-pattern.md`
+- `decision-to-deck-attribute-map.md`
 
 本协议有两个连续门槛：
 
@@ -91,6 +103,16 @@
     "target_pages": 25,
     "density": "high / medium / low"
   },
+  "interaction_locks": {
+    "audience_weight": "strategy / governance / compliance / investment / execution",
+    "information_density": "presentation / hybrid / reading",
+    "persuasion_goal": "approve_project / identify_risk / decide_transaction / sync",
+    "risk_posture": "hide / moderate / confront",
+    "research_depth": "materials_only / public_background / benchmark_research",
+    "number_precision": "strict_pending / public_ok_internal_pending / range_estimate",
+    "template_retention": "100 / 80_plus_breakout / color_only",
+    "sample_checkpoint": "three_samples / one_sample / skipped"
+  },
   "visual_profile": "rsm-insurance-results",
   "key_evidence_sources": ["用户材料", "Excel", "公开披露", "待补充来源"],
   "open_questions": ["需要用户确认的问题"],
@@ -112,7 +134,8 @@
    - 第一章：[章节] — [作用] — [预估页数]
    - 第二章：[章节] — [作用] — [预估页数]
 5. 默认语言：中文为主；如需英文或双语，我会单独切换。
-6. 默认视觉：[visual_profile]
+6. 已锁定的 PPT 属性：[interaction_locks 摘要]
+7. 默认视觉：[visual_profile]
 
 请先确认三件事：
 - 核心问题和总答案方向是否准确？
@@ -132,10 +155,10 @@
 | `pending_framework_confirmation` | 已输出框架方案，等待用户确认 | 不进入逐页生成 |
 | `confirmed` | 用户确认框架无修改 | 进入标题链和逐页结构 |
 | `confirmed_with_changes` | 用户提出调整 | 先更新框架，再进入细节 |
-| `assumed_user_requested_direct` | 用户明确要求跳过提问并直接生成最终 PPT | 可以推进，但交付说明中标记风险 |
+| `direct_build_after_minimal_interview` | 用户要求跳过完整框架访谈，且已完成最小访谈并接受风险 | 可以推进，但交付说明中标记风险 |
 | `blocked` | 用户未确认且无法合理假设 | 不进入逐页生成 |
 
-确认状态应同时写入 `confirmation_log.json` 的 `CN1_framework` 节点。`partner-ready` 以上项目如果没有该日志，不得进入 `preset_map.json`。
+确认状态应同时写入 `confirmation_log.json` 的 `CN0_interview` 和 `CN1_framework` 节点。`partner-ready` 以上项目如果没有该日志，不得进入 `preset_map.json`。
 
 ## Quality Rules
 
